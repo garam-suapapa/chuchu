@@ -1,0 +1,12 @@
+artifacts/
+assets/master/
+assets/generated/
+scripts/
+tests/
+plans/
+/*.jpg
+/*.png
+*.cmd
+server.cjs
+node_modules/
+npm-debug.log*

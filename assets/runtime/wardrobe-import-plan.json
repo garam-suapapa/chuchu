@@ -1,0 +1,808 @@
+{
+  "schema_version": 1,
+  "status": "extracted_rgba_integrated_in_browser_prototype",
+  "source_manifest": "F:/chuchu/assets/generated/wardrobe-manifest-v1.json",
+  "character_count": 4,
+  "item_count": 24,
+  "input_format": "RGB PNG with baked checkerboard",
+  "output_requirement": "RGBA PNG with transparent background, garment whites preserved",
+  "processing_authorization": "User approved proposed local processing with go-ahead",
+  "fit_verified": false,
+  "items": [
+    {
+      "id": "hachuping_outfit_01",
+      "character_id": "hachuping",
+      "display_name": "하트 파티 원피스",
+      "source_sheet": "F:/chuchu/assets/generated/hachuping/hachuping-wardrobe-six-design-v1.png",
+      "source_sha256": "B3154FA68E237C9E9FF6E872AB6EF9E1B2F63639404EA36F9DFF356B40825085",
+      "planned_crop": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "planned_output": "F:/chuchu/assets/runtime/outfits/hachuping/hachuping_outfit_01.png",
+      "slot": "body",
+      "anchors": {
+        "frame": {
+          "x": 142.19413092550786,
+          "y": 396.9074492099323,
+          "width": 299.11512415349887,
+          "height": 214.058690744921
+        }
+      },
+      "extracted": true,
+      "alpha_verified": true,
+      "fit_verified": false,
+      "actual_crop": [
+        45,
+        45,
+        515,
+        455
+      ],
+      "output": "assets/runtime/outfits/hachuping/hachuping_outfit_01.png"
+    },
+    {
+      "id": "hachuping_outfit_02",
+      "character_id": "hachuping",
+      "display_name": "데님 하트 멜빵옷",
+      "source_sheet": "F:/chuchu/assets/generated/hachuping/hachuping-wardrobe-six-design-v1.png",
+      "source_sha256": "B3154FA68E237C9E9FF6E872AB6EF9E1B2F63639404EA36F9DFF356B40825085",
+      "planned_crop": {
+        "x": 512,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "planned_output": "F:/chuchu/assets/runtime/outfits/hachuping/hachuping_outfit_02.png",
+      "slot": "body",
+      "anchors": {
+        "frame": {
+          "x": 179.76072234762975,
+          "y": 396.9074492099323,
+          "width": 223.9819413092551,
+          "height": 225.3995485327314
+        }
+      },
+      "extracted": true,
+      "alpha_verified": true,
+      "fit_verified": false,
+      "actual_crop": [
+        567,
+        45,
+        411,
+        455
+      ],
+      "output": "assets/runtime/outfits/hachuping/hachuping_outfit_02.png"
+    },
+    {
+      "id": "hachuping_outfit_03",
+      "character_id": "hachuping",
+      "display_name": "노란 하트 포켓 원피스",
+      "source_sheet": "F:/chuchu/assets/generated/hachuping/hachuping-wardrobe-six-design-v1.png",
+      "source_sha256": "B3154FA68E237C9E9FF6E872AB6EF9E1B2F63639404EA36F9DFF356B40825085",
+      "planned_crop": {
+        "x": 1024,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "planned_output": "F:/chuchu/assets/runtime/outfits/hachuping/hachuping_outfit_03.png",
+      "slot": "body",
+      "anchors": {
+        "frame": {
+          "x": 142.19413092550786,
+          "y": 396.9074492099323,
+          "width": 299.11512415349887,
+          "height": 214.058690744921
+        }
+      },
+      "extracted": true,
+      "alpha_verified": true,
+      "fit_verified": false,
+      "actual_crop": [
+        985,
+        45,
+        465,
+        455
+      ],
+      "output": "assets/runtime/outfits/hachuping/hachuping_outfit_03.png"
+    },
+    {
+      "id": "hachuping_outfit_04",
+      "character_id": "hachuping",
+      "display_name": "보라 리본 원피스",
+      "source_sheet": "F:/chuchu/assets/generated/hachuping/hachuping-wardrobe-six-design-v1.png",
+      "source_sha256": "B3154FA68E237C9E9FF6E872AB6EF9E1B2F63639404EA36F9DFF356B40825085",
+      "planned_crop": {
+        "x": 0,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "planned_output": "F:/chuchu/assets/runtime/outfits/hachuping/hachuping_outfit_04.png",
+      "slot": "body",
+      "anchors": {
+        "frame": {
+          "x": 142.19413092550786,
+          "y": 396.9074492099323,
+          "width": 299.11512415349887,
+          "height": 214.058690744921
+        }
+      },
+      "extracted": true,
+      "alpha_verified": true,
+      "fit_verified": false,
+      "actual_crop": [
+        45,
+        490,
+        515,
+        490
+      ],
+      "output": "assets/runtime/outfits/hachuping/hachuping_outfit_04.png"
+    },
+    {
+      "id": "hachuping_outfit_05",
+      "character_id": "hachuping",
+      "display_name": "민트 하트 후드복",
+      "source_sheet": "F:/chuchu/assets/generated/hachuping/hachuping-wardrobe-six-design-v1.png",
+      "source_sha256": "B3154FA68E237C9E9FF6E872AB6EF9E1B2F63639404EA36F9DFF356B40825085",
+      "planned_crop": {
+        "x": 512,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "planned_output": "F:/chuchu/assets/runtime/outfits/hachuping/hachuping_outfit_05.png",
+      "slot": "body",
+      "anchors": {
+        "frame": {
+          "x": 165.58465011286677,
+          "y": 396.9074492099323,
+          "width": 252.33408577878103,
+          "height": 216.89390519187359
+        }
+      },
+      "extracted": true,
+      "alpha_verified": true,
+      "fit_verified": false,
+      "actual_crop": [
+        567,
+        490,
+        411,
+        490
+      ],
+      "output": "assets/runtime/outfits/hachuping/hachuping_outfit_05.png"
+    },
+    {
+      "id": "hachuping_outfit_06",
+      "character_id": "hachuping",
+      "display_name": "분홍 하트 잠옷",
+      "source_sheet": "F:/chuchu/assets/generated/hachuping/hachuping-wardrobe-six-design-v1.png",
+      "source_sha256": "B3154FA68E237C9E9FF6E872AB6EF9E1B2F63639404EA36F9DFF356B40825085",
+      "planned_crop": {
+        "x": 1024,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "planned_output": "F:/chuchu/assets/runtime/outfits/hachuping/hachuping_outfit_06.png",
+      "slot": "body",
+      "anchors": {
+        "frame": {
+          "x": 179.76072234762975,
+          "y": 396.9074492099323,
+          "width": 223.9819413092551,
+          "height": 225.3995485327314
+        }
+      },
+      "extracted": true,
+      "alpha_verified": true,
+      "fit_verified": false,
+      "actual_crop": [
+        985,
+        490,
+        465,
+        490
+      ],
+      "output": "assets/runtime/outfits/hachuping/hachuping_outfit_06.png"
+    },
+    {
+      "id": "soraping_outfit_01",
+      "character_id": "soraping",
+      "display_name": "진주 조개 파티복",
+      "source_sheet": "F:/chuchu/assets/generated/soraping/soraping-wardrobe-six-design-v1.png",
+      "source_sha256": "CD0BB18739F802ED1119D21CBA1A08382FAFFD7A0E823963B731252A41F3C12D",
+      "planned_crop": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "planned_output": "F:/chuchu/assets/runtime/outfits/soraping/soraping_outfit_01.png",
+      "slot": "body",
+      "anchors": {
+        "frame": {
+          "x": 210.07203389830508,
+          "y": 429.16101694915255,
+          "width": 280.73728813559325,
+          "height": 200.90677966101694
+        }
+      },
+      "extracted": true,
+      "alpha_verified": true,
+      "fit_verified": false,
+      "actual_crop": [
+        55,
+        45,
+        492,
+        455
+      ],
+      "output": "assets/runtime/outfits/soraping/soraping_outfit_01.png"
+    },
+    {
+      "id": "soraping_outfit_02",
+      "character_id": "soraping",
+      "display_name": "분홍 조개 세일러복",
+      "source_sheet": "F:/chuchu/assets/generated/soraping/soraping-wardrobe-six-design-v1.png",
+      "source_sha256": "CD0BB18739F802ED1119D21CBA1A08382FAFFD7A0E823963B731252A41F3C12D",
+      "planned_crop": {
+        "x": 512,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "planned_output": "F:/chuchu/assets/runtime/outfits/soraping/soraping_outfit_02.png",
+      "slot": "body",
+      "anchors": {
+        "frame": {
+          "x": 210.07203389830508,
+          "y": 429.16101694915255,
+          "width": 280.73728813559325,
+          "height": 200.90677966101694
+        }
+      },
+      "extracted": true,
+      "alpha_verified": true,
+      "fit_verified": false,
+      "actual_crop": [
+        556,
+        45,
+        432,
+        455
+      ],
+      "output": "assets/runtime/outfits/soraping/soraping_outfit_02.png"
+    },
+    {
+      "id": "soraping_outfit_03",
+      "character_id": "soraping",
+      "display_name": "민트 조개 드레스",
+      "source_sheet": "F:/chuchu/assets/generated/soraping/soraping-wardrobe-six-design-v1.png",
+      "source_sha256": "CD0BB18739F802ED1119D21CBA1A08382FAFFD7A0E823963B731252A41F3C12D",
+      "planned_crop": {
+        "x": 1024,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "planned_output": "F:/chuchu/assets/runtime/outfits/soraping/soraping_outfit_03.png",
+      "slot": "body",
+      "anchors": {
+        "frame": {
+          "x": 210.07203389830508,
+          "y": 429.16101694915255,
+          "width": 280.73728813559325,
+          "height": 200.90677966101694
+        }
+      },
+      "extracted": true,
+      "alpha_verified": true,
+      "fit_verified": false,
+      "actual_crop": [
+        991,
+        45,
+        514,
+        455
+      ],
+      "output": "assets/runtime/outfits/soraping/soraping_outfit_03.png"
+    },
+    {
+      "id": "soraping_outfit_04",
+      "character_id": "soraping",
+      "display_name": "보라 조개 멜빵옷",
+      "source_sheet": "F:/chuchu/assets/generated/soraping/soraping-wardrobe-six-design-v1.png",
+      "source_sha256": "CD0BB18739F802ED1119D21CBA1A08382FAFFD7A0E823963B731252A41F3C12D",
+      "planned_crop": {
+        "x": 0,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "planned_output": "F:/chuchu/assets/runtime/outfits/soraping/soraping_outfit_04.png",
+      "slot": "body",
+      "anchors": {
+        "frame": {
+          "x": 245.33050847457628,
+          "y": 429.16101694915255,
+          "width": 210.22033898305085,
+          "height": 211.55084745762713
+        }
+      },
+      "extracted": true,
+      "alpha_verified": true,
+      "fit_verified": false,
+      "actual_crop": [
+        55,
+        490,
+        492,
+        490
+      ],
+      "output": "assets/runtime/outfits/soraping/soraping_outfit_04.png"
+    },
+    {
+      "id": "soraping_outfit_05",
+      "character_id": "soraping",
+      "display_name": "분홍 조개 후드복",
+      "source_sheet": "F:/chuchu/assets/generated/soraping/soraping-wardrobe-six-design-v1.png",
+      "source_sha256": "CD0BB18739F802ED1119D21CBA1A08382FAFFD7A0E823963B731252A41F3C12D",
+      "planned_crop": {
+        "x": 512,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "planned_output": "F:/chuchu/assets/runtime/outfits/soraping/soraping_outfit_05.png",
+      "slot": "body",
+      "anchors": {
+        "frame": {
+          "x": 232.02542372881356,
+          "y": 429.16101694915255,
+          "width": 236.83050847457628,
+          "height": 203.5677966101695
+        }
+      },
+      "extracted": true,
+      "alpha_verified": true,
+      "fit_verified": false,
+      "actual_crop": [
+        556,
+        490,
+        432,
+        490
+      ],
+      "output": "assets/runtime/outfits/soraping/soraping_outfit_05.png"
+    },
+    {
+      "id": "soraping_outfit_06",
+      "character_id": "soraping",
+      "display_name": "아쿠아 조개 잠옷",
+      "source_sheet": "F:/chuchu/assets/generated/soraping/soraping-wardrobe-six-design-v1.png",
+      "source_sha256": "CD0BB18739F802ED1119D21CBA1A08382FAFFD7A0E823963B731252A41F3C12D",
+      "planned_crop": {
+        "x": 1024,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "planned_output": "F:/chuchu/assets/runtime/outfits/soraping/soraping_outfit_06.png",
+      "slot": "body",
+      "anchors": {
+        "frame": {
+          "x": 245.33050847457628,
+          "y": 429.16101694915255,
+          "width": 210.22033898305085,
+          "height": 211.55084745762713
+        }
+      },
+      "extracted": true,
+      "alpha_verified": true,
+      "fit_verified": false,
+      "actual_crop": [
+        991,
+        490,
+        514,
+        490
+      ],
+      "output": "assets/runtime/outfits/soraping/soraping_outfit_06.png"
+    },
+    {
+      "id": "challangping_outfit_01",
+      "character_id": "challangping",
+      "display_name": "코랄 꽃리본 파티복",
+      "source_sheet": "F:/chuchu/assets/generated/challangping/challangping-wardrobe-six-design-v1.png",
+      "source_sha256": "07E01EDC21F7762C34A7FB088196CB9932A3DF6B0FC1F3F1754341D9DFC45099",
+      "planned_crop": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "planned_output": "F:/chuchu/assets/runtime/outfits/challangping/challangping_outfit_01.png",
+      "slot": "body",
+      "anchors": {
+        "frame": {
+          "x": 124.31794871794875,
+          "y": 409.18974358974356,
+          "width": 339.7641025641026,
+          "height": 243.14871794871794
+        }
+      },
+      "extracted": true,
+      "alpha_verified": true,
+      "fit_verified": false,
+      "actual_crop": [
+        45,
+        45,
+        495,
+        455
+      ],
+      "output": "assets/runtime/outfits/challangping/challangping_outfit_01.png"
+    },
+    {
+      "id": "challangping_outfit_02",
+      "character_id": "challangping",
+      "display_name": "민트 꽃잎 드레스",
+      "source_sheet": "F:/chuchu/assets/generated/challangping/challangping-wardrobe-six-design-v1.png",
+      "source_sha256": "07E01EDC21F7762C34A7FB088196CB9932A3DF6B0FC1F3F1754341D9DFC45099",
+      "planned_crop": {
+        "x": 512,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "planned_output": "F:/chuchu/assets/runtime/outfits/challangping/challangping_outfit_02.png",
+      "slot": "body",
+      "anchors": {
+        "frame": {
+          "x": 124.31794871794875,
+          "y": 409.18974358974356,
+          "width": 339.7641025641026,
+          "height": 243.14871794871794
+        }
+      },
+      "extracted": true,
+      "alpha_verified": true,
+      "fit_verified": false,
+      "actual_crop": [
+        542,
+        45,
+        458,
+        455
+      ],
+      "output": "assets/runtime/outfits/challangping/challangping_outfit_02.png"
+    },
+    {
+      "id": "challangping_outfit_03",
+      "character_id": "challangping",
+      "display_name": "노란 데이지 원피스",
+      "source_sheet": "F:/chuchu/assets/generated/challangping/challangping-wardrobe-six-design-v1.png",
+      "source_sha256": "07E01EDC21F7762C34A7FB088196CB9932A3DF6B0FC1F3F1754341D9DFC45099",
+      "planned_crop": {
+        "x": 1024,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "planned_output": "F:/chuchu/assets/runtime/outfits/challangping/challangping_outfit_03.png",
+      "slot": "body",
+      "anchors": {
+        "frame": {
+          "x": 124.31794871794875,
+          "y": 409.18974358974356,
+          "width": 339.7641025641026,
+          "height": 243.14871794871794
+        }
+      },
+      "extracted": true,
+      "alpha_verified": true,
+      "fit_verified": false,
+      "actual_crop": [
+        1002,
+        45,
+        468,
+        455
+      ],
+      "output": "assets/runtime/outfits/challangping/challangping_outfit_03.png"
+    },
+    {
+      "id": "challangping_outfit_04",
+      "character_id": "challangping",
+      "display_name": "하늘색 꽃 멜빵옷",
+      "source_sheet": "F:/chuchu/assets/generated/challangping/challangping-wardrobe-six-design-v1.png",
+      "source_sha256": "07E01EDC21F7762C34A7FB088196CB9932A3DF6B0FC1F3F1754341D9DFC45099",
+      "planned_crop": {
+        "x": 0,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "planned_output": "F:/chuchu/assets/runtime/outfits/challangping/challangping_outfit_04.png",
+      "slot": "body",
+      "anchors": {
+        "frame": {
+          "x": 166.98974358974363,
+          "y": 409.18974358974356,
+          "width": 254.42051282051284,
+          "height": 256.03076923076924
+        }
+      },
+      "extracted": true,
+      "alpha_verified": true,
+      "fit_verified": false,
+      "actual_crop": [
+        45,
+        490,
+        495,
+        490
+      ],
+      "output": "assets/runtime/outfits/challangping/challangping_outfit_04.png"
+    },
+    {
+      "id": "challangping_outfit_05",
+      "character_id": "challangping",
+      "display_name": "코랄 체크 원피스",
+      "source_sheet": "F:/chuchu/assets/generated/challangping/challangping-wardrobe-six-design-v1.png",
+      "source_sha256": "07E01EDC21F7762C34A7FB088196CB9932A3DF6B0FC1F3F1754341D9DFC45099",
+      "planned_crop": {
+        "x": 512,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "planned_output": "F:/chuchu/assets/runtime/outfits/challangping/challangping_outfit_05.png",
+      "slot": "body",
+      "anchors": {
+        "frame": {
+          "x": 124.31794871794875,
+          "y": 409.18974358974356,
+          "width": 339.7641025641026,
+          "height": 243.14871794871794
+        }
+      },
+      "extracted": true,
+      "alpha_verified": true,
+      "fit_verified": false,
+      "actual_crop": [
+        542,
+        490,
+        458,
+        490
+      ],
+      "output": "assets/runtime/outfits/challangping/challangping_outfit_05.png"
+    },
+    {
+      "id": "challangping_outfit_06",
+      "character_id": "challangping",
+      "display_name": "라일락 꽃 잠옷",
+      "source_sheet": "F:/chuchu/assets/generated/challangping/challangping-wardrobe-six-design-v1.png",
+      "source_sha256": "07E01EDC21F7762C34A7FB088196CB9932A3DF6B0FC1F3F1754341D9DFC45099",
+      "planned_crop": {
+        "x": 1024,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "planned_output": "F:/chuchu/assets/runtime/outfits/challangping/challangping_outfit_06.png",
+      "slot": "body",
+      "anchors": {
+        "frame": {
+          "x": 166.98974358974363,
+          "y": 409.18974358974356,
+          "width": 254.42051282051284,
+          "height": 256.03076923076924
+        }
+      },
+      "extracted": true,
+      "alpha_verified": true,
+      "fit_verified": false,
+      "actual_crop": [
+        1002,
+        490,
+        468,
+        490
+      ],
+      "output": "assets/runtime/outfits/challangping/challangping_outfit_06.png"
+    },
+    {
+      "id": "bangulping_outfit_01",
+      "character_id": "bangulping",
+      "display_name": "청록 별 세일러복",
+      "source_sheet": "F:/chuchu/assets/generated/bangulping/bangulping-wardrobe-six-design-v1.png",
+      "source_sha256": "BAA9D3A47D556041651BEA23320A237D614A7359CBDF0AC9915F3C1305F22E78",
+      "planned_crop": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "planned_output": "F:/chuchu/assets/runtime/outfits/bangulping/bangulping_outfit_01.png",
+      "slot": "body",
+      "anchors": {
+        "frame": {
+          "x": 158.69633507853405,
+          "y": 422.11518324607334,
+          "width": 302.69109947643983,
+          "height": 216.61780104712042
+        }
+      },
+      "extracted": true,
+      "alpha_verified": true,
+      "fit_verified": false,
+      "actual_crop": [
+        40,
+        45,
+        491,
+        455
+      ],
+      "output": "assets/runtime/outfits/bangulping/bangulping_outfit_01.png"
+    },
+    {
+      "id": "bangulping_outfit_02",
+      "character_id": "bangulping",
+      "display_name": "보라 별 파티복",
+      "source_sheet": "F:/chuchu/assets/generated/bangulping/bangulping-wardrobe-six-design-v1.png",
+      "source_sha256": "BAA9D3A47D556041651BEA23320A237D614A7359CBDF0AC9915F3C1305F22E78",
+      "planned_crop": {
+        "x": 512,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "planned_output": "F:/chuchu/assets/runtime/outfits/bangulping/bangulping_outfit_02.png",
+      "slot": "body",
+      "anchors": {
+        "frame": {
+          "x": 158.69633507853405,
+          "y": 422.11518324607334,
+          "width": 302.69109947643983,
+          "height": 216.61780104712042
+        }
+      },
+      "extracted": true,
+      "alpha_verified": true,
+      "fit_verified": false,
+      "actual_crop": [
+        537,
+        45,
+        457,
+        455
+      ],
+      "output": "assets/runtime/outfits/bangulping/bangulping_outfit_02.png"
+    },
+    {
+      "id": "bangulping_outfit_03",
+      "character_id": "bangulping",
+      "display_name": "민트 별 후드복",
+      "source_sheet": "F:/chuchu/assets/generated/bangulping/bangulping-wardrobe-six-design-v1.png",
+      "source_sha256": "BAA9D3A47D556041651BEA23320A237D614A7359CBDF0AC9915F3C1305F22E78",
+      "planned_crop": {
+        "x": 1024,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "planned_output": "F:/chuchu/assets/runtime/outfits/bangulping/bangulping_outfit_03.png",
+      "slot": "body",
+      "anchors": {
+        "frame": {
+          "x": 182.3664921465969,
+          "y": 422.11518324607334,
+          "width": 255.35078534031416,
+          "height": 219.4869109947644
+        }
+      },
+      "extracted": true,
+      "alpha_verified": true,
+      "fit_verified": false,
+      "actual_crop": [
+        1004,
+        45,
+        491,
+        455
+      ],
+      "output": "assets/runtime/outfits/bangulping/bangulping_outfit_03.png"
+    },
+    {
+      "id": "bangulping_outfit_04",
+      "character_id": "bangulping",
+      "display_name": "민트 별 멜빵옷",
+      "source_sheet": "F:/chuchu/assets/generated/bangulping/bangulping-wardrobe-six-design-v1.png",
+      "source_sha256": "BAA9D3A47D556041651BEA23320A237D614A7359CBDF0AC9915F3C1305F22E78",
+      "planned_crop": {
+        "x": 0,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "planned_output": "F:/chuchu/assets/runtime/outfits/bangulping/bangulping_outfit_04.png",
+      "slot": "body",
+      "anchors": {
+        "frame": {
+          "x": 196.71204188481678,
+          "y": 422.11518324607334,
+          "width": 226.65968586387436,
+          "height": 228.09424083769633
+        }
+      },
+      "extracted": true,
+      "alpha_verified": true,
+      "fit_verified": false,
+      "actual_crop": [
+        40,
+        490,
+        491,
+        490
+      ],
+      "output": "assets/runtime/outfits/bangulping/bangulping_outfit_04.png"
+    },
+    {
+      "id": "bangulping_outfit_05",
+      "character_id": "bangulping",
+      "display_name": "노란 별 원피스",
+      "source_sheet": "F:/chuchu/assets/generated/bangulping/bangulping-wardrobe-six-design-v1.png",
+      "source_sha256": "BAA9D3A47D556041651BEA23320A237D614A7359CBDF0AC9915F3C1305F22E78",
+      "planned_crop": {
+        "x": 512,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "planned_output": "F:/chuchu/assets/runtime/outfits/bangulping/bangulping_outfit_05.png",
+      "slot": "body",
+      "anchors": {
+        "frame": {
+          "x": 158.69633507853405,
+          "y": 422.11518324607334,
+          "width": 302.69109947643983,
+          "height": 216.61780104712042
+        }
+      },
+      "extracted": true,
+      "alpha_verified": true,
+      "fit_verified": false,
+      "actual_crop": [
+        537,
+        490,
+        457,
+        490
+      ],
+      "output": "assets/runtime/outfits/bangulping/bangulping_outfit_05.png"
+    },
+    {
+      "id": "bangulping_outfit_06",
+      "character_id": "bangulping",
+      "display_name": "하늘색 물방울 잠옷",
+      "source_sheet": "F:/chuchu/assets/generated/bangulping/bangulping-wardrobe-six-design-v1.png",
+      "source_sha256": "BAA9D3A47D556041651BEA23320A237D614A7359CBDF0AC9915F3C1305F22E78",
+      "planned_crop": {
+        "x": 1024,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "planned_output": "F:/chuchu/assets/runtime/outfits/bangulping/bangulping_outfit_06.png",
+      "slot": "body",
+      "anchors": {
+        "frame": {
+          "x": 196.71204188481678,
+          "y": 422.11518324607334,
+          "width": 226.65968586387436,
+          "height": 228.09424083769633
+        }
+      },
+      "extracted": true,
+      "alpha_verified": true,
+      "fit_verified": false,
+      "actual_crop": [
+        1004,
+        490,
+        491,
+        490
+      ],
+      "output": "assets/runtime/outfits/bangulping/bangulping_outfit_06.png"
+    }
+  ],
+  "runtime_manifest": "assets/runtime/game-assets.json",
+  "extraction_report": "assets/runtime/extraction-report.json",
+  "fit_note": "Prototype anchors and front layers are integrated. Production edge/pose polish remains."
+}

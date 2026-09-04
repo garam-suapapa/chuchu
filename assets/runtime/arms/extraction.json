@@ -1,0 +1,42 @@
+[
+  {
+    "name": "pink-left",
+    "bounds": {
+      "left": 207,
+      "top": 80,
+      "width": 259,
+      "height": 484
+    },
+    "transparentPixels": 319977
+  },
+  {
+    "name": "pink-right",
+    "bounds": {
+      "left": 161,
+      "top": 80,
+      "width": 259,
+      "height": 484
+    },
+    "transparentPixels": 320026
+  },
+  {
+    "name": "ivory-left",
+    "bounds": {
+      "left": 207,
+      "top": 44,
+      "width": 259,
+      "height": 487
+    },
+    "transparentPixels": 319619
+  },
+  {
+    "name": "ivory-right",
+    "bounds": {
+      "left": 161,
+      "top": 44,
+      "width": 259,
+      "height": 487
+    },
+    "transparentPixels": 319744
+  }
+]

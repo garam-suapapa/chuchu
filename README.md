@@ -1,0 +1,110 @@
+# 나의 티니핑 옷장 — 태블릿 놀이 시제품
+
+캐릭터 선택 → 옷 갈아입히기 → 악세서리 선택 → 배경 선택 → 터치 인형놀이까지 실행되는 로컬 웹 프로토타입입니다. 상단 메뉴로 어느 단계든 바로 이동할 수 있습니다. 기존 기획을 빠르게 검증하기 위한 화면이며, 완성된 앱이나 자유 생성 AI 서비스는 아닙니다.
+
+> **착용 미술 상태: 승인 0벌, 검수 후보 24벌.** 하츄핑 민트 하트 후드복은 사용자가 제공한 완성 착용 이미지 v11을 유지하고, 나머지 23벌은 같은 원칙의 완성 캐릭터 v12 착용본으로 교체했다. 24벌 모두 실제 가로·세로 브라우저 증거까지 생성한 `review` 상태이며, 명시적인 사용자 승인 전까지 전체 상태는 `rejected`다. 구조·기능 검사 통과는 시각 승인으로 취급하지 않는다.
+
+## 실행
+
+Node.js가 설치된 환경에서 프로젝트 폴더의 `티니핑_옷장_실행.cmd`를 더블클릭하면 서버가 숨김으로 시작되고 게임이 브라우저에서 열립니다. 영문 이름이 필요한 환경에서는 같은 동작의 `start-game.cmd`를 사용할 수 있습니다. 또는 다음 명령을 사용합니다.
+
+```powershell
+cd F:\chuchu
+npm start
+```
+
+브라우저에서 [게임 열기](http://127.0.0.1:4173)를 엽니다. `index.html`을 파일로 직접 열면 데이터 로딩이 되지 않습니다. 종료는 서버 터미널에서 Ctrl+C입니다. 포트가 이미 사용 중이면 기존 게임 서버를 사용하세요.
+
+현재 서버는 이 PC의 `127.0.0.1`에만 바인딩되어 있습니다. 다른 태블릿에서 접속하려면 별도 HTTPS 테스트 호스팅이 필요합니다. 이번 작업에서는 외부 공개·배포를 하지 않았습니다.
+
+## 지금 가능한 놀이
+
+- 하츄핑·소라핑·찰랑핑·방울핑의 전용 의상 6벌씩, 총 24벌
+- 옷 탭 / 캐릭터가 있는 무대로 드래그, 캐릭터별 코디 자동 저장
+- 리본·왕관·꽃 머리핀 3종과 하트·조개·별 가방 3종: 머리 장식과 가방을 하나씩 동시 착용, 다시 누르면 해제
+- 캔디 왕국 / 포근한 드레스룸 / 꽃 피는 정원 / 별빛 놀이터 배경 선택
+- 옷을 벗으면 원래 손을 모은 모습, 입으면 소매·팔·손이 함께 그려진 착용 이미지 표시
+- 옷장과 드래그 미리보기에는 손 없는 의상만 표시, ‘옷 벗기’ 상태도 캐릭터별 저장
+- 놀이 화면에서 인형 드래그, 화살표 키 이동, 터치 인사와 포즈
+- 선물 상자 열기·닫기, 거울 포즈, 비눗방울 이펙트
+- 현재 의상과 배경을 반영하는 준비된 대사, 선택적 브라우저 음성 읽기
+- 현재 캐릭터·의상·악세서리·배경을 합성한 코디 사진 PNG 다운로드
+
+저장되는 정보는 버전, 선택 캐릭터, 캐릭터별 의상과 악세서리, 배경, 소리 설정뿐입니다. 기존 저장 데이터의 코디와 설정은 유지합니다. 인형 위치·상자 상태·음성 동의는 다음 접속에 저장하지 않습니다.
+
+## 음성 입력의 범위
+
+지원 브라우저에서 보호자 설정의 음성 입력을 켜고 **누르고 말하기** 버튼을 누른 채 한국어로 말합니다. 손을 떼면 인식을 마무리하며 최대 8초 후 자동 종료를 요청합니다. 화면 이탈·캐릭터/단계 변경 시 인식을 중단합니다. 권한 거부·인식 불가·미지원 환경에서는 이야기 버튼으로 계속 놀 수 있습니다.
+
+게임 코드에는 음성 녹음 파일이나 발화 내용을 저장·로그하는 기능이 없습니다. 다만 브라우저의 음성 인식 서비스로 음성이 전송될 수 있고, 공급자의 처리·보관 방식은 별도 확인이 필요합니다. 브라우저별 지원 차이는 [MDN SpeechRecognition 문서](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition)를 참고하세요.
+
+현재 대답은 `game-state.js`의 상황별 문장 선택입니다. **LLM API, 실제 AI 자유 대화, 캐릭터 전용 합성 목소리는 아직 연결하지 않았습니다.** 음성 생명주기는 모의 인식기로 자동 검증했으며 실제 어린이 발화·마이크·iPad Safari/Android 태블릿 검증은 남아 있습니다. 보호자 설정도 단순 동의 UI이지 검증된 부모 인증 절차는 아닙니다.
+
+## 파일과 검수
+
+- `assets/runtime/game-assets.json`: 게임이 사용하는 4명·24벌·4개 배경과 현재 검수 후보 착용 경로
+- `decor-catalog.js`: 악세서리 6종과 추가 배경 2종 데이터
+- `doll-renderer.js`: 기본 모습 또는 완성된 착용 이미지와 악세서리를 표시하는 화면·사진 공통 렌더러. 가방 끈은 캐릭터 뒤, 가방 본체는 앞에 합성합니다.
+- `assets/runtime/exact-wearables/`: 이전 레이어 합성 후보. 현재 manifest는 이 착용본을 사용하지 않습니다.
+- `assets/runtime/reference-wearables/hachuping/hachuping_outfit_05-v11/`: 사용자가 제공한 완성 착용 비율을 그대로 유지한 대표 후드복 착용본
+- `assets/runtime/reference-wearables/*/*-v12/`: 나머지 23벌의 600×700 완성 캐릭터 착용본
+- `assets/runtime/production-wearables/`: 사용자 검수에서 탈락한 이전 production-v1 결과. 현재 manifest는 이 착용본을 사용하지 않습니다.
+- `assets/master/characters/*/anchors.json`: 캐릭터별 턱·목·어깨·허리·손·발·밑단 기준 좌표
+- `assets/master/outfits/*/selection-master.png`: 손과 신체가 없는 옷장용 의상 원본
+- `assets/generated/production-v1/`: 이전 착용본 제작 원본. 현재 후보의 의상 몸통으로 사용하지 않습니다.
+- `assets/generated/hachuping/`: 하츄핑 6벌에 사용한 소매·팔·손 전용 원본
+- `assets/runtime/accessories/`: 머리 장식과 가방 SVG
+- `assets/runtime/outfits/`: 손 없는 선택용 RGBA 의상 24개. 기존 파일 유지
+- `assets/runtime/characters/`: 원본의 손을 모은 기본 모습. 옷을 벗으면 본체를 그대로 표시합니다.
+- `scripts/prepare-assets.cjs`: 원본을 보존하는 로컬 분리 재현 스크립트
+- `scripts/prepare-hachuping-v6.cjs`, `scripts/prepare-paper-doll-v7.cjs`: 재현 파이프라인 안에 남아 있는 이전 후보 생성 단계. 최종 단계가 v12 착용본으로 덮어씁니다.
+- `scripts/prepare-hachuping-hoodie-v11.cjs`: 사용자 제공 완성 착용 이미지를 보존하고 외곽의 작은 흰 잔여물만 제거한 뒤 600×700 런타임 착용본 생성
+- `scripts/prepare-all-outfits-v12.cjs`: 나머지 23벌의 투명 완성 캐릭터 원본을 정리하고 600×700 런타임 착용본·검수 메타데이터 생성
+- `scripts/remove-flat-green-v12.cjs`: 단색 배경으로 정리한 4개 생성본에서 화면 가장자리와 연결된 초록 배경만 제거
+- `scripts/verify-fit.cjs`: 손 없는 선택 원본과 사용자 제공 착용 원본의 해시, 정리본의 RGBA·크기, 600×700 변환 결과와 실제 런타임 PNG의 픽셀 일치를 검사하는 구조 검사. 미술 품질을 승인하지 않음
+- `scripts/verify-visual-approval.cjs`: 24벌의 사용자 시각 승인과 증거 파일을 검사. 현재 24벌이 불합격이므로 의도적으로 실패함
+- `plans/wearable-visual-acceptance-criteria.md`: 목·어깨·소매·팔·손·몸통·발·디자인·비율의 필수 합격 기준
+- `assets/master/visual-approval.json`: 24벌 개별 승인 상태. 현재 24벌 `review`, 승인 0벌
+- `artifacts/approval/*-v11/`, `artifacts/approval/*-v12/`: 각 의상의 선택·착용·50% 오버레이·가로·세로·확대 증거와 검수판
+- `artifacts/all-24-v12-browser-review.png`: 손 없는 선택 이미지, 실제 브라우저 착용 결과, 목·손 확대를 한 장으로 비교한 24벌 종합 검수표
+- `artifacts/user-rejected-24-outfits-2026-09-04.png`: 현재 24벌의 사용자 불합격 판정 근거
+- `artifacts/*-all-outfits-detail.png`: 캐릭터별 6벌 확대 착용 화면과 손 없는 선택 이미지 비교
+- `artifacts/undressed-and-worn-review.png`: 각 줄의 첫 칸은 기본 모습, 나머지 6칸은 실제 브라우저의 착용 모습
+- `artifacts/outfits-alpha-review.png`: 24벌 투명 배경 검수
+- `artifacts/fitted-hands-browser-review.png`: 현재 브라우저 합성기로 렌더링한 24벌 착용 검수
+- `artifacts/neck-alignment-review.png`, `neck-fit-details.png`: 실제 브라우저에서 추출한 목·옷깃 확대 검수
+- `artifacts/accessory-menu-1280x800.png`, `background-menu-1280x800.png`: 악세서리·배경 메뉴 실제 브라우저 캡처
+- `artifacts/accessory-all-characters-review.png`: 4명×머리 장식 3종·가방 3종 위치 및 앞뒤 순서 대조
+- `artifacts/background-grounding-review.png`: 배경 4종의 중앙 안전 영역과 발 접지 대조
+- `artifacts/accessory-outfit-photo.png`: 악세서리와 배경을 반영한 사진 다운로드 검수
+- `artifacts/tablet-dressup-1280x800.png`, `tablet-play-1280x800.png`: 실제 브라우저 캡처
+- `plans/hachuping-dressup-ai-doll-game-gdd.md`: 전체 기획과 후속 제작 범위
+
+캐릭터 JPG 4장과 의상 디자인 시트 4장의 해시를 확인해 원본 보존을 검증했습니다. 디자인 시트의 칸이 정확히 균등하지 않아 실제 의상 경계에 맞춘 분리 영역을 사용합니다. 손 없는 선택 이미지 24장은 selection master와 해시가 같습니다.
+
+선택용 의상과 착용용 이미지를 분리합니다. 선택 카드와 드래그 미리보기에는 손 없는 의상 원본을 표시합니다. 옷을 입으면 머리·목·옷·소매·팔·모은 손·다리가 연결된 단일 완성 캐릭터 착용본을 표시하고, 옷을 벗으면 원본의 손을 모은 기본 모습으로 돌아갑니다. 후드복 1벌은 사용자 제공 v11 기준본, 나머지 23벌은 v12 생성본입니다. 모션은 캐릭터 전체를 이동·회전하는 방식입니다.
+
+## 개발 검증
+
+```powershell
+npm test
+node scripts/verify-assets.cjs
+npm run verify:fit
+npm run verify:render # 게임 서버가 실행 중이어야 함: 실제 캔버스의 전체·목·손 ROI 대조
+npm run verify:visual # 시각 승인 전에는 실패가 정상
+npm run verify:all    # 최종 게이트: 단위 + 구조 + 실제 렌더 + 시각 승인
+# 게임 서버가 실행된 상태에서
+npm run test:e2e
+npm run review:all
+```
+
+실행 자체는 외부 패키지가 필요 없습니다. 이미지 재생성과 브라우저 테스트는 `sharp`, `playwright`, 설치된 Microsoft Edge를 사용합니다. 현재 Codex 번들 의존성을 우선 재사용하며 다른 환경에서는 해당 패키지를 제공하거나 `CHUCHU_NODE_MODULES`를 지정해야 합니다.
+
+단위 테스트 18개와 E2E 21개는 옷 입기·벗기, 기본 모습의 픽셀 일치와 저장 복원, 캐릭터별 코디, 악세서리, 배경, 드래그, 사진, 태블릿 화면, 음성 대체 흐름, 닫힌 영역 초록 제거와 빈 결과 거부, 원본 반투명 픽셀 보존을 검증합니다. `artifacts/fit-validation.json`은 파일과 좌표의 구조 검사 결과이며 현재 `visualStatus: rejected`로 기록됩니다. 시각 합격은 `npm run verify:visual`이 성공하고 사용자가 실제 화면을 승인한 경우에만 성립합니다.
+
+## 다음 제작 순서
+
+1. 실제 태블릿에서 터치·화면 회전·마이크 인식 점검
+2. 표정과 개별 오브젝트 애니메이션 확장
+3. 보호자 동의·사용량 제한·개인정보 처리를 정한 뒤 서버 측 AI 대화 연결
+4. 공개 전 에셋 권리와 서비스 이용 조건 확인

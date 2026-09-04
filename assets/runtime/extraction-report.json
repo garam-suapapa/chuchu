@@ -1,0 +1,729 @@
+{
+  "method": "visually calibrated garment crops; outline-sealed exterior flood fill; retain main component",
+  "sources": [
+    {
+      "path": "4975cc359d7413a48afa69793e9754f3.jpg",
+      "sha256": "e872e6b6548ac8e25c6257a7ada86cfff51a3117911c774845e6048c7dba86b9"
+    },
+    {
+      "path": "assets/generated/hachuping/hachuping-wardrobe-six-design-v1.png",
+      "sha256": "B3154FA68E237C9E9FF6E872AB6EF9E1B2F63639404EA36F9DFF356B40825085"
+    },
+    {
+      "path": "5dc08ce9f036a83f6c438f6867c21aff.jpg",
+      "sha256": "090fb322bb9e0b5e1d8de3d575f431493c557336b3c26d93a29bb4dde1b17708"
+    },
+    {
+      "path": "assets/generated/soraping/soraping-wardrobe-six-design-v1.png",
+      "sha256": "CD0BB18739F802ED1119D21CBA1A08382FAFFD7A0E823963B731252A41F3C12D"
+    },
+    {
+      "path": "1a2ab184c4638671cf913e9f0e5942ff.jpg",
+      "sha256": "e791cc8f71bd03526e72d2dc5853db15d3057725101aaf03440b65eba83fbbfc"
+    },
+    {
+      "path": "assets/generated/challangping/challangping-wardrobe-six-design-v1.png",
+      "sha256": "07E01EDC21F7762C34A7FB088196CB9932A3DF6B0FC1F3F1754341D9DFC45099"
+    },
+    {
+      "path": "df4f3ea4debc4141099826bf9770c4f6.jpg",
+      "sha256": "3654301904b20015cb7d968319b840e2f312a1d915e172d3fc887dce3cd274c4"
+    },
+    {
+      "path": "assets/generated/bangulping/bangulping-wardrobe-six-design-v1.png",
+      "sha256": "BAA9D3A47D556041651BEA23320A237D614A7359CBDF0AC9915F3C1305F22E78"
+    }
+  ],
+  "outfits": [
+    {
+      "id": "hachuping_outfit_01",
+      "alpha_verified": true,
+      "opaque_pixels": 131432,
+      "transparent_pixels": 102893,
+      "source_region": [
+        45,
+        45,
+        515,
+        455
+      ],
+      "source_bounds": {
+        "left": 54,
+        "top": 31,
+        "width": 450,
+        "height": 388
+      },
+      "output": "assets/runtime/outfits/hachuping/hachuping_outfit_01.png",
+      "frame": {
+        "x": 142.19413092550786,
+        "y": 396.9074492099323,
+        "width": 299.11512415349887,
+        "height": 214.058690744921
+      },
+      "fit_status": "prototype_alignment_pending_visual_review"
+    },
+    {
+      "id": "hachuping_outfit_02",
+      "alpha_verified": true,
+      "opaque_pixels": 113716,
+      "transparent_pixels": 73289,
+      "source_region": [
+        567,
+        45,
+        411,
+        455
+      ],
+      "source_bounds": {
+        "left": 17,
+        "top": 33,
+        "width": 371,
+        "height": 378
+      },
+      "output": "assets/runtime/outfits/hachuping/hachuping_outfit_02.png",
+      "frame": {
+        "x": 179.76072234762975,
+        "y": 396.9074492099323,
+        "width": 223.9819413092551,
+        "height": 225.3995485327314
+      },
+      "fit_status": "prototype_alignment_pending_visual_review"
+    },
+    {
+      "id": "hachuping_outfit_03",
+      "alpha_verified": true,
+      "opaque_pixels": 112329,
+      "transparent_pixels": 99246,
+      "source_region": [
+        985,
+        45,
+        465,
+        455
+      ],
+      "source_bounds": {
+        "left": 12,
+        "top": 41,
+        "width": 416,
+        "height": 371
+      },
+      "output": "assets/runtime/outfits/hachuping/hachuping_outfit_03.png",
+      "frame": {
+        "x": 142.19413092550786,
+        "y": 396.9074492099323,
+        "width": 299.11512415349887,
+        "height": 214.058690744921
+      },
+      "fit_status": "prototype_alignment_pending_visual_review"
+    },
+    {
+      "id": "hachuping_outfit_04",
+      "alpha_verified": true,
+      "opaque_pixels": 138876,
+      "transparent_pixels": 113474,
+      "source_region": [
+        45,
+        490,
+        515,
+        490
+      ],
+      "source_bounds": {
+        "left": 43,
+        "top": 12,
+        "width": 447,
+        "height": 416
+      },
+      "output": "assets/runtime/outfits/hachuping/hachuping_outfit_04.png",
+      "frame": {
+        "x": 142.19413092550786,
+        "y": 396.9074492099323,
+        "width": 299.11512415349887,
+        "height": 214.058690744921
+      },
+      "fit_status": "prototype_alignment_pending_visual_review"
+    },
+    {
+      "id": "hachuping_outfit_05",
+      "alpha_verified": true,
+      "opaque_pixels": 127126,
+      "transparent_pixels": 74264,
+      "source_region": [
+        567,
+        490,
+        411,
+        490
+      ],
+      "source_bounds": {
+        "left": 17,
+        "top": 14,
+        "width": 369,
+        "height": 413
+      },
+      "output": "assets/runtime/outfits/hachuping/hachuping_outfit_05.png",
+      "frame": {
+        "x": 165.58465011286677,
+        "y": 396.9074492099323,
+        "width": 252.33408577878103,
+        "height": 216.89390519187359
+      },
+      "fit_status": "prototype_alignment_pending_visual_review"
+    },
+    {
+      "id": "hachuping_outfit_06",
+      "alpha_verified": true,
+      "opaque_pixels": 115544,
+      "transparent_pixels": 112306,
+      "source_region": [
+        985,
+        490,
+        465,
+        490
+      ],
+      "source_bounds": {
+        "left": 21,
+        "top": 32,
+        "width": 394,
+        "height": 387
+      },
+      "output": "assets/runtime/outfits/hachuping/hachuping_outfit_06.png",
+      "frame": {
+        "x": 179.76072234762975,
+        "y": 396.9074492099323,
+        "width": 223.9819413092551,
+        "height": 225.3995485327314
+      },
+      "fit_status": "prototype_alignment_pending_visual_review"
+    },
+    {
+      "id": "soraping_outfit_01",
+      "alpha_verified": true,
+      "opaque_pixels": 122268,
+      "transparent_pixels": 101592,
+      "source_region": [
+        55,
+        45,
+        492,
+        455
+      ],
+      "source_bounds": {
+        "left": 31,
+        "top": 32,
+        "width": 447,
+        "height": 387
+      },
+      "output": "assets/runtime/outfits/soraping/soraping_outfit_01.png",
+      "frame": {
+        "x": 210.07203389830508,
+        "y": 429.16101694915255,
+        "width": 280.73728813559325,
+        "height": 200.90677966101694
+      },
+      "fit_status": "prototype_alignment_pending_visual_review"
+    },
+    {
+      "id": "soraping_outfit_02",
+      "alpha_verified": true,
+      "opaque_pixels": 111315,
+      "transparent_pixels": 85245,
+      "source_region": [
+        556,
+        45,
+        432,
+        455
+      ],
+      "source_bounds": {
+        "left": 16,
+        "top": 37,
+        "width": 393,
+        "height": 372
+      },
+      "output": "assets/runtime/outfits/soraping/soraping_outfit_02.png",
+      "frame": {
+        "x": 210.07203389830508,
+        "y": 429.16101694915255,
+        "width": 280.73728813559325,
+        "height": 200.90677966101694
+      },
+      "fit_status": "prototype_alignment_pending_visual_review"
+    },
+    {
+      "id": "soraping_outfit_03",
+      "alpha_verified": true,
+      "opaque_pixels": 112499,
+      "transparent_pixels": 121371,
+      "source_region": [
+        991,
+        45,
+        514,
+        455
+      ],
+      "source_bounds": {
+        "left": 14,
+        "top": 37,
+        "width": 470,
+        "height": 383
+      },
+      "output": "assets/runtime/outfits/soraping/soraping_outfit_03.png",
+      "frame": {
+        "x": 210.07203389830508,
+        "y": 429.16101694915255,
+        "width": 280.73728813559325,
+        "height": 200.90677966101694
+      },
+      "fit_status": "prototype_alignment_pending_visual_review"
+    },
+    {
+      "id": "soraping_outfit_04",
+      "alpha_verified": true,
+      "opaque_pixels": 142131,
+      "transparent_pixels": 98949,
+      "source_region": [
+        55,
+        490,
+        492,
+        490
+      ],
+      "source_bounds": {
+        "left": 41,
+        "top": 24,
+        "width": 423,
+        "height": 404
+      },
+      "output": "assets/runtime/outfits/soraping/soraping_outfit_04.png",
+      "frame": {
+        "x": 245.33050847457628,
+        "y": 429.16101694915255,
+        "width": 210.22033898305085,
+        "height": 211.55084745762713
+      },
+      "fit_status": "prototype_alignment_pending_visual_review"
+    },
+    {
+      "id": "soraping_outfit_05",
+      "alpha_verified": true,
+      "opaque_pixels": 127923,
+      "transparent_pixels": 83757,
+      "source_region": [
+        556,
+        490,
+        432,
+        490
+      ],
+      "source_bounds": {
+        "left": 15,
+        "top": 20,
+        "width": 391,
+        "height": 419
+      },
+      "output": "assets/runtime/outfits/soraping/soraping_outfit_05.png",
+      "frame": {
+        "x": 232.02542372881356,
+        "y": 429.16101694915255,
+        "width": 236.83050847457628,
+        "height": 203.5677966101695
+      },
+      "fit_status": "prototype_alignment_pending_visual_review"
+    },
+    {
+      "id": "soraping_outfit_06",
+      "alpha_verified": true,
+      "opaque_pixels": 130436,
+      "transparent_pixels": 121424,
+      "source_region": [
+        991,
+        490,
+        514,
+        490
+      ],
+      "source_bounds": {
+        "left": 41,
+        "top": 23,
+        "width": 406,
+        "height": 405
+      },
+      "output": "assets/runtime/outfits/soraping/soraping_outfit_06.png",
+      "frame": {
+        "x": 245.33050847457628,
+        "y": 429.16101694915255,
+        "width": 210.22033898305085,
+        "height": 211.55084745762713
+      },
+      "fit_status": "prototype_alignment_pending_visual_review"
+    },
+    {
+      "id": "challangping_outfit_01",
+      "alpha_verified": true,
+      "opaque_pixels": 131842,
+      "transparent_pixels": 93383,
+      "source_region": [
+        45,
+        45,
+        495,
+        455
+      ],
+      "source_bounds": {
+        "left": 17,
+        "top": 40,
+        "width": 470,
+        "height": 384
+      },
+      "output": "assets/runtime/outfits/challangping/challangping_outfit_01.png",
+      "frame": {
+        "x": 124.31794871794875,
+        "y": 409.18974358974356,
+        "width": 339.7641025641026,
+        "height": 243.14871794871794
+      },
+      "fit_status": "prototype_alignment_pending_visual_review"
+    },
+    {
+      "id": "challangping_outfit_02",
+      "alpha_verified": true,
+      "opaque_pixels": 119256,
+      "transparent_pixels": 89134,
+      "source_region": [
+        542,
+        45,
+        458,
+        455
+      ],
+      "source_bounds": {
+        "left": 10,
+        "top": 48,
+        "width": 438,
+        "height": 373
+      },
+      "output": "assets/runtime/outfits/challangping/challangping_outfit_02.png",
+      "frame": {
+        "x": 124.31794871794875,
+        "y": 409.18974358974356,
+        "width": 339.7641025641026,
+        "height": 243.14871794871794
+      },
+      "fit_status": "prototype_alignment_pending_visual_review"
+    },
+    {
+      "id": "challangping_outfit_03",
+      "alpha_verified": true,
+      "opaque_pixels": 120575,
+      "transparent_pixels": 92365,
+      "source_region": [
+        1002,
+        45,
+        468,
+        455
+      ],
+      "source_bounds": {
+        "left": 14,
+        "top": 47,
+        "width": 434,
+        "height": 374
+      },
+      "output": "assets/runtime/outfits/challangping/challangping_outfit_03.png",
+      "frame": {
+        "x": 124.31794871794875,
+        "y": 409.18974358974356,
+        "width": 339.7641025641026,
+        "height": 243.14871794871794
+      },
+      "fit_status": "prototype_alignment_pending_visual_review"
+    },
+    {
+      "id": "challangping_outfit_04",
+      "alpha_verified": true,
+      "opaque_pixels": 137052,
+      "transparent_pixels": 105498,
+      "source_region": [
+        45,
+        490,
+        495,
+        490
+      ],
+      "source_bounds": {
+        "left": 32,
+        "top": 33,
+        "width": 424,
+        "height": 403
+      },
+      "output": "assets/runtime/outfits/challangping/challangping_outfit_04.png",
+      "frame": {
+        "x": 166.98974358974363,
+        "y": 409.18974358974356,
+        "width": 254.42051282051284,
+        "height": 256.03076923076924
+      },
+      "fit_status": "prototype_alignment_pending_visual_review"
+    },
+    {
+      "id": "challangping_outfit_05",
+      "alpha_verified": true,
+      "opaque_pixels": 129282,
+      "transparent_pixels": 95138,
+      "source_region": [
+        542,
+        490,
+        458,
+        490
+      ],
+      "source_bounds": {
+        "left": 0,
+        "top": 35,
+        "width": 437,
+        "height": 405
+      },
+      "output": "assets/runtime/outfits/challangping/challangping_outfit_05.png",
+      "frame": {
+        "x": 124.31794871794875,
+        "y": 409.18974358974356,
+        "width": 339.7641025641026,
+        "height": 243.14871794871794
+      },
+      "fit_status": "prototype_alignment_pending_visual_review"
+    },
+    {
+      "id": "challangping_outfit_06",
+      "alpha_verified": true,
+      "opaque_pixels": 131825,
+      "transparent_pixels": 97495,
+      "source_region": [
+        1002,
+        490,
+        468,
+        490
+      ],
+      "source_bounds": {
+        "left": 24,
+        "top": 45,
+        "width": 425,
+        "height": 394
+      },
+      "output": "assets/runtime/outfits/challangping/challangping_outfit_06.png",
+      "frame": {
+        "x": 166.98974358974363,
+        "y": 409.18974358974356,
+        "width": 254.42051282051284,
+        "height": 256.03076923076924
+      },
+      "fit_status": "prototype_alignment_pending_visual_review"
+    },
+    {
+      "id": "bangulping_outfit_01",
+      "alpha_verified": true,
+      "opaque_pixels": 136228,
+      "transparent_pixels": 87177,
+      "source_region": [
+        40,
+        45,
+        491,
+        455
+      ],
+      "source_bounds": {
+        "left": 20,
+        "top": 44,
+        "width": 455,
+        "height": 405
+      },
+      "output": "assets/runtime/outfits/bangulping/bangulping_outfit_01.png",
+      "frame": {
+        "x": 158.69633507853405,
+        "y": 422.11518324607334,
+        "width": 302.69109947643983,
+        "height": 216.61780104712042
+      },
+      "fit_status": "prototype_alignment_pending_visual_review"
+    },
+    {
+      "id": "bangulping_outfit_02",
+      "alpha_verified": true,
+      "opaque_pixels": 131233,
+      "transparent_pixels": 76702,
+      "source_region": [
+        537,
+        45,
+        457,
+        455
+      ],
+      "source_bounds": {
+        "left": 13,
+        "top": 49,
+        "width": 434,
+        "height": 399
+      },
+      "output": "assets/runtime/outfits/bangulping/bangulping_outfit_02.png",
+      "frame": {
+        "x": 158.69633507853405,
+        "y": 422.11518324607334,
+        "width": 302.69109947643983,
+        "height": 216.61780104712042
+      },
+      "fit_status": "prototype_alignment_pending_visual_review"
+    },
+    {
+      "id": "bangulping_outfit_03",
+      "alpha_verified": true,
+      "opaque_pixels": 138797,
+      "transparent_pixels": 84608,
+      "source_region": [
+        1004,
+        45,
+        491,
+        455
+      ],
+      "source_bounds": {
+        "left": 18,
+        "top": 44,
+        "width": 452,
+        "height": 406
+      },
+      "output": "assets/runtime/outfits/bangulping/bangulping_outfit_03.png",
+      "frame": {
+        "x": 182.3664921465969,
+        "y": 422.11518324607334,
+        "width": 255.35078534031416,
+        "height": 219.4869109947644
+      },
+      "fit_status": "prototype_alignment_pending_visual_review"
+    },
+    {
+      "id": "bangulping_outfit_04",
+      "alpha_verified": true,
+      "opaque_pixels": 122518,
+      "transparent_pixels": 118072,
+      "source_region": [
+        40,
+        490,
+        491,
+        490
+      ],
+      "source_bounds": {
+        "left": 52,
+        "top": 63,
+        "width": 385,
+        "height": 389
+      },
+      "output": "assets/runtime/outfits/bangulping/bangulping_outfit_04.png",
+      "frame": {
+        "x": 196.71204188481678,
+        "y": 422.11518324607334,
+        "width": 226.65968586387436,
+        "height": 228.09424083769633
+      },
+      "fit_status": "prototype_alignment_pending_visual_review"
+    },
+    {
+      "id": "bangulping_outfit_05",
+      "alpha_verified": true,
+      "opaque_pixels": 131093,
+      "transparent_pixels": 92837,
+      "source_region": [
+        537,
+        490,
+        457,
+        490
+      ],
+      "source_bounds": {
+        "left": 4,
+        "top": 61,
+        "width": 448,
+        "height": 398
+      },
+      "output": "assets/runtime/outfits/bangulping/bangulping_outfit_05.png",
+      "frame": {
+        "x": 158.69633507853405,
+        "y": 422.11518324607334,
+        "width": 302.69109947643983,
+        "height": 216.61780104712042
+      },
+      "fit_status": "prototype_alignment_pending_visual_review"
+    },
+    {
+      "id": "bangulping_outfit_06",
+      "alpha_verified": true,
+      "opaque_pixels": 131340,
+      "transparent_pixels": 109250,
+      "source_region": [
+        1004,
+        490,
+        491,
+        490
+      ],
+      "source_bounds": {
+        "left": 26,
+        "top": 59,
+        "width": 432,
+        "height": 398
+      },
+      "output": "assets/runtime/outfits/bangulping/bangulping_outfit_06.png",
+      "frame": {
+        "x": 196.71204188481678,
+        "y": 422.11518324607334,
+        "width": 226.65968586387436,
+        "height": 228.09424083769633
+      },
+      "fit_status": "prototype_alignment_pending_visual_review"
+    }
+  ],
+  "characters": [
+    {
+      "id": "hachuping",
+      "bounds": {
+        "left": 10,
+        "top": 11,
+        "width": 370,
+        "height": 443
+      },
+      "scale": 1.417607223476298,
+      "neck": {
+        "x": 291.7516930022573,
+        "y": 401.16027088036117
+      },
+      "alpha_verified": true,
+      "fit_status": "prototype_alignment_pending_visual_review"
+    },
+    {
+      "id": "soraping",
+      "bounds": {
+        "left": 8,
+        "top": 13,
+        "width": 321,
+        "height": 472
+      },
+      "scale": 1.3305084745762712,
+      "neck": {
+        "x": 350.4406779661017,
+        "y": 433.1525423728814
+      },
+      "alpha_verified": true,
+      "fit_status": "prototype_alignment_pending_visual_review"
+    },
+    {
+      "id": "challangping",
+      "bounds": {
+        "left": 2,
+        "top": 12,
+        "width": 320,
+        "height": 390
+      },
+      "scale": 1.6102564102564103,
+      "neck": {
+        "x": 294.20000000000005,
+        "y": 414.0205128205128
+      },
+      "alpha_verified": true,
+      "fit_status": "prototype_alignment_pending_visual_review"
+    },
+    {
+      "id": "bangulping",
+      "bounds": {
+        "left": 6,
+        "top": 15,
+        "width": 382,
+        "height": 425
+      },
+      "scale": 1.4345549738219896,
+      "neck": {
+        "x": 310.04188481675396,
+        "y": 426.4188481675393
+      },
+      "alpha_verified": true,
+      "fit_status": "prototype_alignment_pending_visual_review"
+    }
+  ]
+}

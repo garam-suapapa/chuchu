@@ -1,0 +1,22 @@
+{
+  "name": "chuchu-tablet-dressup",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.cjs",
+    "assets": "node scripts/prepare-assets.cjs && node scripts/prepare-wearables.cjs && node scripts/prepare-approved-hachuping-hoodie.cjs && node scripts/prepare-production-outfits.cjs && node scripts/prepare-hachuping-v6.cjs && node scripts/prepare-paper-doll-v7.cjs && node scripts/prepare-hachuping-hoodie-v11.cjs && node scripts/remove-flat-green-v12.cjs && node scripts/prepare-all-outfits-v12.cjs && node scripts/prepare-accessories-v2.cjs",
+    "test": "node --test tests/state.test.mjs tests/flat-green-key.test.cjs",
+    "test:e2e": "node tests/browser.cjs",
+    "verify:fit": "node scripts/verify-fit.cjs",
+    "verify:visual": "node scripts/verify-visual-approval.cjs",
+    "verify:render": "node tests/all-outfits-v12-browser-review.cjs",
+    "verify:all": "npm test && npm run test:e2e && npm run verify:fit && npm run verify:render && npm run verify:accessories && npm run verify:visual",
+    "verify:accessories": "node scripts/verify-accessories-v2.cjs",
+    "review:hachuping": "node tests/hachuping-six-browser-review.cjs",
+    "review:hoodie": "node tests/hachuping-hoodie-v11-review.cjs",
+    "review:all": "node tests/all-outfits-v12-browser-review.cjs --write-evidence",
+    "review:decor": "node tests/decor-review.cjs",
+    "review:accessories": "node tests/accessories-v2-browser-review.cjs"
+  }
+}

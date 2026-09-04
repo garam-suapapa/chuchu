@@ -1,0 +1,629 @@
+{
+  "method": "integrated wearable artwork, exterior alpha extraction, original head and feet compositing",
+  "outfits": [
+    {
+      "id": "hachuping_outfit_01",
+      "source": "assets/generated/hachuping/hachuping-wearable-six-v3.png",
+      "bounds": {
+        "left": 109,
+        "top": 133,
+        "width": 456,
+        "height": 347
+      },
+      "thumbnail": "assets/runtime/outfits/hachuping/hachuping_outfit_01.png",
+      "thumbnailSha256": "0839d7d8ec6482afad8a95f00022d997569fa575eaa1af4893b52019cff53bf7",
+      "worn": "assets/runtime/wearables/hachuping/hachuping_outfit_01-worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/hachuping/hachuping_outfit_01-with-hands.png",
+        "frame": {
+          "x": 139,
+          "y": 405,
+          "width": 310,
+          "height": 236
+        },
+        "neck": {
+          "x": 0.506578947368421,
+          "y": 0
+        }
+      }
+    },
+    {
+      "id": "hachuping_outfit_02",
+      "source": "assets/generated/hachuping/hachuping-wearable-six-v3.png",
+      "bounds": {
+        "left": 573,
+        "top": 134,
+        "width": 387,
+        "height": 332
+      },
+      "thumbnail": "assets/runtime/outfits/hachuping/hachuping_outfit_02.png",
+      "thumbnailSha256": "51bb2e5072ccf9984f3dcd15073d31c522c2aba798cdb606d6ef05ac67ba8050",
+      "worn": "assets/runtime/wearables/hachuping/hachuping_outfit_02-worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/hachuping/hachuping_outfit_02-with-hands.png",
+        "frame": {
+          "x": 161,
+          "y": 405,
+          "width": 270,
+          "height": 232
+        },
+        "neck": {
+          "x": 0.49870801033591733,
+          "y": 0
+        }
+      }
+    },
+    {
+      "id": "hachuping_outfit_03",
+      "source": "assets/generated/hachuping/hachuping-wearable-six-v3.png",
+      "bounds": {
+        "left": 982,
+        "top": 134,
+        "width": 445,
+        "height": 342
+      },
+      "thumbnail": "assets/runtime/outfits/hachuping/hachuping_outfit_03.png",
+      "thumbnailSha256": "048ffc27a532a340a44efee0a8befb6f4fc4cff42b815be45e4abf7d2715ac94",
+      "worn": "assets/runtime/wearables/hachuping/hachuping_outfit_03-worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/hachuping/hachuping_outfit_03-with-hands.png",
+        "frame": {
+          "x": 146,
+          "y": 405,
+          "width": 310,
+          "height": 238
+        },
+        "neck": {
+          "x": 0.4853932584269663,
+          "y": 0
+        }
+      }
+    },
+    {
+      "id": "hachuping_outfit_04",
+      "source": "assets/generated/hachuping/hachuping-wearable-six-v3.png",
+      "bounds": {
+        "left": 109,
+        "top": 524,
+        "width": 450,
+        "height": 350
+      },
+      "thumbnail": "assets/runtime/outfits/hachuping/hachuping_outfit_04.png",
+      "thumbnailSha256": "9e6a3fd14b69edabf48478afa83860b8fcf6747c6bf18228b4fdb91414e91a38",
+      "worn": "assets/runtime/wearables/hachuping/hachuping_outfit_04-worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/hachuping/hachuping_outfit_04-with-hands.png",
+        "frame": {
+          "x": 138,
+          "y": 405,
+          "width": 310,
+          "height": 241
+        },
+        "neck": {
+          "x": 0.51,
+          "y": 0
+        }
+      }
+    },
+    {
+      "id": "hachuping_outfit_05",
+      "source": "assets/generated/hachuping/hachuping-hoodie-fitted-v4.png",
+      "bounds": {
+        "left": 250,
+        "top": 338,
+        "width": 753,
+        "height": 616
+      },
+      "thumbnail": "assets/runtime/outfits/hachuping/hachuping_outfit_05.png",
+      "thumbnailSha256": "8ab32cdde93c5fba2a6312d6be516d08979652904c4a2108735cc2d28e3f01f3",
+      "worn": "assets/runtime/wearables/hachuping/hachuping_outfit_05-worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/hachuping/hachuping_outfit_05-with-hands.png",
+        "frame": {
+          "x": 152,
+          "y": 378,
+          "width": 287,
+          "height": 235
+        },
+        "neck": {
+          "x": 0.50066401062417,
+          "y": 0
+        }
+      }
+    },
+    {
+      "id": "hachuping_outfit_06",
+      "source": "assets/generated/hachuping/hachuping-wearable-six-v3.png",
+      "bounds": {
+        "left": 1005,
+        "top": 525,
+        "width": 390,
+        "height": 348
+      },
+      "thumbnail": "assets/runtime/outfits/hachuping/hachuping_outfit_06.png",
+      "thumbnailSha256": "916941bc7124569daa2c9dbe2d4f0cfabb59981daf500ca9c788908d15a6e862",
+      "worn": "assets/runtime/wearables/hachuping/hachuping_outfit_06-worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/hachuping/hachuping_outfit_06-with-hands.png",
+        "frame": {
+          "x": 165,
+          "y": 405,
+          "width": 263,
+          "height": 235
+        },
+        "neck": {
+          "x": 0.49743589743589745,
+          "y": 0
+        }
+      }
+    },
+    {
+      "id": "soraping_outfit_01",
+      "source": "assets/generated/soraping/soraping-wearable-six-v3.png",
+      "bounds": {
+        "left": 64,
+        "top": 120,
+        "width": 459,
+        "height": 336
+      },
+      "thumbnail": "assets/runtime/outfits/soraping/soraping_outfit_01.png",
+      "thumbnailSha256": "6fa415eba2e7f7e88f341ba64b1f0c02b879b160e08c357605125c832feedb00",
+      "worn": "assets/runtime/wearables/soraping/soraping_outfit_01-worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/soraping/soraping_outfit_01-with-hands.png",
+        "frame": {
+          "x": 204,
+          "y": 426,
+          "width": 300,
+          "height": 220
+        },
+        "neck": {
+          "x": 0.5,
+          "y": 0.020833333333333332
+        }
+      }
+    },
+    {
+      "id": "soraping_outfit_02",
+      "source": "assets/generated/soraping/soraping-wearable-six-v3.png",
+      "bounds": {
+        "left": 552,
+        "top": 120,
+        "width": 419,
+        "height": 325
+      },
+      "thumbnail": "assets/runtime/outfits/soraping/soraping_outfit_02.png",
+      "thumbnailSha256": "463e261c6181738096d8c53a36e2f84d2be9052726a9ac2931b79145bed15907",
+      "worn": "assets/runtime/wearables/soraping/soraping_outfit_02-worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/soraping/soraping_outfit_02-with-hands.png",
+        "frame": {
+          "x": 209,
+          "y": 428,
+          "width": 286,
+          "height": 222
+        },
+        "neck": {
+          "x": 0.5059665871121718,
+          "y": 0.012307692307692308
+        }
+      }
+    },
+    {
+      "id": "soraping_outfit_03",
+      "source": "assets/generated/soraping/soraping-wearable-six-v3.png",
+      "bounds": {
+        "left": 1001,
+        "top": 123,
+        "width": 464,
+        "height": 335
+      },
+      "thumbnail": "assets/runtime/outfits/soraping/soraping_outfit_03.png",
+      "thumbnailSha256": "20581e12f5b24ed052b75407c1b2b94457efd60bbd6a596819ae7c5b282759d1",
+      "worn": "assets/runtime/wearables/soraping/soraping_outfit_03-worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/soraping/soraping_outfit_03-with-hands.png",
+        "frame": {
+          "x": 206,
+          "y": 427,
+          "width": 300,
+          "height": 217
+        },
+        "neck": {
+          "x": 0.49353448275862066,
+          "y": 0.01791044776119403
+        }
+      }
+    },
+    {
+      "id": "soraping_outfit_04",
+      "source": "assets/generated/soraping/soraping-wearable-six-v3.png",
+      "bounds": {
+        "left": 108,
+        "top": 561,
+        "width": 381,
+        "height": 331
+      },
+      "thumbnail": "assets/runtime/outfits/soraping/soraping_outfit_04.png",
+      "thumbnailSha256": "7469bd7d3c0f61372bc98612de693e00275d4bc12aebc1dff6992cafd30fc365",
+      "worn": "assets/runtime/wearables/soraping/soraping_outfit_04-worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/soraping/soraping_outfit_04-with-hands.png",
+        "frame": {
+          "x": 239,
+          "y": 428,
+          "width": 250,
+          "height": 217
+        },
+        "neck": {
+          "x": 0.46062992125984253,
+          "y": 0.015105740181268883
+        }
+      }
+    },
+    {
+      "id": "soraping_outfit_05",
+      "source": "assets/generated/soraping/soraping-hoodie-fitted-v4.png",
+      "bounds": {
+        "left": 253,
+        "top": 338,
+        "width": 746,
+        "height": 623
+      },
+      "thumbnail": "assets/runtime/outfits/soraping/soraping_outfit_05.png",
+      "thumbnailSha256": "3274c069d9464267802df697f1f6cd18849d96908466fe85846b32b9ad5d26a0",
+      "worn": "assets/runtime/wearables/soraping/soraping_outfit_05-worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/soraping/soraping_outfit_05-with-hands.png",
+        "frame": {
+          "x": 221,
+          "y": 394,
+          "width": 266,
+          "height": 222
+        },
+        "neck": {
+          "x": 0.5013404825737265,
+          "y": 0.012841091492776886
+        }
+      }
+    },
+    {
+      "id": "soraping_outfit_06",
+      "source": "assets/generated/soraping/soraping-wearable-six-v3.png",
+      "bounds": {
+        "left": 1040,
+        "top": 557,
+        "width": 375,
+        "height": 339
+      },
+      "thumbnail": "assets/runtime/outfits/soraping/soraping_outfit_06.png",
+      "thumbnailSha256": "a9c5a9a8e272e64d67eb55259fe46b9e3e2b875f1c3599c0e73876849fecfb7c",
+      "worn": "assets/runtime/wearables/soraping/soraping_outfit_06-worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/soraping/soraping_outfit_06-with-hands.png",
+        "frame": {
+          "x": 231,
+          "y": 428,
+          "width": 241,
+          "height": 218
+        },
+        "neck": {
+          "x": 0.512,
+          "y": 0.014749262536873156
+        }
+      }
+    },
+    {
+      "id": "challangping_outfit_01",
+      "source": "assets/generated/challangping/challangping-wearable-six-v3.png",
+      "bounds": {
+        "left": 77,
+        "top": 137,
+        "width": 456,
+        "height": 340
+      },
+      "thumbnail": "assets/runtime/outfits/challangping/challangping_outfit_01.png",
+      "thumbnailSha256": "559e5b5ef925276449e21be6d3d46945b8d6f6204c59250605f354c175d10a47",
+      "worn": "assets/runtime/wearables/challangping/challangping_outfit_01-worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/challangping/challangping_outfit_01-with-hands.png",
+        "frame": {
+          "x": 144,
+          "y": 421,
+          "width": 307,
+          "height": 229
+        },
+        "neck": {
+          "x": 0.5274122807017544,
+          "y": 0
+        }
+      }
+    },
+    {
+      "id": "challangping_outfit_02",
+      "source": "assets/generated/challangping/challangping-wearable-six-v3.png",
+      "bounds": {
+        "left": 552,
+        "top": 128,
+        "width": 429,
+        "height": 344
+      },
+      "thumbnail": "assets/runtime/outfits/challangping/challangping_outfit_02.png",
+      "thumbnailSha256": "fa94b1b3f4c473561958b3d43c8041341f33db6bab59dfd14f0ccdcf82924307",
+      "worn": "assets/runtime/wearables/challangping/challangping_outfit_02-worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/challangping/challangping_outfit_02-with-hands.png",
+        "frame": {
+          "x": 162,
+          "y": 420,
+          "width": 286,
+          "height": 230
+        },
+        "neck": {
+          "x": 0.5023310023310024,
+          "y": 0.0029069767441860465
+        }
+      }
+    },
+    {
+      "id": "challangping_outfit_03",
+      "source": "assets/generated/challangping/challangping-wearable-six-v3.png",
+      "bounds": {
+        "left": 1004,
+        "top": 135,
+        "width": 419,
+        "height": 341
+      },
+      "thumbnail": "assets/runtime/outfits/challangping/challangping_outfit_03.png",
+      "thumbnailSha256": "4fd451d1099d96ddb202b0fddf780d79667f8f50e8d715aad9fba54ca669ed1f",
+      "worn": "assets/runtime/wearables/challangping/challangping_outfit_03-worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/challangping/challangping_outfit_03-with-hands.png",
+        "frame": {
+          "x": 162,
+          "y": 420,
+          "width": 282,
+          "height": 230
+        },
+        "neck": {
+          "x": 0.5095465393794749,
+          "y": 0.002932551319648094
+        }
+      }
+    },
+    {
+      "id": "challangping_outfit_04",
+      "source": "assets/generated/challangping/challangping-wearable-six-v3.png",
+      "bounds": {
+        "left": 105,
+        "top": 523,
+        "width": 387,
+        "height": 338
+      },
+      "thumbnail": "assets/runtime/outfits/challangping/challangping_outfit_04.png",
+      "thumbnailSha256": "cd23fa969aea3f3b08d2b214d0da7286ea8036cb60c5855f0f91a11a27255696",
+      "worn": "assets/runtime/wearables/challangping/challangping_outfit_04-worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/challangping/challangping_outfit_04-with-hands.png",
+        "frame": {
+          "x": 171,
+          "y": 421,
+          "width": 260,
+          "height": 227
+        },
+        "neck": {
+          "x": 0.5193798449612403,
+          "y": 0
+        }
+      }
+    },
+    {
+      "id": "challangping_outfit_05",
+      "source": "assets/generated/challangping/challangping-wearable-six-v3.png",
+      "bounds": {
+        "left": 548,
+        "top": 521,
+        "width": 419,
+        "height": 346
+      },
+      "thumbnail": "assets/runtime/outfits/challangping/challangping_outfit_05.png",
+      "thumbnailSha256": "b8dce4be2a82b5089649feadc8fd14285ee3d25214596b26a01c2aa1a96ee3a6",
+      "worn": "assets/runtime/wearables/challangping/challangping_outfit_05-worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/challangping/challangping_outfit_05-with-hands.png",
+        "frame": {
+          "x": 164,
+          "y": 420,
+          "width": 278,
+          "height": 230
+        },
+        "neck": {
+          "x": 0.5119331742243437,
+          "y": 0.002890173410404624
+        }
+      }
+    },
+    {
+      "id": "challangping_outfit_06",
+      "source": "assets/generated/challangping/challangping-wearable-six-v3.png",
+      "bounds": {
+        "left": 1007,
+        "top": 522,
+        "width": 393,
+        "height": 339
+      },
+      "thumbnail": "assets/runtime/outfits/challangping/challangping_outfit_06.png",
+      "thumbnailSha256": "3614c1287b5ed172ee3a22814d3ce8eb44a50515832193ced77722587de19707",
+      "worn": "assets/runtime/wearables/challangping/challangping_outfit_06-worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/challangping/challangping_outfit_06-with-hands.png",
+        "frame": {
+          "x": 172,
+          "y": 421,
+          "width": 260,
+          "height": 224
+        },
+        "neck": {
+          "x": 0.5152671755725191,
+          "y": 0
+        }
+      }
+    },
+    {
+      "id": "bangulping_outfit_01",
+      "source": "assets/generated/bangulping/bangulping-wearable-six-v3.png",
+      "bounds": {
+        "left": 38,
+        "top": 163,
+        "width": 491,
+        "height": 331
+      },
+      "thumbnail": "assets/runtime/outfits/bangulping/bangulping_outfit_01.png",
+      "thumbnailSha256": "dd96536a8788dfd00a07b5a2774b4ff9e99cfa2e95ea43acc441a976122ac4d6",
+      "worn": "assets/runtime/wearables/bangulping/bangulping_outfit_01-worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/bangulping/bangulping_outfit_01-with-hands.png",
+        "frame": {
+          "x": 159,
+          "y": 426,
+          "width": 310,
+          "height": 209
+        },
+        "neck": {
+          "x": 0.4969450101832994,
+          "y": 0.00906344410876133
+        }
+      }
+    },
+    {
+      "id": "bangulping_outfit_02",
+      "source": "assets/generated/bangulping/bangulping-wearable-six-v3.png",
+      "bounds": {
+        "left": 543,
+        "top": 163,
+        "width": 468,
+        "height": 331
+      },
+      "thumbnail": "assets/runtime/outfits/bangulping/bangulping_outfit_02.png",
+      "thumbnailSha256": "ff25233186ea3681e657508a5987aa9c3759658e69b3bea54da03fbe2b09165d",
+      "worn": "assets/runtime/wearables/bangulping/bangulping_outfit_02-worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/bangulping/bangulping_outfit_02-with-hands.png",
+        "frame": {
+          "x": 159,
+          "y": 426,
+          "width": 310,
+          "height": 219
+        },
+        "neck": {
+          "x": 0.49572649572649574,
+          "y": 0.00906344410876133
+        }
+      }
+    },
+    {
+      "id": "bangulping_outfit_03",
+      "source": "assets/generated/bangulping/bangulping-wearable-six-v3.png",
+      "bounds": {
+        "left": 1023,
+        "top": 162,
+        "width": 447,
+        "height": 332
+      },
+      "thumbnail": "assets/runtime/outfits/bangulping/bangulping_outfit_03.png",
+      "thumbnailSha256": "4e3aba776eb818911901087a8a2e397d6db56a4e69dad908c4f7f1c862878014",
+      "worn": "assets/runtime/wearables/bangulping/bangulping_outfit_03-worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/bangulping/bangulping_outfit_03-with-hands.png",
+        "frame": {
+          "x": 163,
+          "y": 424,
+          "width": 300,
+          "height": 223
+        },
+        "neck": {
+          "x": 0.5011185682326622,
+          "y": 0.018072289156626505
+        }
+      }
+    },
+    {
+      "id": "bangulping_outfit_04",
+      "source": "assets/generated/bangulping/bangulping-wearable-six-v3.png",
+      "bounds": {
+        "left": 79,
+        "top": 539,
+        "width": 404,
+        "height": 332
+      },
+      "thumbnail": "assets/runtime/outfits/bangulping/bangulping_outfit_04.png",
+      "thumbnailSha256": "46993881387265bb0eddec8419fa4ba6683d6674ef9c453c37ed34b82acf3550",
+      "worn": "assets/runtime/wearables/bangulping/bangulping_outfit_04-worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/bangulping/bangulping_outfit_04-with-hands.png",
+        "frame": {
+          "x": 183,
+          "y": 426,
+          "width": 260,
+          "height": 214
+        },
+        "neck": {
+          "x": 0.49876237623762376,
+          "y": 0.009036144578313253
+        }
+      }
+    },
+    {
+      "id": "bangulping_outfit_05",
+      "source": "assets/generated/bangulping/bangulping-wearable-six-v3.png",
+      "bounds": {
+        "left": 542,
+        "top": 539,
+        "width": 462,
+        "height": 338
+      },
+      "thumbnail": "assets/runtime/outfits/bangulping/bangulping_outfit_05.png",
+      "thumbnailSha256": "159a5cbec8c07e168502cccc11e8a4713bf974638b9e659eb3e1b1a565a55505",
+      "worn": "assets/runtime/wearables/bangulping/bangulping_outfit_05-worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/bangulping/bangulping_outfit_05-with-hands.png",
+        "frame": {
+          "x": 161,
+          "y": 426,
+          "width": 306,
+          "height": 224
+        },
+        "neck": {
+          "x": 0.49783549783549785,
+          "y": 0.008875739644970414
+        }
+      }
+    },
+    {
+      "id": "bangulping_outfit_06",
+      "source": "assets/generated/bangulping/bangulping-wearable-six-v3.png",
+      "bounds": {
+        "left": 1053,
+        "top": 539,
+        "width": 378,
+        "height": 335
+      },
+      "thumbnail": "assets/runtime/outfits/bangulping/bangulping_outfit_06.png",
+      "thumbnailSha256": "cc3d6be203b1a4c8c7408ae811de2bcf3f862a86b74d480f2b6bbffc99764bab",
+      "worn": "assets/runtime/wearables/bangulping/bangulping_outfit_06-worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/bangulping/bangulping_outfit_06-with-hands.png",
+        "frame": {
+          "x": 187,
+          "y": 426,
+          "width": 248,
+          "height": 220
+        },
+        "neck": {
+          "x": 0.5066137566137566,
+          "y": 0.008955223880597015
+        }
+      }
+    }
+  ]
+}

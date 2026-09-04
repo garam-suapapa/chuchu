@@ -1,0 +1,2617 @@
+{
+  "version": 3,
+  "characters": [
+    {
+      "id": "hachuping",
+      "name": "하츄핑",
+      "accent": "#e7679c",
+      "motif": "하트",
+      "base": "assets/runtime/characters/hachuping/base.png",
+      "front": "assets/runtime/characters/hachuping/front.png",
+      "canvas": {
+        "width": 600,
+        "height": 700
+      },
+      "neck": {
+        "x": 291.7516930022573,
+        "y": 401.16027088036117
+      },
+      "sourceScale": 1.417607223476298
+    },
+    {
+      "id": "soraping",
+      "name": "소라핑",
+      "accent": "#a681d6",
+      "motif": "조개",
+      "base": "assets/runtime/characters/soraping/base.png",
+      "front": "assets/runtime/characters/soraping/front.png",
+      "canvas": {
+        "width": 600,
+        "height": 700
+      },
+      "neck": {
+        "x": 350.4406779661017,
+        "y": 433.1525423728814
+      },
+      "sourceScale": 1.3305084745762712
+    },
+    {
+      "id": "challangping",
+      "name": "찰랑핑",
+      "accent": "#e78c6d",
+      "motif": "꽃",
+      "base": "assets/runtime/characters/challangping/base.png",
+      "front": "assets/runtime/characters/challangping/front.png",
+      "canvas": {
+        "width": 600,
+        "height": 700
+      },
+      "neck": {
+        "x": 294.20000000000005,
+        "y": 414.0205128205128
+      },
+      "sourceScale": 1.6102564102564103
+    },
+    {
+      "id": "bangulping",
+      "name": "방울핑",
+      "accent": "#48b9c5",
+      "motif": "별",
+      "base": "assets/runtime/characters/bangulping/base.png",
+      "front": "assets/runtime/characters/bangulping/front.png",
+      "canvas": {
+        "width": 600,
+        "height": 700
+      },
+      "neck": {
+        "x": 310.04188481675396,
+        "y": 426.4188481675393
+      },
+      "sourceScale": 1.4345549738219896
+    }
+  ],
+  "backgrounds": [
+    {
+      "id": "candy",
+      "name": "캔디 왕국",
+      "caption": "달콤한 모험이 기다려",
+      "image": "assets/runtime/backgrounds-v3/candy-v3.webp"
+    },
+    {
+      "id": "observatory",
+      "name": "별빛 천문대",
+      "caption": "별과 행성을 만나는 곳",
+      "image": "assets/runtime/backgrounds-v3/observatory-v3.webp"
+    }
+  ],
+  "outfits": [
+    {
+      "id": "hachuping_outfit_01",
+      "characterId": "hachuping",
+      "name": "하트 파티 원피스",
+      "category": "party",
+      "sprite": "assets/runtime/outfits/hachuping/hachuping_outfit_01.png",
+      "width": 450,
+      "height": 388,
+      "frame": {
+        "x": 142.19413092550786,
+        "y": 396.9074492099323,
+        "width": 299.11512415349887,
+        "height": 214.058690744921
+      },
+      "wornSprite": "assets/runtime/reference-wearables/hachuping/hachuping_outfit_01-v12/worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/hachuping/hachuping_outfit_01-with-hands.png",
+        "frame": {
+          "x": 139,
+          "y": 405,
+          "width": 310,
+          "height": 236
+        },
+        "neck": {
+          "x": 0.506578947368421,
+          "y": 0
+        }
+      },
+      "productionTemplate": {
+        "version": 12,
+        "status": "review",
+        "method": "generated-complete-character-reference",
+        "selectionMaster": "assets/runtime/outfits/hachuping/hachuping_outfit_01.png",
+        "selectionSha256": "0839d7d8ec6482afad8a95f00022d997569fa575eaa1af4893b52019cff53bf7",
+        "garmentCore": "assets/runtime/outfits/hachuping/hachuping_outfit_01.png",
+        "inputReference": "assets/master/outfits/hachuping_outfit_01/v12/reference-worn.png",
+        "inputReferenceSha256": "ca32e9c11025e8b088fd745f4c982466f6043c27ee852db4176994859060e756",
+        "referenceSource": "assets/master/outfits/hachuping_outfit_01/v12/reference-clean.png",
+        "referenceSha256": "80bbfc5da8f55a5f74d2e3a54207bdd9916bb8229a0056fe33e38bbcdd5bc7e4",
+        "referenceSize": {
+          "width": 1161,
+          "height": 1354
+        },
+        "referenceBounds": {
+          "left": 148,
+          "top": 51,
+          "width": 873,
+          "height": 1228,
+          "transparentPixels": 851886
+        },
+        "backgroundExtraction": null,
+        "cleanup": {
+          "minimumPixels": 80,
+          "changedAlphaPixels": 32,
+          "removedComponents": 23,
+          "limits": {
+            "maximumChangedAlphaPixels": 20000,
+            "maximumRemovedComponents": 500
+          }
+        },
+        "referencePlacement": {
+          "fit": "contain",
+          "position": "centre",
+          "canvas": {
+            "width": 600,
+            "height": 700
+          }
+        },
+        "runtimeBounds": {
+          "left": 76,
+          "top": 26,
+          "width": 452,
+          "height": 635,
+          "transparentPixels": 227136
+        },
+        "wearableLayer": "assets/runtime/reference-wearables/hachuping/hachuping_outfit_01-v12/worn.png",
+        "wornSprite": "assets/runtime/reference-wearables/hachuping/hachuping_outfit_01-v12/worn.png",
+        "reviewRegions": {
+          "neck": {
+            "x": 222,
+            "y": 312,
+            "width": 160,
+            "height": 130
+          },
+          "hands": {
+            "x": 167,
+            "y": 363,
+            "width": 270,
+            "height": 175
+          }
+        },
+        "invariants": [
+          "undressed-state-keeps-original-clasped-hands",
+          "selection-card-keeps-original-handless-garment",
+          "dressed-state-uses-one-complete-character-sprite",
+          "neck-is-visible-and-centred-under-the-chin",
+          "sleeves-arms-wrists-and-clasped-hands-form-one-continuous-body",
+          "exactly-one-hand-pair-is-visible"
+        ]
+      },
+      "renderLayers": []
+    },
+    {
+      "id": "hachuping_outfit_02",
+      "characterId": "hachuping",
+      "name": "데님 하트 멜빵옷",
+      "category": "dungarees",
+      "sprite": "assets/runtime/outfits/hachuping/hachuping_outfit_02.png",
+      "width": 371,
+      "height": 378,
+      "frame": {
+        "x": 179.76072234762975,
+        "y": 396.9074492099323,
+        "width": 223.9819413092551,
+        "height": 225.3995485327314
+      },
+      "wornSprite": "assets/runtime/reference-wearables/hachuping/hachuping_outfit_02-v12/worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/hachuping/hachuping_outfit_02-with-hands.png",
+        "frame": {
+          "x": 161,
+          "y": 405,
+          "width": 270,
+          "height": 232
+        },
+        "neck": {
+          "x": 0.49870801033591733,
+          "y": 0
+        }
+      },
+      "productionTemplate": {
+        "version": 12,
+        "status": "review",
+        "method": "generated-complete-character-reference",
+        "selectionMaster": "assets/runtime/outfits/hachuping/hachuping_outfit_02.png",
+        "selectionSha256": "51bb2e5072ccf9984f3dcd15073d31c522c2aba798cdb606d6ef05ac67ba8050",
+        "garmentCore": "assets/runtime/outfits/hachuping/hachuping_outfit_02.png",
+        "inputReference": "assets/master/outfits/hachuping_outfit_02/v12/reference-worn.png",
+        "inputReferenceSha256": "a6b44266b6a40905523f1cb5e707e758a9bbc12970cec8e35f5bb3ab8a5c3525",
+        "referenceSource": "assets/master/outfits/hachuping_outfit_02/v12/reference-clean.png",
+        "referenceSha256": "7cce7d7907ab6b2afa8ae1956b89ec794abe410a0e61da1721da55aa0486d968",
+        "referenceSize": {
+          "width": 1160,
+          "height": 1356
+        },
+        "referenceBounds": {
+          "left": 78,
+          "top": 40,
+          "width": 994,
+          "height": 1262,
+          "transparentPixels": 788997
+        },
+        "backgroundExtraction": null,
+        "cleanup": {
+          "minimumPixels": 80,
+          "changedAlphaPixels": 22,
+          "removedComponents": 10,
+          "limits": {
+            "maximumChangedAlphaPixels": 20000,
+            "maximumRemovedComponents": 500
+          }
+        },
+        "referencePlacement": {
+          "fit": "contain",
+          "position": "centre",
+          "canvas": {
+            "width": 600,
+            "height": 700
+          }
+        },
+        "runtimeBounds": {
+          "left": 40,
+          "top": 21,
+          "width": 514,
+          "height": 651,
+          "transparentPixels": 210528
+        },
+        "wearableLayer": "assets/runtime/reference-wearables/hachuping/hachuping_outfit_02-v12/worn.png",
+        "wornSprite": "assets/runtime/reference-wearables/hachuping/hachuping_outfit_02-v12/worn.png",
+        "reviewRegions": {
+          "neck": {
+            "x": 217,
+            "y": 314,
+            "width": 160,
+            "height": 130
+          },
+          "hands": {
+            "x": 162,
+            "y": 366,
+            "width": 270,
+            "height": 175
+          }
+        },
+        "invariants": [
+          "undressed-state-keeps-original-clasped-hands",
+          "selection-card-keeps-original-handless-garment",
+          "dressed-state-uses-one-complete-character-sprite",
+          "neck-is-visible-and-centred-under-the-chin",
+          "sleeves-arms-wrists-and-clasped-hands-form-one-continuous-body",
+          "exactly-one-hand-pair-is-visible"
+        ]
+      },
+      "renderLayers": []
+    },
+    {
+      "id": "hachuping_outfit_03",
+      "characterId": "hachuping",
+      "name": "노란 하트 포켓 원피스",
+      "category": "pinafore",
+      "sprite": "assets/runtime/outfits/hachuping/hachuping_outfit_03.png",
+      "width": 416,
+      "height": 371,
+      "frame": {
+        "x": 142.19413092550786,
+        "y": 396.9074492099323,
+        "width": 299.11512415349887,
+        "height": 214.058690744921
+      },
+      "wornSprite": "assets/runtime/reference-wearables/hachuping/hachuping_outfit_03-v12/worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/hachuping/hachuping_outfit_03-with-hands.png",
+        "frame": {
+          "x": 146,
+          "y": 405,
+          "width": 310,
+          "height": 238
+        },
+        "neck": {
+          "x": 0.4853932584269663,
+          "y": 0
+        }
+      },
+      "productionTemplate": {
+        "version": 12,
+        "status": "review",
+        "method": "generated-complete-character-reference",
+        "selectionMaster": "assets/runtime/outfits/hachuping/hachuping_outfit_03.png",
+        "selectionSha256": "048ffc27a532a340a44efee0a8befb6f4fc4cff42b815be45e4abf7d2715ac94",
+        "garmentCore": "assets/runtime/outfits/hachuping/hachuping_outfit_03.png",
+        "inputReference": "assets/master/outfits/hachuping_outfit_03/v12/reference-worn.png",
+        "inputReferenceSha256": "1abf1348b53bba2ee0c4dbea1b8ae05d264b7fba1e3e3b2055d8619c65915f53",
+        "referenceSource": "assets/master/outfits/hachuping_outfit_03/v12/reference-clean.png",
+        "referenceSha256": "c13edc2b08c5fb01a3b4578989934860c11cff621344319d5645a35d093784f4",
+        "referenceSize": {
+          "width": 1159,
+          "height": 1356
+        },
+        "referenceBounds": {
+          "left": 122,
+          "top": 45,
+          "width": 903,
+          "height": 1255,
+          "transparentPixels": 842823
+        },
+        "backgroundExtraction": null,
+        "cleanup": {
+          "minimumPixels": 80,
+          "changedAlphaPixels": 35,
+          "removedComponents": 22,
+          "limits": {
+            "maximumChangedAlphaPixels": 20000,
+            "maximumRemovedComponents": 500
+          }
+        },
+        "referencePlacement": {
+          "fit": "contain",
+          "position": "centre",
+          "canvas": {
+            "width": 600,
+            "height": 700
+          }
+        },
+        "runtimeBounds": {
+          "left": 64,
+          "top": 23,
+          "width": 466,
+          "height": 648,
+          "transparentPixels": 225275
+        },
+        "wearableLayer": "assets/runtime/reference-wearables/hachuping/hachuping_outfit_03-v12/worn.png",
+        "wornSprite": "assets/runtime/reference-wearables/hachuping/hachuping_outfit_03-v12/worn.png",
+        "reviewRegions": {
+          "neck": {
+            "x": 217,
+            "y": 315,
+            "width": 160,
+            "height": 130
+          },
+          "hands": {
+            "x": 162,
+            "y": 366,
+            "width": 270,
+            "height": 175
+          }
+        },
+        "invariants": [
+          "undressed-state-keeps-original-clasped-hands",
+          "selection-card-keeps-original-handless-garment",
+          "dressed-state-uses-one-complete-character-sprite",
+          "neck-is-visible-and-centred-under-the-chin",
+          "sleeves-arms-wrists-and-clasped-hands-form-one-continuous-body",
+          "exactly-one-hand-pair-is-visible"
+        ]
+      },
+      "renderLayers": []
+    },
+    {
+      "id": "hachuping_outfit_04",
+      "characterId": "hachuping",
+      "name": "보라 리본 원피스",
+      "category": "outing",
+      "sprite": "assets/runtime/outfits/hachuping/hachuping_outfit_04.png",
+      "width": 447,
+      "height": 416,
+      "frame": {
+        "x": 142.19413092550786,
+        "y": 396.9074492099323,
+        "width": 299.11512415349887,
+        "height": 214.058690744921
+      },
+      "wornSprite": "assets/runtime/reference-wearables/hachuping/hachuping_outfit_04-v12/worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/hachuping/hachuping_outfit_04-with-hands.png",
+        "frame": {
+          "x": 138,
+          "y": 405,
+          "width": 310,
+          "height": 241
+        },
+        "neck": {
+          "x": 0.51,
+          "y": 0
+        }
+      },
+      "productionTemplate": {
+        "version": 12,
+        "status": "review",
+        "method": "generated-complete-character-reference",
+        "selectionMaster": "assets/runtime/outfits/hachuping/hachuping_outfit_04.png",
+        "selectionSha256": "9e6a3fd14b69edabf48478afa83860b8fcf6747c6bf18228b4fdb91414e91a38",
+        "garmentCore": "assets/runtime/outfits/hachuping/hachuping_outfit_04.png",
+        "inputReference": "assets/master/outfits/hachuping_outfit_04/v12/reference-worn.png",
+        "inputReferenceSha256": "c72b68136d0d8385e2f8093cb6e3630d236f625b3bdebe3ff423939f1c5fa2ed",
+        "referenceSource": "assets/master/outfits/hachuping_outfit_04/v12/reference-clean.png",
+        "referenceSha256": "67a479c677bddf1fe6908e9f440e6e7f1942531a2156b0d182c35fce48c593f1",
+        "referenceSize": {
+          "width": 1161,
+          "height": 1355
+        },
+        "referenceBounds": {
+          "left": 113,
+          "top": 35,
+          "width": 934,
+          "height": 1288,
+          "transparentPixels": 777155
+        },
+        "backgroundExtraction": null,
+        "cleanup": {
+          "minimumPixels": 80,
+          "changedAlphaPixels": 22,
+          "removedComponents": 17,
+          "limits": {
+            "maximumChangedAlphaPixels": 20000,
+            "maximumRemovedComponents": 500
+          }
+        },
+        "referencePlacement": {
+          "fit": "contain",
+          "position": "centre",
+          "canvas": {
+            "width": 600,
+            "height": 700
+          }
+        },
+        "runtimeBounds": {
+          "left": 58,
+          "top": 18,
+          "width": 483,
+          "height": 666,
+          "transparentPixels": 206983
+        },
+        "wearableLayer": "assets/runtime/reference-wearables/hachuping/hachuping_outfit_04-v12/worn.png",
+        "wornSprite": "assets/runtime/reference-wearables/hachuping/hachuping_outfit_04-v12/worn.png",
+        "reviewRegions": {
+          "neck": {
+            "x": 220,
+            "y": 318,
+            "width": 160,
+            "height": 130
+          },
+          "hands": {
+            "x": 165,
+            "y": 371,
+            "width": 270,
+            "height": 175
+          }
+        },
+        "invariants": [
+          "undressed-state-keeps-original-clasped-hands",
+          "selection-card-keeps-original-handless-garment",
+          "dressed-state-uses-one-complete-character-sprite",
+          "neck-is-visible-and-centred-under-the-chin",
+          "sleeves-arms-wrists-and-clasped-hands-form-one-continuous-body",
+          "exactly-one-hand-pair-is-visible"
+        ]
+      },
+      "renderLayers": []
+    },
+    {
+      "id": "hachuping_outfit_05",
+      "characterId": "hachuping",
+      "name": "민트 하트 후드복",
+      "category": "hoodie",
+      "sprite": "assets/runtime/outfits/hachuping/hachuping_outfit_05.png",
+      "width": 369,
+      "height": 413,
+      "frame": {
+        "x": 165.58465011286677,
+        "y": 396.9074492099323,
+        "width": 252.33408577878103,
+        "height": 216.89390519187359
+      },
+      "wornSprite": "assets/runtime/reference-wearables/hachuping/hachuping_outfit_05-v11/worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/hachuping/hachuping_outfit_05-with-hands.png",
+        "frame": {
+          "x": 152,
+          "y": 378,
+          "width": 287,
+          "height": 235
+        },
+        "neck": {
+          "x": 0.50066401062417,
+          "y": 0
+        }
+      },
+      "productionTemplate": {
+        "version": 11,
+        "status": "review",
+        "method": "user-reference-exact-worn",
+        "selectionMaster": "assets/runtime/outfits/hachuping/hachuping_outfit_05.png",
+        "selectionSha256": "8ab32cdde93c5fba2a6312d6be516d08979652904c4a2108735cc2d28e3f01f3",
+        "garmentCore": "assets/runtime/outfits/hachuping/hachuping_outfit_05.png",
+        "inputReference": "assets/master/outfits/hachuping_outfit_05/v11/user-reference-worn.png",
+        "inputReferenceSha256": "05f6cd3199f1a34e351f2ea191869b075171a72ed2f1c554d8f624121f262d09",
+        "referenceSource": "assets/master/outfits/hachuping_outfit_05/v11/user-reference-clean.png",
+        "referenceSha256": "4d204948e831fa74595a00dd953213bbb434e41b6b89c8dadbcae2cf048e6490",
+        "referenceSize": {
+          "width": 1182,
+          "height": 1330
+        },
+        "cleanup": {
+          "smallIslandMinimumPixels": 500,
+          "edgeWhiteRule": {
+            "topBeforeY": 110,
+            "leftBeforeX": 150,
+            "rightAfterX": 1032,
+            "minimumRgb": 240,
+            "maximumChannelSpread": 12
+          },
+          "limits": {
+            "maximumChangedAlphaPixels": 8000,
+            "maximumStrongAlphaPixelsRemoved": 100,
+            "maximumProtectedBodyStrongAlphaPixelsRemoved": 50
+          },
+          "stats": {
+            "changedAlphaPixels": 6940,
+            "strongAlphaPixelsRemoved": 73,
+            "protectedBodyStrongAlphaPixelsRemoved": 38,
+            "alphaLoss": 13827
+          }
+        },
+        "referencePlacement": {
+          "fit": "contain",
+          "position": "centre",
+          "canvas": {
+            "width": 600,
+            "height": 700
+          }
+        },
+        "wearableLayer": "assets/runtime/reference-wearables/hachuping/hachuping_outfit_05-v11/worn.png",
+        "wornSprite": "assets/runtime/reference-wearables/hachuping/hachuping_outfit_05-v11/worn.png",
+        "reviewRegions": {
+          "neck": {
+            "x": 255,
+            "y": 365,
+            "width": 90,
+            "height": 55
+          },
+          "hands": {
+            "x": 225,
+            "y": 405,
+            "width": 150,
+            "height": 105
+          }
+        },
+        "invariants": [
+          "undressed-state-keeps-original-clasped-hands",
+          "selection-card-keeps-original-handless-garment",
+          "dressed-state-uses-the-user-provided-complete-character-reference",
+          "reference-aspect-ratio-and-alpha-are-preserved",
+          "exactly-one-sleeve-pair-and-one-hand-pair-are-visible"
+        ]
+      },
+      "renderLayers": []
+    },
+    {
+      "id": "hachuping_outfit_06",
+      "characterId": "hachuping",
+      "name": "분홍 하트 잠옷",
+      "category": "pajamas",
+      "sprite": "assets/runtime/outfits/hachuping/hachuping_outfit_06.png",
+      "width": 394,
+      "height": 387,
+      "frame": {
+        "x": 179.76072234762975,
+        "y": 396.9074492099323,
+        "width": 223.9819413092551,
+        "height": 225.3995485327314
+      },
+      "wornSprite": "assets/runtime/reference-wearables/hachuping/hachuping_outfit_06-v12/worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/hachuping/hachuping_outfit_06-with-hands.png",
+        "frame": {
+          "x": 165,
+          "y": 405,
+          "width": 263,
+          "height": 235
+        },
+        "neck": {
+          "x": 0.49743589743589745,
+          "y": 0
+        }
+      },
+      "productionTemplate": {
+        "version": 12,
+        "status": "review",
+        "method": "generated-complete-character-reference",
+        "selectionMaster": "assets/runtime/outfits/hachuping/hachuping_outfit_06.png",
+        "selectionSha256": "916941bc7124569daa2c9dbe2d4f0cfabb59981daf500ca9c788908d15a6e862",
+        "garmentCore": "assets/runtime/outfits/hachuping/hachuping_outfit_06.png",
+        "inputReference": "assets/master/outfits/hachuping_outfit_06/v12/reference-worn.png",
+        "inputReferenceSha256": "eaa5452afd473757b790ea10c4bc1afec5a4cc105611378482b9358a3cc64a1d",
+        "referenceSource": "assets/master/outfits/hachuping_outfit_06/v12/reference-clean.png",
+        "referenceSha256": "a253fb78e39f58e83056ae85201c2099df505f40edbb9ac07a13fa81ead63a81",
+        "referenceSize": {
+          "width": 1161,
+          "height": 1355
+        },
+        "referenceBounds": {
+          "left": 63,
+          "top": 35,
+          "width": 1035,
+          "height": 1282,
+          "transparentPixels": 759873
+        },
+        "backgroundExtraction": null,
+        "cleanup": {
+          "minimumPixels": 80,
+          "changedAlphaPixels": 12,
+          "removedComponents": 10,
+          "limits": {
+            "maximumChangedAlphaPixels": 20000,
+            "maximumRemovedComponents": 500
+          }
+        },
+        "referencePlacement": {
+          "fit": "contain",
+          "position": "centre",
+          "canvas": {
+            "width": 600,
+            "height": 700
+          }
+        },
+        "runtimeBounds": {
+          "left": 33,
+          "top": 18,
+          "width": 534,
+          "height": 663,
+          "transparentPixels": 202455
+        },
+        "wearableLayer": "assets/runtime/reference-wearables/hachuping/hachuping_outfit_06-v12/worn.png",
+        "wornSprite": "assets/runtime/reference-wearables/hachuping/hachuping_outfit_06-v12/worn.png",
+        "reviewRegions": {
+          "neck": {
+            "x": 220,
+            "y": 316,
+            "width": 160,
+            "height": 130
+          },
+          "hands": {
+            "x": 165,
+            "y": 369,
+            "width": 270,
+            "height": 175
+          }
+        },
+        "invariants": [
+          "undressed-state-keeps-original-clasped-hands",
+          "selection-card-keeps-original-handless-garment",
+          "dressed-state-uses-one-complete-character-sprite",
+          "neck-is-visible-and-centred-under-the-chin",
+          "sleeves-arms-wrists-and-clasped-hands-form-one-continuous-body",
+          "exactly-one-hand-pair-is-visible"
+        ]
+      },
+      "renderLayers": []
+    },
+    {
+      "id": "soraping_outfit_01",
+      "characterId": "soraping",
+      "name": "진주 조개 파티복",
+      "category": "party",
+      "sprite": "assets/runtime/outfits/soraping/soraping_outfit_01.png",
+      "width": 447,
+      "height": 387,
+      "frame": {
+        "x": 210.07203389830508,
+        "y": 429.16101694915255,
+        "width": 280.73728813559325,
+        "height": 200.90677966101694
+      },
+      "wornSprite": "assets/runtime/reference-wearables/soraping/soraping_outfit_01-v12/worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/soraping/soraping_outfit_01-with-hands.png",
+        "frame": {
+          "x": 204,
+          "y": 426,
+          "width": 300,
+          "height": 220
+        },
+        "neck": {
+          "x": 0.5,
+          "y": 0.020833333333333332
+        }
+      },
+      "productionTemplate": {
+        "version": 12,
+        "status": "review",
+        "method": "generated-complete-character-reference",
+        "selectionMaster": "assets/runtime/outfits/soraping/soraping_outfit_01.png",
+        "selectionSha256": "6fa415eba2e7f7e88f341ba64b1f0c02b879b160e08c357605125c832feedb00",
+        "garmentCore": "assets/runtime/outfits/soraping/soraping_outfit_01.png",
+        "inputReference": "assets/master/outfits/soraping_outfit_01/v12/reference-worn.png",
+        "inputReferenceSha256": "19b31da13512b503400adcb945c5ab13780281ce2c83151b029f01b1af1f822b",
+        "referenceSource": "assets/master/outfits/soraping_outfit_01/v12/reference-clean.png",
+        "referenceSha256": "e2f4b263ebd3d94becfc4b440f3bd2df212a878d5eb4d1c49b93ec68b9af6fd5",
+        "referenceSize": {
+          "width": 1161,
+          "height": 1355
+        },
+        "referenceBounds": {
+          "left": 167,
+          "top": 28,
+          "width": 717,
+          "height": 1281,
+          "transparentPixels": 999647
+        },
+        "backgroundExtraction": null,
+        "cleanup": {
+          "minimumPixels": 80,
+          "changedAlphaPixels": 12,
+          "removedComponents": 7,
+          "limits": {
+            "maximumChangedAlphaPixels": 20000,
+            "maximumRemovedComponents": 500
+          }
+        },
+        "referencePlacement": {
+          "fit": "contain",
+          "position": "centre",
+          "canvas": {
+            "width": 600,
+            "height": 700
+          }
+        },
+        "runtimeBounds": {
+          "left": 86,
+          "top": 14,
+          "width": 371,
+          "height": 662,
+          "transparentPixels": 266492
+        },
+        "wearableLayer": "assets/runtime/reference-wearables/soraping/soraping_outfit_01-v12/worn.png",
+        "wornSprite": "assets/runtime/reference-wearables/soraping/soraping_outfit_01-v12/worn.png",
+        "reviewRegions": {
+          "neck": {
+            "x": 192,
+            "y": 312,
+            "width": 160,
+            "height": 130
+          },
+          "hands": {
+            "x": 137,
+            "y": 365,
+            "width": 270,
+            "height": 175
+          }
+        },
+        "invariants": [
+          "undressed-state-keeps-original-clasped-hands",
+          "selection-card-keeps-original-handless-garment",
+          "dressed-state-uses-one-complete-character-sprite",
+          "neck-is-visible-and-centred-under-the-chin",
+          "sleeves-arms-wrists-and-clasped-hands-form-one-continuous-body",
+          "exactly-one-hand-pair-is-visible"
+        ]
+      },
+      "renderLayers": []
+    },
+    {
+      "id": "soraping_outfit_02",
+      "characterId": "soraping",
+      "name": "분홍 조개 세일러복",
+      "category": "sailor",
+      "sprite": "assets/runtime/outfits/soraping/soraping_outfit_02.png",
+      "width": 393,
+      "height": 372,
+      "frame": {
+        "x": 210.07203389830508,
+        "y": 429.16101694915255,
+        "width": 280.73728813559325,
+        "height": 200.90677966101694
+      },
+      "wornSprite": "assets/runtime/reference-wearables/soraping/soraping_outfit_02-v12/worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/soraping/soraping_outfit_02-with-hands.png",
+        "frame": {
+          "x": 209,
+          "y": 428,
+          "width": 286,
+          "height": 222
+        },
+        "neck": {
+          "x": 0.5059665871121718,
+          "y": 0.012307692307692308
+        }
+      },
+      "productionTemplate": {
+        "version": 12,
+        "status": "review",
+        "method": "generated-complete-character-reference",
+        "selectionMaster": "assets/runtime/outfits/soraping/soraping_outfit_02.png",
+        "selectionSha256": "463e261c6181738096d8c53a36e2f84d2be9052726a9ac2931b79145bed15907",
+        "garmentCore": "assets/runtime/outfits/soraping/soraping_outfit_02.png",
+        "inputReference": "assets/master/outfits/soraping_outfit_02/v12/reference-worn.png",
+        "inputReferenceSha256": "7aab0b75e20db12ad1b9b371d5fb581e4fc1b2c62af4d5fb8999968a0647aa29",
+        "referenceSource": "assets/master/outfits/soraping_outfit_02/v12/reference-clean.png",
+        "referenceSha256": "f7e4599d7baee02ae23767ea93c469323bdc1870f2468e50afddfe44544eb9ee",
+        "referenceSize": {
+          "width": 1161,
+          "height": 1355
+        },
+        "referenceBounds": {
+          "left": 74,
+          "top": 8,
+          "width": 891,
+          "height": 1311,
+          "transparentPixels": 865370
+        },
+        "backgroundExtraction": null,
+        "cleanup": {
+          "minimumPixels": 80,
+          "changedAlphaPixels": 0,
+          "removedComponents": 0,
+          "limits": {
+            "maximumChangedAlphaPixels": 20000,
+            "maximumRemovedComponents": 500
+          }
+        },
+        "referencePlacement": {
+          "fit": "contain",
+          "position": "centre",
+          "canvas": {
+            "width": 600,
+            "height": 700
+          }
+        },
+        "runtimeBounds": {
+          "left": 38,
+          "top": 4,
+          "width": 461,
+          "height": 677,
+          "transparentPixels": 230964
+        },
+        "wearableLayer": "assets/runtime/reference-wearables/soraping/soraping_outfit_02-v12/worn.png",
+        "wornSprite": "assets/runtime/reference-wearables/soraping/soraping_outfit_02-v12/worn.png",
+        "reviewRegions": {
+          "neck": {
+            "x": 189,
+            "y": 309,
+            "width": 160,
+            "height": 130
+          },
+          "hands": {
+            "x": 134,
+            "y": 363,
+            "width": 270,
+            "height": 175
+          }
+        },
+        "invariants": [
+          "undressed-state-keeps-original-clasped-hands",
+          "selection-card-keeps-original-handless-garment",
+          "dressed-state-uses-one-complete-character-sprite",
+          "neck-is-visible-and-centred-under-the-chin",
+          "sleeves-arms-wrists-and-clasped-hands-form-one-continuous-body",
+          "exactly-one-hand-pair-is-visible"
+        ]
+      },
+      "renderLayers": []
+    },
+    {
+      "id": "soraping_outfit_03",
+      "characterId": "soraping",
+      "name": "민트 조개 드레스",
+      "category": "shell_dress",
+      "sprite": "assets/runtime/outfits/soraping/soraping_outfit_03.png",
+      "width": 470,
+      "height": 383,
+      "frame": {
+        "x": 210.07203389830508,
+        "y": 429.16101694915255,
+        "width": 280.73728813559325,
+        "height": 200.90677966101694
+      },
+      "wornSprite": "assets/runtime/reference-wearables/soraping/soraping_outfit_03-v12/worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/soraping/soraping_outfit_03-with-hands.png",
+        "frame": {
+          "x": 206,
+          "y": 427,
+          "width": 300,
+          "height": 217
+        },
+        "neck": {
+          "x": 0.49353448275862066,
+          "y": 0.01791044776119403
+        }
+      },
+      "productionTemplate": {
+        "version": 12,
+        "status": "review",
+        "method": "generated-complete-character-reference",
+        "selectionMaster": "assets/runtime/outfits/soraping/soraping_outfit_03.png",
+        "selectionSha256": "20581e12f5b24ed052b75407c1b2b94457efd60bbd6a596819ae7c5b282759d1",
+        "garmentCore": "assets/runtime/outfits/soraping/soraping_outfit_03.png",
+        "inputReference": "assets/master/outfits/soraping_outfit_03/v12/reference-worn.png",
+        "inputReferenceSha256": "23a3878c5a0c85dae6a6556aa866fae31ae1773ad3c5eca483c1adf2afced202",
+        "referenceSource": "assets/master/outfits/soraping_outfit_03/v12/reference-clean.png",
+        "referenceSha256": "23a3878c5a0c85dae6a6556aa866fae31ae1773ad3c5eca483c1adf2afced202",
+        "referenceSize": {
+          "width": 1024,
+          "height": 1536
+        },
+        "referenceBounds": {
+          "left": 27,
+          "top": 22,
+          "width": 892,
+          "height": 1492,
+          "transparentPixels": 761221
+        },
+        "backgroundExtraction": {
+          "method": "flat-green-key",
+          "algorithmVersion": 2,
+          "source": "assets/master/outfits/soraping_outfit_03/v12/flat-background.png",
+          "sourceSha256": "ad3c19562a6b22b0273513d6ed90219f99d7e8fb028567099f8e99bdbdba6a83",
+          "stats": {
+            "algorithmVersion": 2,
+            "corePixels": 761187,
+            "softEdgePixels": 3543,
+            "transparentPixels": 761210,
+            "visiblePixels": 811654,
+            "transparentRatio": 0.4839642842610677,
+            "visibleRatio": 0.5160357157389323,
+            "residualCorePixels": 0,
+            "bounds": {
+              "left": 27,
+              "top": 22,
+              "width": 892,
+              "height": 1492
+            }
+          }
+        },
+        "cleanup": {
+          "minimumPixels": 80,
+          "changedAlphaPixels": 0,
+          "removedComponents": 0,
+          "limits": {
+            "maximumChangedAlphaPixels": 20000,
+            "maximumRemovedComponents": 500
+          }
+        },
+        "referencePlacement": {
+          "fit": "contain",
+          "position": "centre",
+          "canvas": {
+            "width": 600,
+            "height": 700
+          }
+        },
+        "runtimeBounds": {
+          "left": 78,
+          "top": 10,
+          "width": 408,
+          "height": 681,
+          "transparentPixels": 250295
+        },
+        "wearableLayer": "assets/runtime/reference-wearables/soraping/soraping_outfit_03-v12/worn.png",
+        "wornSprite": "assets/runtime/reference-wearables/soraping/soraping_outfit_03-v12/worn.png",
+        "reviewRegions": {
+          "neck": {
+            "x": 202,
+            "y": 316,
+            "width": 160,
+            "height": 130
+          },
+          "hands": {
+            "x": 147,
+            "y": 371,
+            "width": 270,
+            "height": 175
+          }
+        },
+        "invariants": [
+          "undressed-state-keeps-original-clasped-hands",
+          "selection-card-keeps-original-handless-garment",
+          "dressed-state-uses-one-complete-character-sprite",
+          "neck-is-visible-and-centred-under-the-chin",
+          "sleeves-arms-wrists-and-clasped-hands-form-one-continuous-body",
+          "exactly-one-hand-pair-is-visible"
+        ]
+      },
+      "renderLayers": []
+    },
+    {
+      "id": "soraping_outfit_04",
+      "characterId": "soraping",
+      "name": "보라 조개 멜빵옷",
+      "category": "dungarees",
+      "sprite": "assets/runtime/outfits/soraping/soraping_outfit_04.png",
+      "width": 423,
+      "height": 404,
+      "frame": {
+        "x": 245.33050847457628,
+        "y": 429.16101694915255,
+        "width": 210.22033898305085,
+        "height": 211.55084745762713
+      },
+      "wornSprite": "assets/runtime/reference-wearables/soraping/soraping_outfit_04-v12/worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/soraping/soraping_outfit_04-with-hands.png",
+        "frame": {
+          "x": 239,
+          "y": 428,
+          "width": 250,
+          "height": 217
+        },
+        "neck": {
+          "x": 0.46062992125984253,
+          "y": 0.015105740181268883
+        }
+      },
+      "productionTemplate": {
+        "version": 12,
+        "status": "review",
+        "method": "generated-complete-character-reference",
+        "selectionMaster": "assets/runtime/outfits/soraping/soraping_outfit_04.png",
+        "selectionSha256": "7469bd7d3c0f61372bc98612de693e00275d4bc12aebc1dff6992cafd30fc365",
+        "garmentCore": "assets/runtime/outfits/soraping/soraping_outfit_04.png",
+        "inputReference": "assets/master/outfits/soraping_outfit_04/v12/reference-worn.png",
+        "inputReferenceSha256": "4579d0848cb513dbd5a1c565fc39fbaa53c1c4e924bef36a977d91885e9eaa60",
+        "referenceSource": "assets/master/outfits/soraping_outfit_04/v12/reference-clean.png",
+        "referenceSha256": "317fa379ae0b2dff84018db62e2cf11d3f5a30418467ab6565e1f8a1b265f095",
+        "referenceSize": {
+          "width": 1173,
+          "height": 1341
+        },
+        "referenceBounds": {
+          "left": 170,
+          "top": 36,
+          "width": 766,
+          "height": 1251,
+          "transparentPixels": 1001648
+        },
+        "backgroundExtraction": null,
+        "cleanup": {
+          "minimumPixels": 80,
+          "changedAlphaPixels": 32,
+          "removedComponents": 14,
+          "limits": {
+            "maximumChangedAlphaPixels": 20000,
+            "maximumRemovedComponents": 500
+          }
+        },
+        "referencePlacement": {
+          "fit": "contain",
+          "position": "centre",
+          "canvas": {
+            "width": 600,
+            "height": 700
+          }
+        },
+        "runtimeBounds": {
+          "left": 87,
+          "top": 25,
+          "width": 392,
+          "height": 641,
+          "transparentPixels": 270113
+        },
+        "wearableLayer": "assets/runtime/reference-wearables/soraping/soraping_outfit_04-v12/worn.png",
+        "wornSprite": "assets/runtime/reference-wearables/soraping/soraping_outfit_04-v12/worn.png",
+        "reviewRegions": {
+          "neck": {
+            "x": 203,
+            "y": 313,
+            "width": 160,
+            "height": 130
+          },
+          "hands": {
+            "x": 148,
+            "y": 365,
+            "width": 270,
+            "height": 175
+          }
+        },
+        "invariants": [
+          "undressed-state-keeps-original-clasped-hands",
+          "selection-card-keeps-original-handless-garment",
+          "dressed-state-uses-one-complete-character-sprite",
+          "neck-is-visible-and-centred-under-the-chin",
+          "sleeves-arms-wrists-and-clasped-hands-form-one-continuous-body",
+          "exactly-one-hand-pair-is-visible"
+        ]
+      },
+      "renderLayers": []
+    },
+    {
+      "id": "soraping_outfit_05",
+      "characterId": "soraping",
+      "name": "분홍 조개 후드복",
+      "category": "hoodie",
+      "sprite": "assets/runtime/outfits/soraping/soraping_outfit_05.png",
+      "width": 391,
+      "height": 419,
+      "frame": {
+        "x": 232.02542372881356,
+        "y": 429.16101694915255,
+        "width": 236.83050847457628,
+        "height": 203.5677966101695
+      },
+      "wornSprite": "assets/runtime/reference-wearables/soraping/soraping_outfit_05-v12/worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/soraping/soraping_outfit_05-with-hands.png",
+        "frame": {
+          "x": 221,
+          "y": 394,
+          "width": 266,
+          "height": 222
+        },
+        "neck": {
+          "x": 0.5013404825737265,
+          "y": 0.012841091492776886
+        }
+      },
+      "productionTemplate": {
+        "version": 12,
+        "status": "review",
+        "method": "generated-complete-character-reference",
+        "selectionMaster": "assets/runtime/outfits/soraping/soraping_outfit_05.png",
+        "selectionSha256": "3274c069d9464267802df697f1f6cd18849d96908466fe85846b32b9ad5d26a0",
+        "garmentCore": "assets/runtime/outfits/soraping/soraping_outfit_05.png",
+        "inputReference": "assets/master/outfits/soraping_outfit_05/v12/reference-worn.png",
+        "inputReferenceSha256": "942344379829b6707186be8f2c82e8d2b3f6f394af21f7355004a57c27c9fe02",
+        "referenceSource": "assets/master/outfits/soraping_outfit_05/v12/reference-clean.png",
+        "referenceSha256": "c44948912692b6506c83e63e7ecdd9a1ffac19be2639c76c79b17dc1a5b09d49",
+        "referenceSize": {
+          "width": 1166,
+          "height": 1349
+        },
+        "referenceBounds": {
+          "left": 159,
+          "top": 24,
+          "width": 766,
+          "height": 1271,
+          "transparentPixels": 986465
+        },
+        "backgroundExtraction": null,
+        "cleanup": {
+          "minimumPixels": 80,
+          "changedAlphaPixels": 10,
+          "removedComponents": 7,
+          "limits": {
+            "maximumChangedAlphaPixels": 20000,
+            "maximumRemovedComponents": 500
+          }
+        },
+        "referencePlacement": {
+          "fit": "contain",
+          "position": "centre",
+          "canvas": {
+            "width": 600,
+            "height": 700
+          }
+        },
+        "runtimeBounds": {
+          "left": 82,
+          "top": 15,
+          "width": 394,
+          "height": 654,
+          "transparentPixels": 264272
+        },
+        "wearableLayer": "assets/runtime/reference-wearables/soraping/soraping_outfit_05-v12/worn.png",
+        "wornSprite": "assets/runtime/reference-wearables/soraping/soraping_outfit_05-v12/worn.png",
+        "reviewRegions": {
+          "neck": {
+            "x": 199,
+            "y": 309,
+            "width": 160,
+            "height": 130
+          },
+          "hands": {
+            "x": 144,
+            "y": 362,
+            "width": 270,
+            "height": 175
+          }
+        },
+        "invariants": [
+          "undressed-state-keeps-original-clasped-hands",
+          "selection-card-keeps-original-handless-garment",
+          "dressed-state-uses-one-complete-character-sprite",
+          "neck-is-visible-and-centred-under-the-chin",
+          "sleeves-arms-wrists-and-clasped-hands-form-one-continuous-body",
+          "exactly-one-hand-pair-is-visible"
+        ]
+      },
+      "renderLayers": []
+    },
+    {
+      "id": "soraping_outfit_06",
+      "characterId": "soraping",
+      "name": "아쿠아 조개 잠옷",
+      "category": "pajamas",
+      "sprite": "assets/runtime/outfits/soraping/soraping_outfit_06.png",
+      "width": 406,
+      "height": 405,
+      "frame": {
+        "x": 245.33050847457628,
+        "y": 429.16101694915255,
+        "width": 210.22033898305085,
+        "height": 211.55084745762713
+      },
+      "wornSprite": "assets/runtime/reference-wearables/soraping/soraping_outfit_06-v12/worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/soraping/soraping_outfit_06-with-hands.png",
+        "frame": {
+          "x": 231,
+          "y": 428,
+          "width": 241,
+          "height": 218
+        },
+        "neck": {
+          "x": 0.512,
+          "y": 0.014749262536873156
+        }
+      },
+      "productionTemplate": {
+        "version": 12,
+        "status": "review",
+        "method": "generated-complete-character-reference",
+        "selectionMaster": "assets/runtime/outfits/soraping/soraping_outfit_06.png",
+        "selectionSha256": "a9c5a9a8e272e64d67eb55259fe46b9e3e2b875f1c3599c0e73876849fecfb7c",
+        "garmentCore": "assets/runtime/outfits/soraping/soraping_outfit_06.png",
+        "inputReference": "assets/master/outfits/soraping_outfit_06/v12/reference-worn.png",
+        "inputReferenceSha256": "bb35c12f712934e0bd5b1e3da9bff92c7fe1fcdcfd9f39c8988cb7a5aba3ebc4",
+        "referenceSource": "assets/master/outfits/soraping_outfit_06/v12/reference-clean.png",
+        "referenceSha256": "bb35c12f712934e0bd5b1e3da9bff92c7fe1fcdcfd9f39c8988cb7a5aba3ebc4",
+        "referenceSize": {
+          "width": 1178,
+          "height": 1335
+        },
+        "referenceBounds": {
+          "left": 186,
+          "top": 32,
+          "width": 693,
+          "height": 1244,
+          "transparentPixels": 1046423
+        },
+        "backgroundExtraction": {
+          "method": "flat-green-key",
+          "algorithmVersion": 2,
+          "source": "assets/master/outfits/soraping_outfit_06/v12/flat-background.png",
+          "sourceSha256": "f1751a930c6dc10c31ca08556ff7915eb7890dc1284520ea88e5d8e0c13e11ca",
+          "stats": {
+            "algorithmVersion": 2,
+            "corePixels": 1046350,
+            "softEdgePixels": 2884,
+            "transparentPixels": 1046395,
+            "visiblePixels": 526235,
+            "transparentRatio": 0.6653790147714338,
+            "visibleRatio": 0.33462098522856615,
+            "residualCorePixels": 0,
+            "bounds": {
+              "left": 186,
+              "top": 32,
+              "width": 693,
+              "height": 1244
+            }
+          }
+        },
+        "cleanup": {
+          "minimumPixels": 80,
+          "changedAlphaPixels": 0,
+          "removedComponents": 0,
+          "limits": {
+            "maximumChangedAlphaPixels": 20000,
+            "maximumRemovedComponents": 500
+          }
+        },
+        "referencePlacement": {
+          "fit": "contain",
+          "position": "centre",
+          "canvas": {
+            "width": 600,
+            "height": 700
+          }
+        },
+        "runtimeBounds": {
+          "left": 94,
+          "top": 26,
+          "width": 354,
+          "height": 634,
+          "transparentPixels": 282667
+        },
+        "wearableLayer": "assets/runtime/reference-wearables/soraping/soraping_outfit_06-v12/worn.png",
+        "wornSprite": "assets/runtime/reference-wearables/soraping/soraping_outfit_06-v12/worn.png",
+        "reviewRegions": {
+          "neck": {
+            "x": 191,
+            "y": 311,
+            "width": 160,
+            "height": 130
+          },
+          "hands": {
+            "x": 136,
+            "y": 362,
+            "width": 270,
+            "height": 175
+          }
+        },
+        "invariants": [
+          "undressed-state-keeps-original-clasped-hands",
+          "selection-card-keeps-original-handless-garment",
+          "dressed-state-uses-one-complete-character-sprite",
+          "neck-is-visible-and-centred-under-the-chin",
+          "sleeves-arms-wrists-and-clasped-hands-form-one-continuous-body",
+          "exactly-one-hand-pair-is-visible"
+        ]
+      },
+      "renderLayers": []
+    },
+    {
+      "id": "challangping_outfit_01",
+      "characterId": "challangping",
+      "name": "코랄 꽃리본 파티복",
+      "category": "party",
+      "sprite": "assets/runtime/outfits/challangping/challangping_outfit_01.png",
+      "width": 470,
+      "height": 384,
+      "frame": {
+        "x": 124.31794871794875,
+        "y": 409.18974358974356,
+        "width": 339.7641025641026,
+        "height": 243.14871794871794
+      },
+      "wornSprite": "assets/runtime/reference-wearables/challangping/challangping_outfit_01-v12/worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/challangping/challangping_outfit_01-with-hands.png",
+        "frame": {
+          "x": 144,
+          "y": 421,
+          "width": 307,
+          "height": 229
+        },
+        "neck": {
+          "x": 0.5274122807017544,
+          "y": 0
+        }
+      },
+      "productionTemplate": {
+        "version": 12,
+        "status": "review",
+        "method": "generated-complete-character-reference",
+        "selectionMaster": "assets/runtime/outfits/challangping/challangping_outfit_01.png",
+        "selectionSha256": "559e5b5ef925276449e21be6d3d46945b8d6f6204c59250605f354c175d10a47",
+        "garmentCore": "assets/runtime/outfits/challangping/challangping_outfit_01.png",
+        "inputReference": "assets/master/outfits/challangping_outfit_01/v12/reference-worn.png",
+        "inputReferenceSha256": "5b15bc2b48a8adc036a194101d02b495d947801acc04f4b126f4549f2d7db1f2",
+        "referenceSource": "assets/master/outfits/challangping_outfit_01/v12/reference-clean.png",
+        "referenceSha256": "dbf133f235f30cba1038c814a94163c6b9f5d8d6e299f48af70df29c1e3a4819",
+        "referenceSize": {
+          "width": 1179,
+          "height": 1334
+        },
+        "referenceBounds": {
+          "left": 181,
+          "top": 27,
+          "width": 816,
+          "height": 1285,
+          "transparentPixels": 853897
+        },
+        "backgroundExtraction": null,
+        "cleanup": {
+          "minimumPixels": 80,
+          "changedAlphaPixels": 14,
+          "removedComponents": 11,
+          "limits": {
+            "maximumChangedAlphaPixels": 20000,
+            "maximumRemovedComponents": 500
+          }
+        },
+        "referencePlacement": {
+          "fit": "contain",
+          "position": "centre",
+          "canvas": {
+            "width": 600,
+            "height": 700
+          }
+        },
+        "runtimeBounds": {
+          "left": 92,
+          "top": 24,
+          "width": 416,
+          "height": 654,
+          "transparentPixels": 233298
+        },
+        "wearableLayer": "assets/runtime/reference-wearables/challangping/challangping_outfit_01-v12/worn.png",
+        "wornSprite": "assets/runtime/reference-wearables/challangping/challangping_outfit_01-v12/worn.png",
+        "reviewRegions": {
+          "neck": {
+            "x": 220,
+            "y": 318,
+            "width": 160,
+            "height": 130
+          },
+          "hands": {
+            "x": 165,
+            "y": 371,
+            "width": 270,
+            "height": 175
+          }
+        },
+        "invariants": [
+          "undressed-state-keeps-original-clasped-hands",
+          "selection-card-keeps-original-handless-garment",
+          "dressed-state-uses-one-complete-character-sprite",
+          "neck-is-visible-and-centred-under-the-chin",
+          "sleeves-arms-wrists-and-clasped-hands-form-one-continuous-body",
+          "exactly-one-hand-pair-is-visible"
+        ]
+      },
+      "renderLayers": []
+    },
+    {
+      "id": "challangping_outfit_02",
+      "characterId": "challangping",
+      "name": "민트 꽃잎 드레스",
+      "category": "petal_dress",
+      "sprite": "assets/runtime/outfits/challangping/challangping_outfit_02.png",
+      "width": 438,
+      "height": 373,
+      "frame": {
+        "x": 124.31794871794875,
+        "y": 409.18974358974356,
+        "width": 339.7641025641026,
+        "height": 243.14871794871794
+      },
+      "wornSprite": "assets/runtime/reference-wearables/challangping/challangping_outfit_02-v12/worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/challangping/challangping_outfit_02-with-hands.png",
+        "frame": {
+          "x": 162,
+          "y": 420,
+          "width": 286,
+          "height": 230
+        },
+        "neck": {
+          "x": 0.5023310023310024,
+          "y": 0.0029069767441860465
+        }
+      },
+      "productionTemplate": {
+        "version": 12,
+        "status": "review",
+        "method": "generated-complete-character-reference",
+        "selectionMaster": "assets/runtime/outfits/challangping/challangping_outfit_02.png",
+        "selectionSha256": "fa94b1b3f4c473561958b3d43c8041341f33db6bab59dfd14f0ccdcf82924307",
+        "garmentCore": "assets/runtime/outfits/challangping/challangping_outfit_02.png",
+        "inputReference": "assets/master/outfits/challangping_outfit_02/v12/reference-worn.png",
+        "inputReferenceSha256": "e0dff06a4c279f955a40c5cce3f0f100105469280f5ee1214f658aca0d000f27",
+        "referenceSource": "assets/master/outfits/challangping_outfit_02/v12/reference-clean.png",
+        "referenceSha256": "964b0340ca2194fe14bf84304f65df494f53747422e59aef3383a011c79a9abf",
+        "referenceSize": {
+          "width": 1147,
+          "height": 1372
+        },
+        "referenceBounds": {
+          "left": 171,
+          "top": 34,
+          "width": 790,
+          "height": 1294,
+          "transparentPixels": 872499
+        },
+        "backgroundExtraction": {
+          "method": "flat-green-key",
+          "algorithmVersion": 2,
+          "source": "assets/master/outfits/challangping_outfit_02/v12/flat-background.png",
+          "sourceSha256": "3ae506b9af745794dc017d927c066ab3ce0628c646d9cd9ecba20dd7135d7490",
+          "stats": {
+            "algorithmVersion": 2,
+            "corePixels": 872394,
+            "softEdgePixels": 5026,
+            "transparentPixels": 872430,
+            "visiblePixels": 701254,
+            "transparentRatio": 0.5543870306872282,
+            "visibleRatio": 0.44561296931277183,
+            "residualCorePixels": 0,
+            "bounds": {
+              "left": 171,
+              "top": 34,
+              "width": 790,
+              "height": 1294
+            }
+          }
+        },
+        "cleanup": {
+          "minimumPixels": 80,
+          "changedAlphaPixels": 47,
+          "removedComponents": 1,
+          "limits": {
+            "maximumChangedAlphaPixels": 20000,
+            "maximumRemovedComponents": 500
+          }
+        },
+        "referencePlacement": {
+          "fit": "contain",
+          "position": "centre",
+          "canvas": {
+            "width": 600,
+            "height": 700
+          }
+        },
+        "runtimeBounds": {
+          "left": 94,
+          "top": 17,
+          "width": 404,
+          "height": 661,
+          "transparentPixels": 236474
+        },
+        "wearableLayer": "assets/runtime/reference-wearables/challangping/challangping_outfit_02-v12/worn.png",
+        "wornSprite": "assets/runtime/reference-wearables/challangping/challangping_outfit_02-v12/worn.png",
+        "reviewRegions": {
+          "neck": {
+            "x": 216,
+            "y": 314,
+            "width": 160,
+            "height": 130
+          },
+          "hands": {
+            "x": 161,
+            "y": 367,
+            "width": 270,
+            "height": 175
+          }
+        },
+        "invariants": [
+          "undressed-state-keeps-original-clasped-hands",
+          "selection-card-keeps-original-handless-garment",
+          "dressed-state-uses-one-complete-character-sprite",
+          "neck-is-visible-and-centred-under-the-chin",
+          "sleeves-arms-wrists-and-clasped-hands-form-one-continuous-body",
+          "exactly-one-hand-pair-is-visible"
+        ]
+      },
+      "renderLayers": []
+    },
+    {
+      "id": "challangping_outfit_03",
+      "characterId": "challangping",
+      "name": "노란 데이지 원피스",
+      "category": "pinafore",
+      "sprite": "assets/runtime/outfits/challangping/challangping_outfit_03.png",
+      "width": 434,
+      "height": 374,
+      "frame": {
+        "x": 124.31794871794875,
+        "y": 409.18974358974356,
+        "width": 339.7641025641026,
+        "height": 243.14871794871794
+      },
+      "wornSprite": "assets/runtime/reference-wearables/challangping/challangping_outfit_03-v12/worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/challangping/challangping_outfit_03-with-hands.png",
+        "frame": {
+          "x": 162,
+          "y": 420,
+          "width": 282,
+          "height": 230
+        },
+        "neck": {
+          "x": 0.5095465393794749,
+          "y": 0.002932551319648094
+        }
+      },
+      "productionTemplate": {
+        "version": 12,
+        "status": "review",
+        "method": "generated-complete-character-reference",
+        "selectionMaster": "assets/runtime/outfits/challangping/challangping_outfit_03.png",
+        "selectionSha256": "4fd451d1099d96ddb202b0fddf780d79667f8f50e8d715aad9fba54ca669ed1f",
+        "garmentCore": "assets/runtime/outfits/challangping/challangping_outfit_03.png",
+        "inputReference": "assets/master/outfits/challangping_outfit_03/v12/reference-worn.png",
+        "inputReferenceSha256": "0fdd48cb74c1e0de4e13b2055da88bd09c57759e9c4e5b72694da5d123851d4e",
+        "referenceSource": "assets/master/outfits/challangping_outfit_03/v12/reference-clean.png",
+        "referenceSha256": "57ea9483f588c2589f272b6d435b17462ab4049353871facc0144f19e715e3d8",
+        "referenceSize": {
+          "width": 1161,
+          "height": 1354
+        },
+        "referenceBounds": {
+          "left": 122,
+          "top": 3,
+          "width": 945,
+          "height": 1332,
+          "transparentPixels": 785584
+        },
+        "backgroundExtraction": null,
+        "cleanup": {
+          "minimumPixels": 80,
+          "changedAlphaPixels": 4,
+          "removedComponents": 3,
+          "limits": {
+            "maximumChangedAlphaPixels": 20000,
+            "maximumRemovedComponents": 500
+          }
+        },
+        "referencePlacement": {
+          "fit": "contain",
+          "position": "centre",
+          "canvas": {
+            "width": 600,
+            "height": 700
+          }
+        },
+        "runtimeBounds": {
+          "left": 63,
+          "top": 2,
+          "width": 489,
+          "height": 688,
+          "transparentPixels": 209464
+        },
+        "wearableLayer": "assets/runtime/reference-wearables/challangping/challangping_outfit_03-v12/worn.png",
+        "wornSprite": "assets/runtime/reference-wearables/challangping/challangping_outfit_03-v12/worn.png",
+        "reviewRegions": {
+          "neck": {
+            "x": 228,
+            "y": 312,
+            "width": 160,
+            "height": 130
+          },
+          "hands": {
+            "x": 173,
+            "y": 367,
+            "width": 270,
+            "height": 175
+          }
+        },
+        "invariants": [
+          "undressed-state-keeps-original-clasped-hands",
+          "selection-card-keeps-original-handless-garment",
+          "dressed-state-uses-one-complete-character-sprite",
+          "neck-is-visible-and-centred-under-the-chin",
+          "sleeves-arms-wrists-and-clasped-hands-form-one-continuous-body",
+          "exactly-one-hand-pair-is-visible"
+        ]
+      },
+      "renderLayers": []
+    },
+    {
+      "id": "challangping_outfit_04",
+      "characterId": "challangping",
+      "name": "하늘색 꽃 멜빵옷",
+      "category": "dungarees",
+      "sprite": "assets/runtime/outfits/challangping/challangping_outfit_04.png",
+      "width": 424,
+      "height": 403,
+      "frame": {
+        "x": 166.98974358974363,
+        "y": 409.18974358974356,
+        "width": 254.42051282051284,
+        "height": 256.03076923076924
+      },
+      "wornSprite": "assets/runtime/reference-wearables/challangping/challangping_outfit_04-v12/worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/challangping/challangping_outfit_04-with-hands.png",
+        "frame": {
+          "x": 171,
+          "y": 421,
+          "width": 260,
+          "height": 227
+        },
+        "neck": {
+          "x": 0.5193798449612403,
+          "y": 0
+        }
+      },
+      "productionTemplate": {
+        "version": 12,
+        "status": "review",
+        "method": "generated-complete-character-reference",
+        "selectionMaster": "assets/runtime/outfits/challangping/challangping_outfit_04.png",
+        "selectionSha256": "cd23fa969aea3f3b08d2b214d0da7286ea8036cb60c5855f0f91a11a27255696",
+        "garmentCore": "assets/runtime/outfits/challangping/challangping_outfit_04.png",
+        "inputReference": "assets/master/outfits/challangping_outfit_04/v12/reference-worn.png",
+        "inputReferenceSha256": "0a55c21258c211e52ab8b4bdf2f9ab270cfe36f58448eeb01ba4e5940e4fc126",
+        "referenceSource": "assets/master/outfits/challangping_outfit_04/v12/reference-clean.png",
+        "referenceSha256": "a4060a5d1733afdcd23ee72897c2bce5cf114b4b15b55d01c8474405fe80c17d",
+        "referenceSize": {
+          "width": 1190,
+          "height": 1322
+        },
+        "referenceBounds": {
+          "left": 157,
+          "top": 10,
+          "width": 869,
+          "height": 1264,
+          "transparentPixels": 877959
+        },
+        "backgroundExtraction": null,
+        "cleanup": {
+          "minimumPixels": 80,
+          "changedAlphaPixels": 2,
+          "removedComponents": 2,
+          "limits": {
+            "maximumChangedAlphaPixels": 20000,
+            "maximumRemovedComponents": 500
+          }
+        },
+        "referencePlacement": {
+          "fit": "contain",
+          "position": "centre",
+          "canvas": {
+            "width": 600,
+            "height": 700
+          }
+        },
+        "runtimeBounds": {
+          "left": 79,
+          "top": 21,
+          "width": 438,
+          "height": 638,
+          "transparentPixels": 242822
+        },
+        "wearableLayer": "assets/runtime/reference-wearables/challangping/challangping_outfit_04-v12/worn.png",
+        "wornSprite": "assets/runtime/reference-wearables/challangping/challangping_outfit_04-v12/worn.png",
+        "reviewRegions": {
+          "neck": {
+            "x": 218,
+            "y": 308,
+            "width": 160,
+            "height": 130
+          },
+          "hands": {
+            "x": 163,
+            "y": 359,
+            "width": 270,
+            "height": 175
+          }
+        },
+        "invariants": [
+          "undressed-state-keeps-original-clasped-hands",
+          "selection-card-keeps-original-handless-garment",
+          "dressed-state-uses-one-complete-character-sprite",
+          "neck-is-visible-and-centred-under-the-chin",
+          "sleeves-arms-wrists-and-clasped-hands-form-one-continuous-body",
+          "exactly-one-hand-pair-is-visible"
+        ]
+      },
+      "renderLayers": []
+    },
+    {
+      "id": "challangping_outfit_05",
+      "characterId": "challangping",
+      "name": "코랄 체크 원피스",
+      "category": "gingham",
+      "sprite": "assets/runtime/outfits/challangping/challangping_outfit_05.png",
+      "width": 437,
+      "height": 405,
+      "frame": {
+        "x": 124.31794871794875,
+        "y": 409.18974358974356,
+        "width": 339.7641025641026,
+        "height": 243.14871794871794
+      },
+      "wornSprite": "assets/runtime/reference-wearables/challangping/challangping_outfit_05-v12/worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/challangping/challangping_outfit_05-with-hands.png",
+        "frame": {
+          "x": 164,
+          "y": 420,
+          "width": 278,
+          "height": 230
+        },
+        "neck": {
+          "x": 0.5119331742243437,
+          "y": 0.002890173410404624
+        }
+      },
+      "productionTemplate": {
+        "version": 12,
+        "status": "review",
+        "method": "generated-complete-character-reference",
+        "selectionMaster": "assets/runtime/outfits/challangping/challangping_outfit_05.png",
+        "selectionSha256": "b8dce4be2a82b5089649feadc8fd14285ee3d25214596b26a01c2aa1a96ee3a6",
+        "garmentCore": "assets/runtime/outfits/challangping/challangping_outfit_05.png",
+        "inputReference": "assets/master/outfits/challangping_outfit_05/v12/reference-worn.png",
+        "inputReferenceSha256": "1d535d23f6b098898bf08d4ae208c2e9abeb628a2465dcc7f2fed4e7f1742ed2",
+        "referenceSource": "assets/master/outfits/challangping_outfit_05/v12/reference-clean.png",
+        "referenceSha256": "dc9b0008241587a1d6ac4896679d65206423ac9c63539e77fcb4b912c7bbc0d0",
+        "referenceSize": {
+          "width": 1180,
+          "height": 1333
+        },
+        "referenceBounds": {
+          "left": 95,
+          "top": 58,
+          "width": 973,
+          "height": 1221,
+          "transparentPixels": 851886
+        },
+        "backgroundExtraction": null,
+        "cleanup": {
+          "minimumPixels": 80,
+          "changedAlphaPixels": 55,
+          "removedComponents": 15,
+          "limits": {
+            "maximumChangedAlphaPixels": 20000,
+            "maximumRemovedComponents": 500
+          }
+        },
+        "referencePlacement": {
+          "fit": "contain",
+          "position": "centre",
+          "canvas": {
+            "width": 600,
+            "height": 700
+          }
+        },
+        "runtimeBounds": {
+          "left": 48,
+          "top": 40,
+          "width": 495,
+          "height": 622,
+          "transparentPixels": 233027
+        },
+        "wearableLayer": "assets/runtime/reference-wearables/challangping/challangping_outfit_05-v12/worn.png",
+        "wornSprite": "assets/runtime/reference-wearables/challangping/challangping_outfit_05-v12/worn.png",
+        "reviewRegions": {
+          "neck": {
+            "x": 216,
+            "y": 320,
+            "width": 160,
+            "height": 130
+          },
+          "hands": {
+            "x": 161,
+            "y": 370,
+            "width": 270,
+            "height": 175
+          }
+        },
+        "invariants": [
+          "undressed-state-keeps-original-clasped-hands",
+          "selection-card-keeps-original-handless-garment",
+          "dressed-state-uses-one-complete-character-sprite",
+          "neck-is-visible-and-centred-under-the-chin",
+          "sleeves-arms-wrists-and-clasped-hands-form-one-continuous-body",
+          "exactly-one-hand-pair-is-visible"
+        ]
+      },
+      "renderLayers": []
+    },
+    {
+      "id": "challangping_outfit_06",
+      "characterId": "challangping",
+      "name": "라일락 꽃 잠옷",
+      "category": "pajamas",
+      "sprite": "assets/runtime/outfits/challangping/challangping_outfit_06.png",
+      "width": 425,
+      "height": 394,
+      "frame": {
+        "x": 166.98974358974363,
+        "y": 409.18974358974356,
+        "width": 254.42051282051284,
+        "height": 256.03076923076924
+      },
+      "wornSprite": "assets/runtime/reference-wearables/challangping/challangping_outfit_06-v12/worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/challangping/challangping_outfit_06-with-hands.png",
+        "frame": {
+          "x": 172,
+          "y": 421,
+          "width": 260,
+          "height": 224
+        },
+        "neck": {
+          "x": 0.5152671755725191,
+          "y": 0
+        }
+      },
+      "productionTemplate": {
+        "version": 12,
+        "status": "review",
+        "method": "generated-complete-character-reference",
+        "selectionMaster": "assets/runtime/outfits/challangping/challangping_outfit_06.png",
+        "selectionSha256": "3614c1287b5ed172ee3a22814d3ce8eb44a50515832193ced77722587de19707",
+        "garmentCore": "assets/runtime/outfits/challangping/challangping_outfit_06.png",
+        "inputReference": "assets/master/outfits/challangping_outfit_06/v12/reference-worn.png",
+        "inputReferenceSha256": "93e51505f6c11fda57e2f697bd84567a9c70a9f583951fd04a9cc8b4f159ef5f",
+        "referenceSource": "assets/master/outfits/challangping_outfit_06/v12/reference-clean.png",
+        "referenceSha256": "49103fbcac0c83ad3815410297bf513c56902def8bcd85d29366be239543d319",
+        "referenceSize": {
+          "width": 1166,
+          "height": 1349
+        },
+        "referenceBounds": {
+          "left": 87,
+          "top": 36,
+          "width": 997,
+          "height": 1255,
+          "transparentPixels": 767898
+        },
+        "backgroundExtraction": null,
+        "cleanup": {
+          "minimumPixels": 80,
+          "changedAlphaPixels": 20,
+          "removedComponents": 14,
+          "limits": {
+            "maximumChangedAlphaPixels": 20000,
+            "maximumRemovedComponents": 500
+          }
+        },
+        "referencePlacement": {
+          "fit": "contain",
+          "position": "centre",
+          "canvas": {
+            "width": 600,
+            "height": 700
+          }
+        },
+        "runtimeBounds": {
+          "left": 44,
+          "top": 21,
+          "width": 514,
+          "height": 647,
+          "transparentPixels": 206289
+        },
+        "wearableLayer": "assets/runtime/reference-wearables/challangping/challangping_outfit_06-v12/worn.png",
+        "wornSprite": "assets/runtime/reference-wearables/challangping/challangping_outfit_06-v12/worn.png",
+        "reviewRegions": {
+          "neck": {
+            "x": 221,
+            "y": 312,
+            "width": 160,
+            "height": 130
+          },
+          "hands": {
+            "x": 166,
+            "y": 364,
+            "width": 270,
+            "height": 175
+          }
+        },
+        "invariants": [
+          "undressed-state-keeps-original-clasped-hands",
+          "selection-card-keeps-original-handless-garment",
+          "dressed-state-uses-one-complete-character-sprite",
+          "neck-is-visible-and-centred-under-the-chin",
+          "sleeves-arms-wrists-and-clasped-hands-form-one-continuous-body",
+          "exactly-one-hand-pair-is-visible"
+        ]
+      },
+      "renderLayers": []
+    },
+    {
+      "id": "bangulping_outfit_01",
+      "characterId": "bangulping",
+      "name": "청록 별 세일러복",
+      "category": "sailor",
+      "sprite": "assets/runtime/outfits/bangulping/bangulping_outfit_01.png",
+      "width": 455,
+      "height": 405,
+      "frame": {
+        "x": 158.69633507853405,
+        "y": 422.11518324607334,
+        "width": 302.69109947643983,
+        "height": 216.61780104712042
+      },
+      "wornSprite": "assets/runtime/reference-wearables/bangulping/bangulping_outfit_01-v12/worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/bangulping/bangulping_outfit_01-with-hands.png",
+        "frame": {
+          "x": 159,
+          "y": 426,
+          "width": 310,
+          "height": 209
+        },
+        "neck": {
+          "x": 0.4969450101832994,
+          "y": 0.00906344410876133
+        }
+      },
+      "productionTemplate": {
+        "version": 12,
+        "status": "review",
+        "method": "generated-complete-character-reference",
+        "selectionMaster": "assets/runtime/outfits/bangulping/bangulping_outfit_01.png",
+        "selectionSha256": "dd96536a8788dfd00a07b5a2774b4ff9e99cfa2e95ea43acc441a976122ac4d6",
+        "garmentCore": "assets/runtime/outfits/bangulping/bangulping_outfit_01.png",
+        "inputReference": "assets/master/outfits/bangulping_outfit_01/v12/reference-worn.png",
+        "inputReferenceSha256": "faa8a7ea1a49daf872348f6331bfa1b473dc9334c5838645fed74cd589c5573b",
+        "referenceSource": "assets/master/outfits/bangulping_outfit_01/v12/reference-clean.png",
+        "referenceSha256": "fc9d37903644152c2d1f189255ac7dc0c1f84b231b23d4cac1b4b685f34b4e7d",
+        "referenceSize": {
+          "width": 1173,
+          "height": 1341
+        },
+        "referenceBounds": {
+          "left": 94,
+          "top": 28,
+          "width": 983,
+          "height": 1269,
+          "transparentPixels": 813953
+        },
+        "backgroundExtraction": null,
+        "cleanup": {
+          "minimumPixels": 80,
+          "changedAlphaPixels": 19,
+          "removedComponents": 7,
+          "limits": {
+            "maximumChangedAlphaPixels": 20000,
+            "maximumRemovedComponents": 500
+          }
+        },
+        "referencePlacement": {
+          "fit": "contain",
+          "position": "centre",
+          "canvas": {
+            "width": 600,
+            "height": 700
+          }
+        },
+        "runtimeBounds": {
+          "left": 48,
+          "top": 21,
+          "width": 503,
+          "height": 650,
+          "transparentPixels": 221011
+        },
+        "wearableLayer": "assets/runtime/reference-wearables/bangulping/bangulping_outfit_01-v12/worn.png",
+        "wornSprite": "assets/runtime/reference-wearables/bangulping/bangulping_outfit_01-v12/worn.png",
+        "reviewRegions": {
+          "neck": {
+            "x": 220,
+            "y": 314,
+            "width": 160,
+            "height": 130
+          },
+          "hands": {
+            "x": 165,
+            "y": 366,
+            "width": 270,
+            "height": 175
+          }
+        },
+        "invariants": [
+          "undressed-state-keeps-original-clasped-hands",
+          "selection-card-keeps-original-handless-garment",
+          "dressed-state-uses-one-complete-character-sprite",
+          "neck-is-visible-and-centred-under-the-chin",
+          "sleeves-arms-wrists-and-clasped-hands-form-one-continuous-body",
+          "exactly-one-hand-pair-is-visible"
+        ]
+      },
+      "renderLayers": []
+    },
+    {
+      "id": "bangulping_outfit_02",
+      "characterId": "bangulping",
+      "name": "보라 별 파티복",
+      "category": "party",
+      "sprite": "assets/runtime/outfits/bangulping/bangulping_outfit_02.png",
+      "width": 434,
+      "height": 399,
+      "frame": {
+        "x": 158.69633507853405,
+        "y": 422.11518324607334,
+        "width": 302.69109947643983,
+        "height": 216.61780104712042
+      },
+      "wornSprite": "assets/runtime/reference-wearables/bangulping/bangulping_outfit_02-v12/worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/bangulping/bangulping_outfit_02-with-hands.png",
+        "frame": {
+          "x": 159,
+          "y": 426,
+          "width": 310,
+          "height": 219
+        },
+        "neck": {
+          "x": 0.49572649572649574,
+          "y": 0.00906344410876133
+        }
+      },
+      "productionTemplate": {
+        "version": 12,
+        "status": "review",
+        "method": "generated-complete-character-reference",
+        "selectionMaster": "assets/runtime/outfits/bangulping/bangulping_outfit_02.png",
+        "selectionSha256": "ff25233186ea3681e657508a5987aa9c3759658e69b3bea54da03fbe2b09165d",
+        "garmentCore": "assets/runtime/outfits/bangulping/bangulping_outfit_02.png",
+        "inputReference": "assets/master/outfits/bangulping_outfit_02/v12/reference-worn.png",
+        "inputReferenceSha256": "300f05ff075ada96c0c2bdec2b753038ebb67b741607d9fd9f32eb1283a8e858",
+        "referenceSource": "assets/master/outfits/bangulping_outfit_02/v12/reference-clean.png",
+        "referenceSha256": "300f05ff075ada96c0c2bdec2b753038ebb67b741607d9fd9f32eb1283a8e858",
+        "referenceSize": {
+          "width": 1024,
+          "height": 1536
+        },
+        "referenceBounds": {
+          "left": 18,
+          "top": 89,
+          "width": 988,
+          "height": 1346,
+          "transparentPixels": 729811
+        },
+        "backgroundExtraction": {
+          "method": "flat-green-key",
+          "algorithmVersion": 2,
+          "source": "assets/master/outfits/bangulping_outfit_02/v12/flat-background.png",
+          "sourceSha256": "b40d19c98915e2523de91076b39057a3bb81b0d3b4f7e10efb181466f974653d",
+          "stats": {
+            "algorithmVersion": 2,
+            "corePixels": 729423,
+            "softEdgePixels": 4241,
+            "transparentPixels": 729763,
+            "visiblePixels": 843101,
+            "transparentRatio": 0.4639708201090495,
+            "visibleRatio": 0.5360291798909506,
+            "residualCorePixels": 0,
+            "bounds": {
+              "left": 18,
+              "top": 89,
+              "width": 988,
+              "height": 1346
+            }
+          }
+        },
+        "cleanup": {
+          "minimumPixels": 80,
+          "changedAlphaPixels": 0,
+          "removedComponents": 0,
+          "limits": {
+            "maximumChangedAlphaPixels": 20000,
+            "maximumRemovedComponents": 500
+          }
+        },
+        "referencePlacement": {
+          "fit": "contain",
+          "position": "centre",
+          "canvas": {
+            "width": 600,
+            "height": 700
+          }
+        },
+        "runtimeBounds": {
+          "left": 74,
+          "top": 40,
+          "width": 451,
+          "height": 615,
+          "transparentPixels": 243671
+        },
+        "wearableLayer": "assets/runtime/reference-wearables/bangulping/bangulping_outfit_02-v12/worn.png",
+        "wornSprite": "assets/runtime/reference-wearables/bangulping/bangulping_outfit_02-v12/worn.png",
+        "reviewRegions": {
+          "neck": {
+            "x": 220,
+            "y": 317,
+            "width": 160,
+            "height": 130
+          },
+          "hands": {
+            "x": 165,
+            "y": 366,
+            "width": 270,
+            "height": 175
+          }
+        },
+        "invariants": [
+          "undressed-state-keeps-original-clasped-hands",
+          "selection-card-keeps-original-handless-garment",
+          "dressed-state-uses-one-complete-character-sprite",
+          "neck-is-visible-and-centred-under-the-chin",
+          "sleeves-arms-wrists-and-clasped-hands-form-one-continuous-body",
+          "exactly-one-hand-pair-is-visible"
+        ]
+      },
+      "renderLayers": []
+    },
+    {
+      "id": "bangulping_outfit_03",
+      "characterId": "bangulping",
+      "name": "민트 별 후드복",
+      "category": "hoodie",
+      "sprite": "assets/runtime/outfits/bangulping/bangulping_outfit_03.png",
+      "width": 452,
+      "height": 406,
+      "frame": {
+        "x": 182.3664921465969,
+        "y": 422.11518324607334,
+        "width": 255.35078534031416,
+        "height": 219.4869109947644
+      },
+      "wornSprite": "assets/runtime/reference-wearables/bangulping/bangulping_outfit_03-v12/worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/bangulping/bangulping_outfit_03-with-hands.png",
+        "frame": {
+          "x": 163,
+          "y": 424,
+          "width": 300,
+          "height": 223
+        },
+        "neck": {
+          "x": 0.5011185682326622,
+          "y": 0.018072289156626505
+        }
+      },
+      "productionTemplate": {
+        "version": 12,
+        "status": "review",
+        "method": "generated-complete-character-reference",
+        "selectionMaster": "assets/runtime/outfits/bangulping/bangulping_outfit_03.png",
+        "selectionSha256": "4e3aba776eb818911901087a8a2e397d6db56a4e69dad908c4f7f1c862878014",
+        "garmentCore": "assets/runtime/outfits/bangulping/bangulping_outfit_03.png",
+        "inputReference": "assets/master/outfits/bangulping_outfit_03/v12/reference-worn.png",
+        "inputReferenceSha256": "1fad2dca2d126009995640dbff78f55fe9a1b0fb555bccdd48330df0eb68d167",
+        "referenceSource": "assets/master/outfits/bangulping_outfit_03/v12/reference-clean.png",
+        "referenceSha256": "d880d5075d092804c3a80d68325d9a49b857a0820954be074ce22754665275ec",
+        "referenceSize": {
+          "width": 1161,
+          "height": 1355
+        },
+        "referenceBounds": {
+          "left": 91,
+          "top": 39,
+          "width": 985,
+          "height": 1278,
+          "transparentPixels": 846882
+        },
+        "backgroundExtraction": null,
+        "cleanup": {
+          "minimumPixels": 80,
+          "changedAlphaPixels": 40,
+          "removedComponents": 24,
+          "limits": {
+            "maximumChangedAlphaPixels": 20000,
+            "maximumRemovedComponents": 500
+          }
+        },
+        "referencePlacement": {
+          "fit": "contain",
+          "position": "centre",
+          "canvas": {
+            "width": 600,
+            "height": 700
+          }
+        },
+        "runtimeBounds": {
+          "left": 47,
+          "top": 20,
+          "width": 509,
+          "height": 661,
+          "transparentPixels": 225606
+        },
+        "wearableLayer": "assets/runtime/reference-wearables/bangulping/bangulping_outfit_03-v12/worn.png",
+        "wornSprite": "assets/runtime/reference-wearables/bangulping/bangulping_outfit_03-v12/worn.png",
+        "reviewRegions": {
+          "neck": {
+            "x": 222,
+            "y": 317,
+            "width": 160,
+            "height": 130
+          },
+          "hands": {
+            "x": 167,
+            "y": 370,
+            "width": 270,
+            "height": 175
+          }
+        },
+        "invariants": [
+          "undressed-state-keeps-original-clasped-hands",
+          "selection-card-keeps-original-handless-garment",
+          "dressed-state-uses-one-complete-character-sprite",
+          "neck-is-visible-and-centred-under-the-chin",
+          "sleeves-arms-wrists-and-clasped-hands-form-one-continuous-body",
+          "exactly-one-hand-pair-is-visible"
+        ]
+      },
+      "renderLayers": []
+    },
+    {
+      "id": "bangulping_outfit_04",
+      "characterId": "bangulping",
+      "name": "민트 별 멜빵옷",
+      "category": "dungarees",
+      "sprite": "assets/runtime/outfits/bangulping/bangulping_outfit_04.png",
+      "width": 385,
+      "height": 389,
+      "frame": {
+        "x": 196.71204188481678,
+        "y": 422.11518324607334,
+        "width": 226.65968586387436,
+        "height": 228.09424083769633
+      },
+      "wornSprite": "assets/runtime/reference-wearables/bangulping/bangulping_outfit_04-v12/worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/bangulping/bangulping_outfit_04-with-hands.png",
+        "frame": {
+          "x": 183,
+          "y": 426,
+          "width": 260,
+          "height": 214
+        },
+        "neck": {
+          "x": 0.49876237623762376,
+          "y": 0.009036144578313253
+        }
+      },
+      "productionTemplate": {
+        "version": 12,
+        "status": "review",
+        "method": "generated-complete-character-reference",
+        "selectionMaster": "assets/runtime/outfits/bangulping/bangulping_outfit_04.png",
+        "selectionSha256": "46993881387265bb0eddec8419fa4ba6683d6674ef9c453c37ed34b82acf3550",
+        "garmentCore": "assets/runtime/outfits/bangulping/bangulping_outfit_04.png",
+        "inputReference": "assets/master/outfits/bangulping_outfit_04/v12/reference-worn.png",
+        "inputReferenceSha256": "144aef964f6569169f7a731bbffe8b3c377c94d4bddc3bb13763eaa23688ab1a",
+        "referenceSource": "assets/master/outfits/bangulping_outfit_04/v12/reference-clean.png",
+        "referenceSha256": "94f72f626c37f90b54cb114c04fa42a4bc34b9a96ee2159eac85186453404228",
+        "referenceSize": {
+          "width": 1180,
+          "height": 1333
+        },
+        "referenceBounds": {
+          "left": 47,
+          "top": 54,
+          "width": 1058,
+          "height": 1213,
+          "transparentPixels": 833171
+        },
+        "backgroundExtraction": null,
+        "cleanup": {
+          "minimumPixels": 80,
+          "changedAlphaPixels": 31,
+          "removedComponents": 18,
+          "limits": {
+            "maximumChangedAlphaPixels": 20000,
+            "maximumRemovedComponents": 500
+          }
+        },
+        "referencePlacement": {
+          "fit": "contain",
+          "position": "centre",
+          "canvas": {
+            "width": 600,
+            "height": 700
+          }
+        },
+        "runtimeBounds": {
+          "left": 24,
+          "top": 39,
+          "width": 538,
+          "height": 617,
+          "transparentPixels": 228236
+        },
+        "wearableLayer": "assets/runtime/reference-wearables/bangulping/bangulping_outfit_04-v12/worn.png",
+        "wornSprite": "assets/runtime/reference-wearables/bangulping/bangulping_outfit_04-v12/worn.png",
+        "reviewRegions": {
+          "neck": {
+            "x": 213,
+            "y": 317,
+            "width": 160,
+            "height": 130
+          },
+          "hands": {
+            "x": 158,
+            "y": 366,
+            "width": 270,
+            "height": 175
+          }
+        },
+        "invariants": [
+          "undressed-state-keeps-original-clasped-hands",
+          "selection-card-keeps-original-handless-garment",
+          "dressed-state-uses-one-complete-character-sprite",
+          "neck-is-visible-and-centred-under-the-chin",
+          "sleeves-arms-wrists-and-clasped-hands-form-one-continuous-body",
+          "exactly-one-hand-pair-is-visible"
+        ]
+      },
+      "renderLayers": []
+    },
+    {
+      "id": "bangulping_outfit_05",
+      "characterId": "bangulping",
+      "name": "노란 별 원피스",
+      "category": "pinafore",
+      "sprite": "assets/runtime/outfits/bangulping/bangulping_outfit_05.png",
+      "width": 448,
+      "height": 398,
+      "frame": {
+        "x": 158.69633507853405,
+        "y": 422.11518324607334,
+        "width": 302.69109947643983,
+        "height": 216.61780104712042
+      },
+      "wornSprite": "assets/runtime/reference-wearables/bangulping/bangulping_outfit_05-v12/worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/bangulping/bangulping_outfit_05-with-hands.png",
+        "frame": {
+          "x": 161,
+          "y": 426,
+          "width": 306,
+          "height": 224
+        },
+        "neck": {
+          "x": 0.49783549783549785,
+          "y": 0.008875739644970414
+        }
+      },
+      "productionTemplate": {
+        "version": 12,
+        "status": "review",
+        "method": "generated-complete-character-reference",
+        "selectionMaster": "assets/runtime/outfits/bangulping/bangulping_outfit_05.png",
+        "selectionSha256": "159a5cbec8c07e168502cccc11e8a4713bf974638b9e659eb3e1b1a565a55505",
+        "garmentCore": "assets/runtime/outfits/bangulping/bangulping_outfit_05.png",
+        "inputReference": "assets/master/outfits/bangulping_outfit_05/v12/reference-worn.png",
+        "inputReferenceSha256": "f0d79a765a8971e1b755125d0e6feee06f0a4b857e07b24582bce731a5826b83",
+        "referenceSource": "assets/master/outfits/bangulping_outfit_05/v12/reference-clean.png",
+        "referenceSha256": "7ca96b15470d3eaa84f834d0b913577dc8faa99ef6ff1e6f795a4de0a41d21f2",
+        "referenceSize": {
+          "width": 1175,
+          "height": 1339
+        },
+        "referenceBounds": {
+          "left": 34,
+          "top": 37,
+          "width": 1083,
+          "height": 1265,
+          "transparentPixels": 731887
+        },
+        "backgroundExtraction": null,
+        "cleanup": {
+          "minimumPixels": 80,
+          "changedAlphaPixels": 38,
+          "removedComponents": 27,
+          "limits": {
+            "maximumChangedAlphaPixels": 20000,
+            "maximumRemovedComponents": 500
+          }
+        },
+        "referencePlacement": {
+          "fit": "contain",
+          "position": "centre",
+          "canvas": {
+            "width": 600,
+            "height": 700
+          }
+        },
+        "runtimeBounds": {
+          "left": 17,
+          "top": 27,
+          "width": 554,
+          "height": 646,
+          "transparentPixels": 200041
+        },
+        "wearableLayer": "assets/runtime/reference-wearables/bangulping/bangulping_outfit_05-v12/worn.png",
+        "wornSprite": "assets/runtime/reference-wearables/bangulping/bangulping_outfit_05-v12/worn.png",
+        "reviewRegions": {
+          "neck": {
+            "x": 214,
+            "y": 318,
+            "width": 160,
+            "height": 130
+          },
+          "hands": {
+            "x": 159,
+            "y": 369,
+            "width": 270,
+            "height": 175
+          }
+        },
+        "invariants": [
+          "undressed-state-keeps-original-clasped-hands",
+          "selection-card-keeps-original-handless-garment",
+          "dressed-state-uses-one-complete-character-sprite",
+          "neck-is-visible-and-centred-under-the-chin",
+          "sleeves-arms-wrists-and-clasped-hands-form-one-continuous-body",
+          "exactly-one-hand-pair-is-visible"
+        ]
+      },
+      "renderLayers": []
+    },
+    {
+      "id": "bangulping_outfit_06",
+      "characterId": "bangulping",
+      "name": "하늘색 물방울 잠옷",
+      "category": "pajamas",
+      "sprite": "assets/runtime/outfits/bangulping/bangulping_outfit_06.png",
+      "width": 432,
+      "height": 398,
+      "frame": {
+        "x": 196.71204188481678,
+        "y": 422.11518324607334,
+        "width": 226.65968586387436,
+        "height": 228.09424083769633
+      },
+      "wornSprite": "assets/runtime/reference-wearables/bangulping/bangulping_outfit_06-v12/worn.png",
+      "wearable": {
+        "sprite": "assets/runtime/wearables/bangulping/bangulping_outfit_06-with-hands.png",
+        "frame": {
+          "x": 187,
+          "y": 426,
+          "width": 248,
+          "height": 220
+        },
+        "neck": {
+          "x": 0.5066137566137566,
+          "y": 0.008955223880597015
+        }
+      },
+      "productionTemplate": {
+        "version": 12,
+        "status": "review",
+        "method": "generated-complete-character-reference",
+        "selectionMaster": "assets/runtime/outfits/bangulping/bangulping_outfit_06.png",
+        "selectionSha256": "cc3d6be203b1a4c8c7408ae811de2bcf3f862a86b74d480f2b6bbffc99764bab",
+        "garmentCore": "assets/runtime/outfits/bangulping/bangulping_outfit_06.png",
+        "inputReference": "assets/master/outfits/bangulping_outfit_06/v12/reference-worn.png",
+        "inputReferenceSha256": "f71e0913169dfe24ae54f6195c697f851d581ffbc58f2ea33f2471e713af26fe",
+        "referenceSource": "assets/master/outfits/bangulping_outfit_06/v12/reference-clean.png",
+        "referenceSha256": "4a4683056f26164b425e094a9eba102fcf031f5dafd9690a66160c92400d16ae",
+        "referenceSize": {
+          "width": 1180,
+          "height": 1333
+        },
+        "referenceBounds": {
+          "left": 79,
+          "top": 47,
+          "width": 1029,
+          "height": 1227,
+          "transparentPixels": 819714
+        },
+        "backgroundExtraction": null,
+        "cleanup": {
+          "minimumPixels": 80,
+          "changedAlphaPixels": 80,
+          "removedComponents": 39,
+          "limits": {
+            "maximumChangedAlphaPixels": 20000,
+            "maximumRemovedComponents": 500
+          }
+        },
+        "referencePlacement": {
+          "fit": "contain",
+          "position": "centre",
+          "canvas": {
+            "width": 600,
+            "height": 700
+          }
+        },
+        "runtimeBounds": {
+          "left": 40,
+          "top": 35,
+          "width": 523,
+          "height": 624,
+          "transparentPixels": 224700
+        },
+        "wearableLayer": "assets/runtime/reference-wearables/bangulping/bangulping_outfit_06-v12/worn.png",
+        "wornSprite": "assets/runtime/reference-wearables/bangulping/bangulping_outfit_06-v12/worn.png",
+        "reviewRegions": {
+          "neck": {
+            "x": 222,
+            "y": 316,
+            "width": 160,
+            "height": 130
+          },
+          "hands": {
+            "x": 167,
+            "y": 366,
+            "width": 270,
+            "height": 175
+          }
+        },
+        "invariants": [
+          "undressed-state-keeps-original-clasped-hands",
+          "selection-card-keeps-original-handless-garment",
+          "dressed-state-uses-one-complete-character-sprite",
+          "neck-is-visible-and-centred-under-the-chin",
+          "sleeves-arms-wrists-and-clasped-hands-form-one-continuous-body",
+          "exactly-one-hand-pair-is-visible"
+        ]
+      },
+      "renderLayers": []
+    }
+  ]
+}

@@ -4,6 +4,8 @@ assets/generated/
 scripts/
 tests/*
 !tests/presets.test.mjs
+!tests/play-scene.test.mjs
+!tests/play-scene-browser.cjs
 plans/
 /*.jpg
 /*.png

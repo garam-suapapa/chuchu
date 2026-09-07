@@ -65,7 +65,41 @@ export function makeSave(assets,stored={}) {
       presets[id].push({id:preset.id,name:preset.name.trim().slice(0,40),...outfitSnapshot(normalized)});seen.add(preset.id);
     }
   }
-  return {...save,presets};
+  const scene=Array.isArray(stored?.scene)?[]:null,seen=new Set();
+  for(const entry of Array.isArray(stored?.scene)?stored.scene:[]){
+    if(scene.length===5)break;
+    if(!entry||typeof entry.id!=='string'||! /^[\w-]{1,80}$/.test(entry.id)||seen.has(entry.id)||!assets.characters.some(c=>c.id===entry.characterId))continue;
+    const id=entry.characterId;
+    const normalized=makeCurrentSave(assets,{characterId:id,outfits:{[id]:entry.outfitId},accessories:{[id]:entry.accessories},accessoryPositions:{[id]:{[entry.outfitId||'base']:entry.positions}}});
+    scene.push({id:entry.id,characterId:id,name:typeof entry.name==='string'?entry.name.slice(0,40):'친구',...outfitSnapshot(normalized),x:Number.isFinite(entry.x)?Math.max(0,Math.min(1,entry.x)):.5,y:Number.isFinite(entry.y)?Math.max(0,Math.min(1,entry.y)):.55});seen.add(entry.id);
+  }
+  return {...save,presets,scene};
+}
+
+// Array order is also paint order. Scene outfits are independent snapshots.
+export function addSceneDoll(save,id,characterId=save.characterId,presetId=null){
+  const entries=save.scene||[];
+  if(entries.length>=5||entries.some(e=>e.id===id)||typeof id!=='string'||! /^[\w-]{1,80}$/.test(id)||!save.presets[characterId])return save;
+  const preset=presetId===null?null:save.presets[characterId].find(p=>p.id===presetId);
+  if(presetId!==null&&!preset)return save;
+  const snapshot=preset||outfitSnapshot({...save,characterId});
+  const slots=[{x:.5,y:.55},{x:.25,y:.65},{x:.75,y:.65},{x:.3,y:.35},{x:.7,y:.35}];
+  const spot=slots.reduce((best,slot)=>{
+    const distance=p=>entries.length?Math.min(...entries.map(e=>Math.hypot(e.x-p.x,e.y-p.y))):0;
+    return distance(slot)>distance(best)?slot:best;
+  },slots[0]);
+  const entry={id,characterId,name:preset?.name||'지금 입은 코디',outfitId:snapshot.outfitId,accessories:{...snapshot.accessories},positions:Object.fromEntries(Object.entries(snapshot.positions).map(([key,value])=>[key,{...value}])),...spot};
+  return {...save,scene:[...entries,entry]};
+}
+
+export function moveSceneDoll(save,id,position){
+  if(!Number.isFinite(position.x)||!Number.isFinite(position.y)||!save.scene?.some(e=>e.id===id))return save;
+  return {...save,scene:save.scene.map(e=>e.id===id?{...e,x:Math.max(0,Math.min(1,position.x)),y:Math.max(0,Math.min(1,position.y))}:e)};
+}
+
+export function removeSceneDoll(save,id){
+  if(!save.scene?.some(e=>e.id===id))return save;
+  return {...save,scene:save.scene.filter(e=>e.id!==id)};
 }
 
 function presetName(name) {

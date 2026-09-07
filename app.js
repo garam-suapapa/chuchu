@@ -1,13 +1,15 @@
-import {SAVE_KEY,makeSave,equip,equipAccessory,setAccessoryPosition,resetAccessoryPositions,clampPosition,replyFor} from './game-state.js';
+import {SAVE_KEY,makeSave,equip,equipAccessory,setAccessoryPosition,resetAccessoryPositions,replyFor} from './game-state.js';
 import {drawDoll,accessoryFrame} from './doll-renderer.js';
 import {accessories,extraBackgrounds} from './decor-catalog.js';
 import {setupPresets} from './preset-ui.js';
+import {setupPlayScene} from './play-scene.js';
 import {loadExpansionAssets} from './expansion-assets.js';
 
 const $=id=>document.getElementById(id);
-let assets,save,step='dress',chestOpen=false,position={x:.5,y:.56},accessoryEditId=null;
+let assets,save,step='dress',chestOpen=false,accessoryEditId=null;
 let voiceAllowed=false,recognition=null,voiceTimer=null,stopRequested=false,audioContext=null;
-let toastTimer=null,animationTimer=null;
+let toastTimer=null;
+let playScene;
 const imageCache=new Map();
 const decodedImages=new Map();
 const steps=['dress','accessory','background','play'];
@@ -33,7 +35,7 @@ function chime(){
     osc.connect(gain);gain.connect(audioContext.destination);osc.start(now);osc.stop(now+.24);
   }catch{/* Sound must never interrupt touch play. */}
 }
-function animateDoll(kind='equipped'){$('doll').classList.remove('twirl','equipped');void $('doll').offsetWidth;$('doll').classList.add(kind);clearTimeout(animationTimer);animationTimer=setTimeout(()=>$('doll').classList.remove(kind),760);}
+function animateDoll(kind='equipped'){const doll=step==='play'?playScene?.selectedButton():$('doll');if(!doll)return;doll.classList.remove('twirl','equipped');void doll.offsetWidth;doll.classList.add(kind);setTimeout(()=>doll.classList.remove(kind),760);}
 function particles(kind='sparkle',origin={x:50,y:64}){
   if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
   for(let i=0;i<9;i++){
@@ -51,6 +53,7 @@ function renderCharacters(){
     const portrait=document.createElement('span');portrait.className='character-portrait';const img=document.createElement('img');img.src=c.base;img.alt='';img.draggable=false;portrait.append(img);
     const label=document.createElement('span');label.textContent=c.name;button.append(portrait,label);
     button.addEventListener('click',()=>{
+      if(step==='play')setStep('dress');
       if(c.id===save.characterId)return;
       abortVoice();save={...save,characterId:c.id};persist();renderAll();say(`안녕! 나는 ${c.name}이야. 내 옷장도 구경해 줘!`);animateDoll();particles();chime();
     });fragment.append(button);
@@ -186,16 +189,18 @@ function renderStage(){
   $('stage-kicker').textContent=step==='dress'?'오늘의 주인공':step==='accessory'?'반짝이는 나의 코디':step==='background'?'우리의 놀이터':'나만의 티니핑 친구';
   $('stage-tip').textContent=step==='dress'?'옷을 톡 누르거나 친구에게 끌어다 놓아요':step==='accessory'?'장착한 악세서리를 직접 끌어 원하는 위치에 놓아요':step==='background'?'어디든 좋아! 함께 가 볼까?':'친구를 잡고 옮겨 봐요 · 화살표 키로도 움직여요';
   applyPosition();
+  playScene?.refresh();
 }
 function applyPosition(){
-  const stage=$('stage'),baseWidth=Math.min(innerWidth>=1400?460:400,stage.clientWidth*.88,stage.clientHeight*.88*6/7),width=step==='play'?Math.min(baseWidth,Math.max(150,baseWidth*.52)):baseWidth;
-  Object.assign($('doll-position').style,{width:width+'px',height:width*7/6+'px',maxHeight:'none',left:(step==='play'?position.x:.5)*100+'%',top:(step==='play'?position.y:.56)*100+'%'});
+  const stage=$('stage'),width=Math.min(innerWidth>=1400?460:400,stage.clientWidth*.88,stage.clientHeight*.88*6/7);
+  Object.assign($('doll-position').style,{width:width+'px',height:width*7/6+'px',maxHeight:'none',left:'50%',top:'56%'});
 }
 
 function renderAll(){renderCharacters();renderOutfits();renderAccessories();renderDoll();renderBackgrounds();renderStage();updateSound();}
 function setStep(next){
   if(!steps.includes(next))return;
   abortVoice();step=next;
+  playScene?.setVisible(step==='play');
   if(step==='accessory'&&!selectedAccessories().some(a=>a.id===accessoryEditId))accessoryEditId=selectedAccessories()[0]?.id||null;
   syncAccessoryTargets();
   steps.forEach((id,i)=>{const b=document.querySelector(`[data-step="${id}"]`);b.disabled=false;b.classList.toggle('active',id===step);b.classList.toggle('done',i<steps.indexOf(step));if(id===step)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current');$(id+'-panel').hidden=id!==step;});
@@ -203,7 +208,7 @@ function setStep(next){
   $('next-button').replaceChildren(document.createTextNode(texts[step][0]));$('next-button').insertAdjacentHTML('beforeend',icons('arrow'));$('footer-note').textContent=texts[step][1];
   renderDoll();renderStage();
   say(step==='dress'?'다른 옷도 입어 볼까?':step==='accessory'?'리본도 가방도 좋아! 나에게 골라 줄래?':step==='background'?'정말 마음에 들어! 이제 어디에서 놀까?':`${selectedBackground().name}에 도착했어! 나를 움직여 봐.`);
-  if(step==='play'){position=clampPosition(.5,.55,$('stage').getBoundingClientRect(),$('doll').getBoundingClientRect());applyPosition();}
+  if(step==='play')playScene?.refresh();
   particles();updateVoiceUI();
 }
 
@@ -232,7 +237,7 @@ function insideStage(x,y){const r=$('stage').getBoundingClientRect();return x>=r
 let controlTap=null,lastTouchControl=null,lastTouchTime=0;
 document.addEventListener('pointerdown',e=>{
   const button=e.target.closest?.('button');
-  if(e.pointerType!=='touch'||!e.isPrimary||!button||button.disabled||button.matches('.outfit-card,#doll,#mic-button'))return;
+  if(e.pointerType!=='touch'||!e.isPrimary||!button||button.disabled||button.matches('.outfit-card,.play-doll,#doll,#mic-button'))return;
   controlTap={button,id:e.pointerId,x:e.clientX,y:e.clientY};
 });
 document.addEventListener('pointercancel',()=>{controlTap=null;});
@@ -245,7 +250,7 @@ document.addEventListener('click',e=>{
   if(lastTouchControl&&e.isTrusted&&e.detail>0&&e.target.closest?.('button')===lastTouchControl&&performance.now()-lastTouchTime<750){e.preventDefault();e.stopImmediatePropagation();}
 },true);
 
-let dollDrag=null,accessoryDrag=null,dollClickSuppressed=false;
+let accessoryDrag=null,dollClickSuppressed=false;
 const alphaHitCanvas=document.createElement('canvas');alphaHitCanvas.width=alphaHitCanvas.height=1;
 const alphaHitContext=alphaHitCanvas.getContext('2d',{willReadFrequently:true});
 function canvasPoint(e){const r=$('doll').getBoundingClientRect();return{x:(e.clientX-r.left)*600/r.width,y:(e.clientY-r.top)*700/r.height};}
@@ -271,8 +276,6 @@ $('doll').addEventListener('pointerdown',e=>{
     accessoryEditId=accessory.id;syncAccessoryTargets();accessoryDrag={id:e.pointerId,accessoryId:accessory.id,start:point,startClient:{x:e.clientX,y:e.clientY},pointerType:e.pointerType,origin:{...origin},saveBeforeDrag:save,moved:false};
     $('doll').setPointerCapture(e.pointerId);e.preventDefault();return;
   }
-  if(step!=='play')return;
-  dollDrag={id:e.pointerId,x:e.clientX,y:e.clientY,origin:{...position},moved:false};$('doll').setPointerCapture(e.pointerId);
 });
 $('doll').addEventListener('pointermove',e=>{
   if(accessoryDrag&&accessoryDrag.id===e.pointerId){
@@ -284,11 +287,6 @@ $('doll').addEventListener('pointermove',e=>{
     save=setAccessoryPosition(save,accessory.id,selectedOutfit()?.id,offset,assets);$('doll').classList.add('accessory-editing');renderDoll();return;
   }
   if(step==='accessory'){$('doll').classList.toggle('accessory-hover',Boolean(visibleAccessoryAt(canvasPoint(e))));return;}
-  if(!dollDrag||dollDrag.id!==e.pointerId)return;
-  const r=$('stage').getBoundingClientRect(),d=$('doll').getBoundingClientRect();
-  if(Math.hypot(e.clientX-dollDrag.x,e.clientY-dollDrag.y)>6)dollDrag.moved=true;
-  if(!dollDrag.moved)return;
-  position=clampPosition(dollDrag.origin.x+(e.clientX-dollDrag.x)/r.width,dollDrag.origin.y+(e.clientY-dollDrag.y)/r.height,r,d);applyPosition();$('doll').classList.add('dragging');
 });
 function endAccessoryDrag(e,cancelled=false){
   if(!accessoryDrag||accessoryDrag.id!==e.pointerId)return false;
@@ -298,20 +296,18 @@ function endAccessoryDrag(e,cancelled=false){
   if(drag.moved){dollClickSuppressed=true;setTimeout(()=>dollClickSuppressed=false,0);if(!cancelled){const accessory=assets.accessories.find(a=>a.id===drag.accessoryId);say(`${accessory.name} 위치를 옮겼어!`);toast('원하는 자리에 놓았어요.');}}
   return true;
 }
-function endDollDrag(e,cancelled=false){if(!dollDrag||dollDrag.id!==e.pointerId)return;const moved=dollDrag.moved;if(cancelled)position=dollDrag.origin;dollDrag=null;$('doll').classList.remove('dragging');applyPosition();if(moved){dollClickSuppressed=true;setTimeout(()=>dollClickSuppressed=false,0);if(!cancelled){say('여기도 좋다! 다음에는 어디로 갈까?');particles('sparkle',{x:position.x*100,y:position.y*100});}}}
-$('doll').addEventListener('pointerup',e=>{if(!endAccessoryDrag(e))endDollDrag(e);});$('doll').addEventListener('pointercancel',e=>{if(!endAccessoryDrag(e,true))endDollDrag(e,true);});$('doll').addEventListener('lostpointercapture',e=>{if(accessoryDrag)endAccessoryDrag(e,true);else if(dollDrag)endDollDrag(e,true);});
+$('doll').addEventListener('pointerup',e=>endAccessoryDrag(e));$('doll').addEventListener('pointercancel',e=>endAccessoryDrag(e,true));$('doll').addEventListener('lostpointercapture',e=>endAccessoryDrag(e,true));
 $('doll').addEventListener('pointerleave',()=>{if(!accessoryDrag)$('doll').classList.remove('accessory-hover');});
 $('doll').addEventListener('click',()=>{if(dollClickSuppressed)return;say('헤헤, 네가 톡 눌러 주니 간질간질해!');animateDoll();particles();chime();});
-$('doll').addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key))return;if(step==='accessory'){e.preventDefault();nudgeAccessory(accessoryEditId||selectedAccessories()[0]?.id,e.key,e.shiftKey);return;}if(step!=='play')return;e.preventDefault();position=clampPosition(position.x+({ArrowLeft:-.05,ArrowRight:.05}[e.key]||0),position.y+({ArrowUp:-.05,ArrowDown:.05}[e.key]||0),$('stage').getBoundingClientRect(),$('doll').getBoundingClientRect());applyPosition();});
-window.addEventListener('resize',()=>{applyPosition();if(step==='play'){position=clampPosition(position.x,position.y,$('stage').getBoundingClientRect(),$('doll').getBoundingClientRect());applyPosition();}});
-$('doll-position').addEventListener('transitionend',e=>{if(step!=='play'||!['width','height'].includes(e.propertyName))return;position=clampPosition(position.x,position.y,$('stage').getBoundingClientRect(),$('doll').getBoundingClientRect());applyPosition();});
+$('doll').addEventListener('keydown',e=>{if(step!=='accessory'||!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key))return;e.preventDefault();nudgeAccessory(accessoryEditId||selectedAccessories()[0]?.id,e.key,e.shiftKey);});
+window.addEventListener('resize',applyPosition);
 
 function toggleChest(){chestOpen=!chestOpen;$('chest').classList.toggle('open',chestOpen);$('chest').setAttribute('aria-expanded',String(chestOpen));$('chest').setAttribute('aria-label',chestOpen?'선물 상자 닫기':'선물 상자 열기');say(chestOpen?'우와! 반짝이는 별 선물이 들어 있었어!':'상자를 살포시 닫았어. 다시 열어도 좋아!');if(chestOpen)particles('sparkle',{x:18,y:75});chime();}
 $('chest').addEventListener('click',toggleChest);
 function pose(){animateDoll('twirl');say('빙그르르! 오늘의 코디, 정말 마음에 들어!');particles();chime();}
 $('pose-button').addEventListener('click',pose);$('mirror').addEventListener('click',pose);
 $('bubble-toy').addEventListener('click',()=>{particles('bubbles',{x:18,y:70});say('몽글몽글 비눗방울! 저기까지 날아가네!');chime();});
-function talk(text){const answer=replyFor(text,{character:selectedCharacter(),outfit:selectedOutfit(),background:selectedBackground(),chestOpen});say(answer.line,true);if(answer.action==='twirl')animateDoll('twirl');else animateDoll();particles(answer.action==='bubbles'?'bubbles':'sparkle');}
+function talk(text){const friend=step==='play'?playScene?.selectedOptions():null;if(step==='play'&&!friend){say('먼저 함께 놀 친구를 추가해 주세요.');return;}const answer=replyFor(text,{character:friend?.character||selectedCharacter(),outfit:friend?friend.outfit:selectedOutfit(),background:selectedBackground(),chestOpen});say(answer.line,true);if(answer.action==='twirl')animateDoll('twirl');else animateDoll();particles(answer.action==='bubbles'?'bubbles':'sparkle');}
 for(const button of document.querySelectorAll('[data-talk]'))button.addEventListener('click',()=>talk(button.dataset.talk));
 for(const button of document.querySelectorAll('[data-step]'))button.addEventListener('click',()=>setStep(button.dataset.step));
 $('next-button').addEventListener('click',()=>setStep(steps[(steps.indexOf(step)+1)%steps.length]));
@@ -349,6 +345,11 @@ window.addEventListener('blur',abortVoice);document.addEventListener('visibility
 $('photo-button').addEventListener('click',async()=>{
   const button=$('photo-button');button.disabled=true;
   try{
+    if(step==='play'){
+      const canvas=await playScene.photo(loadImage,selectedBackground());
+      const blob=await new Promise(resolve=>canvas.toBlob(resolve,'image/png'));if(!blob)throw new Error('Empty image');
+      const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download='chuchu-friends.png';link.click();setTimeout(()=>URL.revokeObjectURL(url),10000);toast('친구들과 단체 사진을 저장했어요!');return;
+    }
     const c=selectedCharacter(),o=selectedOutfit(),b=selectedBackground(),chosen=selectedAccessories();const canvas=document.createElement('canvas');canvas.width=1200;canvas.height=900;const ctx=canvas.getContext('2d');
     ctx.fillStyle='#fff8f2';ctx.fillRect(0,0,1200,900);
     if(b.image){const bg=await loadImage(b.image);const factor=Math.max(1200/bg.width,770/bg.height);ctx.drawImage(bg,(1200-bg.width*factor)/2,(770-bg.height*factor)/2,bg.width*factor,bg.height*factor);}else{const gradient=ctx.createLinearGradient(0,0,0,770);gradient.addColorStop(0,'#fff9f3');gradient.addColorStop(1,'#f4dce7');ctx.fillStyle=gradient;ctx.fillRect(0,0,1200,770);}
@@ -369,8 +370,9 @@ async function init(){
     save=makeSave(assets,stored);
     const accessorySprites=assets.accessories.flatMap(a=>[a.sprite,a.backSprite,a.frontSprite].filter(Boolean));
     await Promise.all([...assets.characters.map(c=>c.base),...assets.outfits.flatMap(o=>[o.sprite,o.wornSprite,...(o.renderLayers||[]).map(layer=>layer.src)]),...accessorySprites,...assets.backgrounds.filter(b=>b.image).map(b=>b.image)].map(loadImage));
+    playScene=setupPlayScene({assets,images:decodedImages,getSave:()=>save,commit:(next,store=true)=>{save=next;if(store)persist();},say,onSelect:()=>{abortVoice();if('speechSynthesis'in window)speechSynthesis.cancel();},onGreet:()=>{talk('안녕');animateDoll();chime();}});
     renderAll();renderPlayProps();setStep('dress');updateVoiceUI();
-    setupPresets({assets,getSave:()=>save,commit:next=>{if(!persist(next))return false;save=next;return true;},onApply:preset=>{accessoryEditId=null;renderAll();say(`${preset.name} 코디를 입었어! 함께 놀자!`);animateDoll();},onOpen:abortVoice});
+    setupPresets({assets,getSave:()=>save,commit:next=>{if(!persist(next))return false;save=next;return true;},onApply:preset=>{accessoryEditId=null;if(step==='play')setStep('dress');renderAll();say(`${preset.name} 코디를 입었어! 함께 놀자!`);animateDoll();},onOpen:abortVoice});
     $('presets-button').disabled=false;
     $('loading').hidden=true;$('app').setAttribute('aria-busy','false');$('app').dataset.ready='true';
     if(expansion.warnings.length)toast('일부 새 아이템을 불러오지 못했어요. 다른 아이템으로 계속 놀 수 있어요.');

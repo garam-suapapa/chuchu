@@ -1,0 +1,31 @@
+{
+  "id": "challangping_outfit_10",
+  "characterId": "challangping",
+  "name": "포근한 꽃단추 겨울옷",
+  "category": "winter",
+  "method": "built-in image_gen; separate worn and sprite generation; one background-extraction retry",
+  "prompts": {
+    "worn": "Use case: identity-preserve. Asset type: transparent full-body wornSprite for the chuchu children's dress-up game. Input image 1 (base.png): exact character identity reference. Input image 2 (existing worn.png): primary edit target and exact front-facing pose, framing, proportions, polished toy-like 3D rendering reference. Create exactly ONE character wearing a new warm winter outfit. Preserve Challangping's exact enormous green eyes, tiny smile, cream face, pink-red hair silhouette and curled ends, gold bead hair chain, forehead heart gem, side flower hair ornament, white wing-like ears, big head/small body proportions, and front-facing hands gently clasped together at chest. Change ONLY the outfit. Outfit design: cozy soft peach-pink quilted winter coat, creamy fluffy collar and cuff trim, tiny floral gold buttons, pale mint knitted scarf with short ends, matching warm cream leggings and peach-pink winter boots with fluffy cream tops. Keep existing hair accessories fully visible; no hat, no hood on head. Arms remain bent inward, two bare hands clasped at center, not hidden by scarf. Coat fits the original short chibi torso and reaches above knees. Render whole character including hair tips and both boots, centered with comfortable transparent margins, intended for a 600x700 portrait runtime frame. High-quality smooth glossy toy character shading with soft textile texture. GENUINE TRANSPARENT RGBA BACKGROUND, no white background, no checkerboard drawn in image, no scene, no floor, no cast shadow, no text, no watermark, no extra figures. Keep face/hair/pose near-identical to existing worn reference. This is one finished wearing image only, no clothing-only view or collage.",
+    "alphaRetry": "Use case: background-extraction. Edit target: the attached completed winter character image. Remove ONLY the entire gray/white checkerboard background, including between feet and around every hair edge. Export actual transparent RGBA PNG with alpha=0 outside subject. The checkerboard is baked into this input and MUST be removed, not painted again. Do not add ANY checkerboard, white, gray, black, colored background or floor. Preserve EVERY character pixel design: identical pink hair, green eyes, face, ornaments, peach quilted winter coat, cream fur trim, mint scarf, hands clasped together, leggings, boots. No redesign, no reframing, no clipping. Single full-body transparent cutout.",
+    "sprite": "Use case: precise-object-edit. Asset type: wardrobe selection icon for children's dress-up game. The provided image is the EXACT outfit design reference. Create a SINGLE CLOTHES-ONLY product sprite of that same complete winter outfit: peach-pink diamond quilted short winter coat with fluffy ivory collar/cuffs/hem, small white flower buttons with golden centers, pale mint rib-knit scarf with short fringed ends, cream ribbed leggings and matching peach boots with cream fluffy cuffs and side flower details. Coat facing directly forward, sleeves relaxed slightly outward with EMPTY dark sleeve openings, natural clothing product arrangement. The scarf is neatly arranged at collar; leggings and two boots directly below coat as coherent complete outfit. Show ALL clothing pieces and entire coat/boots inside generous transparent margins. CRITICAL: remove character entirely: NO face, NO head, NO hair, NO ears, NO hands, NO fingers, NO skin, NO arms, NO legs or body, NO mannequin, NO hanger. Clothing only, with hollow openings. Preserve the same color, proportions, materials and details of clothing from reference. High quality polished toy-like 3D asset. Transparent PNG with real alpha channel outside the clothing. No checkerboard drawn in pixels, no background, no floor, no shadows outside clothing, no text, no collage. One complete outfit only."
+  },
+  "sourcePaths": {
+    "worn": "C:/Users/admin/.codex/generated_images/01a07a94-c980-7c93-b7f1-55f8f611f7fd/exec-09295fa5-dbc7-496b-87fb-5ea5a87040fc.png",
+    "alphaRetry": "C:/Users/admin/.codex/generated_images/01a07a94-c980-7c93-b7f1-55f8f611f7fd/exec-f43f7147-7ce1-47d6-add5-986f573b9ded.png",
+    "sprite": "C:/Users/admin/.codex/generated_images/01a07a94-c980-7c93-b7f1-55f8f611f7fd/exec-01309e12-efb5-4842-ade3-93343cf72491.png"
+  },
+  "qa": {
+    "wornDimensions": [
+      1162,
+      1353
+    ],
+    "spriteDimensions": [
+      1163,
+      1352
+    ],
+    "alpha": false,
+    "pixelFormat": "Format24bppRgb",
+    "limitation": "All three built-in outputs contain baked checkerboard backgrounds despite explicit transparency requests. No local image editing performed. Parent must convert using user-authorized workflow before runtime use.",
+    "visual": "Worn: full body/hair tips/boots unclipped, front-facing clasped hands, character identity and glossy style preserved. Sprite: no head/hair/skin/hands/body, hollow cuffs and cream knit legwear, matching quilted coat/mint scarf/flower buttons/boots; unclipped. Legwear is shown as separate tubes, scarf arrangement differs naturally from worn."
+  }
+}

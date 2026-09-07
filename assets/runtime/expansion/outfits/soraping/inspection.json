@@ -1,0 +1,82 @@
+[
+  {
+    "file": "soraping_outfit_07-worn.png",
+    "width": 1162,
+    "height": 1354,
+    "colorType": 2,
+    "hasAlphaChannel": false,
+    "hasTransparencyChunk": false,
+    "bytes": 1344680,
+    "sha256": "f4eaa3e502551d40dc602998ddb8d534f95517334e913cf1fecbb6d416e96cd8"
+  },
+  {
+    "file": "soraping_outfit_07.png",
+    "width": 1254,
+    "height": 1254,
+    "colorType": 2,
+    "hasAlphaChannel": false,
+    "hasTransparencyChunk": false,
+    "bytes": 1389456,
+    "sha256": "d27116af2fad3b90d1de6c14757408ea446be40fb13bf6a1ab7e0ffb495b9112"
+  },
+  {
+    "file": "soraping_outfit_08-worn.png",
+    "width": 1162,
+    "height": 1354,
+    "colorType": 2,
+    "hasAlphaChannel": false,
+    "hasTransparencyChunk": false,
+    "bytes": 1314148,
+    "sha256": "672530a2128d26ec997c80788af3984e84d7ae456d95ffaa78f6167a5e8d225b"
+  },
+  {
+    "file": "soraping_outfit_08.png",
+    "width": 1162,
+    "height": 1353,
+    "colorType": 2,
+    "hasAlphaChannel": false,
+    "hasTransparencyChunk": false,
+    "bytes": 1433069,
+    "sha256": "1dd1c7c9ead342bad966f1288d4a2edc1442c0febaf92e362c2652b43041638e"
+  },
+  {
+    "file": "soraping_outfit_09-worn.png",
+    "width": 1159,
+    "height": 1357,
+    "colorType": 2,
+    "hasAlphaChannel": false,
+    "hasTransparencyChunk": false,
+    "bytes": 1371288,
+    "sha256": "10e0e0d79a019ff73f6f216ee23512806d252011d2c6edd2dfa4e0c416c68be5"
+  },
+  {
+    "file": "soraping_outfit_09.png",
+    "width": 1160,
+    "height": 1356,
+    "colorType": 2,
+    "hasAlphaChannel": false,
+    "hasTransparencyChunk": false,
+    "bytes": 1367307,
+    "sha256": "9d2082bae3893cf39005170f6a399f25d94951f8c537dfdfcad2eb953e839aeb"
+  },
+  {
+    "file": "soraping_outfit_10-worn.png",
+    "width": 1163,
+    "height": 1353,
+    "colorType": 2,
+    "hasAlphaChannel": false,
+    "hasTransparencyChunk": false,
+    "bytes": 1440687,
+    "sha256": "5e0c2fbc786bb78a643671a39d5504f548fa15d9a84e8547aeae0ade09547791"
+  },
+  {
+    "file": "soraping_outfit_10.png",
+    "width": 1254,
+    "height": 1254,
+    "colorType": 2,
+    "hasAlphaChannel": false,
+    "hasTransparencyChunk": false,
+    "bytes": 1388140,
+    "sha256": "7b75c88b12acb8442b0e02d27b372c249ee14264e9cf53005bf27250a6df8cd9"
+  }
+]

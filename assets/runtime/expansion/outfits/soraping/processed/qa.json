@@ -1,0 +1,246 @@
+[
+  {
+    "file": "soraping_outfit_07-worn.png",
+    "sourceSha256": "f4eaa3e502551d40dc602998ddb8d534f95517334e913cf1fecbb6d416e96cd8",
+    "width": 600,
+    "height": 700,
+    "sourceBounds": [
+      171,
+      25,
+      869,
+      1332
+    ],
+    "alphaBounds": [
+      94,
+      14,
+      448,
+      676
+    ],
+    "referenceBounds": [
+      86,
+      14,
+      457,
+      676
+    ],
+    "placement": [
+      94,
+      14
+    ],
+    "scale": 0.5065034429992349,
+    "transparentPixels": 279786,
+    "opaquePixels": 133788,
+    "partialAlphaPixels": 6426,
+    "edgeAlphaMax": 0
+  },
+  {
+    "file": "soraping_outfit_07.png",
+    "sourceSha256": "d27116af2fad3b90d1de6c14757408ea446be40fb13bf6a1ab7e0ffb495b9112",
+    "width": 600,
+    "height": 600,
+    "sourceBounds": [
+      230,
+      56,
+      1023,
+      1190
+    ],
+    "alphaBounds": [
+      104,
+      20,
+      496,
+      580
+    ],
+    "referenceBounds": null,
+    "placement": [
+      104,
+      20
+    ],
+    "scale": 0.49382716049382713,
+    "transparentPixels": 227267,
+    "opaquePixels": 125260,
+    "partialAlphaPixels": 7473,
+    "edgeAlphaMax": 0
+  },
+  {
+    "file": "soraping_outfit_08-worn.png",
+    "sourceSha256": "672530a2128d26ec997c80788af3984e84d7ae456d95ffaa78f6167a5e8d225b",
+    "width": 600,
+    "height": 700,
+    "sourceBounds": [
+      170,
+      49,
+      849,
+      1299
+    ],
+    "alphaBounds": [
+      92,
+      14,
+      452,
+      676
+    ],
+    "referenceBounds": [
+      86,
+      14,
+      457,
+      676
+    ],
+    "placement": [
+      92,
+      14
+    ],
+    "scale": 0.5296,
+    "transparentPixels": 274079,
+    "opaquePixels": 139243,
+    "partialAlphaPixels": 6678,
+    "edgeAlphaMax": 0
+  },
+  {
+    "file": "soraping_outfit_08.png",
+    "sourceSha256": "1dd1c7c9ead342bad966f1288d4a2edc1442c0febaf92e362c2652b43041638e",
+    "width": 600,
+    "height": 600,
+    "sourceBounds": [
+      147,
+      130,
+      1015,
+      1253
+    ],
+    "alphaBounds": [
+      83,
+      20,
+      516,
+      580
+    ],
+    "referenceBounds": null,
+    "placement": [
+      83,
+      20
+    ],
+    "scale": 0.4986642920747996,
+    "transparentPixels": 221949,
+    "opaquePixels": 129738,
+    "partialAlphaPixels": 8313,
+    "edgeAlphaMax": 0
+  },
+  {
+    "file": "soraping_outfit_09-worn.png",
+    "sourceSha256": "10e0e0d79a019ff73f6f216ee23512806d252011d2c6edd2dfa4e0c416c68be5",
+    "width": 600,
+    "height": 700,
+    "sourceBounds": [
+      160,
+      20,
+      807,
+      1330
+    ],
+    "alphaBounds": [
+      108,
+      14,
+      435,
+      676
+    ],
+    "referenceBounds": [
+      86,
+      14,
+      457,
+      676
+    ],
+    "placement": [
+      108,
+      14
+    ],
+    "scale": 0.5053435114503817,
+    "transparentPixels": 292497,
+    "opaquePixels": 121079,
+    "partialAlphaPixels": 6424,
+    "edgeAlphaMax": 0
+  },
+  {
+    "file": "soraping_outfit_09.png",
+    "sourceSha256": "9d2082bae3893cf39005170f6a399f25d94951f8c537dfdfcad2eb953e839aeb",
+    "width": 600,
+    "height": 600,
+    "sourceBounds": [
+      231,
+      96,
+      918,
+      1233
+    ],
+    "alphaBounds": [
+      131,
+      20,
+      469,
+      580
+    ],
+    "referenceBounds": null,
+    "placement": [
+      131,
+      20
+    ],
+    "scale": 0.4925241864555849,
+    "transparentPixels": 240884,
+    "opaquePixels": 113176,
+    "partialAlphaPixels": 5940,
+    "edgeAlphaMax": 0
+  },
+  {
+    "file": "soraping_outfit_10-worn.png",
+    "sourceSha256": "5e0c2fbc786bb78a643671a39d5504f548fa15d9a84e8547aeae0ade09547791",
+    "width": 600,
+    "height": 700,
+    "sourceBounds": [
+      174,
+      19,
+      845,
+      1329
+    ],
+    "alphaBounds": [
+      102,
+      14,
+      441,
+      676
+    ],
+    "referenceBounds": [
+      86,
+      14,
+      457,
+      676
+    ],
+    "placement": [
+      102,
+      14
+    ],
+    "scale": 0.5053435114503817,
+    "transparentPixels": 281770,
+    "opaquePixels": 131801,
+    "partialAlphaPixels": 6429,
+    "edgeAlphaMax": 0
+  },
+  {
+    "file": "soraping_outfit_10.png",
+    "sourceSha256": "7b75c88b12acb8442b0e02d27b372c249ee14264e9cf53005bf27250a6df8cd9",
+    "width": 600,
+    "height": 600,
+    "sourceBounds": [
+      210,
+      77,
+      1045,
+      1177
+    ],
+    "alphaBounds": [
+      87,
+      20,
+      512,
+      580
+    ],
+    "referenceBounds": null,
+    "placement": [
+      87,
+      20
+    ],
+    "scale": 0.509090909090909,
+    "transparentPixels": 214259,
+    "opaquePixels": 139728,
+    "partialAlphaPixels": 6013,
+    "edgeAlphaMax": 0
+  }
+]

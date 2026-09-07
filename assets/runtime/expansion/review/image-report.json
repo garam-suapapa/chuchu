@@ -1,0 +1,918 @@
+{
+  "status": "passed",
+  "catalogAssets": 32,
+  "selectedImages": 48,
+  "originalFilesChecked": 48,
+  "originalsUnchanged": true,
+  "issues": [],
+  "files": [
+    {
+      "id": "undersea",
+      "role": "image",
+      "path": "assets/runtime/expansion/backgrounds/undersea.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "transparentPixels": 0,
+      "opaquePixels": 1572864,
+      "partialAlphaPixels": 0,
+      "bounds": [
+        0,
+        0,
+        1536,
+        1024
+      ]
+    },
+    {
+      "id": "forest-home",
+      "role": "image",
+      "path": "assets/runtime/expansion/backgrounds/forest-home.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "transparentPixels": 0,
+      "opaquePixels": 1572864,
+      "partialAlphaPixels": 0,
+      "bounds": [
+        0,
+        0,
+        1536,
+        1024
+      ]
+    },
+    {
+      "id": "snow-village",
+      "role": "image",
+      "path": "assets/runtime/expansion/backgrounds/snow-village.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "transparentPixels": 0,
+      "opaquePixels": 1572864,
+      "partialAlphaPixels": 0,
+      "bounds": [
+        0,
+        0,
+        1536,
+        1024
+      ]
+    },
+    {
+      "id": "funfair",
+      "role": "image",
+      "path": "assets/runtime/expansion/backgrounds/funfair.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "transparentPixels": 0,
+      "opaquePixels": 1572864,
+      "partialAlphaPixels": 0,
+      "bounds": [
+        0,
+        0,
+        1536,
+        1024
+      ]
+    },
+    {
+      "id": "pearl-tiara",
+      "role": "sprite",
+      "path": "assets/runtime/expansion/accessories/processed/pearl-tiara.png",
+      "size": [
+        600,
+        302
+      ],
+      "transparentPixels": 102192,
+      "opaquePixels": 64405,
+      "partialAlphaPixels": 14603,
+      "bounds": [
+        1,
+        1,
+        599,
+        301
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "strawberry-beret",
+      "role": "sprite",
+      "path": "assets/runtime/expansion/accessories/processed/strawberry-beret.png",
+      "size": [
+        600,
+        417
+      ],
+      "transparentPixels": 68058,
+      "opaquePixels": 176583,
+      "partialAlphaPixels": 5559,
+      "bounds": [
+        2,
+        2,
+        598,
+        415
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "flower-wreath",
+      "role": "sprite",
+      "path": "assets/runtime/expansion/accessories/processed/flower-wreath.png",
+      "size": [
+        600,
+        203
+      ],
+      "transparentPixels": 54473,
+      "opaquePixels": 60660,
+      "partialAlphaPixels": 6667,
+      "bounds": [
+        2,
+        2,
+        598,
+        201
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "moon-pin",
+      "role": "sprite",
+      "path": "assets/runtime/expansion/accessories/processed/moon-pin.png",
+      "size": [
+        600,
+        409
+      ],
+      "transparentPixels": 105431,
+      "opaquePixels": 132398,
+      "partialAlphaPixels": 7571,
+      "bounds": [
+        3,
+        3,
+        597,
+        406
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "bunny-bag",
+      "role": "sprite",
+      "path": "assets/runtime/expansion/accessories/processed/bunny-bag.png",
+      "size": [
+        496,
+        600
+      ],
+      "transparentPixels": 86314,
+      "opaquePixels": 202138,
+      "partialAlphaPixels": 9148,
+      "bounds": [
+        3,
+        3,
+        493,
+        597
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "rainbow-bag",
+      "role": "sprite",
+      "path": "assets/runtime/expansion/accessories/processed/rainbow-bag.png",
+      "size": [
+        576,
+        600
+      ],
+      "transparentPixels": 120220,
+      "opaquePixels": 216789,
+      "partialAlphaPixels": 8591,
+      "bounds": [
+        3,
+        3,
+        573,
+        597
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "teddy-bear",
+      "role": "sprite",
+      "path": "assets/runtime/expansion/props/processed/teddy-bear.png",
+      "size": [
+        640,
+        640
+      ],
+      "transparentPixels": 214432,
+      "opaquePixels": 186747,
+      "partialAlphaPixels": 8421,
+      "bounds": [
+        88,
+        30,
+        551,
+        610
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "play-ball",
+      "role": "sprite",
+      "path": "assets/runtime/expansion/props/processed/play-ball.png",
+      "size": [
+        640,
+        640
+      ],
+      "transparentPixels": 145523,
+      "opaquePixels": 257773,
+      "partialAlphaPixels": 6304,
+      "bounds": [
+        31,
+        30,
+        609,
+        610
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "strawberry-cake",
+      "role": "sprite",
+      "path": "assets/runtime/expansion/props/processed/strawberry-cake.png",
+      "size": [
+        640,
+        640
+      ],
+      "transparentPixels": 146156,
+      "opaquePixels": 256771,
+      "partialAlphaPixels": 6673,
+      "bounds": [
+        30,
+        33,
+        610,
+        607
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "picnic-basket",
+      "role": "sprite",
+      "path": "assets/runtime/expansion/props/processed/picnic-basket.png",
+      "size": [
+        640,
+        640
+      ],
+      "transparentPixels": 228301,
+      "opaquePixels": 172173,
+      "partialAlphaPixels": 9126,
+      "bounds": [
+        57,
+        30,
+        583,
+        610
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "flower-teacup",
+      "role": "sprite",
+      "path": "assets/runtime/expansion/props/processed/flower-teacup.png",
+      "size": [
+        640,
+        640
+      ],
+      "transparentPixels": 216924,
+      "opaquePixels": 185590,
+      "partialAlphaPixels": 7086,
+      "bounds": [
+        30,
+        95,
+        610,
+        545
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "star-tambourine",
+      "role": "sprite",
+      "path": "assets/runtime/expansion/props/processed/star-tambourine.png",
+      "size": [
+        640,
+        640
+      ],
+      "transparentPixels": 208330,
+      "opaquePixels": 193509,
+      "partialAlphaPixels": 7761,
+      "bounds": [
+        42,
+        30,
+        597,
+        610
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "hachuping_outfit_07",
+      "role": "sprite",
+      "path": "assets/runtime/expansion/outfits/hachuping/processed/pajamas/sprite.png",
+      "size": [
+        512,
+        512
+      ],
+      "transparentPixels": 182111,
+      "opaquePixels": 72552,
+      "partialAlphaPixels": 7481,
+      "bounds": [
+        115,
+        20,
+        397,
+        492
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "hachuping_outfit_07",
+      "role": "wornSprite",
+      "path": "assets/runtime/expansion/outfits/hachuping/processed/pajamas/worn.png",
+      "size": [
+        600,
+        700
+      ],
+      "transparentPixels": 229586,
+      "opaquePixels": 181320,
+      "partialAlphaPixels": 9094,
+      "bounds": [
+        70,
+        27,
+        534,
+        661
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "hachuping_outfit_08",
+      "role": "sprite",
+      "path": "assets/runtime/expansion/outfits/hachuping/processed/raincoat/sprite.png",
+      "size": [
+        512,
+        512
+      ],
+      "transparentPixels": 157653,
+      "opaquePixels": 97876,
+      "partialAlphaPixels": 6615,
+      "bounds": [
+        64,
+        20,
+        448,
+        492
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "hachuping_outfit_08",
+      "role": "wornSprite",
+      "path": "assets/runtime/expansion/outfits/hachuping/processed/raincoat/worn.png",
+      "size": [
+        600,
+        700
+      ],
+      "transparentPixels": 238255,
+      "opaquePixels": 172844,
+      "partialAlphaPixels": 8901,
+      "bounds": [
+        86,
+        27,
+        517,
+        661
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "hachuping_outfit_09",
+      "role": "sprite",
+      "path": "assets/runtime/expansion/outfits/hachuping/processed/swimwear/sprite.png",
+      "size": [
+        512,
+        512
+      ],
+      "transparentPixels": 118189,
+      "opaquePixels": 138209,
+      "partialAlphaPixels": 5746,
+      "bounds": [
+        48,
+        20,
+        464,
+        492
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "hachuping_outfit_09",
+      "role": "wornSprite",
+      "path": "assets/runtime/expansion/outfits/hachuping/processed/swimwear/worn.png",
+      "size": [
+        600,
+        700
+      ],
+      "transparentPixels": 225392,
+      "opaquePixels": 185627,
+      "partialAlphaPixels": 8981,
+      "bounds": [
+        66,
+        27,
+        537,
+        661
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "hachuping_outfit_10",
+      "role": "sprite",
+      "path": "assets/runtime/expansion/outfits/hachuping/processed/winter/sprite.png",
+      "size": [
+        512,
+        512
+      ],
+      "transparentPixels": 143960,
+      "opaquePixels": 110932,
+      "partialAlphaPixels": 7252,
+      "bounds": [
+        43,
+        20,
+        469,
+        492
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "hachuping_outfit_10",
+      "role": "wornSprite",
+      "path": "assets/runtime/expansion/outfits/hachuping/processed/winter/worn.png",
+      "size": [
+        600,
+        700
+      ],
+      "transparentPixels": 217198,
+      "opaquePixels": 194112,
+      "partialAlphaPixels": 8690,
+      "bounds": [
+        64,
+        27,
+        540,
+        661
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "soraping_outfit_07",
+      "role": "sprite",
+      "path": "assets/runtime/expansion/outfits/soraping/processed/soraping_outfit_07.png",
+      "size": [
+        600,
+        600
+      ],
+      "transparentPixels": 227267,
+      "opaquePixels": 125260,
+      "partialAlphaPixels": 7473,
+      "bounds": [
+        104,
+        20,
+        496,
+        580
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "soraping_outfit_07",
+      "role": "wornSprite",
+      "path": "assets/runtime/expansion/outfits/soraping/processed/soraping_outfit_07-worn.png",
+      "size": [
+        600,
+        700
+      ],
+      "transparentPixels": 279786,
+      "opaquePixels": 133788,
+      "partialAlphaPixels": 6426,
+      "bounds": [
+        94,
+        14,
+        448,
+        676
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "soraping_outfit_08",
+      "role": "sprite",
+      "path": "assets/runtime/expansion/outfits/soraping/processed/soraping_outfit_08.png",
+      "size": [
+        600,
+        600
+      ],
+      "transparentPixels": 221949,
+      "opaquePixels": 129738,
+      "partialAlphaPixels": 8313,
+      "bounds": [
+        83,
+        20,
+        516,
+        580
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "soraping_outfit_08",
+      "role": "wornSprite",
+      "path": "assets/runtime/expansion/outfits/soraping/processed/soraping_outfit_08-worn.png",
+      "size": [
+        600,
+        700
+      ],
+      "transparentPixels": 274079,
+      "opaquePixels": 139243,
+      "partialAlphaPixels": 6678,
+      "bounds": [
+        92,
+        14,
+        452,
+        676
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "soraping_outfit_09",
+      "role": "sprite",
+      "path": "assets/runtime/expansion/outfits/soraping/processed/soraping_outfit_09.png",
+      "size": [
+        600,
+        600
+      ],
+      "transparentPixels": 240884,
+      "opaquePixels": 113176,
+      "partialAlphaPixels": 5940,
+      "bounds": [
+        131,
+        20,
+        469,
+        580
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "soraping_outfit_09",
+      "role": "wornSprite",
+      "path": "assets/runtime/expansion/outfits/soraping/processed/soraping_outfit_09-worn.png",
+      "size": [
+        600,
+        700
+      ],
+      "transparentPixels": 292497,
+      "opaquePixels": 121079,
+      "partialAlphaPixels": 6424,
+      "bounds": [
+        108,
+        14,
+        435,
+        676
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "soraping_outfit_10",
+      "role": "sprite",
+      "path": "assets/runtime/expansion/outfits/soraping/processed/soraping_outfit_10.png",
+      "size": [
+        600,
+        600
+      ],
+      "transparentPixels": 214259,
+      "opaquePixels": 139728,
+      "partialAlphaPixels": 6013,
+      "bounds": [
+        87,
+        20,
+        512,
+        580
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "soraping_outfit_10",
+      "role": "wornSprite",
+      "path": "assets/runtime/expansion/outfits/soraping/processed/soraping_outfit_10-worn.png",
+      "size": [
+        600,
+        700
+      ],
+      "transparentPixels": 281770,
+      "opaquePixels": 131801,
+      "partialAlphaPixels": 6429,
+      "bounds": [
+        102,
+        14,
+        441,
+        676
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "challangping_outfit_07",
+      "role": "sprite",
+      "path": "assets/runtime/expansion/outfits/challangping/processed/07-sprite.png",
+      "size": [
+        512,
+        512
+      ],
+      "transparentPixels": 181712,
+      "opaquePixels": 72954,
+      "partialAlphaPixels": 7478,
+      "bounds": [
+        105,
+        24,
+        406,
+        488
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "challangping_outfit_07",
+      "role": "wornSprite",
+      "path": "assets/runtime/expansion/outfits/challangping/processed/07-worn.png",
+      "size": [
+        600,
+        700
+      ],
+      "transparentPixels": 256225,
+      "opaquePixels": 155173,
+      "partialAlphaPixels": 8602,
+      "bounds": [
+        102,
+        24,
+        496,
+        677
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "challangping_outfit_08",
+      "role": "sprite",
+      "path": "assets/runtime/expansion/outfits/challangping/processed/08-sprite.png",
+      "size": [
+        512,
+        512
+      ],
+      "transparentPixels": 159949,
+      "opaquePixels": 95618,
+      "partialAlphaPixels": 6577,
+      "bounds": [
+        70,
+        24,
+        441,
+        488
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "challangping_outfit_08",
+      "role": "wornSprite",
+      "path": "assets/runtime/expansion/outfits/challangping/processed/08-worn.png",
+      "size": [
+        600,
+        700
+      ],
+      "transparentPixels": 245506,
+      "opaquePixels": 165703,
+      "partialAlphaPixels": 8791,
+      "bounds": [
+        94,
+        24,
+        506,
+        677
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "challangping_outfit_09",
+      "role": "sprite",
+      "path": "assets/runtime/expansion/outfits/challangping/processed/09-sprite.png",
+      "size": [
+        512,
+        512
+      ],
+      "transparentPixels": 123802,
+      "opaquePixels": 132385,
+      "partialAlphaPixels": 5957,
+      "bounds": [
+        64,
+        24,
+        447,
+        488
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "challangping_outfit_09",
+      "role": "wornSprite",
+      "path": "assets/runtime/expansion/outfits/challangping/processed/09-worn.png",
+      "size": [
+        600,
+        700
+      ],
+      "transparentPixels": 257603,
+      "opaquePixels": 153563,
+      "partialAlphaPixels": 8834,
+      "bounds": [
+        98,
+        24,
+        501,
+        677
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "challangping_outfit_10",
+      "role": "sprite",
+      "path": "assets/runtime/expansion/outfits/challangping/processed/10-sprite.png",
+      "size": [
+        512,
+        512
+      ],
+      "transparentPixels": 177104,
+      "opaquePixels": 77605,
+      "partialAlphaPixels": 7435,
+      "bounds": [
+        98,
+        24,
+        414,
+        488
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "challangping_outfit_10",
+      "role": "wornSprite",
+      "path": "assets/runtime/expansion/outfits/challangping/processed/10-worn.png",
+      "size": [
+        600,
+        700
+      ],
+      "transparentPixels": 247185,
+      "opaquePixels": 164398,
+      "partialAlphaPixels": 8417,
+      "bounds": [
+        94,
+        24,
+        504,
+        677
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "bangulping_outfit_07",
+      "role": "sprite",
+      "path": "assets/runtime/expansion/outfits/bangulping/processed/bangulping_outfit_07.png",
+      "size": [
+        512,
+        512
+      ],
+      "transparentPixels": 165896,
+      "opaquePixels": 89055,
+      "partialAlphaPixels": 7193,
+      "bounds": [
+        76,
+        20,
+        437,
+        492
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "bangulping_outfit_07",
+      "role": "wornSprite",
+      "path": "assets/runtime/expansion/outfits/bangulping/processed/bangulping_outfit_07-worn.png",
+      "size": [
+        600,
+        700
+      ],
+      "transparentPixels": 231908,
+      "opaquePixels": 178879,
+      "partialAlphaPixels": 9213,
+      "bounds": [
+        48,
+        21,
+        551,
+        671
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "bangulping_outfit_08",
+      "role": "sprite",
+      "path": "assets/runtime/expansion/outfits/bangulping/processed/bangulping_outfit_08.png",
+      "size": [
+        512,
+        512
+      ],
+      "transparentPixels": 167379,
+      "opaquePixels": 88715,
+      "partialAlphaPixels": 6050,
+      "bounds": [
+        89,
+        20,
+        423,
+        492
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "bangulping_outfit_08",
+      "role": "wornSprite",
+      "path": "assets/runtime/expansion/outfits/bangulping/processed/bangulping_outfit_08-worn.png",
+      "size": [
+        600,
+        700
+      ],
+      "transparentPixels": 241895,
+      "opaquePixels": 168251,
+      "partialAlphaPixels": 9854,
+      "bounds": [
+        66,
+        21,
+        532,
+        671
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "bangulping_outfit_09",
+      "role": "sprite",
+      "path": "assets/runtime/expansion/outfits/bangulping/processed/bangulping_outfit_09.png",
+      "size": [
+        512,
+        512
+      ],
+      "transparentPixels": 111640,
+      "opaquePixels": 144654,
+      "partialAlphaPixels": 5850,
+      "bounds": [
+        31,
+        20,
+        480,
+        492
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "bangulping_outfit_09",
+      "role": "wornSprite",
+      "path": "assets/runtime/expansion/outfits/bangulping/processed/bangulping_outfit_09-worn.png",
+      "size": [
+        600,
+        700
+      ],
+      "transparentPixels": 234536,
+      "opaquePixels": 175488,
+      "partialAlphaPixels": 9976,
+      "bounds": [
+        48,
+        25,
+        551,
+        667
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "bangulping_outfit_10",
+      "role": "sprite",
+      "path": "assets/runtime/expansion/outfits/bangulping/processed/bangulping_outfit_10.png",
+      "size": [
+        512,
+        512
+      ],
+      "transparentPixels": 95379,
+      "opaquePixels": 161545,
+      "partialAlphaPixels": 5220,
+      "bounds": [
+        27,
+        20,
+        484,
+        492
+      ],
+      "visibleBorderPixels": 0
+    },
+    {
+      "id": "bangulping_outfit_10",
+      "role": "wornSprite",
+      "path": "assets/runtime/expansion/outfits/bangulping/processed/bangulping_outfit_10-worn.png",
+      "size": [
+        600,
+        700
+      ],
+      "transparentPixels": 222485,
+      "opaquePixels": 187798,
+      "partialAlphaPixels": 9717,
+      "bounds": [
+        55,
+        21,
+        543,
+        671
+      ],
+      "visibleBorderPixels": 0
+    }
+  ]
+}

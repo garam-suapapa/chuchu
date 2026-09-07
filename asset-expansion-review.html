@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>새 에셋 제작 검수</title>
+<style>
+body{margin:0;background:#fff8f4;color:#49344a;font:16px/1.6 system-ui,sans-serif}main{max-width:1320px;margin:auto;padding:32px}h1{margin-bottom:4px}p{color:#795e74}nav{display:flex;gap:8px;flex-wrap:wrap;margin:24px 0}button{padding:10px 18px;border:1px solid #dabbd2;border-radius:24px;background:white;color:inherit;cursor:pointer;font:inherit}button[aria-pressed=true]{background:#654b72;color:white}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:18px}article{border:1px solid #e8d5e2;border-radius:18px;overflow:hidden;background:white}article img{width:100%;height:260px;object-fit:contain;display:block;background-color:#f7f4f7;background-image:conic-gradient(#e7e1e9 25%,transparent 0 50%,#e7e1e9 0 75%,transparent 0);background-size:20px 20px}article.wide img{height:200px;object-fit:cover}article h3,article p{margin:12px 16px}article p{font-size:13px}.pair{display:flex}.pair img{width:50%;height:280px}a{color:#654b72}.error{color:#9e3751}
+</style>
+<main>
+<a href="./index.html">← 옷장으로</a>
+<h1>새 에셋 제작 검수</h1>
+<p>새로 제작한 배경·악세서리·의상·소품의 검수 후보입니다. 의상은 선택용 이미지와 착용용 이미지를 나란히 표시합니다. 투명 PNG 뒤의 체크무늬는 이미지 경계를 확인하기 위한 화면 배경입니다.</p>
+<p id="status" role="status">제작 목록을 읽는 중…</p>
+<nav aria-label="에셋 종류"></nav>
+<div class="grid" id="grid"></div>
+</main>
+<script type="module">
+const groups=[['배경','backgrounds/catalog.json'],['악세서리','accessories/catalog.json'],['소품','props/catalog.json'],...['hachuping','soraping','challangping','bangulping'].map(id=>['의상',`outfits/${id}/catalog.json`])];
+const entries=[],errors=[];
+for(const [group,path] of groups){
+  try{const r=await fetch(`assets/runtime/expansion/${path}`);if(!r.ok)throw new Error(String(r.status));const items=await r.json();for(const item of items)entries.push({...item,group});}
+  catch{errors.push(path);}
+}
+const status=document.getElementById('status');status.textContent=`새 에셋 ${entries.length}종`+(errors.length?` · 아직 읽을 수 없는 제작 목록 ${errors.length}개`:'');
+function show(group){
+  document.querySelectorAll('nav button').forEach(b=>b.setAttribute('aria-pressed',String(b.textContent===group)));
+  const cards=entries.filter(e=>group==='전체'||e.group===group).map(e=>{
+    const card=document.createElement('article');if(e.image)card.classList.add('wide');
+    const pictures=document.createElement('div');if(e.wornSprite)pictures.className='pair';
+    for(const src of [e.image||e.sprite,e.wornSprite].filter(Boolean)){
+      const img=document.createElement('img');img.src=src;img.alt=e.name+(src===e.wornSprite?' 착용 모습':'');img.loading='lazy';
+      img.addEventListener('error',()=>{img.alt+=' — 이미지 로드 실패';card.classList.add('error')});pictures.append(img);
+    }
+    const title=document.createElement('h3');title.textContent=e.name;
+    const pending=e.status||e.productionStatus||(e.runtimeReady===false?'pending':'');
+    const detail=document.createElement('p');detail.textContent=e.group+' · '+e.id+(e.runtimeReady===true?' · 투명 보정 완료':pending?' · 원본 제작 완료 / 게임용 보정 대기':'');
+    card.append(pictures,title,detail);return card;
+  });document.getElementById('grid').replaceChildren(...cards);
+}
+for(const group of ['전체','배경','악세서리','의상','소품']){const button=document.createElement('button');button.textContent=group;button.addEventListener('click',()=>show(group));document.querySelector('nav').append(button)}show('전체');
+</script>
+</html>

@@ -1,0 +1,203 @@
+{
+  "date": "2026-09-07T07:03:26.538Z",
+  "status": "passed",
+  "outfits": [
+    {
+      "characterId": "hachuping",
+      "id": "hachuping_outfit_07"
+    },
+    {
+      "characterId": "hachuping",
+      "id": "hachuping_outfit_08"
+    },
+    {
+      "characterId": "hachuping",
+      "id": "hachuping_outfit_09"
+    },
+    {
+      "characterId": "hachuping",
+      "id": "hachuping_outfit_10"
+    },
+    {
+      "characterId": "soraping",
+      "id": "soraping_outfit_07"
+    },
+    {
+      "characterId": "soraping",
+      "id": "soraping_outfit_08"
+    },
+    {
+      "characterId": "soraping",
+      "id": "soraping_outfit_09"
+    },
+    {
+      "characterId": "soraping",
+      "id": "soraping_outfit_10"
+    },
+    {
+      "characterId": "challangping",
+      "id": "challangping_outfit_07"
+    },
+    {
+      "characterId": "challangping",
+      "id": "challangping_outfit_08"
+    },
+    {
+      "characterId": "challangping",
+      "id": "challangping_outfit_09"
+    },
+    {
+      "characterId": "challangping",
+      "id": "challangping_outfit_10"
+    },
+    {
+      "characterId": "bangulping",
+      "id": "bangulping_outfit_07"
+    },
+    {
+      "characterId": "bangulping",
+      "id": "bangulping_outfit_08"
+    },
+    {
+      "characterId": "bangulping",
+      "id": "bangulping_outfit_09"
+    },
+    {
+      "characterId": "bangulping",
+      "id": "bangulping_outfit_10"
+    }
+  ],
+  "accessories": [
+    {
+      "characterId": "hachuping",
+      "id": "pearl-tiara"
+    },
+    {
+      "characterId": "hachuping",
+      "id": "strawberry-beret"
+    },
+    {
+      "characterId": "hachuping",
+      "id": "flower-wreath"
+    },
+    {
+      "characterId": "hachuping",
+      "id": "moon-pin"
+    },
+    {
+      "characterId": "hachuping",
+      "id": "bunny-bag"
+    },
+    {
+      "characterId": "hachuping",
+      "id": "rainbow-bag"
+    },
+    {
+      "characterId": "soraping",
+      "id": "pearl-tiara"
+    },
+    {
+      "characterId": "soraping",
+      "id": "strawberry-beret"
+    },
+    {
+      "characterId": "soraping",
+      "id": "flower-wreath"
+    },
+    {
+      "characterId": "soraping",
+      "id": "moon-pin"
+    },
+    {
+      "characterId": "soraping",
+      "id": "bunny-bag"
+    },
+    {
+      "characterId": "soraping",
+      "id": "rainbow-bag"
+    },
+    {
+      "characterId": "challangping",
+      "id": "pearl-tiara"
+    },
+    {
+      "characterId": "challangping",
+      "id": "strawberry-beret"
+    },
+    {
+      "characterId": "challangping",
+      "id": "flower-wreath"
+    },
+    {
+      "characterId": "challangping",
+      "id": "moon-pin"
+    },
+    {
+      "characterId": "challangping",
+      "id": "bunny-bag"
+    },
+    {
+      "characterId": "challangping",
+      "id": "rainbow-bag"
+    },
+    {
+      "characterId": "bangulping",
+      "id": "pearl-tiara"
+    },
+    {
+      "characterId": "bangulping",
+      "id": "strawberry-beret"
+    },
+    {
+      "characterId": "bangulping",
+      "id": "flower-wreath"
+    },
+    {
+      "characterId": "bangulping",
+      "id": "moon-pin"
+    },
+    {
+      "characterId": "bangulping",
+      "id": "bunny-bag"
+    },
+    {
+      "characterId": "bangulping",
+      "id": "rainbow-bag"
+    }
+  ],
+  "backgrounds": [
+    "candy",
+    "observatory",
+    "school",
+    "night",
+    "undersea",
+    "forest-home",
+    "snow-village",
+    "funfair"
+  ],
+  "props": [
+    "teddy-bear",
+    "play-ball",
+    "strawberry-cake",
+    "picnic-basket",
+    "flower-teacup",
+    "star-tambourine"
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "saveRestore": {
+    "characterId": "bangulping",
+    "outfitId": "bangulping_outfit_10",
+    "accessoryId": "bunny-bag",
+    "offset": {
+      "x": 5,
+      "y": 5
+    }
+  },
+  "legacyProps": 3,
+  "photo": {
+    "name": "bangulping-my-outfit.png",
+    "width": 1200,
+    "height": 900
+  }
+}

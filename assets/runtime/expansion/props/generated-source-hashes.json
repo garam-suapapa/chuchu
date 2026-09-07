@@ -1,0 +1,50 @@
+[
+  {
+    "id": "teddy-bear",
+    "sourceCache": "C:/Users/admin/.codex/generated_images/01a07a93-ba44-7290-a97a-ae951f8a7064/exec-896fe521-08fd-47df-a217-6f6980fa0fbf.png",
+    "path": "assets/runtime/expansion/props/teddy-bear.png",
+    "sha256": "0c03cd3524ca140a130ad687ad68e131868c559ab0f558bb025bd11f62a9139b",
+    "sourceSha256": "0c03cd3524ca140a130ad687ad68e131868c559ab0f558bb025bd11f62a9139b",
+    "matches": true
+  },
+  {
+    "id": "play-ball",
+    "sourceCache": "C:/Users/admin/.codex/generated_images/01a07a93-ba44-7290-a97a-ae951f8a7064/exec-85b88e04-9d2d-405b-b82c-963ad87adbf7.png",
+    "path": "assets/runtime/expansion/props/play-ball.png",
+    "sha256": "25e134a4d80bb230d66a1a2cf85a90e2d7687fd41820093ee00275e0d17d425e",
+    "sourceSha256": "25e134a4d80bb230d66a1a2cf85a90e2d7687fd41820093ee00275e0d17d425e",
+    "matches": true
+  },
+  {
+    "id": "strawberry-cake",
+    "sourceCache": "C:/Users/admin/.codex/generated_images/01a07a93-ba44-7290-a97a-ae951f8a7064/exec-3e67a07a-f51d-4ab7-9be9-6dfdcf2117aa.png",
+    "path": "assets/runtime/expansion/props/strawberry-cake.png",
+    "sha256": "733a0ffe77cd2c4d49acb7f044b2f215494a292d7d1b5648667ff60d885103a1",
+    "sourceSha256": "733a0ffe77cd2c4d49acb7f044b2f215494a292d7d1b5648667ff60d885103a1",
+    "matches": true
+  },
+  {
+    "id": "picnic-basket",
+    "sourceCache": "C:/Users/admin/.codex/generated_images/01a07a93-ba44-7290-a97a-ae951f8a7064/exec-86f2a639-8191-48ab-93d1-840c800514fd.png",
+    "path": "assets/runtime/expansion/props/picnic-basket.png",
+    "sha256": "919131c794ebc9db1ebe3c290f38d6ce7d236e0d37d5d36fd1466817fca509d7",
+    "sourceSha256": "919131c794ebc9db1ebe3c290f38d6ce7d236e0d37d5d36fd1466817fca509d7",
+    "matches": true
+  },
+  {
+    "id": "flower-teacup",
+    "sourceCache": "C:/Users/admin/.codex/generated_images/01a07a93-ba44-7290-a97a-ae951f8a7064/exec-8000a139-d0ca-4ef6-ad3e-491d52a49b01.png",
+    "path": "assets/runtime/expansion/props/flower-teacup.png",
+    "sha256": "92365dd22f705fc75ac5aef7f2a7bd49efff2f2279ce9fca7c7cadbba7eff710",
+    "sourceSha256": "92365dd22f705fc75ac5aef7f2a7bd49efff2f2279ce9fca7c7cadbba7eff710",
+    "matches": true
+  },
+  {
+    "id": "star-tambourine",
+    "sourceCache": "C:/Users/admin/.codex/generated_images/01a07a93-ba44-7290-a97a-ae951f8a7064/exec-21c431e5-0381-4f13-b909-145733309dbc.png",
+    "path": "assets/runtime/expansion/props/star-tambourine.png",
+    "sha256": "4e81cb8f6b13dbf6698ca1ecb8c86efe2de2080fbf08bf65274dc4fd603f757f",
+    "sourceSha256": "4e81cb8f6b13dbf6698ca1ecb8c86efe2de2080fbf08bf65274dc4fd603f757f",
+    "matches": true
+  }
+]

@@ -1,0 +1,196 @@
+[
+  {
+    "id": "bunny-bag",
+    "originalMode": "RGB",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "size": [
+      496,
+      600
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "transparentPixels": 86314,
+    "opaquePixels": 202138,
+    "partiallyTransparentPixels": 9148,
+    "originalObjectBoundingBox": [
+      176,
+      78,
+      1074,
+      1169
+    ],
+    "enclosedBackgroundRegionIds": [
+      17
+    ],
+    "sprite": "assets/runtime/expansion/accessories/processed/bunny-bag.png"
+  },
+  {
+    "id": "rainbow-bag",
+    "originalMode": "RGB",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "size": [
+      576,
+      600
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "transparentPixels": 120220,
+    "opaquePixels": 216789,
+    "partiallyTransparentPixels": 8591,
+    "originalObjectBoundingBox": [
+      137,
+      108,
+      1116,
+      1129
+    ],
+    "enclosedBackgroundRegionIds": [
+      3
+    ],
+    "sprite": "assets/runtime/expansion/accessories/processed/rainbow-bag.png"
+  },
+  {
+    "id": "moon-pin",
+    "originalMode": "RGB",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "size": [
+      600,
+      409
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "transparentPixels": 105431,
+    "opaquePixels": 132398,
+    "partiallyTransparentPixels": 7571,
+    "originalObjectBoundingBox": [
+      94,
+      222,
+      1216,
+      980
+    ],
+    "enclosedBackgroundRegionIds": [
+      429
+    ],
+    "sprite": "assets/runtime/expansion/accessories/processed/moon-pin.png"
+  },
+  {
+    "id": "flower-wreath",
+    "originalMode": "RGB",
+    "originalSize": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "size": [
+      600,
+      203
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "transparentPixels": 54473,
+    "opaquePixels": 60660,
+    "partiallyTransparentPixels": 6667,
+    "originalObjectBoundingBox": [
+      74,
+      258,
+      1468,
+      716
+    ],
+    "enclosedBackgroundRegionIds": [
+      79,
+      88,
+      169,
+      172
+    ],
+    "sprite": "assets/runtime/expansion/accessories/processed/flower-wreath.png"
+  },
+  {
+    "id": "pearl-tiara",
+    "originalMode": "RGB",
+    "originalSize": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "size": [
+      600,
+      302
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "transparentPixels": 102192,
+    "opaquePixels": 64405,
+    "partiallyTransparentPixels": 14603,
+    "originalObjectBoundingBox": [
+      35,
+      189,
+      1501,
+      917
+    ],
+    "enclosedBackgroundRegionIds": [
+      155,
+      159,
+      338,
+      336,
+      45,
+      47,
+      436,
+      429,
+      430,
+      437,
+      532,
+      537,
+      533,
+      536
+    ],
+    "sprite": "assets/runtime/expansion/accessories/processed/pearl-tiara.png"
+  },
+  {
+    "id": "strawberry-beret",
+    "originalMode": "RGB",
+    "originalSize": [
+      1331,
+      1181
+    ],
+    "mode": "RGBA",
+    "size": [
+      600,
+      417
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "transparentPixels": 68058,
+    "opaquePixels": 176583,
+    "partiallyTransparentPixels": 5559,
+    "originalObjectBoundingBox": [
+      22,
+      139,
+      1310,
+      1028
+    ],
+    "enclosedBackgroundRegionIds": [],
+    "sprite": "assets/runtime/expansion/accessories/processed/strawberry-beret.png"
+  }
+]

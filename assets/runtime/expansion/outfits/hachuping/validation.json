@@ -1,0 +1,97 @@
+{
+  "generatedUniquePngCount": 8,
+  "runtimeReadyPngCount": 0,
+  "method": "Read-only Sharp PNG metadata + view_image visual review; no image transformations",
+  "fullBodyAndGarmentsUnclipped": true,
+  "selectionSpritesContainNoBody": true,
+  "files": [
+    {
+      "path": "assets/runtime/expansion/outfits/hachuping/pajamas/sprite.png",
+      "exists": true,
+      "bytes": 989167,
+      "sha256": "4332927678d2ba50f89831dbcb7610ae28ff9681bed6f217672bf14e63771857",
+      "width": 1163,
+      "height": 1352,
+      "channels": 3,
+      "hasAlpha": false,
+      "transparentPixels": 0
+    },
+    {
+      "path": "assets/runtime/expansion/outfits/hachuping/pajamas/worn.png",
+      "exists": true,
+      "bytes": 1345467,
+      "sha256": "1719338cd2f6e116ee1c30ee56edf3590cf048afec056d7735c1bb98d1559df6",
+      "width": 1162,
+      "height": 1353,
+      "channels": 3,
+      "hasAlpha": false,
+      "transparentPixels": 0
+    },
+    {
+      "path": "assets/runtime/expansion/outfits/hachuping/raincoat/sprite.png",
+      "exists": true,
+      "bytes": 1423795,
+      "sha256": "4f70c95c73d3fdc2bb4f6db0ff6467c9df87759351170e8d97f975b0dcc6e3e0",
+      "width": 1163,
+      "height": 1352,
+      "channels": 3,
+      "hasAlpha": false,
+      "transparentPixels": 0
+    },
+    {
+      "path": "assets/runtime/expansion/outfits/hachuping/raincoat/worn.png",
+      "exists": true,
+      "bytes": 1304646,
+      "sha256": "74c79862fd26862ad0a9385bc0ca17b16e068ae11872b8c0740a0e894e363fcf",
+      "width": 1163,
+      "height": 1353,
+      "channels": 3,
+      "hasAlpha": false,
+      "transparentPixels": 0
+    },
+    {
+      "path": "assets/runtime/expansion/outfits/hachuping/swimwear/sprite.png",
+      "exists": true,
+      "bytes": 1166476,
+      "sha256": "840d08c22194cf03cadda007e9c31cb63d4414f9429922b6b5ae5e0691414a9d",
+      "width": 1254,
+      "height": 1254,
+      "channels": 3,
+      "hasAlpha": false,
+      "transparentPixels": 0
+    },
+    {
+      "path": "assets/runtime/expansion/outfits/hachuping/swimwear/worn.png",
+      "exists": true,
+      "bytes": 1247385,
+      "sha256": "d06875831b6b4c8d8736fdfd87eff76cd3e6c1831d533e2494d691dd75acf753",
+      "width": 1163,
+      "height": 1353,
+      "channels": 3,
+      "hasAlpha": false,
+      "transparentPixels": 0
+    },
+    {
+      "path": "assets/runtime/expansion/outfits/hachuping/winter/sprite.png",
+      "exists": true,
+      "bytes": 1520180,
+      "sha256": "ca220f26cd931acfd62a411ea0b7959f7a4fa55f85bab718c1b65e5e769f97a5",
+      "width": 1254,
+      "height": 1254,
+      "channels": 3,
+      "hasAlpha": false,
+      "transparentPixels": 0
+    },
+    {
+      "path": "assets/runtime/expansion/outfits/hachuping/winter/worn.png",
+      "exists": true,
+      "bytes": 1414451,
+      "sha256": "87f2c07f08bd104fc92ea38bb9487a83d6fee30a6ccc4d1b8dda75620a300c66",
+      "width": 1163,
+      "height": 1353,
+      "channels": 3,
+      "hasAlpha": false,
+      "transparentPixels": 0
+    }
+  ]
+}

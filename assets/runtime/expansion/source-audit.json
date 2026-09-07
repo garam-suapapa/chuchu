@@ -1,0 +1,97 @@
+{
+  "status": "sources-complete-runtime-pending",
+  "total": 32,
+  "groups": [
+    {
+      "group": "backgrounds",
+      "count": 4
+    },
+    {
+      "group": "accessories",
+      "count": 6
+    },
+    {
+      "group": "props",
+      "count": 6
+    },
+    {
+      "group": "outfits/hachuping",
+      "count": 4
+    },
+    {
+      "group": "outfits/soraping",
+      "count": 4
+    },
+    {
+      "group": "outfits/challangping",
+      "count": 4
+    },
+    {
+      "group": "outfits/bangulping",
+      "count": 4
+    }
+  ],
+  "runtimeIssues": [
+    "assets/runtime/expansion/accessories/pearl-tiara.png: PNG has no alpha channel",
+    "assets/runtime/expansion/accessories/strawberry-beret.png: PNG has no alpha channel",
+    "assets/runtime/expansion/accessories/flower-wreath.png: PNG has no alpha channel",
+    "assets/runtime/expansion/accessories/moon-pin.png: PNG has no alpha channel",
+    "assets/runtime/expansion/accessories/bunny-bag.png: PNG has no alpha channel",
+    "assets/runtime/expansion/accessories/rainbow-bag.png: PNG has no alpha channel",
+    "assets/runtime/expansion/props/teddy-bear.png: PNG has no alpha channel",
+    "assets/runtime/expansion/props/play-ball.png: PNG has no alpha channel",
+    "assets/runtime/expansion/props/strawberry-cake.png: PNG has no alpha channel",
+    "assets/runtime/expansion/props/picnic-basket.png: PNG has no alpha channel",
+    "assets/runtime/expansion/props/flower-teacup.png: PNG has no alpha channel",
+    "assets/runtime/expansion/props/star-tambourine.png: PNG has no alpha channel",
+    "assets/runtime/expansion/outfits/hachuping/pajamas/sprite.png: PNG has no alpha channel",
+    "assets/runtime/expansion/outfits/hachuping/pajamas/worn.png: PNG has no alpha channel",
+    "assets/runtime/expansion/outfits/hachuping/pajamas/worn.png: expected 600x700, got 1162x1353",
+    "assets/runtime/expansion/outfits/hachuping/raincoat/sprite.png: PNG has no alpha channel",
+    "assets/runtime/expansion/outfits/hachuping/raincoat/worn.png: PNG has no alpha channel",
+    "assets/runtime/expansion/outfits/hachuping/raincoat/worn.png: expected 600x700, got 1163x1353",
+    "assets/runtime/expansion/outfits/hachuping/swimwear/sprite.png: PNG has no alpha channel",
+    "assets/runtime/expansion/outfits/hachuping/swimwear/worn.png: PNG has no alpha channel",
+    "assets/runtime/expansion/outfits/hachuping/swimwear/worn.png: expected 600x700, got 1163x1353",
+    "assets/runtime/expansion/outfits/hachuping/winter/sprite.png: PNG has no alpha channel",
+    "assets/runtime/expansion/outfits/hachuping/winter/worn.png: PNG has no alpha channel",
+    "assets/runtime/expansion/outfits/hachuping/winter/worn.png: expected 600x700, got 1163x1353",
+    "assets/runtime/expansion/outfits/soraping/soraping_outfit_07.png: PNG has no alpha channel",
+    "assets/runtime/expansion/outfits/soraping/soraping_outfit_07-worn.png: PNG has no alpha channel",
+    "assets/runtime/expansion/outfits/soraping/soraping_outfit_07-worn.png: expected 600x700, got 1162x1354",
+    "assets/runtime/expansion/outfits/soraping/soraping_outfit_08.png: PNG has no alpha channel",
+    "assets/runtime/expansion/outfits/soraping/soraping_outfit_08-worn.png: PNG has no alpha channel",
+    "assets/runtime/expansion/outfits/soraping/soraping_outfit_08-worn.png: expected 600x700, got 1162x1354",
+    "assets/runtime/expansion/outfits/soraping/soraping_outfit_09.png: PNG has no alpha channel",
+    "assets/runtime/expansion/outfits/soraping/soraping_outfit_09-worn.png: PNG has no alpha channel",
+    "assets/runtime/expansion/outfits/soraping/soraping_outfit_09-worn.png: expected 600x700, got 1159x1357",
+    "assets/runtime/expansion/outfits/soraping/soraping_outfit_10.png: PNG has no alpha channel",
+    "assets/runtime/expansion/outfits/soraping/soraping_outfit_10-worn.png: PNG has no alpha channel",
+    "assets/runtime/expansion/outfits/soraping/soraping_outfit_10-worn.png: expected 600x700, got 1163x1353",
+    "assets/runtime/expansion/outfits/challangping/07-sprite.png: PNG has no alpha channel",
+    "assets/runtime/expansion/outfits/challangping/07-worn.png: PNG has no alpha channel",
+    "assets/runtime/expansion/outfits/challangping/07-worn.png: expected 600x700, got 1163x1353",
+    "assets/runtime/expansion/outfits/challangping/08-sprite.png: PNG has no alpha channel",
+    "assets/runtime/expansion/outfits/challangping/08-worn.png: PNG has no alpha channel",
+    "assets/runtime/expansion/outfits/challangping/08-worn.png: expected 600x700, got 1162x1353",
+    "assets/runtime/expansion/outfits/challangping/09-sprite.png: PNG has no alpha channel",
+    "assets/runtime/expansion/outfits/challangping/09-worn.png: PNG has no alpha channel",
+    "assets/runtime/expansion/outfits/challangping/09-worn.png: expected 600x700, got 1162x1354",
+    "assets/runtime/expansion/outfits/challangping/10-sprite.png: PNG has no alpha channel",
+    "assets/runtime/expansion/outfits/challangping/10-worn.png: PNG has no alpha channel",
+    "assets/runtime/expansion/outfits/challangping/10-worn.png: expected 600x700, got 1162x1353",
+    "assets/runtime/expansion/outfits/bangulping/bangulping_outfit_07.png: PNG has no alpha channel",
+    "assets/runtime/expansion/outfits/bangulping/bangulping_outfit_07-worn.png: PNG has no alpha channel",
+    "assets/runtime/expansion/outfits/bangulping/bangulping_outfit_07-worn.png: expected 600x700, got 1163x1353",
+    "assets/runtime/expansion/outfits/bangulping/bangulping_outfit_08.png: PNG has no alpha channel",
+    "assets/runtime/expansion/outfits/bangulping/bangulping_outfit_08-worn.png: PNG has no alpha channel",
+    "assets/runtime/expansion/outfits/bangulping/bangulping_outfit_08-worn.png: expected 600x700, got 1163x1353",
+    "assets/runtime/expansion/outfits/bangulping/bangulping_outfit_09.png: PNG has no alpha channel",
+    "assets/runtime/expansion/outfits/bangulping/bangulping_outfit_09-worn.png: PNG has no alpha channel",
+    "assets/runtime/expansion/outfits/bangulping/bangulping_outfit_09-worn.png: expected 600x700, got 1162x1354",
+    "assets/runtime/expansion/outfits/bangulping/bangulping_outfit_10.png: PNG has no alpha channel",
+    "assets/runtime/expansion/outfits/bangulping/bangulping_outfit_10-worn.png: PNG has no alpha channel",
+    "assets/runtime/expansion/outfits/bangulping/bangulping_outfit_10-worn.png: expected 600x700, got 1163x1353"
+  ],
+  "note": "Checks catalog counts, IDs, local paths, PNG headers and alpha capability. Visual quality and actual transparent pixels require image review."
+}

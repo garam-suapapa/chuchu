@@ -1,0 +1,88 @@
+{
+  "status": "artwork-generated-runtime-processing-pending",
+  "generatedArtworkCount": 8,
+  "alphaRetryCount": 4,
+  "transparentCount": 0,
+  "files": [
+    {
+      "id": "challangping_outfit_07",
+      "characterId": "challangping",
+      "name": "복숭아 꽃 잠옷",
+      "category": "pajamas",
+      "sprite": "assets/runtime/expansion/outfits/challangping/07-sprite.png",
+      "wornSprite": "assets/runtime/expansion/outfits/challangping/07-worn.png",
+      "width": 1164,
+      "height": 1351,
+      "pngColorType": 2,
+      "wornSize": {
+        "width": 1163,
+        "height": 1353,
+        "pngColorType": 2
+      },
+      "renderLayers": [],
+      "productionStatus": "pending-alpha-and-runtime-framing"
+    },
+    {
+      "id": "challangping_outfit_08",
+      "characterId": "challangping",
+      "name": "노란 우비",
+      "category": "raincoat",
+      "sprite": "assets/runtime/expansion/outfits/challangping/08-sprite.png",
+      "wornSprite": "assets/runtime/expansion/outfits/challangping/08-worn.png",
+      "width": 1163,
+      "height": 1353,
+      "pngColorType": 2,
+      "wornSize": {
+        "width": 1162,
+        "height": 1353,
+        "pngColorType": 2
+      },
+      "renderLayers": [],
+      "productionStatus": "pending-alpha-and-runtime-framing"
+    },
+    {
+      "id": "challangping_outfit_09",
+      "characterId": "challangping",
+      "name": "조개별 민트 수영복",
+      "category": "swimwear",
+      "sprite": "assets/runtime/expansion/outfits/challangping/09-sprite.png",
+      "wornSprite": "assets/runtime/expansion/outfits/challangping/09-worn.png",
+      "width": 1162,
+      "height": 1353,
+      "pngColorType": 2,
+      "wornSize": {
+        "width": 1162,
+        "height": 1354,
+        "pngColorType": 2
+      },
+      "renderLayers": [],
+      "productionStatus": "pending-alpha-and-runtime-framing"
+    },
+    {
+      "id": "challangping_outfit_10",
+      "characterId": "challangping",
+      "name": "포근한 꽃단추 겨울옷",
+      "category": "winter",
+      "sprite": "assets/runtime/expansion/outfits/challangping/10-sprite.png",
+      "wornSprite": "assets/runtime/expansion/outfits/challangping/10-worn.png",
+      "width": 1163,
+      "height": 1352,
+      "pngColorType": 2,
+      "wornSize": {
+        "width": 1162,
+        "height": 1353,
+        "pngColorType": 2
+      },
+      "renderLayers": [],
+      "productionStatus": "pending-alpha-and-runtime-framing"
+    }
+  ],
+  "visualReview": {
+    "fullBodyAndGarmentClipping": "No visible clipping; all hair, feet, sleeves and clothing pieces fully framed.",
+    "selectionBodyParts": "No hands, face, hair, skin, body or mannequin in all four sprites.",
+    "identity": "Green eyes, coral curled hair, gold bead chain, flower ornament, heart forehead jewel and front-facing clasped hands retained. Generative geometry variation remains; swimwear legs longer than current reference.",
+    "design": "Matching garment colors and design retained across paired worn and selection images; winter scarf arrangement and legwear presentation differ naturally."
+  },
+  "historicalRecord": true,
+  "latestProcessedQA": "processed/qa.json"
+}

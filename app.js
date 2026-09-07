@@ -2,6 +2,7 @@ import {SAVE_KEY,makeSave,equip,equipAccessory,setAccessoryPosition,resetAccesso
 import {drawDoll,accessoryFrame} from './doll-renderer.js';
 import {accessories,extraBackgrounds} from './decor-catalog.js';
 import {setupPresets} from './preset-ui.js';
+import {loadExpansionAssets} from './expansion-assets.js';
 
 const $=id=>document.getElementById(id);
 let assets,save,step='dress',chestOpen=false,position={x:.5,y:.56},accessoryEditId=null;
@@ -65,6 +66,7 @@ function renderOutfits(){
     const check=document.createElement('span');check.className='selected-check';check.innerHTML=icons('check');
     button.append(image,label,check);button.addEventListener('click',()=>wear(o.id));attachOutfitDrag(button,o);fragment.append(button);
   }$('outfits').replaceChildren(fragment);
+  $('dress-panel').querySelector('.count-badge').textContent=assets.outfits.filter(o=>o.characterId===save.characterId).length+'벌';
   $('undress-button').setAttribute('aria-pressed',String(!selectedOutfit()));
 }
 function wear(outfitId){
@@ -120,6 +122,7 @@ function renderAccessories(){
       say(remove?`${a.name}을 벗었어. 다른 것도 골라 볼까?`:`${a.name}! 반짝반짝 잘 어울려!`);animateDoll();particles();chime();
     });button.addEventListener('keydown',e=>{if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key)&&save.accessories[save.characterId][a.slot]===a.id){e.preventDefault();accessoryEditId=a.id;nudgeAccessory(a.id,e.key,e.shiftKey);}});fragment.append(button);
   }$('accessories').replaceChildren(fragment);
+  $('accessory-panel').querySelector('.count-badge').textContent=assets.accessories.length+'개';
 }
 function syncAccessoryTargets(){
   for(const card of $('accessories').querySelectorAll('.accessory-card')){
@@ -150,6 +153,29 @@ function renderBackgrounds(){
     button.append(preview,name,caption);button.addEventListener('click',()=>{save={...save,backgroundId:b.id};persist();renderBackgrounds();renderStage();say(`${b.name}에서 함께 놀자!`);chime();});fragment.append(button);
   }$('backgrounds').replaceChildren(fragment);
 }
+
+function playWithProp(prop){
+  if(step!=='play')return;
+  const displayed=$('featured-prop');displayed.hidden=false;displayed.dataset.prop=prop.id;
+  displayed.querySelector('img').src=prop.sprite;displayed.setAttribute('aria-label',prop.name+' 다시 놀기');
+  displayed.querySelector('span').textContent=prop.name;
+  for(const card of $('play-props').querySelectorAll('button'))card.setAttribute('aria-pressed',String(card.dataset.prop===prop.id));
+  say(prop.line||`${prop.name}으로 함께 놀자!`);
+  animateDoll(prop.action==='twirl'?'twirl':'equipped');particles(prop.action==='bubbles'?'bubbles':'sparkle',{x:73,y:67});chime();
+}
+function renderPlayProps(){
+  $('extra-props-section').hidden=!assets.props.length;
+  const fragment=document.createDocumentFragment();
+  for(const prop of assets.props){
+    const button=document.createElement('button');button.type='button';button.className='play-prop-card';button.dataset.prop=prop.id;
+    button.setAttribute('aria-label',prop.name+' 가지고 놀기');button.setAttribute('aria-pressed','false');
+    const image=document.createElement('img');image.src=prop.sprite;image.alt='';image.draggable=false;
+    const name=document.createElement('span');name.textContent=prop.name;button.append(image,name);
+    button.addEventListener('click',()=>playWithProp(prop));fragment.append(button);
+  }
+  $('play-props').replaceChildren(fragment);
+}
+$('featured-prop').addEventListener('click',()=>{const prop=assets.props.find(p=>p.id===$('featured-prop').dataset.prop);if(prop)playWithProp(prop);});
 
 function renderStage(){
   const b=selectedBackground(),image=b.image,stage=$('stage');
@@ -336,15 +362,18 @@ $('photo-button').addEventListener('click',async()=>{
 async function init(){
   try{
     const response=await fetch('assets/runtime/game-assets.json');if(!response.ok)throw new Error('옷장 정보를 불러오지 못했어요.');assets=await response.json();
-    assets.accessories=accessories;assets.backgrounds.push(...extraBackgrounds);
+    assets.accessories=[...accessories];assets.backgrounds.push(...extraBackgrounds);
+    const expansion=await loadExpansionAssets(assets,loadImage);
+    assets.accessories.push(...expansion.accessories);assets.outfits.push(...expansion.outfits);assets.props=expansion.props;
     let stored={};try{stored=JSON.parse(localStorage.getItem(SAVE_KEY)||'{}');}catch{}
     save=makeSave(assets,stored);
     const accessorySprites=assets.accessories.flatMap(a=>[a.sprite,a.backSprite,a.frontSprite].filter(Boolean));
     await Promise.all([...assets.characters.map(c=>c.base),...assets.outfits.flatMap(o=>[o.sprite,o.wornSprite,...(o.renderLayers||[]).map(layer=>layer.src)]),...accessorySprites,...assets.backgrounds.filter(b=>b.image).map(b=>b.image)].map(loadImage));
-    renderAll();setStep('dress');updateVoiceUI();
+    renderAll();renderPlayProps();setStep('dress');updateVoiceUI();
     setupPresets({assets,getSave:()=>save,commit:next=>{if(!persist(next))return false;save=next;return true;},onApply:preset=>{accessoryEditId=null;renderAll();say(`${preset.name} 코디를 입었어! 함께 놀자!`);animateDoll();},onOpen:abortVoice});
     $('presets-button').disabled=false;
     $('loading').hidden=true;$('app').setAttribute('aria-busy','false');$('app').dataset.ready='true';
+    if(expansion.warnings.length)toast('일부 새 아이템을 불러오지 못했어요. 다른 아이템으로 계속 놀 수 있어요.');
   }catch(error){$('loading').classList.add('error');$('loading').querySelector('p').textContent='옷장을 열지 못했어요. 새로고침해 주세요.';const retry=document.createElement('button');retry.className='primary-button';retry.textContent='다시 열기';retry.addEventListener('click',()=>location.reload());$('loading').append(retry);console.error(error);}
 }
 init();

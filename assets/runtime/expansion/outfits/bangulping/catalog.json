@@ -1,0 +1,190 @@
+[
+  {
+    "id": "bangulping_outfit_07",
+    "characterId": "bangulping",
+    "name": "별빛 포근 잠옷",
+    "category": "pajamas",
+    "sprite": "assets/runtime/expansion/outfits/bangulping/processed/bangulping_outfit_07.png",
+    "wornSprite": "assets/runtime/expansion/outfits/bangulping/processed/bangulping_outfit_07-worn.png",
+    "width": 512,
+    "height": 512,
+    "wornWidth": 600,
+    "wornHeight": 700,
+    "renderLayers": [],
+    "status": "processed-review",
+    "runtimeReady": true,
+    "targetCanvas": {
+      "height": 700,
+      "width": 600
+    },
+    "validation": {
+      "filesExist": true,
+      "designMatch": "pass-visual",
+      "clipping": "pass-visual",
+      "runtimeFrame": true,
+      "selectionBodyFree": true,
+      "alpha": true,
+      "sourceOriginalsUnchanged": true,
+      "contrastCompositeReview": "pass",
+      "whiteDetailsPreserved": true
+    },
+    "limitations": [
+      "Generated face and body proportions and garment pattern placement are close to references, not pixel-identical."
+    ],
+    "processing": {
+      "method": "authorized-local-color-and-connectivity-matte",
+      "referenceAlphaBoundsAbove8": [
+        48,
+        21,
+        551,
+        671
+      ],
+      "placement": "aspect-preserving crop of foreground, contain within reference bounds; center",
+      "script": "assets/runtime/expansion/outfits/bangulping/processed/process_07.py",
+      "qa": "assets/runtime/expansion/outfits/bangulping/processed/07-qa.json"
+    },
+    "sourceSprite": "assets/runtime/expansion/outfits/bangulping/bangulping_outfit_07.png",
+    "sourceWornSprite": "assets/runtime/expansion/outfits/bangulping/bangulping_outfit_07-worn.png"
+  },
+  {
+    "id": "bangulping_outfit_08",
+    "characterId": "bangulping",
+    "name": "별방울 우비",
+    "category": "raincoat",
+    "sprite": "assets/runtime/expansion/outfits/bangulping/processed/bangulping_outfit_08.png",
+    "wornSprite": "assets/runtime/expansion/outfits/bangulping/processed/bangulping_outfit_08-worn.png",
+    "width": 512,
+    "height": 512,
+    "wornWidth": 600,
+    "wornHeight": 700,
+    "renderLayers": [],
+    "status": "processed-review",
+    "runtimeReady": true,
+    "targetCanvas": {
+      "height": 700,
+      "width": 600
+    },
+    "validation": {
+      "filesExist": true,
+      "designMatch": "pass-visual",
+      "clipping": "pass-visual",
+      "runtimeFrame": true,
+      "selectionBodyFree": true,
+      "alpha": true,
+      "sourceOriginalsUnchanged": true,
+      "contrastCompositeReview": "pass",
+      "whiteDetailsPreserved": true
+    },
+    "limitations": [
+      "Generated face and body proportions and garment pattern placement are close to references, not pixel-identical."
+    ],
+    "processing": {
+      "method": "authorized-local-color-and-connectivity-matte",
+      "referenceAlphaBoundsAbove8": [
+        48,
+        21,
+        551,
+        671
+      ],
+      "placement": "aspect-preserving crop of foreground, contain within reference bounds; center",
+      "script": "assets/runtime/expansion/outfits/bangulping/processed/process_08.py",
+      "qa": "assets/runtime/expansion/outfits/bangulping/processed/08-qa.json"
+    },
+    "sourceSprite": "assets/runtime/expansion/outfits/bangulping/bangulping_outfit_08.png",
+    "sourceWornSprite": "assets/runtime/expansion/outfits/bangulping/bangulping_outfit_08-worn.png"
+  },
+  {
+    "id": "bangulping_outfit_09",
+    "characterId": "bangulping",
+    "name": "별빛 래시가드 수영복",
+    "category": "swimwear",
+    "sprite": "assets/runtime/expansion/outfits/bangulping/processed/bangulping_outfit_09.png",
+    "wornSprite": "assets/runtime/expansion/outfits/bangulping/processed/bangulping_outfit_09-worn.png",
+    "width": 512,
+    "height": 512,
+    "wornWidth": 600,
+    "wornHeight": 700,
+    "renderLayers": [],
+    "status": "processed-review",
+    "runtimeReady": true,
+    "targetCanvas": {
+      "height": 700,
+      "width": 600
+    },
+    "validation": {
+      "filesExist": true,
+      "designMatch": "pass-visual",
+      "clipping": "pass-visual",
+      "runtimeFrame": true,
+      "selectionBodyFree": true,
+      "alpha": true,
+      "sourceOriginalsUnchanged": true,
+      "contrastCompositeReview": "pass",
+      "whiteDetailsPreserved": true
+    },
+    "limitations": [
+      "Generated face and body proportions and garment pattern placement are close to references, not pixel-identical."
+    ],
+    "processing": {
+      "method": "authorized-local-color-and-connectivity-matte",
+      "referenceAlphaBoundsAbove8": [
+        48,
+        21,
+        551,
+        671
+      ],
+      "placement": "aspect-preserving crop of foreground, contain within reference bounds; center",
+      "script": "assets/runtime/expansion/outfits/bangulping/processed/process_09.py",
+      "qa": "assets/runtime/expansion/outfits/bangulping/processed/09-qa.json"
+    },
+    "sourceSprite": "assets/runtime/expansion/outfits/bangulping/bangulping_outfit_09.png",
+    "sourceWornSprite": "assets/runtime/expansion/outfits/bangulping/bangulping_outfit_09-worn.png"
+  },
+  {
+    "id": "bangulping_outfit_10",
+    "characterId": "bangulping",
+    "name": "포근 별 겨울 코트",
+    "category": "winter",
+    "sprite": "assets/runtime/expansion/outfits/bangulping/processed/bangulping_outfit_10.png",
+    "wornSprite": "assets/runtime/expansion/outfits/bangulping/processed/bangulping_outfit_10-worn.png",
+    "width": 512,
+    "height": 512,
+    "wornWidth": 600,
+    "wornHeight": 700,
+    "renderLayers": [],
+    "status": "processed-review",
+    "runtimeReady": true,
+    "targetCanvas": {
+      "height": 700,
+      "width": 600
+    },
+    "validation": {
+      "filesExist": true,
+      "designMatch": "pass-visual",
+      "clipping": "pass-visual",
+      "runtimeFrame": true,
+      "selectionBodyFree": true,
+      "alpha": true,
+      "sourceOriginalsUnchanged": true,
+      "contrastCompositeReview": "pass",
+      "whiteDetailsPreserved": true
+    },
+    "limitations": [
+      "Generated face and body proportions and garment pattern placement are close to references, not pixel-identical."
+    ],
+    "processing": {
+      "method": "authorized-local-color-and-connectivity-matte",
+      "referenceAlphaBoundsAbove8": [
+        48,
+        21,
+        551,
+        671
+      ],
+      "placement": "aspect-preserving crop of foreground, contain within reference bounds; center",
+      "script": "assets/runtime/expansion/outfits/bangulping/processed/process_10.py",
+      "qa": "assets/runtime/expansion/outfits/bangulping/processed/10-qa.json"
+    },
+    "sourceSprite": "assets/runtime/expansion/outfits/bangulping/bangulping_outfit_10.png",
+    "sourceWornSprite": "assets/runtime/expansion/outfits/bangulping/bangulping_outfit_10-worn.png"
+  }
+]

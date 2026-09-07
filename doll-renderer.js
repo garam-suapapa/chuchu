@@ -27,9 +27,8 @@ export function accessoryFrame(character,accessory,offset={x:0,y:0}) {
       bag:{x:285,y:330,width:210,height:303}
     }
   };
-  const characterFrames=frames[character.id];
-  if(!characterFrames)throw new Error(`Unknown character accessory frame: ${character.id}`);
-  const frame=characterFrames[accessory.id]||(accessory.slot==='bag'?characterFrames.bag:null);
+  const characterFrames=frames[character.id]||{};
+  const frame=accessory.frames?.[character.id]||accessory.frame||characterFrames[accessory.id]||(accessory.slot==='bag'?characterFrames.bag:null);
   if(!frame)throw new Error(`Unknown accessory frame: ${character.id}/${accessory.id}`);
   return {...frame,x:frame.x+(Number.isFinite(offset.x)?offset.x:0),y:frame.y+(Number.isFinite(offset.y)?offset.y:0)};
 }

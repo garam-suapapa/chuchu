@@ -2,7 +2,8 @@ artifacts/
 assets/master/
 assets/generated/
 scripts/
-tests/
+tests/*
+!tests/presets.test.mjs
 plans/
 /*.jpg
 /*.png

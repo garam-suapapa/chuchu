@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "test:presets": "node --test tests/presets.test.mjs",
     "start": "node server.cjs",
     "assets": "node scripts/prepare-assets.cjs && node scripts/prepare-wearables.cjs && node scripts/prepare-approved-hachuping-hoodie.cjs && node scripts/prepare-production-outfits.cjs && node scripts/prepare-hachuping-v6.cjs && node scripts/prepare-paper-doll-v7.cjs && node scripts/prepare-hachuping-hoodie-v11.cjs && node scripts/remove-flat-green-v12.cjs && node scripts/prepare-all-outfits-v12.cjs && node scripts/prepare-accessories-v2.cjs",
     "test": "node --test tests/state.test.mjs tests/flat-green-key.test.cjs",

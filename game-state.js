@@ -10,7 +10,7 @@ function clampAccessoryOffset(character,accessory,offset) {
   };
 }
 
-export function makeSave(assets, stored = {}) {
+function makeCurrentSave(assets, stored = {}) {
   const ids=assets.characters.map(c=>c.id);
   const outfits={},accessories={},accessoryPositions={};
   for(const id of ids){
@@ -36,9 +36,67 @@ export function makeSave(assets, stored = {}) {
     }
   }
   const migratedBackground={studio:'observatory',garden:'school'}[stored?.backgroundId]||stored?.backgroundId;
-  return {version:4, characterId:ids.includes(stored?.characterId)?stored.characterId:ids[0],outfits,accessories,accessoryPositions,
+  return {version:5, characterId:ids.includes(stored?.characterId)?stored.characterId:ids[0],outfits,accessories,accessoryPositions,
     backgroundId:assets.backgrounds.some(b=>b.id===migratedBackground)?migratedBackground:'candy',
     sound:typeof stored?.sound==='boolean'?stored.sound:true};
+}
+
+// A preset owns a snapshot of the visible outfit, not references to the live edit.
+function outfitSnapshot(save) {
+  const id=save.characterId,outfitId=save.outfits[id]||null;
+  const accessories={...save.accessories[id]},positions={};
+  for(const accessoryId of Object.values(accessories)){
+    const offset=save.accessoryPositions?.[id]?.[outfitId||'base']?.[accessoryId];
+    if(offset)positions[accessoryId]={...offset};
+  }
+  return {outfitId,accessories,positions};
+}
+
+export function makeSave(assets,stored={}) {
+  const save=makeCurrentSave(assets,stored),presets={};
+  for(const character of assets.characters){
+    const id=character.id,seen=new Set();presets[id]=[];
+    const entries=stored?.presets?.[id];
+    if(!Array.isArray(entries))continue;
+    for(const preset of entries){
+      if(!preset||typeof preset.id!=='string'||! /^[\w-]{1,80}$/.test(preset.id)||seen.has(preset.id)||typeof preset.name!=='string'||!preset.name.trim())continue;
+      if(preset.outfitId!==null&&!assets.outfits.some(o=>o.id===preset.outfitId&&o.characterId===id))continue;
+      const normalized=makeCurrentSave(assets,{characterId:id,outfits:{[id]:preset.outfitId},accessories:{[id]:preset.accessories},accessoryPositions:{[id]:{[preset.outfitId||'base']:preset.positions}}});
+      presets[id].push({id:preset.id,name:preset.name.trim().slice(0,40),...outfitSnapshot(normalized)});seen.add(preset.id);
+    }
+  }
+  return {...save,presets};
+}
+
+function presetName(name) {
+  if(typeof name!=='string'||!name.trim())throw new Error('프리셋 이름을 입력해 주세요.');
+  if(name.trim().length>40)throw new Error('이름은 40자 이내로 입력해 주세요.');
+  return name.trim();
+}
+
+export function storePreset(save,id,name,replace=false) {
+  const entries=save.presets[save.characterId],existing=entries.find(p=>p.id===id);
+  if(typeof id!=='string'||! /^[\w-]{1,80}$/.test(id)||Boolean(existing)!==replace)return save;
+  const preset={id,name:presetName(name),...outfitSnapshot(save)};
+  return {...save,presets:{...save.presets,[save.characterId]:replace?entries.map(p=>p.id===id?preset:p):[...entries,preset]}};
+}
+
+export function renamePreset(save,id,name) {
+  const entries=save.presets[save.characterId];if(!entries.some(p=>p.id===id))return save;
+  const cleanName=presetName(name);
+  return {...save,presets:{...save.presets,[save.characterId]:entries.map(p=>p.id===id?{...p,name:cleanName}:p)}};
+}
+
+export function deletePreset(save,id) {
+  const entries=save.presets[save.characterId];if(!entries.some(p=>p.id===id))return save;
+  return {...save,presets:{...save.presets,[save.characterId]:entries.filter(p=>p.id!==id)}};
+}
+
+export function applyPreset(save,id) {
+  const characterId=save.characterId,preset=save.presets[characterId].find(p=>p.id===id);if(!preset)return save;
+  const positions=Object.fromEntries(Object.entries(preset.positions).map(([key,value])=>[key,{...value}]));
+  return {...save,outfits:{...save.outfits,[characterId]:preset.outfitId},accessories:{...save.accessories,[characterId]:{...preset.accessories}},
+    accessoryPositions:{...save.accessoryPositions,[characterId]:{...save.accessoryPositions[characterId],[preset.outfitId||'base']:positions}}};
 }
 
 export function equipAccessory(save,accessoryId,slot,assets) {

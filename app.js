@@ -1,6 +1,7 @@
 import {SAVE_KEY,makeSave,equip,equipAccessory,setAccessoryPosition,resetAccessoryPositions,clampPosition,replyFor} from './game-state.js';
 import {drawDoll,accessoryFrame} from './doll-renderer.js';
 import {accessories,extraBackgrounds} from './decor-catalog.js';
+import {setupPresets} from './preset-ui.js';
 
 const $=id=>document.getElementById(id);
 let assets,save,step='dress',chestOpen=false,position={x:.5,y:.56},accessoryEditId=null;
@@ -17,7 +18,7 @@ const selectedAccessories=()=>assets.accessories.filter(a=>save.accessories[save
 const selectedPoseId=()=>selectedOutfit()?.id||'base';
 const selectedAccessoryPositions=()=>save.accessoryPositions?.[save.characterId]?.[selectedPoseId()]||{};
 
-function persist(){try{localStorage.setItem(SAVE_KEY,JSON.stringify(save));}catch{toast('이 브라우저에서는 코디를 저장할 수 없어요. 지금 놀이는 계속할 수 있어요.');}}
+function persist(next=save){try{localStorage.setItem(SAVE_KEY,JSON.stringify(next));return true;}catch{toast('이 브라우저에서는 코디를 저장할 수 없어요. 지금 놀이는 계속할 수 있어요.');return false;}}
 function toast(message){$('toast').textContent=message;$('toast').hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').hidden=true,2600);}
 function say(line,read=false){$('speech').textContent=line;if(read&&save.sound&&'speechSynthesis'in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(line);u.lang='ko-KR';u.rate=.92;u.pitch=1.2;speechSynthesis.speak(u);}}
 function chime(){
@@ -341,6 +342,8 @@ async function init(){
     const accessorySprites=assets.accessories.flatMap(a=>[a.sprite,a.backSprite,a.frontSprite].filter(Boolean));
     await Promise.all([...assets.characters.map(c=>c.base),...assets.outfits.flatMap(o=>[o.sprite,o.wornSprite,...(o.renderLayers||[]).map(layer=>layer.src)]),...accessorySprites,...assets.backgrounds.filter(b=>b.image).map(b=>b.image)].map(loadImage));
     renderAll();setStep('dress');updateVoiceUI();
+    setupPresets({assets,getSave:()=>save,commit:next=>{if(!persist(next))return false;save=next;return true;},onApply:preset=>{accessoryEditId=null;renderAll();say(`${preset.name} 코디를 입었어! 함께 놀자!`);animateDoll();},onOpen:abortVoice});
+    $('presets-button').disabled=false;
     $('loading').hidden=true;$('app').setAttribute('aria-busy','false');$('app').dataset.ready='true';
   }catch(error){$('loading').classList.add('error');$('loading').querySelector('p').textContent='옷장을 열지 못했어요. 새로고침해 주세요.';const retry=document.createElement('button');retry.className='primary-button';retry.textContent='다시 열기';retry.addEventListener('click',()=>location.reload());$('loading').append(retry);console.error(error);}
 }

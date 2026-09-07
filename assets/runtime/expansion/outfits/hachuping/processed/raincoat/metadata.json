@@ -1,0 +1,31 @@
+{
+  "id": "hachuping_outfit_08",
+  "characterId": "hachuping",
+  "name": "하트 방울 우비",
+  "category": "raincoat",
+  "sprite": "assets/runtime/expansion/outfits/hachuping/processed/raincoat/sprite.png",
+  "wornSprite": "assets/runtime/expansion/outfits/hachuping/processed/raincoat/worn.png",
+  "width": 512,
+  "height": 512,
+  "wornWidth": 600,
+  "wornHeight": 700,
+  "renderLayers": [],
+  "requiredWornCanvas": {
+    "width": 600,
+    "height": 700
+  },
+  "runtimeReady": true,
+  "status": "processed-review",
+  "hasAlpha": true,
+  "review": {
+    "fullBodyUnclipped": true,
+    "claspedHandsVisible": true,
+    "selectionNoHandsOrBody": true,
+    "designMatches": true,
+    "identity": "Recognizable reference identity and pose; generated facial proportions vary slightly, not pixel-identical.",
+    "limitation": "Source-generation facial proportions vary slightly. Manual contrast-background review passed; alpha and canvas conversion complete. Raw sources and historic alpha failures are preserved.",
+    "processedReview": "8 PNGs reviewed on dark teal and orange contact sheet; no visible checkerboard residue, body clipping, missing highlights, or hand/body artifacts in selection sprites."
+  },
+  "sourceSprite": "assets/runtime/expansion/outfits/hachuping/raincoat/sprite.png",
+  "sourceWornSprite": "assets/runtime/expansion/outfits/hachuping/raincoat/worn.png"
+}

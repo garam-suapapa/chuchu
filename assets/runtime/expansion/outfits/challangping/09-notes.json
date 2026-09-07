@@ -1,0 +1,40 @@
+{
+  "id": "challangping_outfit_09",
+  "category": "swimwear",
+  "name": "조개별 민트 수영복",
+  "method": "built-in image_gen; three separate calls: worn, failed alpha repair, garment-only sprite",
+  "files": {
+    "worn": "09-worn.png",
+    "sprite": "09-sprite.png",
+    "alphaRepairAttempt": "09-worn-transparency-attempt.png"
+  },
+  "sources": {
+    "worn": "C:/Users/admin/.codex/generated_images/01a07a94-aa66-7e30-b544-097b1bc676ff/exec-fa161554-6237-4dd2-ad90-86c3df78bc68.png",
+    "sprite": "C:/Users/admin/.codex/generated_images/01a07a94-aa66-7e30-b544-097b1bc676ff/exec-e064e9aa-bb8a-4dc1-89b0-40dc06b12ed3.png",
+    "alphaRepairAttempt": "C:/Users/admin/.codex/generated_images/01a07a94-aa66-7e30-b544-097b1bc676ff/exec-fca57e1f-d039-47cf-9607-80fefc4a27bb.png"
+  },
+  "prompts": {
+    "worn": "Use case: identity-preserve. Asset type: children's dress-up game full-body transparent wornSprite.\nInput images: image 1 is the character identity reference; image 2 is the edit target and strict pose/proportion/rendering reference. Edit image 2, replacing only its pink party dress with a cute modest toddler one-piece full-coverage swim romper. This is a nonsexual toy fantasy character in children's beach clothing.\nPreserve the exact existing Challangping identity: huge glossy emerald-green eyes, small smile, cream toy skin, heart forehead jewel, vivid coral pink hair with symmetrical curled ends, three bangs, gold pearl hair chain, green/yellow flower ornament, white ear wings. Preserve image 2's head scale, body proportions, straight-on standing pose with both hands joined in front at chest height, feet and arms positions, glossy polished 3D toy rendering. Do not redesign the face or hair.\nOutfit design: mint-aqua short-sleeved UV swim romper, high rounded collar with narrow cream trim, fully covered torso, opaque thigh-length shorts legs, subtle scalloped peplum at waist, a small pink seashell motif at upper chest and tiny gold starfish accent, pink piping at sleeve cuffs and leg hems. Short cream legs and feet visible beneath the romper. No accessories or beach props.\nSingle complete character centered on a genuinely transparent alpha background, vertical 600:700 aspect ratio, full hair ornament, hair curls, feet and entire outfit all inside frame with margin. No cast floor shadow, no background, no checkerboard baked into image, no typography, no watermark.",
+    "alphaRepair": "Use case: background-extraction. Edit target: the provided Challangping mint swim-romper full-body image. Remove the entire gray-and-white checkerboard background and output a genuinely transparent RGBA PNG with zero-alpha pixels outside the character. The checkerboard in the input is an unwanted opaque background, not part of the art. Preserve every character pixel, the exact facial features, coral hair, joined hands, mint romper, peplum, seams, shell/starfish and feet. Full body entirely visible with margins. Do not paint any backdrop, white field, checker pattern or shadow. Actual transparent alpha output is required.",
+    "sprite": "Use case: precise-object-edit. Asset type: children's dress-up wardrobe selection garment sprite.\nInput image is a reference of the character wearing the outfit. Create ONLY the exact mint-aqua one-piece short-sleeved toddler swim romper seen in it, as a front-facing isolated empty garment.\nKeep the exact matching design: aqua mint opaque fabric, high rounded cream-trimmed neck opening, short sleeves with cream and pink cuff piping, pink raglan shoulder seam piping, pink seashell emblem on upper chest, small gold starfish beneath it, scalloped peplum with cream trim, thigh-length shorts with separate leg openings and pink/cream hems. Reconstruct portions hidden by the hands. Shape the sleeves naturally without arms, show empty dark-mint fabric interiors at openings.\nRemove ALL character body parts: absolutely no head, hair, hands, arms, neck, legs, feet, skin, mannequin, hanger or accessories. One single complete garment centered, entire garment inside frame with generous margin. Match polished glossy 3D toy rendering and design precisely, without text, props or watermark.\nOutput a genuinely transparent RGBA PNG. Background pixels outside garment must have alpha=0. Do not render a checkerboard, gray squares, white backdrop or floor shadow."
+  },
+  "qa": {
+    "visual": "Entire character/hair/feet and entire standalone garment are in frame with margins. Original joined hands frontal pose, green eyes, coral hair, gold head chain and flower maintained. Standalone garment contains no body parts and matches romper, shell, starfish, peplum, piping. Character proportions have mild generation drift: legs are slightly longer than reference.",
+    "alpha": "FAIL: all three built-in output files are Format24bppRgb, corner alpha=255, gray-white checkerboard is baked in. Explicit built-in alpha repair also failed. No local background editing performed.",
+    "sizes": {
+      "worn": [
+        1162,
+        1354
+      ],
+      "sprite": [
+        1162,
+        1353
+      ],
+      "alphaRepairAttempt": [
+        1163,
+        1353
+      ]
+    },
+    "runtimeConversion": "Pending parent integration; no 600x700 conversion performed."
+  }
+}

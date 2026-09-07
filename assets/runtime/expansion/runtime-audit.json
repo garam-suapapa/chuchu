@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "total": 32,
+  "groups": [
+    {
+      "group": "backgrounds",
+      "count": 4
+    },
+    {
+      "group": "accessories",
+      "count": 6
+    },
+    {
+      "group": "props",
+      "count": 6
+    },
+    {
+      "group": "outfits/hachuping",
+      "count": 4
+    },
+    {
+      "group": "outfits/soraping",
+      "count": 4
+    },
+    {
+      "group": "outfits/challangping",
+      "count": 4
+    },
+    {
+      "group": "outfits/bangulping",
+      "count": 4
+    }
+  ],
+  "runtimeIssues": [],
+  "note": "Checks catalog counts, IDs, local paths, PNG headers and alpha capability. Visual quality and actual transparent pixels require image review."
+}

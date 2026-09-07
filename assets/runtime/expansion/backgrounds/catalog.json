@@ -1,0 +1,26 @@
+[
+  {
+    "id": "undersea",
+    "name": "바닷속 정원",
+    "caption": "반짝이는 조개 궁전으로 놀러 가요",
+    "image": "assets/runtime/expansion/backgrounds/undersea.png"
+  },
+  {
+    "id": "forest-home",
+    "name": "숲속 집",
+    "caption": "포근한 숲속 친구들의 쉼터",
+    "image": "assets/runtime/expansion/backgrounds/forest-home.png"
+  },
+  {
+    "id": "snow-village",
+    "name": "눈꽃 마을",
+    "caption": "사르르 눈꽃이 반짝이는 마을",
+    "image": "assets/runtime/expansion/backgrounds/snow-village.png"
+  },
+  {
+    "id": "funfair",
+    "name": "꿈빛 놀이공원",
+    "caption": "두근두근 신나는 놀이가 기다려",
+    "image": "assets/runtime/expansion/backgrounds/funfair.png"
+  }
+]

@@ -1,0 +1,114 @@
+[
+  {
+    "id": "hachuping_outfit_07",
+    "characterId": "hachuping",
+    "name": "포근 하트 잠옷",
+    "category": "pajamas",
+    "sprite": "assets/runtime/expansion/outfits/hachuping/pajamas/sprite.png",
+    "wornSprite": "assets/runtime/expansion/outfits/hachuping/pajamas/worn.png",
+    "width": 1163,
+    "height": 1352,
+    "wornWidth": 1162,
+    "wornHeight": 1353,
+    "renderLayers": [],
+    "requiredWornCanvas": {
+      "width": 600,
+      "height": 700
+    },
+    "runtimeReady": false,
+    "status": "source-generated-needs-alpha-and-runtime-size",
+    "hasAlpha": false,
+    "review": {
+      "fullBodyUnclipped": true,
+      "claspedHandsVisible": true,
+      "selectionNoHandsOrBody": true,
+      "designMatches": true,
+      "identity": "Recognizable reference identity and pose; generated facial proportions vary slightly, not pixel-identical.",
+      "limitation": "Built-in image generation and background-extraction retries returned RGB. Local background removal and resizing deferred by parent pending user reply. Do not enable in runtime before finishing alpha and 600x700 conversion."
+    }
+  },
+  {
+    "id": "hachuping_outfit_08",
+    "characterId": "hachuping",
+    "name": "하트 방울 우비",
+    "category": "raincoat",
+    "sprite": "assets/runtime/expansion/outfits/hachuping/raincoat/sprite.png",
+    "wornSprite": "assets/runtime/expansion/outfits/hachuping/raincoat/worn.png",
+    "width": 1163,
+    "height": 1352,
+    "wornWidth": 1163,
+    "wornHeight": 1353,
+    "renderLayers": [],
+    "requiredWornCanvas": {
+      "width": 600,
+      "height": 700
+    },
+    "runtimeReady": false,
+    "status": "source-generated-needs-alpha-and-runtime-size",
+    "hasAlpha": false,
+    "review": {
+      "fullBodyUnclipped": true,
+      "claspedHandsVisible": true,
+      "selectionNoHandsOrBody": true,
+      "designMatches": true,
+      "identity": "Recognizable reference identity and pose; generated facial proportions vary slightly, not pixel-identical.",
+      "limitation": "Built-in image generation and background-extraction retries returned RGB. Local background removal and resizing deferred by parent pending user reply. Do not enable in runtime before finishing alpha and 600x700 conversion."
+    }
+  },
+  {
+    "id": "hachuping_outfit_09",
+    "characterId": "hachuping",
+    "name": "하트 물놀이 수영복",
+    "category": "swimwear",
+    "sprite": "assets/runtime/expansion/outfits/hachuping/swimwear/sprite.png",
+    "wornSprite": "assets/runtime/expansion/outfits/hachuping/swimwear/worn.png",
+    "width": 1254,
+    "height": 1254,
+    "wornWidth": 1163,
+    "wornHeight": 1353,
+    "renderLayers": [],
+    "requiredWornCanvas": {
+      "width": 600,
+      "height": 700
+    },
+    "runtimeReady": false,
+    "status": "source-generated-needs-alpha-and-runtime-size",
+    "hasAlpha": false,
+    "review": {
+      "fullBodyUnclipped": true,
+      "claspedHandsVisible": true,
+      "selectionNoHandsOrBody": true,
+      "designMatches": true,
+      "identity": "Recognizable reference identity and pose; generated facial proportions vary slightly, not pixel-identical.",
+      "limitation": "Built-in image generation and background-extraction retries returned RGB. Local background removal and resizing deferred by parent pending user reply. Do not enable in runtime before finishing alpha and 600x700 conversion."
+    }
+  },
+  {
+    "id": "hachuping_outfit_10",
+    "characterId": "hachuping",
+    "name": "포근 하트 겨울옷",
+    "category": "winter",
+    "sprite": "assets/runtime/expansion/outfits/hachuping/winter/sprite.png",
+    "wornSprite": "assets/runtime/expansion/outfits/hachuping/winter/worn.png",
+    "width": 1254,
+    "height": 1254,
+    "wornWidth": 1163,
+    "wornHeight": 1353,
+    "renderLayers": [],
+    "requiredWornCanvas": {
+      "width": 600,
+      "height": 700
+    },
+    "runtimeReady": false,
+    "status": "source-generated-needs-alpha-and-runtime-size",
+    "hasAlpha": false,
+    "review": {
+      "fullBodyUnclipped": true,
+      "claspedHandsVisible": true,
+      "selectionNoHandsOrBody": true,
+      "designMatches": true,
+      "identity": "Recognizable reference identity and pose; generated facial proportions vary slightly, not pixel-identical.",
+      "limitation": "Built-in image generation and background-extraction retries returned RGB. Local background removal and resizing deferred by parent pending user reply. Do not enable in runtime before finishing alpha and 600x700 conversion."
+    }
+  }
+]

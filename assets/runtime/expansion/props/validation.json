@@ -1,0 +1,128 @@
+[
+  {
+    "id": "flower-teacup",
+    "source": "flower-teacup.png",
+    "output": "processed/flower-teacup.png",
+    "mode": "RGBA",
+    "size": [
+      640,
+      640
+    ],
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "transparentPixels": 216924,
+    "partialAlphaPixels": 7086,
+    "borderTransparent": true,
+    "sourceBounds": [
+      24,
+      182,
+      1214,
+      1105
+    ]
+  },
+  {
+    "id": "picnic-basket",
+    "source": "picnic-basket.png",
+    "output": "processed/picnic-basket.png",
+    "mode": "RGBA",
+    "size": [
+      640,
+      640
+    ],
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "transparentPixels": 228301,
+    "partialAlphaPixels": 9126,
+    "borderTransparent": true,
+    "sourceBounds": [
+      108,
+      58,
+      1140,
+      1195
+    ]
+  },
+  {
+    "id": "play-ball",
+    "source": "play-ball.png",
+    "output": "processed/play-ball.png",
+    "mode": "RGBA",
+    "size": [
+      640,
+      640
+    ],
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "transparentPixels": 145523,
+    "partialAlphaPixels": 6304,
+    "borderTransparent": true,
+    "sourceBounds": [
+      130,
+      101,
+      1133,
+      1108
+    ]
+  },
+  {
+    "id": "star-tambourine",
+    "source": "star-tambourine.png",
+    "output": "processed/star-tambourine.png",
+    "mode": "RGBA",
+    "size": [
+      640,
+      640
+    ],
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "transparentPixels": 208330,
+    "partialAlphaPixels": 7761,
+    "borderTransparent": true,
+    "sourceBounds": [
+      69,
+      45,
+      1173,
+      1198
+    ]
+  },
+  {
+    "id": "strawberry-cake",
+    "source": "strawberry-cake.png",
+    "output": "processed/strawberry-cake.png",
+    "mode": "RGBA",
+    "size": [
+      640,
+      640
+    ],
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "transparentPixels": 146156,
+    "partialAlphaPixels": 6673,
+    "borderTransparent": true,
+    "sourceBounds": [
+      69,
+      73,
+      1186,
+      1179
+    ]
+  },
+  {
+    "id": "teddy-bear",
+    "source": "teddy-bear.png",
+    "output": "processed/teddy-bear.png",
+    "mode": "RGBA",
+    "size": [
+      640,
+      640
+    ],
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "transparentPixels": 214432,
+    "partialAlphaPixels": 8421,
+    "borderTransparent": true,
+    "sourceBounds": [
+      168,
+      32,
+      1106,
+      1207
+    ]
+  }
+]

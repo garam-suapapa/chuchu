@@ -1,0 +1,188 @@
+{
+  "status": "processed-review",
+  "method": "border-connected high-value neutral checkerboard segmentation plus source-reviewed enclosed leg-gap seeds; tighter left-ear threshold for winter; internal whites protected by connectivity; 90-pixel component minimum; 1.2px inward alpha transition",
+  "referenceVisibleBounds": [
+    92,
+    24,
+    507,
+    677
+  ],
+  "files": [
+    {
+      "file": "07-worn.png",
+      "sourceBounds": [
+        195,
+        48,
+        960,
+        1316
+      ],
+      "size": [
+        600,
+        700
+      ],
+      "visibleBounds": [
+        102,
+        24,
+        496,
+        677
+      ],
+      "transparentPixels": 256225,
+      "partialAlphaPixels": 8602,
+      "touchesCanvasEdge": false
+    },
+    {
+      "file": "07-sprite.png",
+      "sourceBounds": [
+        186,
+        71,
+        978,
+        1292
+      ],
+      "size": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        105,
+        24,
+        406,
+        488
+      ],
+      "transparentPixels": 181712,
+      "partialAlphaPixels": 7478,
+      "touchesCanvasEdge": false
+    },
+    {
+      "file": "08-worn.png",
+      "sourceBounds": [
+        148,
+        25,
+        968,
+        1325
+      ],
+      "size": [
+        600,
+        700
+      ],
+      "visibleBounds": [
+        94,
+        24,
+        506,
+        677
+      ],
+      "transparentPixels": 245506,
+      "partialAlphaPixels": 8791,
+      "touchesCanvasEdge": false
+    },
+    {
+      "file": "08-sprite.png",
+      "sourceBounds": [
+        122,
+        118,
+        1036,
+        1260
+      ],
+      "size": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        70,
+        24,
+        441,
+        488
+      ],
+      "transparentPixels": 159949,
+      "partialAlphaPixels": 6577,
+      "touchesCanvasEdge": false
+    },
+    {
+      "file": "09-worn.png",
+      "sourceBounds": [
+        188,
+        26,
+        971,
+        1295
+      ],
+      "size": [
+        600,
+        700
+      ],
+      "visibleBounds": [
+        98,
+        24,
+        501,
+        677
+      ],
+      "transparentPixels": 257603,
+      "partialAlphaPixels": 8834,
+      "touchesCanvasEdge": false
+    },
+    {
+      "file": "09-sprite.png",
+      "sourceBounds": [
+        185,
+        200,
+        976,
+        1159
+      ],
+      "size": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        64,
+        24,
+        447,
+        488
+      ],
+      "transparentPixels": 123802,
+      "partialAlphaPixels": 5957,
+      "touchesCanvasEdge": false
+    },
+    {
+      "file": "10-worn.png",
+      "sourceBounds": [
+        171,
+        30,
+        982,
+        1321
+      ],
+      "size": [
+        600,
+        700
+      ],
+      "visibleBounds": [
+        94,
+        24,
+        504,
+        677
+      ],
+      "transparentPixels": 247185,
+      "partialAlphaPixels": 8417,
+      "touchesCanvasEdge": false
+    },
+    {
+      "file": "10-sprite.png",
+      "sourceBounds": [
+        174,
+        86,
+        978,
+        1267
+      ],
+      "size": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        98,
+        24,
+        414,
+        488
+      ],
+      "transparentPixels": 177104,
+      "partialAlphaPixels": 7435,
+      "touchesCanvasEdge": false
+    }
+  ]
+}

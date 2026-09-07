@@ -1,0 +1,95 @@
+{
+  "checkedAt": "2026-09-07T06:50:56.379Z",
+  "files": [
+    {
+      "file": "bangulping_outfit_07.png",
+      "width": 1254,
+      "height": 1254,
+      "colorType": 2,
+      "hasTRNS": false,
+      "alphaCapable": false,
+      "transparentPixels": 0,
+      "runtimeFramePass": null,
+      "sha256": "f08ba31dd42caa2b3288e74424b1da700bb553f3b8e88a2cf27626d13c8256b2"
+    },
+    {
+      "file": "bangulping_outfit_07-worn.png",
+      "width": 1163,
+      "height": 1353,
+      "colorType": 2,
+      "hasTRNS": false,
+      "alphaCapable": false,
+      "transparentPixels": 0,
+      "runtimeFramePass": false,
+      "sha256": "1f179acf1c80c1ff409072723d043842c8be1830e39be7ec336a6da99b892cca"
+    },
+    {
+      "file": "bangulping_outfit_08.png",
+      "width": 1164,
+      "height": 1351,
+      "colorType": 2,
+      "hasTRNS": false,
+      "alphaCapable": false,
+      "transparentPixels": 0,
+      "runtimeFramePass": null,
+      "sha256": "a1f6228719e971ca50c4d330685a0e7f9cddedb6d277554d4643e7974eab2fab"
+    },
+    {
+      "file": "bangulping_outfit_08-worn.png",
+      "width": 1163,
+      "height": 1353,
+      "colorType": 2,
+      "hasTRNS": false,
+      "alphaCapable": false,
+      "transparentPixels": 0,
+      "runtimeFramePass": false,
+      "sha256": "eb2035ce6fba35696d2d992b83025f835ba847dd28c905d7e3f6304f10729176"
+    },
+    {
+      "file": "bangulping_outfit_09.png",
+      "width": 1254,
+      "height": 1254,
+      "colorType": 2,
+      "hasTRNS": false,
+      "alphaCapable": false,
+      "transparentPixels": 0,
+      "runtimeFramePass": null,
+      "sha256": "1700c2feab3d1deff559c7cda53cb7895ba3f3676a7b28070cd16302b10a2f52"
+    },
+    {
+      "file": "bangulping_outfit_09-worn.png",
+      "width": 1162,
+      "height": 1354,
+      "colorType": 2,
+      "hasTRNS": false,
+      "alphaCapable": false,
+      "transparentPixels": 0,
+      "runtimeFramePass": false,
+      "sha256": "f8fe01f54e921407612407362f469df3a9e907a177099a9cd3998e9eb32c6e4d"
+    },
+    {
+      "file": "bangulping_outfit_10.png",
+      "width": 1254,
+      "height": 1254,
+      "colorType": 2,
+      "hasTRNS": false,
+      "alphaCapable": false,
+      "transparentPixels": 0,
+      "runtimeFramePass": null,
+      "sha256": "6d122f47eed4c62d181e70179d291f9a75937e6251a896e21cc3f2ed1adc7c2a"
+    },
+    {
+      "file": "bangulping_outfit_10-worn.png",
+      "width": 1163,
+      "height": 1353,
+      "colorType": 2,
+      "hasTRNS": false,
+      "alphaCapable": false,
+      "transparentPixels": 0,
+      "runtimeFramePass": false,
+      "sha256": "d9e07537a94150d1be435bee4d761f1aac1eeba7933bbe2c8353242be660bbba"
+    }
+  ],
+  "status": "blocked",
+  "notes": "PNG header/chunk verification only. Full visual inspection is recorded in prompts.md and per-outfit notes."
+}

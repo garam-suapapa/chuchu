@@ -1,0 +1,68 @@
+[
+  {
+    "file": "bangulping_outfit_07-worn.png",
+    "sourceSize": [
+      1163,
+      1353
+    ],
+    "sourceForegroundBounds": [
+      91,
+      45,
+      1068,
+      1308
+    ],
+    "size": [
+      600,
+      700
+    ],
+    "alphaBounds": [
+      48,
+      21,
+      551,
+      671
+    ],
+    "transparentPixels": 231908,
+    "semiTransparentPixels": 9213,
+    "opaquePixels": 178879,
+    "placement": [
+      48,
+      21,
+      503,
+      650
+    ],
+    "method": "neutral-bright edge-connected floodfill; one-pixel source erosion and 0.35px feather; aspect-preserving foreground fit"
+  },
+  {
+    "file": "bangulping_outfit_07.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "sourceForegroundBounds": [
+      191,
+      48,
+      1062,
+      1187
+    ],
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      76,
+      20,
+      437,
+      492
+    ],
+    "transparentPixels": 165896,
+    "semiTransparentPixels": 7193,
+    "opaquePixels": 89055,
+    "placement": [
+      76,
+      20,
+      361,
+      472
+    ],
+    "method": "neutral-bright edge-connected floodfill; one-pixel source erosion and 0.35px feather; aspect-preserving foreground fit"
+  }
+]

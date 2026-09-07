@@ -1,0 +1,28 @@
+{
+  "id": "hachuping_outfit_07",
+  "characterId": "hachuping",
+  "name": "포근 하트 잠옷",
+  "category": "pajamas",
+  "sprite": "assets/runtime/expansion/outfits/hachuping/pajamas/sprite.png",
+  "wornSprite": "assets/runtime/expansion/outfits/hachuping/pajamas/worn.png",
+  "width": 1163,
+  "height": 1352,
+  "wornWidth": 1162,
+  "wornHeight": 1353,
+  "renderLayers": [],
+  "requiredWornCanvas": {
+    "width": 600,
+    "height": 700
+  },
+  "runtimeReady": false,
+  "status": "source-generated-needs-alpha-and-runtime-size",
+  "hasAlpha": false,
+  "review": {
+    "fullBodyUnclipped": true,
+    "claspedHandsVisible": true,
+    "selectionNoHandsOrBody": true,
+    "designMatches": true,
+    "identity": "Recognizable reference identity and pose; generated facial proportions vary slightly, not pixel-identical.",
+    "limitation": "Built-in image generation and background-extraction retries returned RGB. Local background removal and resizing deferred by parent pending user reply. Do not enable in runtime before finishing alpha and 600x700 conversion."
+  }
+}

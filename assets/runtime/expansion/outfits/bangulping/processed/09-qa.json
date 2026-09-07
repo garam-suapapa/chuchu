@@ -1,0 +1,54 @@
+{
+  "worn": {
+    "source": "09-worn-original.png",
+    "source_bbox": [
+      83,
+      39,
+      1084,
+      1317
+    ],
+    "removed_source_pixels": 858074,
+    "size": [
+      600,
+      700
+    ],
+    "mode": "RGBA",
+    "alpha_min": 0,
+    "alpha_max": 255,
+    "transparent_pixels": 234536,
+    "partial_alpha_pixels": 9976,
+    "alpha_gt8_bbox": [
+      48,
+      25,
+      551,
+      667
+    ],
+    "edge_alpha_max": 0
+  },
+  "sprite": {
+    "source": "09-sprite-original.png",
+    "source_bbox": [
+      224,
+      198,
+      1026,
+      1041
+    ],
+    "removed_source_pixels": 1101447,
+    "size": [
+      512,
+      512
+    ],
+    "mode": "RGBA",
+    "alpha_min": 0,
+    "alpha_max": 255,
+    "transparent_pixels": 111640,
+    "partial_alpha_pixels": 5850,
+    "alpha_gt8_bbox": [
+      31,
+      20,
+      480,
+      492
+    ],
+    "edge_alpha_max": 0
+  }
+}

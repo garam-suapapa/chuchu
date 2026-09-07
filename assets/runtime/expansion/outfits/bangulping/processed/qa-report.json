@@ -1,0 +1,219 @@
+{
+  "status": "pass",
+  "requestedPNGs": 8,
+  "processedPNGs": 8,
+  "sourceOriginalsUnchanged": [
+    {
+      "file": "bangulping_outfit_07.png",
+      "sha256": "f08ba31dd42caa2b3288e74424b1da700bb553f3b8e88a2cf27626d13c8256b2",
+      "unchanged": true
+    },
+    {
+      "file": "bangulping_outfit_07-worn.png",
+      "sha256": "1f179acf1c80c1ff409072723d043842c8be1830e39be7ec336a6da99b892cca",
+      "unchanged": true
+    },
+    {
+      "file": "bangulping_outfit_08.png",
+      "sha256": "a1f6228719e971ca50c4d330685a0e7f9cddedb6d277554d4643e7974eab2fab",
+      "unchanged": true
+    },
+    {
+      "file": "bangulping_outfit_08-worn.png",
+      "sha256": "eb2035ce6fba35696d2d992b83025f835ba847dd28c905d7e3f6304f10729176",
+      "unchanged": true
+    },
+    {
+      "file": "bangulping_outfit_09.png",
+      "sha256": "1700c2feab3d1deff559c7cda53cb7895ba3f3676a7b28070cd16302b10a2f52",
+      "unchanged": true
+    },
+    {
+      "file": "bangulping_outfit_09-worn.png",
+      "sha256": "f8fe01f54e921407612407362f469df3a9e907a177099a9cd3998e9eb32c6e4d",
+      "unchanged": true
+    },
+    {
+      "file": "bangulping_outfit_10.png",
+      "sha256": "6d122f47eed4c62d181e70179d291f9a75937e6251a896e21cc3f2ed1adc7c2a",
+      "unchanged": true
+    },
+    {
+      "file": "bangulping_outfit_10-worn.png",
+      "sha256": "d9e07537a94150d1be435bee4d761f1aac1eeba7933bbe2c8353242be660bbba",
+      "unchanged": true
+    }
+  ],
+  "referenceAlphaBoundsAbove8": [
+    48,
+    21,
+    551,
+    671
+  ],
+  "files": [
+    {
+      "file": "assets/runtime/expansion/outfits/bangulping/processed/bangulping_outfit_07.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alphaBoundsAbove8": [
+        76,
+        20,
+        437,
+        492
+      ],
+      "transparentPixels": 165896,
+      "partialAlphaPixels": 7193,
+      "opaquePixels": 89055,
+      "canvasEdgeAlphaMax": 0,
+      "sha256": "5b136b3f0b21b46dda806d73301117e6f7931ea0cb597775b68062995fc63ebb",
+      "visualQA": "pass: contrast composites inspected; full silhouette, no checkerboard, white details preserved"
+    },
+    {
+      "file": "assets/runtime/expansion/outfits/bangulping/processed/bangulping_outfit_07-worn.png",
+      "size": [
+        600,
+        700
+      ],
+      "mode": "RGBA",
+      "alphaBoundsAbove8": [
+        48,
+        21,
+        551,
+        671
+      ],
+      "transparentPixels": 231908,
+      "partialAlphaPixels": 9213,
+      "opaquePixels": 178879,
+      "canvasEdgeAlphaMax": 0,
+      "sha256": "42b6f81c0791cce15cf3889f146329b7331e35651913930eaaef8bec09398d09",
+      "visualQA": "pass: contrast composites inspected; full silhouette, no checkerboard, white details preserved"
+    },
+    {
+      "file": "assets/runtime/expansion/outfits/bangulping/processed/bangulping_outfit_08.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alphaBoundsAbove8": [
+        89,
+        20,
+        423,
+        492
+      ],
+      "transparentPixels": 167379,
+      "partialAlphaPixels": 6050,
+      "opaquePixels": 88715,
+      "canvasEdgeAlphaMax": 0,
+      "sha256": "d5637d73d2d59ba7f73afcefed97af08e25ed932cd879b1b75f7c97016ef492f",
+      "visualQA": "pass: contrast composites inspected; full silhouette, no checkerboard, white details preserved"
+    },
+    {
+      "file": "assets/runtime/expansion/outfits/bangulping/processed/bangulping_outfit_08-worn.png",
+      "size": [
+        600,
+        700
+      ],
+      "mode": "RGBA",
+      "alphaBoundsAbove8": [
+        66,
+        21,
+        532,
+        671
+      ],
+      "transparentPixels": 241895,
+      "partialAlphaPixels": 9854,
+      "opaquePixels": 168251,
+      "canvasEdgeAlphaMax": 0,
+      "sha256": "b4ddbdd665b4ca8a9b8beec9c9a31c4fc3e74ae32f8eccdbaa86e7b71947d84e",
+      "visualQA": "pass: contrast composites inspected; full silhouette, no checkerboard, white details preserved"
+    },
+    {
+      "file": "assets/runtime/expansion/outfits/bangulping/processed/bangulping_outfit_09.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alphaBoundsAbove8": [
+        31,
+        20,
+        480,
+        492
+      ],
+      "transparentPixels": 111640,
+      "partialAlphaPixels": 5850,
+      "opaquePixels": 144654,
+      "canvasEdgeAlphaMax": 0,
+      "sha256": "8c68ea475a7d3823344523d211c95a3ad5047213c5fa299d6e31185f911a7932",
+      "visualQA": "pass: contrast composites inspected; full silhouette, no checkerboard, white details preserved"
+    },
+    {
+      "file": "assets/runtime/expansion/outfits/bangulping/processed/bangulping_outfit_09-worn.png",
+      "size": [
+        600,
+        700
+      ],
+      "mode": "RGBA",
+      "alphaBoundsAbove8": [
+        48,
+        25,
+        551,
+        667
+      ],
+      "transparentPixels": 234536,
+      "partialAlphaPixels": 9976,
+      "opaquePixels": 175488,
+      "canvasEdgeAlphaMax": 0,
+      "sha256": "421b745e6a588ff4408df6dfd3a981e1beb41e9aeb07a915e6363246c4c99b39",
+      "visualQA": "pass: contrast composites inspected; full silhouette, no checkerboard, white details preserved"
+    },
+    {
+      "file": "assets/runtime/expansion/outfits/bangulping/processed/bangulping_outfit_10.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alphaBoundsAbove8": [
+        27,
+        20,
+        484,
+        492
+      ],
+      "transparentPixels": 95379,
+      "partialAlphaPixels": 5220,
+      "opaquePixels": 161545,
+      "canvasEdgeAlphaMax": 0,
+      "sha256": "cf5f64f1f3aa58a6a2a3d8a8e2e1799ff2b35a0eef4b015b46c4b783645457e8",
+      "visualQA": "pass: contrast composites inspected; full silhouette, no checkerboard, white details preserved"
+    },
+    {
+      "file": "assets/runtime/expansion/outfits/bangulping/processed/bangulping_outfit_10-worn.png",
+      "size": [
+        600,
+        700
+      ],
+      "mode": "RGBA",
+      "alphaBoundsAbove8": [
+        55,
+        21,
+        543,
+        671
+      ],
+      "transparentPixels": 222485,
+      "partialAlphaPixels": 9717,
+      "opaquePixels": 187798,
+      "canvasEdgeAlphaMax": 0,
+      "sha256": "08ade8efeac376242a058fc722872e1c53e54073a81db43aa93e0c03c53e10d5",
+      "visualQA": "pass: contrast composites inspected; full silhouette, no checkerboard, white details preserved"
+    }
+  ],
+  "visualInspection": "All eight composites inspected against dark and contrasting colored backgrounds. No visible checkerboard remnants, clipped silhouettes, body fragments in selection sprites, or lost white garment/eye highlights.",
+  "limitations": [
+    "Uniform foreground scaling preserves generated proportions; small original likeness/proportion differences remain."
+  ]
+}

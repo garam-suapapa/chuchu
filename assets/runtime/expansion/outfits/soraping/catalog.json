@@ -1,0 +1,162 @@
+[
+  {
+    "id": "soraping_outfit_07",
+    "characterId": "soraping",
+    "name": "진주 달빛 잠옷",
+    "category": "pajamas",
+    "sprite": "assets/runtime/expansion/outfits/soraping/processed/soraping_outfit_07.png",
+    "wornSprite": "assets/runtime/expansion/outfits/soraping/processed/soraping_outfit_07-worn.png",
+    "width": 600,
+    "height": 600,
+    "wornWidth": 600,
+    "wornHeight": 700,
+    "renderLayers": [],
+    "runtimeReady": true,
+    "productionTemplate": {
+      "status": "processed-review",
+      "method": "built-in-imagegen-complete-character-then-clothing-only",
+      "transparent": true,
+      "targetCanvas": {
+        "width": 600,
+        "height": 700
+      },
+      "promptRecord": "assets/runtime/expansion/outfits/soraping/prompts-07.md",
+      "generationStatus": "needs-alpha-and-runtime-framing",
+      "postprocessing": "user-authorized local PIL/numpy/scipy: neutral exterior flood with outline closing, alpha feather, subject-bounds alignment",
+      "qaRecord": "assets/runtime/expansion/outfits/soraping/processed/qa.json",
+      "referenceAlphaThreshold": 8,
+      "referenceBounds": [
+        86,
+        14,
+        457,
+        676
+      ]
+    },
+    "sourceSprite": "assets/runtime/expansion/outfits/soraping/soraping_outfit_07.png",
+    "sourceWornSprite": "assets/runtime/expansion/outfits/soraping/soraping_outfit_07-worn.png",
+    "sourceWidth": 1254,
+    "sourceHeight": 1254,
+    "sourceWornWidth": 1162,
+    "sourceWornHeight": 1354
+  },
+  {
+    "id": "soraping_outfit_08",
+    "characterId": "soraping",
+    "name": "노란 조개 우비",
+    "category": "raincoat",
+    "sprite": "assets/runtime/expansion/outfits/soraping/processed/soraping_outfit_08.png",
+    "wornSprite": "assets/runtime/expansion/outfits/soraping/processed/soraping_outfit_08-worn.png",
+    "width": 600,
+    "height": 600,
+    "wornWidth": 600,
+    "wornHeight": 700,
+    "renderLayers": [],
+    "runtimeReady": true,
+    "productionTemplate": {
+      "status": "processed-review",
+      "method": "built-in-imagegen-complete-character-then-clothing-only",
+      "transparent": true,
+      "targetCanvas": {
+        "width": 600,
+        "height": 700
+      },
+      "promptRecord": "assets/runtime/expansion/outfits/soraping/prompts-08.md",
+      "generationStatus": "needs-alpha-and-runtime-framing",
+      "postprocessing": "user-authorized local PIL/numpy/scipy: neutral exterior flood with outline closing, alpha feather, subject-bounds alignment",
+      "qaRecord": "assets/runtime/expansion/outfits/soraping/processed/qa.json",
+      "referenceAlphaThreshold": 8,
+      "referenceBounds": [
+        86,
+        14,
+        457,
+        676
+      ]
+    },
+    "sourceSprite": "assets/runtime/expansion/outfits/soraping/soraping_outfit_08.png",
+    "sourceWornSprite": "assets/runtime/expansion/outfits/soraping/soraping_outfit_08-worn.png",
+    "sourceWidth": 1162,
+    "sourceHeight": 1353,
+    "sourceWornWidth": 1162,
+    "sourceWornHeight": 1354
+  },
+  {
+    "id": "soraping_outfit_09",
+    "characterId": "soraping",
+    "name": "파도 조개 전신 수영복",
+    "category": "swimwear",
+    "sprite": "assets/runtime/expansion/outfits/soraping/processed/soraping_outfit_09.png",
+    "wornSprite": "assets/runtime/expansion/outfits/soraping/processed/soraping_outfit_09-worn.png",
+    "width": 600,
+    "height": 600,
+    "wornWidth": 600,
+    "wornHeight": 700,
+    "renderLayers": [],
+    "runtimeReady": true,
+    "productionTemplate": {
+      "status": "processed-review",
+      "method": "built-in-imagegen-complete-character-then-clothing-only",
+      "transparent": true,
+      "targetCanvas": {
+        "width": 600,
+        "height": 700
+      },
+      "promptRecord": "assets/runtime/expansion/outfits/soraping/prompts-09.md",
+      "generationStatus": "needs-alpha-and-runtime-framing",
+      "postprocessing": "user-authorized local PIL/numpy/scipy: neutral exterior flood with outline closing, alpha feather, subject-bounds alignment",
+      "qaRecord": "assets/runtime/expansion/outfits/soraping/processed/qa.json",
+      "referenceAlphaThreshold": 8,
+      "referenceBounds": [
+        86,
+        14,
+        457,
+        676
+      ]
+    },
+    "sourceSprite": "assets/runtime/expansion/outfits/soraping/soraping_outfit_09.png",
+    "sourceWornSprite": "assets/runtime/expansion/outfits/soraping/soraping_outfit_09-worn.png",
+    "sourceWidth": 1160,
+    "sourceHeight": 1356,
+    "sourceWornWidth": 1159,
+    "sourceWornHeight": 1357
+  },
+  {
+    "id": "soraping_outfit_10",
+    "characterId": "soraping",
+    "name": "포근한 조개 겨울옷",
+    "category": "winter",
+    "sprite": "assets/runtime/expansion/outfits/soraping/processed/soraping_outfit_10.png",
+    "wornSprite": "assets/runtime/expansion/outfits/soraping/processed/soraping_outfit_10-worn.png",
+    "width": 600,
+    "height": 600,
+    "wornWidth": 600,
+    "wornHeight": 700,
+    "renderLayers": [],
+    "runtimeReady": true,
+    "productionTemplate": {
+      "status": "processed-review",
+      "method": "built-in-imagegen-complete-character-then-clothing-only",
+      "transparent": true,
+      "targetCanvas": {
+        "width": 600,
+        "height": 700
+      },
+      "promptRecord": "assets/runtime/expansion/outfits/soraping/prompts-10.md",
+      "generationStatus": "needs-alpha-and-runtime-framing",
+      "postprocessing": "user-authorized local PIL/numpy/scipy: neutral exterior flood with outline closing, alpha feather, subject-bounds alignment",
+      "qaRecord": "assets/runtime/expansion/outfits/soraping/processed/qa.json",
+      "referenceAlphaThreshold": 8,
+      "referenceBounds": [
+        86,
+        14,
+        457,
+        676
+      ]
+    },
+    "sourceSprite": "assets/runtime/expansion/outfits/soraping/soraping_outfit_10.png",
+    "sourceWornSprite": "assets/runtime/expansion/outfits/soraping/soraping_outfit_10-worn.png",
+    "sourceWidth": 1254,
+    "sourceHeight": 1254,
+    "sourceWornWidth": 1163,
+    "sourceWornHeight": 1353
+  }
+]

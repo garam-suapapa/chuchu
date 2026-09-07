@@ -1,0 +1,60 @@
+[
+  {
+    "file": "bangulping_outfit_08-worn.png",
+    "originalSize": [
+      1163,
+      1353
+    ],
+    "size": [
+      600,
+      700
+    ],
+    "mode": "RGBA",
+    "sourceSubjectBBox": [
+      147,
+      48,
+      1049,
+      1307
+    ],
+    "outputAlphaBBox": [
+      66,
+      21,
+      532,
+      671
+    ],
+    "transparentPixels": 241895,
+    "partialAlphaPixels": 9854,
+    "opaquePixels": 168251,
+    "exteriorPixelsRemoved": 916971,
+    "edgeAlphaMax": 0
+  },
+  {
+    "file": "bangulping_outfit_08.png",
+    "originalSize": [
+      1164,
+      1351
+    ],
+    "size": [
+      512,
+      512
+    ],
+    "mode": "RGBA",
+    "sourceSubjectBBox": [
+      186,
+      118,
+      970,
+      1225
+    ],
+    "outputAlphaBBox": [
+      89,
+      20,
+      423,
+      492
+    ],
+    "transparentPixels": 167379,
+    "partialAlphaPixels": 6050,
+    "opaquePixels": 88715,
+    "exteriorPixelsRemoved": 1061874,
+    "edgeAlphaMax": 0
+  }
+]

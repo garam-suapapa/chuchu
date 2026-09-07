@@ -1,0 +1,86 @@
+[
+  {
+    "id": "challangping_outfit_07",
+    "characterId": "challangping",
+    "name": "복숭아 꽃 잠옷",
+    "category": "pajamas",
+    "sprite": "assets/runtime/expansion/outfits/challangping/processed/07-sprite.png",
+    "wornSprite": "assets/runtime/expansion/outfits/challangping/processed/07-worn.png",
+    "width": 512,
+    "height": 512,
+    "pngColorType": 6,
+    "wornSize": {
+      "width": 600,
+      "height": 700,
+      "pngColorType": 6
+    },
+    "renderLayers": [],
+    "productionStatus": "processed-review",
+    "runtimeReady": true,
+    "status": "processed-review",
+    "processingQA": "assets/runtime/expansion/outfits/challangping/processed/qa.json"
+  },
+  {
+    "id": "challangping_outfit_08",
+    "characterId": "challangping",
+    "name": "노란 우비",
+    "category": "raincoat",
+    "sprite": "assets/runtime/expansion/outfits/challangping/processed/08-sprite.png",
+    "wornSprite": "assets/runtime/expansion/outfits/challangping/processed/08-worn.png",
+    "width": 512,
+    "height": 512,
+    "pngColorType": 6,
+    "wornSize": {
+      "width": 600,
+      "height": 700,
+      "pngColorType": 6
+    },
+    "renderLayers": [],
+    "productionStatus": "processed-review",
+    "runtimeReady": true,
+    "status": "processed-review",
+    "processingQA": "assets/runtime/expansion/outfits/challangping/processed/qa.json"
+  },
+  {
+    "id": "challangping_outfit_09",
+    "characterId": "challangping",
+    "name": "조개별 민트 수영복",
+    "category": "swimwear",
+    "sprite": "assets/runtime/expansion/outfits/challangping/processed/09-sprite.png",
+    "wornSprite": "assets/runtime/expansion/outfits/challangping/processed/09-worn.png",
+    "width": 512,
+    "height": 512,
+    "pngColorType": 6,
+    "wornSize": {
+      "width": 600,
+      "height": 700,
+      "pngColorType": 6
+    },
+    "renderLayers": [],
+    "productionStatus": "processed-review",
+    "runtimeReady": true,
+    "status": "processed-review",
+    "processingQA": "assets/runtime/expansion/outfits/challangping/processed/qa.json"
+  },
+  {
+    "id": "challangping_outfit_10",
+    "characterId": "challangping",
+    "name": "포근한 꽃단추 겨울옷",
+    "category": "winter",
+    "sprite": "assets/runtime/expansion/outfits/challangping/processed/10-sprite.png",
+    "wornSprite": "assets/runtime/expansion/outfits/challangping/processed/10-worn.png",
+    "width": 512,
+    "height": 512,
+    "pngColorType": 6,
+    "wornSize": {
+      "width": 600,
+      "height": 700,
+      "pngColorType": 6
+    },
+    "renderLayers": [],
+    "productionStatus": "processed-review",
+    "runtimeReady": true,
+    "status": "processed-review",
+    "processingQA": "assets/runtime/expansion/outfits/challangping/processed/qa.json"
+  }
+]

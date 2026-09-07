@@ -1,0 +1,62 @@
+[
+  {
+    "id": "teddy-bear",
+    "name": "곰 인형",
+    "sprite": "assets/runtime/expansion/props/processed/teddy-bear.png",
+    "line": "폭신한 곰돌이를 꼭 안아 줘!",
+    "action": "sparkle",
+    "status": "ready-local-alpha-cleanup",
+    "sourceSprite": "assets/runtime/expansion/props/teddy-bear.png",
+    "runtimeReady": true
+  },
+  {
+    "id": "play-ball",
+    "name": "놀이 공",
+    "sprite": "assets/runtime/expansion/props/processed/play-ball.png",
+    "line": "통통! 알록달록 공놀이 하자!",
+    "action": "bubbles",
+    "status": "ready-local-alpha-cleanup",
+    "sourceSprite": "assets/runtime/expansion/props/play-ball.png",
+    "runtimeReady": true
+  },
+  {
+    "id": "strawberry-cake",
+    "name": "딸기 케이크",
+    "sprite": "assets/runtime/expansion/props/processed/strawberry-cake.png",
+    "line": "달콤한 딸기 케이크를 나눠 먹자!",
+    "action": "sparkle",
+    "status": "ready-local-alpha-cleanup",
+    "sourceSprite": "assets/runtime/expansion/props/strawberry-cake.png",
+    "runtimeReady": true
+  },
+  {
+    "id": "picnic-basket",
+    "name": "피크닉 바구니",
+    "sprite": "assets/runtime/expansion/props/processed/picnic-basket.png",
+    "line": "소풍 가방을 챙겨서 함께 떠나자!",
+    "action": "twirl",
+    "status": "ready-local-alpha-cleanup",
+    "sourceSprite": "assets/runtime/expansion/props/picnic-basket.png",
+    "runtimeReady": true
+  },
+  {
+    "id": "flower-teacup",
+    "name": "꽃 찻잔",
+    "sprite": "assets/runtime/expansion/props/processed/flower-teacup.png",
+    "line": "꽃 찻잔으로 즐거운 티타임!",
+    "action": "sparkle",
+    "status": "ready-local-alpha-cleanup",
+    "sourceSprite": "assets/runtime/expansion/props/flower-teacup.png",
+    "runtimeReady": true
+  },
+  {
+    "id": "star-tambourine",
+    "name": "별 탬버린",
+    "sprite": "assets/runtime/expansion/props/processed/star-tambourine.png",
+    "line": "찰랑찰랑, 별 탬버린을 흔들어 봐!",
+    "action": "twirl",
+    "status": "ready-local-alpha-cleanup",
+    "sourceSprite": "assets/runtime/expansion/props/star-tambourine.png",
+    "runtimeReady": true
+  }
+]

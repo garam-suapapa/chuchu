@@ -1,0 +1,28 @@
+{
+  "id": "hachuping_outfit_09",
+  "characterId": "hachuping",
+  "name": "하트 물놀이 수영복",
+  "category": "swimwear",
+  "sprite": "assets/runtime/expansion/outfits/hachuping/swimwear/sprite.png",
+  "wornSprite": "assets/runtime/expansion/outfits/hachuping/swimwear/worn.png",
+  "width": 1254,
+  "height": 1254,
+  "wornWidth": 1163,
+  "wornHeight": 1353,
+  "renderLayers": [],
+  "requiredWornCanvas": {
+    "width": 600,
+    "height": 700
+  },
+  "runtimeReady": false,
+  "status": "source-generated-needs-alpha-and-runtime-size",
+  "hasAlpha": false,
+  "review": {
+    "fullBodyUnclipped": true,
+    "claspedHandsVisible": true,
+    "selectionNoHandsOrBody": true,
+    "designMatches": true,
+    "identity": "Recognizable reference identity and pose; generated facial proportions vary slightly, not pixel-identical.",
+    "limitation": "Built-in image generation and background-extraction retries returned RGB. Local background removal and resizing deferred by parent pending user reply. Do not enable in runtime before finishing alpha and 600x700 conversion."
+  }
+}

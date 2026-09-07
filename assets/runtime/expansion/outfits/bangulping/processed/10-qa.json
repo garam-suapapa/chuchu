@@ -1,0 +1,63 @@
+{
+  "method": "edge-connected neutral checkerboard extraction; warm ivory protection; alpha-aware Lanczos fit",
+  "assets": [
+    {
+      "file": "bangulping_outfit_10-worn.png",
+      "mode": "RGBA",
+      "sourceSha256": "d9e07537a94150d1be435bee4d761f1aac1eeba7933bbe2c8353242be660bbba",
+      "sourceSize": [
+        1163,
+        1353
+      ],
+      "sourceCrop": [
+        109,
+        40,
+        1055,
+        1299
+      ],
+      "size": [
+        600,
+        700
+      ],
+      "alphaBBoxThreshold8": [
+        55,
+        21,
+        543,
+        671
+      ],
+      "alphaZeroPixels": 222485,
+      "alphaPartialPixels": 9717,
+      "opaquePixels": 187798,
+      "edgeAlphaMax": 0
+    },
+    {
+      "file": "bangulping_outfit_10.png",
+      "mode": "RGBA",
+      "sourceSha256": "6d122f47eed4c62d181e70179d291f9a75937e6251a896e21cc3f2ed1adc7c2a",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "sourceCrop": [
+        222,
+        223,
+        1032,
+        1060
+      ],
+      "size": [
+        512,
+        512
+      ],
+      "alphaBBoxThreshold8": [
+        27,
+        20,
+        484,
+        492
+      ],
+      "alphaZeroPixels": 95379,
+      "alphaPartialPixels": 5220,
+      "opaquePixels": 161545,
+      "edgeAlphaMax": 0
+    }
+  ]
+}

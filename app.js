@@ -4,7 +4,7 @@ import {accessories,extraBackgrounds} from './decor-catalog.js';
 import {setupPresets} from './preset-ui.js';
 import {setupPlayScene} from './play-scene.js';
 import {loadExpansionAssets} from './expansion-assets.js';
-import {createVoiceRepeater} from './voice-repeat.js?v=20260910-voice-repair2';
+import {createVoiceRepeater} from './voice-repeat.js?v=20260910-mic-input3';
 
 const $=id=>document.getElementById(id);
 let assets,save,step='dress',chestOpen=false,accessoryEditId=null;
@@ -349,6 +349,7 @@ function updateVoiceUI(){
   $('replay-button').hidden=!voiceRepeater.hasRecording;$('replay-button').disabled=busy;$('replay-button').textContent=state==='playing'?'멈추기':'다시 듣기';
   $('voice-player').hidden=!voiceRepeater.hasRecording;
   $('voice-meter').hidden=state!=='recording';
+  $('voice-device').disabled=busy;
   $('voice-enabled').disabled=!voiceRepeater.supported;
   if(!voiceRepeater.supported)$('voice-hint').textContent='이 브라우저에서는 따라 말하기를 사용할 수 없어요. 이야기 버튼으로 놀아 주세요.';
   else if(!voiceAllowed)$('voice-hint').textContent='목소리 따라 말하기는 보호자 설정에서 켤 수 있어요.';
@@ -356,9 +357,21 @@ function updateVoiceUI(){
 }
 function voiceMessage(text){$('voice-hint').textContent=text;$('speech').textContent=text;updateVoiceUI();if(text)requestAnimationFrame(()=>$('voice-hint').textContent=text);}
 const VoiceAudioContext=window.AudioContext||window.webkitAudioContext;
+function updateVoiceInput(text){$('voice-input-status').textContent=text;}
+function updateVoiceDevices(devices,activeId){
+  const select=$('voice-device');select.replaceChildren();
+  const option=document.createElement('option');option.value='';option.textContent='기본 마이크';select.append(option);
+  for(const device of devices){
+    if(!device.id||device.id==='default')continue;
+    const option=document.createElement('option');option.value=device.id;option.textContent=device.label;select.append(option);
+  }
+  select.value=[...select.options].some(option=>option.value===activeId)?activeId:'';
+  $('voice-device-row').hidden=false;
+}
+$('voice-device').addEventListener('change',()=>voiceRepeater.selectDevice($('voice-device').value));
 function updateVoiceLevel(level){const meter=$('voice-meter'),fill=$('voice-meter-fill'),percent=Math.round(level*100);fill.style.transform=`scaleX(${level})`;meter.setAttribute('aria-valuenow',String(percent));}
 voiceRepeater=createVoiceRepeater({mediaDevices:navigator.mediaDevices,AudioContextCtor:VoiceAudioContext,audioElement:$('voice-player'),
-  onState:()=>updateVoiceUI(),onMessage:voiceMessage,onLevel:updateVoiceLevel,onPlayTarget:(id,active)=>playScene?.setVoiceState(id,active?'playing':'ready')});
+  onState:()=>updateVoiceUI(),onMessage:voiceMessage,onLevel:updateVoiceLevel,onInput:updateVoiceInput,onDevices:updateVoiceDevices,onPlayTarget:(id,active)=>playScene?.setVoiceState(id,active?'playing':'ready')});
 $('voice-enabled').addEventListener('change',()=>{voiceAllowed=$('voice-enabled').checked;if(!voiceAllowed)abortVoice();updateVoiceUI();});
 function abortVoice(clearRecording=true){if('speechSynthesis'in window)speechSynthesis.cancel();voiceTargetId=null;voiceRepeater?.cancel({clearRecording});if(assets)updateVoiceUI();}
 function startVoice(){

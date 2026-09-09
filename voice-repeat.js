@@ -34,19 +34,36 @@ export function createVoiceRepeater({
   onState=()=>{},
   onMessage=()=>{},
   onLevel=()=>{},
+  onInput=()=>{},
+  onDevices=()=>{},
   onPlayTarget=()=>{}
 }={}){
-  let currentTarget=null;
+  let currentTarget=null,inputTimer=null,track=null,blocks=0;
+  let selectedDeviceId='';
   let phase='idle',context=null,stream=null,inputNode=null,processor=null,muteGain=null,maxTimer=null;
   let pcmChunks=[],sampleCount=0,peak=0,recording=null,player=null,playTarget=null,generation=0,settled=Promise.resolve();
   const supported=Boolean(mediaDevices?.getUserMedia&&AudioContextCtor&&audioElement?.play);
 
   function setState(next){phase=next;onState(next);}
   function message(text){onMessage(text);}
-  async function ensureContext(){
-    context||=new AudioContextCtor();
-    if(context.state==='suspended'||context.state==='interrupted')await context.resume();
-    return context;
+  async function resumeInput(audio){
+    if(audio.state==='running')return;
+    let timer;
+    try{
+      await Promise.race([audio.resume(),new Promise((_,reject)=>{
+        timer=setTimer(()=>reject(new Error('audio-suspended')),2500);
+      })]);
+      if(audio.state!=='running')throw new Error('audio-suspended');
+    }finally{clearTimer(timer);}
+  }
+  async function updateDevices(token){
+    if(!mediaDevices.enumerateDevices)return;
+    try{
+      const devices=await mediaDevices.enumerateDevices();
+      if(token===generation)onDevices(devices.filter(device=>device.kind==='audioinput').map(device=>({
+        id:device.deviceId,label:device.label||'마이크'
+      })),track?.getSettings?.().deviceId||selectedDeviceId);
+    }catch{/* Device labels are optional; capturing can continue. */}
   }
   function stopPlayback(){
     if(!player)return;
@@ -56,6 +73,8 @@ export function createVoiceRepeater({
     playTarget=null;
   }
   function stopCapture(){
+    clearTimer(inputTimer);inputTimer=null;
+    if(track){track.onmute=null;track.onunmute=null;track.onended=null;track=null;}
     if(processor){processor.onaudioprocess=null;try{processor.disconnect();}catch{}processor=null;}
     if(inputNode){try{inputNode.disconnect();}catch{}inputNode=null;}
     if(muteGain){try{muteGain.disconnect();}catch{}muteGain=null;}
@@ -68,9 +87,10 @@ export function createVoiceRepeater({
   }
   function fail(text,token,{keepRecording=false}={}){
     if(token!==generation)return;
+    clearTimer(maxTimer);maxTimer=null;
     stopCapture();stopPlayback();pcmChunks=[];sampleCount=0;peak=0;
     if(!keepRecording)clearRecording();
-    setState(recording?'ready':'idle');message(text);
+    setState(recording?'ready':'idle');message(text);onInput(text);
   }
   async function play(saved,token,{automatic=false}={}){
     if(!saved||token!==generation)return false;
@@ -98,7 +118,8 @@ export function createVoiceRepeater({
   async function finishRecording(token,target){
     if(token!==generation)return;
     clearTimer(maxTimer);maxTimer=null;stopCapture();
-    const tooShort=sampleCount<context.sampleRate*.35,tooQuiet=peak<.001;
+    const tooShort=sampleCount<context.sampleRate*.35,tooQuiet=peak<.00005;
+    if(blocks===0){fail('브라우저가 마이크 입력을 전달하지 않았어요. 외부 브라우저에서 열거나 다른 마이크를 선택해 주세요.',token);return;}
     if(tooShort||tooQuiet){
       pcmChunks=[];sampleCount=0;peak=0;
       fail(tooQuiet?'마이크 소리가 감지되지 않았어요. 볼륨 바를 확인하며 다시 말해 주세요.':'조금 더 길게 말해 줘!',token);
@@ -116,12 +137,26 @@ export function createVoiceRepeater({
   async function start(target){
     if(!supported){message('이 브라우저에서는 따라 말하기를 사용할 수 없어요. 이야기 버튼으로 놀아 주세요.');return false;}
     cancel({clearRecording:true,silent:true});currentTarget={...target};const token=++generation;
-    setState('requesting');message('마이크 사용을 허용해 주세요.');
+    setState('requesting');message('마이크 사용을 허용해 주세요.');onInput('마이크 연결 중…');
     try{
-      const audio=await ensureContext();
-      const acquired=await mediaDevices.getUserMedia({audio:true,video:false});
+      context||=new AudioContextCtor();
+      const audio=context;
+      // Unlock during the click, then resume again after microphone permission.
+      void audio.resume().catch(()=>{});
+      const acquired=await mediaDevices.getUserMedia({
+        audio:selectedDeviceId?{deviceId:{exact:selectedDeviceId}}:true,video:false
+      });
       if(token!==generation){stopTracks(acquired);return false;}
-      stream=acquired;pcmChunks=[];sampleCount=0;peak=0;
+      stream=acquired;track=stream.getAudioTracks()[0];
+      if(!track||track.readyState==='ended')throw new Error('input-ended');
+      void updateDevices(token);
+      onInput((track.label||'마이크')+' · 입력 준비 중');
+      await resumeInput(audio);
+      if(token!==generation)return false;
+      pcmChunks=[];sampleCount=0;peak=0;blocks=0;
+      track.onended=()=>fail('마이크 연결이 끊겼어요. 다시 연결하거나 다른 마이크를 선택해 주세요.',token);
+      track.onmute=()=>{if(token===generation)onInput((track?.label||'마이크')+' · 브라우저에서 입력이 일시 중단됐어요');};
+      track.onunmute=()=>{if(token===generation)onInput((track?.label||'마이크')+' · 소리를 기다리고 있어요');};
       inputNode=audio.createMediaStreamSource(stream);
       processor=audio.createScriptProcessor(2048,1,1);
       muteGain=audio.createGain();muteGain.gain.value=0;
@@ -130,22 +165,32 @@ export function createVoiceRepeater({
         const input=event.inputBuffer.getChannelData(0),copy=new Float32Array(input);
         let squareSum=0,blockPeak=0;
         for(let index=0;index<copy.length;index++){const value=copy[index];squareSum+=value*value;blockPeak=Math.max(blockPeak,Math.abs(value));}
-        pcmChunks.push(copy);sampleCount+=copy.length;peak=Math.max(peak,blockPeak);
-        onLevel(Math.min(1,Math.sqrt(squareSum/copy.length)*8));
+        pcmChunks.push(copy);sampleCount+=copy.length;peak=Math.max(peak,blockPeak);blocks++;
+        if(blocks===1||blocks%8===0)onInput((track?.label||'마이크')+(blockPeak>.00005?' · 소리 감지됨':' · 입력은 연결됐지만 소리가 없어요'));
+        onLevel(Math.min(1,Math.pow(Math.sqrt(squareSum/copy.length),.6)*3));
       };
       inputNode.connect(processor);processor.connect(muteGain);muteGain.connect(audio.destination);
       setState('recording');message('듣고 있어요… 볼륨 바를 확인해 주세요. 최대 8초');
+      inputTimer=setTimer(()=>{
+        if(token!==generation||phase!=='recording')return;
+        if(blocks===0){
+          fail('브라우저가 마이크 입력을 전달하지 않았어요. 외부 브라우저에서 열거나 다른 마이크를 선택해 주세요.',token);
+        }else if(peak<.00005){
+          onInput((track?.label||'마이크')+' · 소리가 없어요. 마이크 선택과 음소거를 확인해 주세요.');
+        }
+      },2500);
       maxTimer=setTimer(()=>{if(token===generation&&phase==='recording'){setState('processing');settled=finishRecording(token,target);}},8000);
       return true;
     }catch(error){
       if(token!==generation)return false;
+      if(error?.message==='audio-suspended'){fail('마이크 입력이 일시 정지됐어요. 녹음 시작을 다시 눌러 주세요.',token);return false;}
       const denied=['NotAllowedError','SecurityError'].includes(error?.name);
       fail(denied?'마이크 사용이 꺼져 있어요. 브라우저 설정에서 허용해 주세요.':'마이크를 사용할 수 없어요. 연결을 확인해 주세요.',token);
       return false;
     }
   }
   function stop(){
-    if(phase==='requesting'){generation++;setState('idle');message('이제 버튼을 누르고 말해 주세요.');return;}
+    if(phase==='requesting'){cancel({silent:true});message('이제 버튼을 누르고 말해 주세요.');onInput('마이크 연결을 취소했어요.');return;}
     if(phase!=='recording')return;
     const token=generation,target={...currentTarget};
     setState('processing');settled=finishRecording(token,target);
@@ -160,6 +205,7 @@ export function createVoiceRepeater({
     const token=generation;settled=play(recording,token);return true;
   }
   function whenSettled(){return settled;}
+  function selectDevice(id){cancel();selectedDeviceId=id;onInput('선택한 마이크로 녹음할 준비가 됐어요.');}
 
-  return {get supported(){return supported;},get state(){return phase;},get hasRecording(){return Boolean(recording);},start,stop,cancel,replay,whenSettled};
+  return {get supported(){return supported;},get state(){return phase;},get hasRecording(){return Boolean(recording);},start,stop,cancel,replay,whenSettled,selectDevice};
 }

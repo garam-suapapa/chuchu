@@ -36,6 +36,7 @@ export function createVoiceRepeater({
   onLevel=()=>{},
   onPlayTarget=()=>{}
 }={}){
+  let currentTarget=null;
   let phase='idle',context=null,stream=null,inputNode=null,processor=null,muteGain=null,maxTimer=null;
   let pcmChunks=[],sampleCount=0,peak=0,recording=null,player=null,playTarget=null,generation=0,settled=Promise.resolve();
   const supported=Boolean(mediaDevices?.getUserMedia&&AudioContextCtor&&audioElement?.play);
@@ -76,7 +77,7 @@ export function createVoiceRepeater({
     stopPlayback();
     try{
       const next=audioElement;next.src=saved.url;
-      next.preload='auto';next.volume=1;next.defaultPlaybackRate=saved.rate;next.playbackRate=saved.rate;
+      next.preload='auto';next.muted=false;next.volume=1;next.defaultPlaybackRate=saved.rate;next.playbackRate=saved.rate;
       if('preservesPitch'in next)next.preservesPitch=false;
       if('webkitPreservesPitch'in next)next.webkitPreservesPitch=false;
       if('mozPreservesPitch'in next)next.mozPreservesPitch=false;
@@ -114,7 +115,7 @@ export function createVoiceRepeater({
   }
   async function start(target){
     if(!supported){message('이 브라우저에서는 따라 말하기를 사용할 수 없어요. 이야기 버튼으로 놀아 주세요.');return false;}
-    cancel({clearRecording:true,silent:true});const token=++generation;
+    cancel({clearRecording:true,silent:true});currentTarget={...target};const token=++generation;
     setState('requesting');message('마이크 사용을 허용해 주세요.');
     try{
       const audio=await ensureContext();
@@ -149,9 +150,6 @@ export function createVoiceRepeater({
     const token=generation,target={...currentTarget};
     setState('processing');settled=finishRecording(token,target);
   }
-  let currentTarget=null;
-  const originalStart=start;
-  async function startWithTarget(target){currentTarget=target;return originalStart(target);}
   function cancel({clearRecording:shouldClear=true,silent=false}={}){
     generation++;clearTimer(maxTimer);maxTimer=null;stopCapture();stopPlayback();pcmChunks=[];sampleCount=0;peak=0;currentTarget=null;
     if(shouldClear)clearRecording();setState(recording?'ready':'idle');
@@ -163,5 +161,5 @@ export function createVoiceRepeater({
   }
   function whenSettled(){return settled;}
 
-  return {get supported(){return supported;},get state(){return phase;},get hasRecording(){return Boolean(recording);},start:startWithTarget,stop,cancel,replay,whenSettled};
+  return {get supported(){return supported;},get state(){return phase;},get hasRecording(){return Boolean(recording);},start,stop,cancel,replay,whenSettled};
 }

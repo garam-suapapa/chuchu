@@ -4,8 +4,7 @@ import {accessories,extraBackgrounds} from './decor-catalog.js';
 import {setupPresets} from './preset-ui.js';
 import {setupPlayScene} from './play-scene.js';
 import {loadExpansionAssets} from './expansion-assets.js';
-import {createVoiceRepeater} from './voice-repeat.js?v=20260910-voice-meter';
-import {createCharacterTts} from './character-tts.js';
+import {createVoiceRepeater} from './voice-repeat.js?v=20260910-voice-repair2';
 
 const $=id=>document.getElementById(id);
 let assets,save,step='dress',chestOpen=false,accessoryEditId=null;
@@ -26,12 +25,7 @@ const selectedAccessoryPositions=()=>save.accessoryPositions?.[save.characterId]
 
 function persist(next=save){try{localStorage.setItem(SAVE_KEY,JSON.stringify(next));return true;}catch{toast('이 브라우저에서는 코디를 저장할 수 없어요. 지금 놀이는 계속할 수 있어요.');return false;}}
 function toast(message){$('toast').textContent=message;$('toast').hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').hidden=true,2600);}
-let ttsFallbackNotified=false;
-const characterTts=createCharacterTts({onFallback:()=>{if(!ttsFallbackNotified){ttsFallbackNotified=true;toast('캐릭터 음성 연결이 어려워 기본 음성으로 읽어요.');}}});
-function say(line,read=false){
-  voiceRepeater?.cancel({clearRecording:true,silent:true});characterTts.cancel();$('speech').textContent=line;
-  if(read&&save.sound){const character=step==='play'?playScene?.selectedOptions()?.character:selectedCharacter();if(character)void characterTts.speak(character.id,line);}
-}
+function say(line,read=false){voiceRepeater?.cancel({clearRecording:true,silent:true});$('speech').textContent=line;if(read&&save.sound&&'speechSynthesis'in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(line);u.lang='ko-KR';u.rate=.92;u.pitch=1.2;speechSynthesis.speak(u);}}
 function chime(){
   if(!save.sound)return;
   try{
@@ -366,7 +360,7 @@ function updateVoiceLevel(level){const meter=$('voice-meter'),fill=$('voice-mete
 voiceRepeater=createVoiceRepeater({mediaDevices:navigator.mediaDevices,AudioContextCtor:VoiceAudioContext,audioElement:$('voice-player'),
   onState:()=>updateVoiceUI(),onMessage:voiceMessage,onLevel:updateVoiceLevel,onPlayTarget:(id,active)=>playScene?.setVoiceState(id,active?'playing':'ready')});
 $('voice-enabled').addEventListener('change',()=>{voiceAllowed=$('voice-enabled').checked;if(!voiceAllowed)abortVoice();updateVoiceUI();});
-function abortVoice(clearRecording=true){characterTts.cancel();voiceTargetId=null;voiceRepeater?.cancel({clearRecording});if(assets)updateVoiceUI();}
+function abortVoice(clearRecording=true){if('speechSynthesis'in window)speechSynthesis.cancel();voiceTargetId=null;voiceRepeater?.cancel({clearRecording});if(assets)updateVoiceUI();}
 function startVoice(){
   if(['requesting','recording'].includes(voiceRepeater.state)){voiceRepeater.stop();return;}
   if(!voiceRepeater.supported)return;
@@ -374,7 +368,7 @@ function startVoice(){
   if(!save.sound){voiceMessage('소리를 켜면 친구 목소리를 들을 수 있어요.');return;}
   const friend=playScene?.selectedOptions(),instanceId=playScene?.selectedId();
   if(!friend||!instanceId){voiceMessage('먼저 함께 놀 친구를 골라 주세요.');return;}
-  characterTts.cancel();voiceTargetId=instanceId;
+  if('speechSynthesis'in window)speechSynthesis.cancel();voiceTargetId=instanceId;
   voiceRepeater.start({instanceId,characterId:friend.character.id});
 }
 $('mic-button').addEventListener('click',startVoice);

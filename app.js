@@ -370,7 +370,7 @@ function startVoice(){
 }
 $('mic-button').addEventListener('click',startVoice);
 $('replay-button').addEventListener('click',()=>{if(voiceRepeater.state==='playing')voiceRepeater.cancel({clearRecording:false});else voiceRepeater.replay();updateVoiceUI();});
-window.addEventListener('blur',()=>abortVoice());window.addEventListener('pagehide',()=>abortVoice());document.addEventListener('visibilitychange',()=>{if(document.hidden){abortVoice();if('speechSynthesis'in window)speechSynthesis.cancel();}});
+window.addEventListener('pagehide',()=>abortVoice());document.addEventListener('visibilitychange',()=>{if(document.hidden){abortVoice();if('speechSynthesis'in window)speechSynthesis.cancel();}});
 
 $('photo-button').addEventListener('click',async()=>{
   const button=$('photo-button');button.disabled=true;

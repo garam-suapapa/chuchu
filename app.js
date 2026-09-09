@@ -4,7 +4,7 @@ import {accessories,extraBackgrounds} from './decor-catalog.js';
 import {setupPresets} from './preset-ui.js';
 import {setupPlayScene} from './play-scene.js';
 import {loadExpansionAssets} from './expansion-assets.js';
-import {createVoiceRepeater} from './voice-repeat.js';
+import {createVoiceRepeater} from './voice-repeat.js?v=20260910-voice-meter';
 import {createCharacterTts} from './character-tts.js';
 
 const $=id=>document.getElementById(id);

@@ -14,7 +14,7 @@ function stopTracks(stream){for(const track of stream?.getTracks?.()||[])track.s
 export function createVoiceRepeater({
   mediaDevices,
   MediaRecorderCtor,
-  AudioCtor,
+  audioElement,
   createObjectURL=blob=>URL.createObjectURL(blob),
   revokeObjectURL=url=>URL.revokeObjectURL(url),
   now=()=>performance.now(),
@@ -26,7 +26,7 @@ export function createVoiceRepeater({
 }={}){
   let phase='idle',stream=null,recorder=null,chunks=[],startedAt=0,maxTimer=null;
   let recording=null,player=null,playTarget=null,generation=0,pressActive=false,settled=Promise.resolve();
-  const supported=Boolean(mediaDevices?.getUserMedia&&MediaRecorderCtor&&AudioCtor);
+  const supported=Boolean(mediaDevices?.getUserMedia&&MediaRecorderCtor&&audioElement?.play);
 
   function setState(next){phase=next;onState(next);}
   function message(text){onMessage(text);}
@@ -40,6 +40,7 @@ export function createVoiceRepeater({
   }
   function clearRecording(){
     if(recording?.url)revokeObjectURL(recording.url);
+    if(audioElement.src){audioElement.removeAttribute('src');audioElement.load();}
     recording=null;
   }
   function fail(text,token,{keepRecording=false}={}){
@@ -52,7 +53,7 @@ export function createVoiceRepeater({
     if(!saved||token!==generation)return false;
     stopPlayback();
     try{
-      const next=new AudioCtor(saved.url);
+      const next=audioElement;next.src=saved.url;
       next.preload='auto';next.volume=.95;next.defaultPlaybackRate=saved.rate;next.playbackRate=saved.rate;
       if('preservesPitch'in next)next.preservesPitch=false;
       if('webkitPreservesPitch'in next)next.webkitPreservesPitch=false;
@@ -79,7 +80,7 @@ export function createVoiceRepeater({
       const blob=new Blob(chunks,{type:mimeType||chunks[0]?.type||''});chunks=[];
       clearRecording();
       recording={blob,url:createObjectURL(blob),target:recorder.target,rate:voiceRateFor(recorder.target.characterId)};
-      recorder=null;
+      recorder=null;setState('ready');
       await play(recording,token,{automatic:true});
     }catch{fail('목소리를 다시 들려줄래? 잘 담지 못했어.',token);}
   }

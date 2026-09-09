@@ -347,13 +347,14 @@ function updateVoiceUI(){
   $('mic-label').textContent=state==='requesting'?'녹음 취소':state==='recording'?'녹음 멈추기':state==='processing'?'목소리를 바꾸는 중…':state==='playing'?'새로 녹음하기':'녹음 시작';
   $('mic-button').classList.toggle('listening',state==='recording');$('mic-button').classList.toggle('processing',state==='processing');
   $('replay-button').hidden=!voiceRepeater.hasRecording;$('replay-button').disabled=busy;$('replay-button').textContent=state==='playing'?'멈추기':'다시 듣기';
+  $('voice-player').hidden=!voiceRepeater.hasRecording;
   $('voice-enabled').disabled=!voiceRepeater.supported;
   if(!voiceRepeater.supported)$('voice-hint').textContent='이 브라우저에서는 따라 말하기를 사용할 수 없어요. 이야기 버튼으로 놀아 주세요.';
   else if(!voiceAllowed)$('voice-hint').textContent='목소리 따라 말하기는 보호자 설정에서 켤 수 있어요.';
   playScene?.setVoiceState(voiceTargetId,state);
 }
 function voiceMessage(text){$('voice-hint').textContent=text;$('speech').textContent=text;updateVoiceUI();if(text)requestAnimationFrame(()=>$('voice-hint').textContent=text);}
-voiceRepeater=createVoiceRepeater({mediaDevices:navigator.mediaDevices,MediaRecorderCtor:window.MediaRecorder,AudioCtor:window.Audio,
+voiceRepeater=createVoiceRepeater({mediaDevices:navigator.mediaDevices,MediaRecorderCtor:window.MediaRecorder,audioElement:$('voice-player'),
   onState:()=>updateVoiceUI(),onMessage:voiceMessage,onPlayTarget:(id,active)=>playScene?.setVoiceState(id,active?'playing':'ready')});
 $('voice-enabled').addEventListener('change',()=>{voiceAllowed=$('voice-enabled').checked;if(!voiceAllowed)abortVoice();updateVoiceUI();});
 function abortVoice(clearRecording=true){voiceTargetId=null;voiceRepeater?.cancel({clearRecording});if(assets)updateVoiceUI();}

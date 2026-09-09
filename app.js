@@ -12,6 +12,7 @@ let toastTimer=null;
 let playScene;
 const imageCache=new Map();
 const decodedImages=new Map();
+let dollLoadRevision=0;
 const steps=['dress','accessory','background','play'];
 const icons=name=>`<svg class="icon" aria-hidden="true"><use href="#i-${name}"/></svg>`;
 const selectedCharacter=()=>assets.characters.find(c=>c.id===save.characterId);
@@ -44,13 +45,33 @@ function particles(kind='sparkle',origin={x:50,y:64}){
     $('effects').append(p);setTimeout(()=>p.remove(),2100);
   }
 }
-function loadImage(src){if(imageCache.has(src))return imageCache.get(src);const promise=new Promise((resolve,reject)=>{const image=new Image();image.onload=()=>{decodedImages.set(src,image);resolve(image);};image.onerror=()=>reject(new Error('이미지를 읽을 수 없어요: '+src));image.src=src;});imageCache.set(src,promise);return promise;}
+function loadImage(src){if(imageCache.has(src))return imageCache.get(src);const promise=new Promise((resolve,reject)=>{const image=new Image();image.onload=()=>{decodedImages.set(src,image);resolve(image);};image.onerror=()=>{imageCache.delete(src);reject(new Error('이미지를 읽을 수 없어요: '+src));};image.src=src;});imageCache.set(src,promise);return promise;}
+function dollImageSources(c=selectedCharacter(),o=selectedOutfit(),chosen=selectedAccessories()){
+  return [...new Set([
+    ...(o?.renderLayers?.length?o.renderLayers.map(layer=>layer.src):[o?o.wornSprite:c.base]),
+    ...chosen.flatMap(a=>[a.backSprite,a.frontSprite||a.sprite]).filter(Boolean)
+  ])];
+}
+async function ensureDollImages(c,o,chosen){await Promise.all(dollImageSources(c,o,chosen).map(loadImage));}
+async function queueDollRender(){
+  const revision=++dollLoadRevision,doll=$('doll');doll.setAttribute('aria-busy','true');
+  try{await ensureDollImages();if(revision===dollLoadRevision)renderDoll();}
+  catch(error){if(revision===dollLoadRevision){toast('선택한 꾸미기를 불러오지 못했어요. 다시 눌러 주세요.');console.error(error);}}
+  finally{if(revision===dollLoadRevision)doll.removeAttribute('aria-busy');}
+}
+function setCatalogImage(image,src,eager){
+  image.alt='';image.draggable=false;image.decoding='async';
+  if(eager)image.src=src;else{image.loading='lazy';image.dataset.src=src;}
+}
+function hydrateImages(container){
+  for(const image of container.querySelectorAll('img[data-src]')){image.src=image.dataset.src;delete image.dataset.src;}
+}
 
 function renderCharacters(){
   const fragment=document.createDocumentFragment();
   for(const c of assets.characters){
     const button=document.createElement('button');button.className='character-card';button.dataset.character=c.id;button.style.setProperty('--character-accent',c.accent);button.setAttribute('aria-label',c.name+' 선택');button.setAttribute('aria-pressed',String(c.id===save.characterId));
-    const portrait=document.createElement('span');portrait.className='character-portrait';const img=document.createElement('img');img.src=c.base;img.alt='';img.draggable=false;portrait.append(img);
+    const portrait=document.createElement('span');portrait.className='character-portrait';const img=document.createElement('img');setCatalogImage(img,c.base,true);portrait.append(img);
     const label=document.createElement('span');label.textContent=c.name;button.append(portrait,label);
     button.addEventListener('click',()=>{
       if(step==='play')setStep('dress');
@@ -64,7 +85,7 @@ function renderOutfits(){
   const fragment=document.createDocumentFragment();
   for(const o of assets.outfits.filter(o=>o.characterId===save.characterId)){
     const button=document.createElement('button');button.className='outfit-card';button.dataset.outfit=o.id;button.setAttribute('aria-label',o.name+' 입히기');button.setAttribute('aria-pressed',String(o.id===save.outfits[save.characterId]));
-    const image=document.createElement('img');image.src=o.sprite;image.alt='';image.draggable=false;
+    const image=document.createElement('img');setCatalogImage(image,o.sprite,step==='dress');
     const label=document.createElement('span');label.className='item-name';label.textContent=o.name;
     const check=document.createElement('span');check.className='selected-check';check.innerHTML=icons('check');
     button.append(image,label,check);button.addEventListener('click',()=>wear(o.id));attachOutfitDrag(button,o);fragment.append(button);
@@ -92,6 +113,8 @@ function renderDoll(){
   if(step!=='accessory')$('doll').classList.remove('accessory-hover');
   $('doll').setAttribute('aria-label',step==='play'?c.name+' 이동하고 인사하기':step==='accessory'?(editAccessory?`${c.name}의 ${editAccessory.name} 위치 조절. 끌거나 화살표 키를 사용하세요.`:`${c.name} 악세서리 위치 조절`):c.name+'에게 인사하기');
   if(step==='accessory')$('doll').setAttribute('aria-describedby','accessory-position-instructions');else $('doll').removeAttribute('aria-describedby');
+  $('current-outfit').textContent=[o?.name||'기본 모습',...chosen.map(a=>a.name)].join(' · ');
+  if(dollImageSources().some(src=>!decodedImages.has(src))){queueDollRender();return;}
   const canvas=$('doll-canvas'),ctx=canvas.getContext('2d');ctx.clearRect(0,0,canvas.width,canvas.height);
   drawDoll(ctx,{character:c,outfit:o,accessories:chosen,accessoryPositions:positions,images:decodedImages});
   if(accessoryDrag?.accessoryId){
@@ -103,7 +126,6 @@ function renderDoll(){
     }
   }
   const reset=$('reset-accessory-position');if(reset)reset.disabled=Object.keys(positions).length===0;
-  $('current-outfit').textContent=[o?.name||'기본 모습',...chosen.map(a=>a.name)].join(' · ');
 }
 
 function renderAccessories(){
@@ -113,7 +135,7 @@ function renderAccessories(){
     const selected=save.accessories[save.characterId][a.slot]===a.id;
     const button=document.createElement('button');button.className='accessory-card';button.dataset.accessory=a.id;
     button.setAttribute('aria-label',selected?`${a.name} 장착됨${a.id===accessoryEditId?'. 위치 조절 중. 화살표 키로 이동할 수 있어요.':''}`:a.name+' 고르기');button.setAttribute('aria-pressed',String(selected));button.classList.toggle('position-target',selected&&a.id===accessoryEditId);
-    const image=document.createElement('img');image.src=a.sprite;image.alt='';image.draggable=false;
+    const image=document.createElement('img');setCatalogImage(image,a.sprite,step==='accessory');
     const name=document.createElement('span');name.className='item-name';name.textContent=a.name;
     const slot=document.createElement('span');slot.className='slot-badge';slot.textContent=a.slot==='head'?'머리':'가방';
     const check=document.createElement('span');check.className='selected-check';check.innerHTML=icons('check');
@@ -150,7 +172,7 @@ function renderBackgrounds(){
   for(const b of assets.backgrounds){
     const button=document.createElement('button');button.className='background-card';button.dataset.background=b.id;button.setAttribute('aria-label',b.name+' 선택');button.setAttribute('aria-pressed',String(save.backgroundId===b.id));
     const preview=document.createElement('div');preview.className='background-preview';
-    if(b.image){const img=document.createElement('img');img.src=b.image;img.alt='';preview.append(img);}else preview.textContent='✿';
+    if(b.image){const img=document.createElement('img');setCatalogImage(img,b.image,step==='background');preview.append(img);}else preview.textContent='✿';
     const name=document.createElement('span');name.className='background-name';name.textContent=b.name;
     const caption=document.createElement('span');caption.className='background-caption';caption.textContent=b.caption;
     button.append(preview,name,caption);button.addEventListener('click',()=>{save={...save,backgroundId:b.id};persist();renderBackgrounds();renderStage();say(`${b.name}에서 함께 놀자!`);chime();});fragment.append(button);
@@ -204,6 +226,7 @@ function setStep(next){
   if(step==='accessory'&&!selectedAccessories().some(a=>a.id===accessoryEditId))accessoryEditId=selectedAccessories()[0]?.id||null;
   syncAccessoryTargets();
   steps.forEach((id,i)=>{const b=document.querySelector(`[data-step="${id}"]`);b.disabled=false;b.classList.toggle('active',id===step);b.classList.toggle('done',i<steps.indexOf(step));if(id===step)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current');$(id+'-panel').hidden=id!==step;});
+  hydrateImages($(step+'-panel'));if(step==='play')hydrateImages($('scene-props'));
   const texts={dress:['다음! 악세서리 고르기','옷 · 악세서리 · 배경은 자동으로 기억해요'],accessory:['완성! 배경 고르기','머리 장식과 가방을 함께 할 수 있어요'],background:['이곳에서 놀기','마음에 드는 배경을 골라 주세요'],play:['다시 꾸미러 가기','위 메뉴에서 언제든 코디를 바꿀 수 있어요']};
   $('next-button').replaceChildren(document.createTextNode(texts[step][0]));$('next-button').insertAdjacentHTML('beforeend',icons('arrow'));$('footer-note').textContent=texts[step][1];
   renderDoll();renderStage();
@@ -351,6 +374,7 @@ $('photo-button').addEventListener('click',async()=>{
       const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download='chuchu-friends.png';link.click();setTimeout(()=>URL.revokeObjectURL(url),10000);toast('친구들과 단체 사진을 저장했어요!');return;
     }
     const c=selectedCharacter(),o=selectedOutfit(),b=selectedBackground(),chosen=selectedAccessories();const canvas=document.createElement('canvas');canvas.width=1200;canvas.height=900;const ctx=canvas.getContext('2d');
+    await ensureDollImages(c,o,chosen);
     ctx.fillStyle='#fff8f2';ctx.fillRect(0,0,1200,900);
     if(b.image){const bg=await loadImage(b.image);const factor=Math.max(1200/bg.width,770/bg.height);ctx.drawImage(bg,(1200-bg.width*factor)/2,(770-bg.height*factor)/2,bg.width*factor,bg.height*factor);}else{const gradient=ctx.createLinearGradient(0,0,0,770);gradient.addColorStop(0,'#fff9f3');gradient.addColorStop(1,'#f4dce7');ctx.fillStyle=gradient;ctx.fillRect(0,0,1200,770);}
     ctx.save();ctx.fillStyle='#79546d2e';ctx.beginPath();ctx.ellipse(600,738,105,16,0,0,Math.PI*2);ctx.fill();ctx.restore();
@@ -368,8 +392,7 @@ async function init(){
     assets.accessories.push(...expansion.accessories);assets.outfits.push(...expansion.outfits);assets.props=expansion.props;
     let stored={};try{stored=JSON.parse(localStorage.getItem(SAVE_KEY)||'{}');}catch{}
     save=makeSave(assets,stored);
-    const accessorySprites=assets.accessories.flatMap(a=>[a.sprite,a.backSprite,a.frontSprite].filter(Boolean));
-    await Promise.all([...assets.characters.map(c=>c.base),...assets.outfits.flatMap(o=>[o.sprite,o.wornSprite,...(o.renderLayers||[]).map(layer=>layer.src)]),...accessorySprites,...assets.backgrounds.filter(b=>b.image).map(b=>b.image)].map(loadImage));
+    await ensureDollImages();
     playScene=setupPlayScene({assets,images:decodedImages,getSave:()=>save,commit:(next,store=true)=>{save=next;if(store)persist();},say,onSelect:()=>{abortVoice();if('speechSynthesis'in window)speechSynthesis.cancel();},onGreet:()=>{talk('안녕');animateDoll();chime();}});
     renderAll();renderPlayProps();setStep('dress');updateVoiceUI();
     setupPresets({assets,getSave:()=>save,commit:next=>{if(!persist(next))return false;save=next;return true;},onApply:preset=>{accessoryEditId=null;if(step==='play')setStep('dress');renderAll();say(`${preset.name} 코디를 입었어! 함께 놀자!`);animateDoll();},onOpen:abortVoice});

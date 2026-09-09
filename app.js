@@ -4,10 +4,11 @@ import {accessories,extraBackgrounds} from './decor-catalog.js';
 import {setupPresets} from './preset-ui.js';
 import {setupPlayScene} from './play-scene.js';
 import {loadExpansionAssets} from './expansion-assets.js';
+import {createVoiceRepeater} from './voice-repeat.js';
 
 const $=id=>document.getElementById(id);
 let assets,save,step='dress',chestOpen=false,accessoryEditId=null;
-let voiceAllowed=false,recognition=null,voiceTimer=null,stopRequested=false,audioContext=null;
+let voiceAllowed=false,voiceRepeater=null,voiceTargetId=null,audioContext=null;
 let toastTimer=null;
 let playScene;
 const imageCache=new Map();
@@ -24,7 +25,7 @@ const selectedAccessoryPositions=()=>save.accessoryPositions?.[save.characterId]
 
 function persist(next=save){try{localStorage.setItem(SAVE_KEY,JSON.stringify(next));return true;}catch{toast('이 브라우저에서는 코디를 저장할 수 없어요. 지금 놀이는 계속할 수 있어요.');return false;}}
 function toast(message){$('toast').textContent=message;$('toast').hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').hidden=true,2600);}
-function say(line,read=false){$('speech').textContent=line;if(read&&save.sound&&'speechSynthesis'in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(line);u.lang='ko-KR';u.rate=.92;u.pitch=1.2;speechSynthesis.speak(u);}}
+function say(line,read=false){voiceRepeater?.cancel({clearRecording:true,silent:true});$('speech').textContent=line;if(read&&save.sound&&'speechSynthesis'in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(line);u.lang='ko-KR';u.rate=.92;u.pitch=1.2;speechSynthesis.speak(u);}}
 function chime(){
   if(!save.sound)return;
   try{
@@ -336,34 +337,40 @@ for(const button of document.querySelectorAll('[data-step]'))button.addEventList
 $('next-button').addEventListener('click',()=>setStep(steps[(steps.indexOf(step)+1)%steps.length]));
 
 function updateSound(){$('sound-button').setAttribute('aria-pressed',String(save.sound));$('sound-button').setAttribute('aria-label',save.sound?'소리 끄기':'소리 켜기');}
-$('sound-button').addEventListener('click',()=>{save={...save,sound:!save.sound};persist();updateSound();if(!save.sound&&'speechSynthesis'in window)speechSynthesis.cancel();else chime();});
+$('sound-button').addEventListener('click',()=>{save={...save,sound:!save.sound};persist();updateSound();if(!save.sound){abortVoice();if('speechSynthesis'in window)speechSynthesis.cancel();}else chime();updateVoiceUI();});
 $('settings-button').addEventListener('click',()=>{abortVoice();$('settings-dialog').showModal();});
 for(const button of document.querySelectorAll('.close-dialog'))button.addEventListener('click',()=>$('settings-dialog').close());
-const SpeechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition;
 function updateVoiceUI(){
-  $('mic-button').disabled=!SpeechRecognition;
-  $('mic-label').textContent=recognition?'듣고 있어요…':'누르고 말하기';$('mic-button').classList.toggle('listening',Boolean(recognition));
-  $('voice-hint').textContent=!SpeechRecognition?'이 브라우저는 음성 입력을 지원하지 않아요. 위의 이야기 버튼을 사용해 주세요.':voiceAllowed?'버튼을 누르고 말한 뒤 손을 떼어 주세요.':'음성 입력은 보호자 설정에서 켤 수 있어요.';
-  $('voice-enabled').disabled=!SpeechRecognition;
+  if(!voiceRepeater)return;
+  const state=voiceRepeater.state,busy=['requesting','recording','processing'].includes(state);
+  $('mic-button').disabled=!voiceRepeater.supported||state==='processing';
+  $('mic-label').textContent=state==='requesting'?'녹음 취소':state==='recording'?'녹음 멈추기':state==='processing'?'목소리를 바꾸는 중…':state==='playing'?'새로 녹음하기':'녹음 시작';
+  $('mic-button').classList.toggle('listening',state==='recording');$('mic-button').classList.toggle('processing',state==='processing');
+  $('replay-button').hidden=!voiceRepeater.hasRecording;$('replay-button').disabled=busy;$('replay-button').textContent=state==='playing'?'멈추기':'다시 듣기';
+  $('voice-enabled').disabled=!voiceRepeater.supported;
+  if(!voiceRepeater.supported)$('voice-hint').textContent='이 브라우저에서는 따라 말하기를 사용할 수 없어요. 이야기 버튼으로 놀아 주세요.';
+  else if(!voiceAllowed)$('voice-hint').textContent='목소리 따라 말하기는 보호자 설정에서 켤 수 있어요.';
+  playScene?.setVoiceState(voiceTargetId,state);
 }
+function voiceMessage(text){$('voice-hint').textContent=text;$('speech').textContent=text;updateVoiceUI();if(text)requestAnimationFrame(()=>$('voice-hint').textContent=text);}
+const VoiceAudioContext=window.AudioContext||window.webkitAudioContext;
+voiceRepeater=createVoiceRepeater({mediaDevices:navigator.mediaDevices,MediaRecorderCtor:window.MediaRecorder,AudioContextCtor:VoiceAudioContext,
+  onState:()=>updateVoiceUI(),onMessage:voiceMessage,onPlayTarget:(id,active)=>playScene?.setVoiceState(id,active?'playing':'ready')});
 $('voice-enabled').addEventListener('change',()=>{voiceAllowed=$('voice-enabled').checked;if(!voiceAllowed)abortVoice();updateVoiceUI();});
-function abortVoice(){if(recognition){const current=recognition;recognition=null;current.abort();}clearTimeout(voiceTimer);stopRequested=false;if(assets)updateVoiceUI();}
+function abortVoice(clearRecording=true){voiceTargetId=null;voiceRepeater?.cancel({clearRecording});if(assets)updateVoiceUI();}
 function startVoice(){
-  if(!SpeechRecognition||recognition)return;
+  if(['requesting','recording'].includes(voiceRepeater.state)){voiceRepeater.stop();return;}
+  if(!voiceRepeater.supported)return;
   if(!voiceAllowed){$('settings-dialog').showModal();return;}
-  if('speechSynthesis'in window)speechSynthesis.cancel();
-  stopRequested=false;const current=new SpeechRecognition();recognition=current;current.lang='ko-KR';current.continuous=false;current.interimResults=false;current.maxAlternatives=1;
-  current.onstart=()=>{if(stopRequested){try{current.stop();}catch{}}};
-  current.onresult=event=>{if(recognition!==current)return;const text=event.results?.[0]?.[0]?.transcript;if(text)talk(text);};
-  current.onerror=event=>{if(event.error==='aborted')return;toast(event.error==='not-allowed'?'마이크 권한이 꺼져 있어요. 이야기 버튼으로 놀 수 있어요.':event.error==='network'?'음성 서비스에 연결되지 않았어요. 이야기 버튼을 눌러 주세요.':'잘 듣지 못했어. 다시 말하거나 이야기 버튼을 눌러 줘!');};
-  current.onend=()=>{if(recognition===current){recognition=null;clearTimeout(voiceTimer);updateVoiceUI();}};
-  try{current.start();voiceTimer=setTimeout(stopVoice,8000);updateVoiceUI();}catch{recognition=null;updateVoiceUI();toast('마이크를 시작하지 못했어요. 이야기 버튼을 사용해 주세요.');}
+  if(!save.sound){voiceMessage('소리를 켜면 친구 목소리를 들을 수 있어요.');return;}
+  const friend=playScene?.selectedOptions(),instanceId=playScene?.selectedId();
+  if(!friend||!instanceId){voiceMessage('먼저 함께 놀 친구를 골라 주세요.');return;}
+  if('speechSynthesis'in window)speechSynthesis.cancel();voiceTargetId=instanceId;
+  voiceRepeater.start({instanceId,characterId:friend.character.id});
 }
-function stopVoice(){if(!recognition)return;stopRequested=true;try{recognition.stop();}catch{}clearTimeout(voiceTimer);voiceTimer=setTimeout(abortVoice,4000);}
-$('mic-button').addEventListener('pointerdown',e=>{if(e.button!==0||!e.isPrimary)return;$('mic-button').setPointerCapture(e.pointerId);startVoice();});
-$('mic-button').addEventListener('pointerup',stopVoice);$('mic-button').addEventListener('pointercancel',abortVoice);
-$('mic-button').addEventListener('keydown',e=>{if([' ','Enter'].includes(e.key)&&!e.repeat){e.preventDefault();startVoice();}});$('mic-button').addEventListener('keyup',e=>{if([' ','Enter'].includes(e.key)){e.preventDefault();stopVoice();}});
-window.addEventListener('blur',abortVoice);document.addEventListener('visibilitychange',()=>{if(document.hidden){abortVoice();if('speechSynthesis'in window)speechSynthesis.cancel();}});
+$('mic-button').addEventListener('click',startVoice);
+$('replay-button').addEventListener('click',()=>{if(voiceRepeater.state==='playing')voiceRepeater.cancel({clearRecording:false});else voiceRepeater.replay();updateVoiceUI();});
+window.addEventListener('blur',()=>abortVoice());window.addEventListener('pagehide',()=>abortVoice());document.addEventListener('visibilitychange',()=>{if(document.hidden){abortVoice();if('speechSynthesis'in window)speechSynthesis.cancel();}});
 
 $('photo-button').addEventListener('click',async()=>{
   const button=$('photo-button');button.disabled=true;

@@ -137,7 +137,9 @@ export function setupPlayScene({assets,images,loadImage,getSave,commit,say,onSel
     },
     refresh(){if(visible)render();},
     selectedOptions(){return selected()?options(selected()):null;},
+    selectedId(){return selected()?.id||null;},
     selectedButton(){return nodes.get(activeId)?.button;},
+    setVoiceState(id,state){for(const node of nodes.values())node.wrapper.classList.remove('voice-listening','voice-speaking');const node=nodes.get(id);if(node&&state==='recording')node.wrapper.classList.add('voice-listening');if(node&&state==='playing')node.wrapper.classList.add('voice-speaking');},
     async photo(loadImage,background){
       // Use stage aspect ratio and the same cover crop, size, and stacking as the live scene.
       const bounds=$('stage').getBoundingClientRect(),size=dimensions(),snapshot=entries().map(e=>({...e}));

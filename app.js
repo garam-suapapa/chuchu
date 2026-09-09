@@ -353,8 +353,7 @@ function updateVoiceUI(){
   playScene?.setVoiceState(voiceTargetId,state);
 }
 function voiceMessage(text){$('voice-hint').textContent=text;$('speech').textContent=text;updateVoiceUI();if(text)requestAnimationFrame(()=>$('voice-hint').textContent=text);}
-const VoiceAudioContext=window.AudioContext||window.webkitAudioContext;
-voiceRepeater=createVoiceRepeater({mediaDevices:navigator.mediaDevices,MediaRecorderCtor:window.MediaRecorder,AudioContextCtor:VoiceAudioContext,
+voiceRepeater=createVoiceRepeater({mediaDevices:navigator.mediaDevices,MediaRecorderCtor:window.MediaRecorder,AudioCtor:window.Audio,
   onState:()=>updateVoiceUI(),onMessage:voiceMessage,onPlayTarget:(id,active)=>playScene?.setVoiceState(id,active?'playing':'ready')});
 $('voice-enabled').addEventListener('change',()=>{voiceAllowed=$('voice-enabled').checked;if(!voiceAllowed)abortVoice();updateVoiceUI();});
 function abortVoice(clearRecording=true){voiceTargetId=null;voiceRepeater?.cancel({clearRecording});if(assets)updateVoiceUI();}

@@ -14,7 +14,9 @@ function stopTracks(stream){for(const track of stream?.getTracks?.()||[])track.s
 export function createVoiceRepeater({
   mediaDevices,
   MediaRecorderCtor,
-  AudioContextCtor,
+  AudioCtor,
+  createObjectURL=blob=>URL.createObjectURL(blob),
+  revokeObjectURL=url=>URL.revokeObjectURL(url),
   now=()=>performance.now(),
   setTimer=(fn,delay)=>setTimeout(fn,delay),
   clearTimer=id=>clearTimeout(id),
@@ -22,47 +24,52 @@ export function createVoiceRepeater({
   onMessage=()=>{},
   onPlayTarget=()=>{}
 }={}){
-  let phase='idle',context=null,stream=null,recorder=null,chunks=[],startedAt=0,maxTimer=null;
-  let recording=null,source=null,playTarget=null,generation=0,pressActive=false,settled=Promise.resolve();
-  const supported=Boolean(mediaDevices?.getUserMedia&&MediaRecorderCtor&&AudioContextCtor);
+  let phase='idle',stream=null,recorder=null,chunks=[],startedAt=0,maxTimer=null;
+  let recording=null,player=null,playTarget=null,generation=0,pressActive=false,settled=Promise.resolve();
+  const supported=Boolean(mediaDevices?.getUserMedia&&MediaRecorderCtor&&AudioCtor);
 
   function setState(next){phase=next;onState(next);}
   function message(text){onMessage(text);}
-  async function ensureContext(){
-    context||=new AudioContextCtor();
-    if(context.state==='suspended')await context.resume();
-    return context;
-  }
   function stopStream(){stopTracks(stream);stream=null;}
   function stopPlayback(){
-    if(!source)return;
-    const current=source;source=null;current.onended=null;
-    try{current.stop();}catch{}
+    if(!player)return;
+    const current=player;player=null;current.onended=null;current.onerror=null;
+    try{current.pause();current.currentTime=0;}catch{}
     if(playTarget!==null)onPlayTarget(playTarget,false);
     playTarget=null;
   }
-  function fail(text,token){
-    if(token!==generation)return;
-    stopStream();recorder=null;chunks=[];recording=null;stopPlayback();setState('idle');message(text);
+  function clearRecording(){
+    if(recording?.url)revokeObjectURL(recording.url);
+    recording=null;
   }
-  async function play(saved,token){
-    if(!saved||token!==generation)return;
+  function fail(text,token,{keepRecording=false}={}){
+    if(token!==generation)return;
+    stopStream();recorder=null;chunks=[];stopPlayback();
+    if(!keepRecording)clearRecording();
+    setState(recording?'ready':'idle');message(text);
+  }
+  async function play(saved,token,{automatic=false}={}){
+    if(!saved||token!==generation)return false;
     stopPlayback();
     try{
-      const audio=await ensureContext();
-      if(token!==generation)return;
-      const next=audio.createBufferSource(),gain=audio.createGain();
-      next.buffer=saved.buffer;next.playbackRate.value=saved.rate;gain.gain.value=.9;
-      next.connect(gain);gain.connect(audio.destination);source=next;playTarget=saved.target.instanceId;
-      setState('playing');message('내가 따라 해 볼게!');onPlayTarget(playTarget,true);
-      await new Promise((resolve,reject)=>{
-        next.onended=()=>{
-          if(source===next){source=null;onPlayTarget(playTarget,false);playTarget=null;if(token===generation)setState('ready');}
-          resolve();
-        };
-        try{next.start();}catch(error){next.onended=null;if(source===next)source=null;reject(error);}
-      });
-    }catch{fail('버튼을 누르면 친구가 따라 말해요.',token);}
+      const next=new AudioCtor(saved.url);
+      next.preload='auto';next.volume=.95;next.defaultPlaybackRate=saved.rate;next.playbackRate=saved.rate;
+      if('preservesPitch'in next)next.preservesPitch=false;
+      if('webkitPreservesPitch'in next)next.webkitPreservesPitch=false;
+      if('mozPreservesPitch'in next)next.mozPreservesPitch=false;
+      player=next;playTarget=saved.target.instanceId;
+      next.onended=()=>{
+        if(player===next){player=null;onPlayTarget(playTarget,false);playTarget=null;if(token===generation)setState('ready');}
+      };
+      next.onerror=()=>fail('녹음은 됐어요. 다시 듣기를 한 번 눌러 주세요.',token,{keepRecording:true});
+      await next.play();
+      if(token!==generation){stopPlayback();return false;}
+      setState('playing');message('내 목소리를 따라 하는 중이에요!');onPlayTarget(playTarget,true);
+      return true;
+    }catch{
+      fail(automatic?'녹음은 됐어요. 다시 듣기를 눌러 주세요.':'소리 재생이 막혔어요. 소리를 켜고 다시 눌러 주세요.',token,{keepRecording:true});
+      return false;
+    }
   }
   async function processRecording(token,duration,mimeType){
     if(token!==generation)return;
@@ -70,16 +77,10 @@ export function createVoiceRepeater({
     setState('processing');message('친구 목소리로 바꾸는 중…');
     try{
       const blob=new Blob(chunks,{type:mimeType||chunks[0]?.type||''});chunks=[];
-      const bytes=await blob.arrayBuffer();
-      const audio=await ensureContext();
-      let decodeTimer;
-      const decoded=await Promise.race([
-        audio.decodeAudioData(bytes.slice(0)),
-        new Promise((_,reject)=>{decodeTimer=setTimer(()=>reject(new Error('decode-timeout')),10000);})
-      ]).finally(()=>clearTimer(decodeTimer));
-      if(token!==generation)return;
-      recording={buffer:decoded,target:recorder.target,rate:voiceRateFor(recorder.target.characterId)};
-      recorder=null;await play(recording,token);
+      clearRecording();
+      recording={blob,url:createObjectURL(blob),target:recorder.target,rate:voiceRateFor(recorder.target.characterId)};
+      recorder=null;
+      await play(recording,token,{automatic:true});
     }catch{fail('목소리를 다시 들려줄래? 잘 담지 못했어.',token);}
   }
   async function start(target){
@@ -87,7 +88,6 @@ export function createVoiceRepeater({
     cancel({clearRecording:true,silent:true});pressActive=true;const token=++generation;
     setState('requesting');message('마이크 사용을 허용해 주세요.');
     try{
-      await ensureContext();
       const acquired=await mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true,autoGainControl:true},video:false});
       if(token!==generation||!pressActive){stopTracks(acquired);if(token===generation)setState('idle');return false;}
       stream=acquired;chunks=[];
@@ -118,10 +118,10 @@ export function createVoiceRepeater({
     clearTimer(maxTimer);maxTimer=null;setState('processing');
     try{recorder.stop();}catch{fail('목소리를 다시 들려줄래? 잘 담지 못했어.',generation);}
   }
-  function cancel({clearRecording=true,silent=false}={}){
+  function cancel({clearRecording:shouldClear=true,silent=false}={}){
     generation++;pressActive=false;clearTimer(maxTimer);maxTimer=null;
     if(recorder){recorder.ondataavailable=null;recorder.onstop=null;recorder.onerror=null;try{if(recorder.state!=='inactive')recorder.stop();}catch{}}
-    recorder=null;chunks=[];stopStream();stopPlayback();if(clearRecording)recording=null;setState(recording?'ready':'idle');
+    recorder=null;chunks=[];stopStream();stopPlayback();if(shouldClear)clearRecording();setState(recording?'ready':'idle');
     if(!silent)message(recording?'다시 들을 수 있어요.':'버튼을 누르면 녹음이 시작돼요. 다시 누르면 멈춰요. 최대 8초!');
   }
   function replay(){

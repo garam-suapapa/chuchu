@@ -1,12 +1,26 @@
 import {addSceneDoll,moveSceneDoll,removeSceneDoll,clampPosition} from './game-state.js';
 import {drawDoll} from './doll-renderer.js';
 
-export function setupPlayScene({assets,images,getSave,commit,say,onSelect,onGreet}){
+export function setupPlayScene({assets,images,loadImage,getSave,commit,say,onSelect,onGreet}){
   const $=id=>document.getElementById(id),nodes=new Map();
   let activeId=null,visible=false,drag=null;
   const entries=()=>getSave().scene||[];
   const selected=()=>entries().find(e=>e.id===activeId);
   const options=entry=>({character:assets.characters.find(c=>c.id===entry.characterId),outfit:assets.outfits.find(o=>o.id===entry.outfitId),accessories:assets.accessories.filter(a=>entry.accessories[a.slot]===a.id),accessoryPositions:entry.positions,images});
+  const imageSources=entry=>{
+    const {character,outfit,accessories}=options(entry);
+    return [...new Set([
+      ...(outfit?.renderLayers?.length?outfit.renderLayers.map(layer=>layer.src):[outfit?outfit.wornSprite:character.base]),
+      ...accessories.flatMap(a=>[a.backSprite,a.frontSprite||a.sprite]).filter(Boolean)
+    ])];
+  };
+  function drawWhenReady(canvas,entry,button){
+    const draw=()=>{const ctx=canvas.getContext('2d');ctx.clearRect(0,0,canvas.width,canvas.height);drawDoll(ctx,options(entry));};
+    const missing=imageSources(entry).filter(src=>!images.has(src));
+    if(!missing.length){draw();return;}
+    button?.setAttribute('aria-busy','true');
+    Promise.all(missing.map(loadImage)).then(()=>{if(canvas.isConnected)draw();}).catch(error=>{console.error(error);say('친구 모습을 불러오지 못했어요. 다시 추가해 주세요.');}).finally(()=>button?.removeAttribute('aria-busy'));
+  }
   function dimensions(){
     const stage=$('stage');
     const width=Math.min(208,stage.clientWidth*.38,stage.clientHeight*.48*6/7);
@@ -61,7 +75,7 @@ export function setupPlayScene({assets,images,getSave,commit,say,onSelect,onGree
       const wrapper=document.createElement('div');wrapper.className='play-doll-position';wrapper.dataset.sceneId=entry.id;
       const button=document.createElement('button');button.type='button';button.className='doll play-doll';button.setAttribute('aria-label',`${options(entry).character.name} · ${entry.name}, 끌거나 화살표 키로 이동`);
       const canvas=document.createElement('canvas');canvas.width=600;canvas.height=700;canvas.setAttribute('aria-hidden','true');
-      drawDoll(canvas.getContext('2d'),options(entry));button.append(canvas);wrapper.append(button);$('play-dolls').append(wrapper);
+      drawWhenReady(canvas,entry,button);button.append(canvas);wrapper.append(button);$('play-dolls').append(wrapper);
       nodes.set(entry.id,{wrapper,button,canvas});
       let suppressClick=false;
       button.addEventListener('pointerdown',e=>{
@@ -101,7 +115,7 @@ export function setupPlayScene({assets,images,getSave,commit,say,onSelect,onGree
     const addCard=(characterId,snapshot,presetId,label)=>{
       const card=document.createElement('button');card.type='button';card.className='friend-preset';
       const canvas=document.createElement('canvas');canvas.width=600;canvas.height=700;canvas.setAttribute('aria-hidden','true');
-      drawDoll(canvas.getContext('2d'),options({...snapshot,characterId}));
+      drawWhenReady(canvas,{...snapshot,characterId},card);
       const name=document.createElement('span');name.textContent=label;card.append(canvas,name);card.addEventListener('click',()=>add(characterId,presetId));list.append(card);
     };
     const save=getSave(),id=save.characterId,outfitId=save.outfits[id];
@@ -129,6 +143,7 @@ export function setupPlayScene({assets,images,getSave,commit,say,onSelect,onGree
       const bounds=$('stage').getBoundingClientRect(),size=dimensions(),snapshot=entries().map(e=>({...e}));
       const canvas=document.createElement('canvas');canvas.width=1200;canvas.height=Math.round(1200*bounds.height/bounds.width);
       const ctx=canvas.getContext('2d'),scale=canvas.width/bounds.width;
+      await Promise.all([...new Set(snapshot.flatMap(imageSources))].map(loadImage));
       ctx.fillStyle='#fff8f2';ctx.fillRect(0,0,canvas.width,canvas.height);
       if(background.image){const bg=await loadImage(background.image),factor=Math.max(canvas.width/bg.width,canvas.height/bg.height);ctx.drawImage(bg,(canvas.width-bg.width*factor)/2,(canvas.height-bg.height*factor)/2,bg.width*factor,bg.height*factor);}
       for(const entry of snapshot){const p=clampPosition(entry.x,entry.y,bounds,size);ctx.save();ctx.translate((p.x*bounds.width-size.width/2)*scale,(p.y*bounds.height-size.height/2)*scale);ctx.scale(size.width*scale/600,size.height*scale/700);drawDoll(ctx,options(entry));ctx.restore();}

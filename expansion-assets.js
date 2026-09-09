@@ -6,7 +6,7 @@ const isFrame=frame=>frame&&['x','y','width','height'].every(key=>Number.isFinit
 
 // Expansion catalogs are optional. A failed catalog or image must not prevent
 // the established wardrobe from opening, and unfinished originals stay hidden.
-export async function loadExpansionAssets(assets,loadImage,fetchCatalog=fetch){
+export async function loadExpansionAssets(assets,loadImage=null,fetchCatalog=fetch){
   const result={accessories:[],outfits:[],props:[],warnings:[]};
   const groups=[['accessories','accessories/catalog.json'],['props','props/catalog.json'],...assets.characters.map(c=>['outfits',`outfits/${c.id}/catalog.json`])];
   const loaded=await Promise.all(groups.map(async([kind,path])=>{
@@ -36,6 +36,7 @@ export async function loadExpansionAssets(assets,loadImage,fetchCatalog=fetch){
         seen[group.kind].add(entry.id);candidates.push({entry,sprites});
       }catch{result.warnings.push(entry?.id||group.path);}
     }
+    if(!loadImage){result[group.kind].push(...candidates.map(({entry})=>entry));continue;}
     const ready=await Promise.all(candidates.map(async({entry,sprites})=>{
       try{await Promise.all(sprites.map(loadImage));return entry;}catch{result.warnings.push(entry.id);return null;}
     }));

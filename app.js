@@ -194,7 +194,7 @@ function renderPlayProps(){
   for(const prop of assets.props){
     const button=document.createElement('button');button.type='button';button.className='play-prop-card';button.dataset.prop=prop.id;
     button.setAttribute('aria-label',prop.name+' 가지고 놀기');button.setAttribute('aria-pressed','false');
-    const image=document.createElement('img');image.src=prop.sprite;image.alt='';image.draggable=false;
+    const image=document.createElement('img');setCatalogImage(image,prop.sprite,step==='play');
     const name=document.createElement('span');name.textContent=prop.name;button.append(image,name);
     button.addEventListener('click',()=>playWithProp(prop));fragment.append(button);
   }
@@ -388,12 +388,12 @@ async function init(){
   try{
     const response=await fetch('assets/runtime/game-assets.json');if(!response.ok)throw new Error('옷장 정보를 불러오지 못했어요.');assets=await response.json();
     assets.accessories=[...accessories];assets.backgrounds.push(...extraBackgrounds);
-    const expansion=await loadExpansionAssets(assets,loadImage);
+    const expansion=await loadExpansionAssets(assets);
     assets.accessories.push(...expansion.accessories);assets.outfits.push(...expansion.outfits);assets.props=expansion.props;
     let stored={};try{stored=JSON.parse(localStorage.getItem(SAVE_KEY)||'{}');}catch{}
     save=makeSave(assets,stored);
     await ensureDollImages();
-    playScene=setupPlayScene({assets,images:decodedImages,getSave:()=>save,commit:(next,store=true)=>{save=next;if(store)persist();},say,onSelect:()=>{abortVoice();if('speechSynthesis'in window)speechSynthesis.cancel();},onGreet:()=>{talk('안녕');animateDoll();chime();}});
+    playScene=setupPlayScene({assets,images:decodedImages,loadImage,getSave:()=>save,commit:(next,store=true)=>{save=next;if(store)persist();},say,onSelect:()=>{abortVoice();if('speechSynthesis'in window)speechSynthesis.cancel();},onGreet:()=>{talk('안녕');animateDoll();chime();}});
     renderAll();renderPlayProps();setStep('dress');updateVoiceUI();
     setupPresets({assets,getSave:()=>save,commit:next=>{if(!persist(next))return false;save=next;return true;},onApply:preset=>{accessoryEditId=null;if(step==='play')setStep('dress');renderAll();say(`${preset.name} 코디를 입었어! 함께 놀자!`);animateDoll();},onOpen:abortVoice});
     $('presets-button').disabled=false;

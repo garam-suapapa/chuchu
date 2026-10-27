@@ -6,10 +6,11 @@ tests/*
 !tests/presets.test.mjs
 !tests/play-scene.test.mjs
 !tests/play-scene-browser.cjs
+!tests/feeding.test.mjs
+!tests/feeding-browser.cjs
 plans/
 /*.jpg
 /*.png
 *.cmd
-server.cjs
 node_modules/
 npm-debug.log*

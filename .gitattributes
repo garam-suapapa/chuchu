@@ -1,0 +1,2 @@
+# Preserve official third-party runtimes byte-for-byte, including upstream whitespace.
+feeding/vendor/** -text -whitespace linguist-vendored

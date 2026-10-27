@@ -1,0 +1,919 @@
+:root {
+  font-family:
+    "Pretendard",
+    "Noto Sans KR",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  color: #3f4c3b;
+  background: #faf7ef;
+  font-synthesis: none;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+button,
+select,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+button,
+select {
+  font: inherit;
+}
+button,
+a,
+select {
+  touch-action: manipulation;
+}
+button {
+  cursor: pointer;
+  border: 0;
+}
+button:disabled {
+  opacity: 0.42;
+  cursor: default;
+}
+button:focus-visible,
+a:focus-visible,
+select:focus-visible {
+  outline: 3px solid #d57846;
+  outline-offset: 4px;
+}
+[hidden] {
+  display: none !important;
+}
+.shell {
+  max-width: 1200px;
+  margin: auto;
+  padding: 28px 44px;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 23px;
+  border-bottom: 1px solid #e6e5da;
+}
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-weight: 800;
+  font-size: 17px;
+  color: inherit;
+  text-decoration: none;
+}
+.brand-icon {
+  background: #eeeeda;
+  border-radius: 15px;
+  padding: 10px;
+  font-size: 24px;
+}
+.brand small {
+  display: block;
+  font-size: 8px;
+  letter-spacing: 1.8px;
+  margin-top: 6px;
+  color: #88907b;
+}
+.wardrobe {
+  font-size: 13px;
+  color: #69765e;
+  text-decoration: none;
+  background: #f0f0e5;
+  border-radius: 99px;
+  padding: 11px 17px;
+}
+.intro {
+  padding: 34px 0 28px;
+}
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 1.8px;
+  font-weight: 750;
+  color: #8b967d;
+}
+.intro h1 {
+  font-size: clamp(26px, 3.8vw, 43px);
+  letter-spacing: -2px;
+  margin: 10px 0 12px;
+  line-height: 1.25;
+}
+.intro h1 span {
+  color: #dc895e;
+}
+.intro i {
+  font-style: normal;
+  display: inline-block;
+  font-size: 33px;
+  color: #e6b95a;
+  vertical-align: top;
+  margin-left: 14px;
+}
+.intro p {
+  color: #838779;
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 0;
+}
+.play-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.camera-card,
+.friend-card {
+  border-radius: 25px;
+  background: #fffefa;
+  border: 1px solid #e9e7dc;
+  overflow: hidden;
+}
+.card-top {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 23px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: #bdc3b5;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+.dot.live {
+  background: #7e9f71;
+}
+.pill {
+  font-size: 10px;
+  font-weight: 500;
+  color: #8a907f;
+  background: #f0f1e9;
+  padding: 6px 10px;
+  border-radius: 99px;
+}
+.camera-view {
+  margin: 0 18px;
+  aspect-ratio: 4/3;
+  background: #f0f1e8;
+  border-radius: 17px;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+.camera-view video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1);
+  position: absolute;
+  inset: 0;
+}
+.camera-placeholder {
+  position: relative;
+  text-align: center;
+  color: #8a997d;
+}
+.face-outline {
+  width: 112px;
+  height: 133px;
+  border: 2px dashed #b5c0a8;
+  border-radius: 48%;
+  margin: auto;
+  display: grid;
+  place-items: center;
+}
+.face-outline span {
+  font-size: 64px;
+  font-weight: 300;
+  margin-top: 7px;
+  line-height: 1;
+}
+.camera-placeholder h2 {
+  font-size: 19px;
+  margin: 18px 0 8px;
+  color: #69795f;
+}
+.camera-placeholder p {
+  font-size: 12px;
+  margin: 0;
+}
+.camera-label {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 11px;
+  color: #7b8c70;
+}
+.face-hint {
+  position: absolute;
+  top: 15px;
+  left: 12px;
+  right: 12px;
+  text-align: center;
+  border-radius: 99px;
+  background: #fffefaed;
+  font-size: 12px;
+  padding: 9px;
+  color: #5c7551;
+}
+.camera-actions {
+  padding: 19px 24px 0;
+  text-align: center;
+}
+.primary {
+  width: 100%;
+  min-height: 50px;
+  background: #7e9470;
+  color: white;
+  border-radius: 13px;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 12px 18px;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+.primary:hover:not(:disabled) {
+  background: #6d845f;
+  transform: translateY(-1px);
+}
+.primary span {
+  float: right;
+}
+.text-button {
+  background: transparent;
+  color: #89917e;
+  font-size: 11px;
+  min-height: 38px;
+  padding: 10px;
+}
+.privacy {
+  text-align: center;
+  font-size: 10px;
+  color: #939889;
+  margin: 0 12px 17px;
+  line-height: 1.6;
+}
+.error {
+  font-size: 12px;
+  line-height: 1.7;
+  color: #a1513a;
+  margin: 0 24px 15px;
+}
+.friend-card {
+  background: #fcf1e7;
+  border-color: #f1e1d2;
+}
+.sound {
+  background: transparent;
+  font-size: 11px;
+  color: #a2856b;
+  min-height: 36px;
+}
+.friend-stage {
+  height: auto;
+  aspect-ratio: 4/3;
+  position: relative;
+  margin: 0 18px;
+  overflow: hidden;
+}
+.bubble {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 14px 24px;
+  background: #fffdf8;
+  border-radius: 18px;
+  white-space: nowrap;
+  font-size: 16px;
+  font-weight: 750;
+  color: #8e7357;
+  z-index: 3;
+}
+.bubble:after {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  left: 45%;
+  border: 8px solid transparent;
+  border-top-color: #fffdf8;
+  border-bottom: 0;
+}
+.bear {
+  position: absolute;
+  width: 210px;
+  height: 230px;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+}
+.ear {
+  position: absolute;
+  top: 14px;
+  width: 58px;
+  height: 61px;
+  border-radius: 50%;
+  background: #d0aa80;
+  border: 12px solid #e5c59d;
+}
+.ear.left {
+  left: 9px;
+}
+.ear.right {
+  right: 9px;
+}
+.bear-head {
+  position: absolute;
+  top: 35px;
+  left: 14px;
+  width: 182px;
+  height: 143px;
+  border-radius: 48% 48% 44% 44%;
+  background: #e5c59d;
+  box-shadow: inset 0 -5px 0 #dbb88e;
+}
+.eye {
+  width: 9px;
+  height: 12px;
+  background: #5e4d3b;
+  border-radius: 50%;
+  position: absolute;
+  top: 56px;
+}
+.eye.left {
+  left: 48px;
+}
+.eye.right {
+  right: 48px;
+}
+.cheek {
+  width: 29px;
+  height: 15px;
+  border-radius: 50%;
+  background: #e7a78b;
+  position: absolute;
+  top: 77px;
+  opacity: 0.7;
+}
+.cheek.left {
+  left: 23px;
+}
+.cheek.right {
+  right: 23px;
+}
+.nose {
+  position: absolute;
+  top: 68px;
+  left: 82px;
+  width: 18px;
+  height: 13px;
+  background: #72573f;
+  border-radius: 45% 45% 60% 60%;
+}
+.mouth {
+  position: absolute;
+  top: 90px;
+  left: 83px;
+  width: 16px;
+  height: 8px;
+  border-bottom: 3px solid #795b42;
+  border-radius: 50%;
+  transition: all 0.15s;
+}
+.bear-body {
+  position: absolute;
+  width: 153px;
+  height: 130px;
+  border-radius: 45%;
+  background: #d8b58b;
+  bottom: 0;
+  left: 28px;
+}
+.bib {
+  position: absolute;
+  top: 164px;
+  left: 65px;
+  width: 80px;
+  height: 60px;
+  background: #8d9b78;
+  border-radius: 8px 8px 45px 45px;
+  text-align: center;
+  padding-top: 7px;
+  font-size: 30px;
+  color: #f4ecd6;
+}
+.paw {
+  position: absolute;
+  width: 53px;
+  height: 47px;
+  border-radius: 50%;
+  background: #e5c59d;
+  bottom: 0;
+  z-index: 2;
+}
+.paw.left {
+  left: 0;
+  transform: rotate(-20deg);
+}
+.paw.right {
+  right: 0;
+  transform: rotate(20deg);
+}
+.table {
+  position: absolute;
+  height: 43px;
+  bottom: 0;
+  left: -18px;
+  right: -18px;
+  background: #e8d6ba;
+  border-radius: 50% 50% 0 0/20% 20% 0 0;
+}
+.plate {
+  position: absolute;
+  width: 104px;
+  height: 31px;
+  background: #fff9ef;
+  border: 4px solid #f7ebd6;
+  border-radius: 50%;
+  left: 50%;
+  top: -8px;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.plate span {
+  display: inline-block;
+  font-size: 29px;
+  transform: translateY(-22px);
+}
+.spoon {
+  position: absolute;
+  width: 92px;
+  height: 11px;
+  background: #a8a48c;
+  border-radius: 10px;
+  left: calc(50% + 70px);
+  top: 12px;
+  transform: rotate(-20deg);
+  transition:
+    transform 0.4s,
+    top 0.4s,
+    left 0.4s;
+}
+.spoon:before {
+  content: "";
+  position: absolute;
+  width: 34px;
+  height: 23px;
+  background: #b8b59c;
+  border-radius: 50%;
+  top: -6px;
+  left: -8px;
+}
+.spoon span {
+  position: absolute;
+  top: -18px;
+  left: -8px;
+  font-size: 25px;
+  transition: opacity 0.2s;
+}
+.spark {
+  position: absolute;
+  color: #d6a45b;
+  font-size: 27px;
+}
+.spark-one {
+  top: 105px;
+  left: 36px;
+  transform: rotate(12deg);
+}
+.spark-two {
+  top: 150px;
+  right: 27px;
+  font-size: 20px;
+}
+.turn-controls {
+  padding: 0 24px 16px;
+  text-align: center;
+}
+.turn-controls p {
+  font-size: 12px;
+  color: #a08467;
+  min-height: 22px;
+  line-height: 1.6;
+  margin: 17px 0 12px;
+}
+.friend-card .primary {
+  background: #d9976f;
+}
+.friend-card .primary:hover:not(:disabled) {
+  background: #c9875f;
+}
+.celebration {
+  display: none;
+  position: absolute;
+  top: 102px;
+  width: 100%;
+  text-align: center;
+  color: #cf7b79;
+  font-size: 36px;
+  z-index: 4;
+  pointer-events: none;
+}
+[data-phase="open"] .mouth {
+  height: 24px;
+  width: 24px;
+  left: 79px;
+  top: 86px;
+  background: #805843;
+  border: 4px solid #a57554;
+}
+[data-phase="open"] .spoon {
+  top: -114px;
+  left: calc(50% + 12px);
+  transform: rotate(-35deg);
+}
+[data-phase="waiting"] .spoon span,
+[data-phase="celebrate"] .spoon span {
+  opacity: 0;
+}
+[data-phase="waiting"] .cheek {
+  height: 22px;
+}
+[data-phase="celebrate"] .celebration {
+  display: block;
+  animation: float 1.5s ease-in-out infinite;
+}
+[data-phase="celebrate"] .eye {
+  height: 7px;
+  border-top: 3px solid #5e4d3b;
+  background: transparent;
+}
+[data-phase="celebrate"] .bear {
+  animation: happy 0.6s ease-in-out 2;
+}
+.caregiver {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  border: 1px solid #e8e6da;
+  border-radius: 18px;
+  padding: 23px;
+  margin-top: 24px;
+  background: #f6f4eb;
+}
+.caregiver-heading {
+  margin-right: auto;
+}
+.caregiver-heading p {
+  font-size: 11px;
+  color: #8c9182;
+  line-height: 1.7;
+  margin: 8px 0 0;
+}
+.caregiver label {
+  display: grid;
+  gap: 9px;
+  font-size: 11px;
+  font-weight: 650;
+  color: #858e79;
+}
+select {
+  border: 1px solid #e3e3d5;
+  background: #fffefa;
+  border-radius: 9px;
+  padding: 11px;
+  color: #55624c;
+  max-width: 210px;
+  font-size: 12px;
+}
+.session-actions {
+  display: grid;
+  gap: 8px;
+}
+.session-actions button {
+  background: #eaece0;
+  border-radius: 8px;
+  padding: 10px 13px;
+  font-size: 11px;
+  color: #6a785e;
+  min-height: 36px;
+}
+.session-actions button:last-child {
+  background: transparent;
+  color: #9b8c76;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  color: #a1a593;
+  font-size: 10px;
+  padding: 25px 3px;
+}
+footer span:last-child {
+  font-size: 8px;
+  letter-spacing: 1.4px;
+}
+@keyframes float {
+  50% {
+    transform: translateY(-9px);
+    opacity: 0.6;
+  }
+}
+@keyframes happy {
+  50% {
+    transform: translate(-50%, -9px) rotate(-3deg);
+  }
+}
+@media (min-width: 1000px) {
+  .friend-stage {
+    aspect-ratio: 4/3;
+  }
+  .bear {
+    bottom: 20px;
+  }
+}
+@media (max-width: 760px) {
+  .shell {
+    padding: 18px 18px;
+  }
+  .intro {
+    padding-top: 26px;
+  }
+  .play-grid {
+    gap: 14px;
+  }
+  .card-top {
+    padding: 0 15px;
+    font-size: 11px;
+    height: 48px;
+  }
+  .camera-view,
+  .friend-stage {
+    margin: 0 10px;
+  }
+  .bear {
+    transform: translateX(-50%) scale(0.75);
+    transform-origin: bottom;
+    height: 230px;
+    bottom: 20px;
+  }
+  .bubble {
+    font-size: 12px;
+    padding: 10px 15px;
+  }
+  .camera-placeholder h2 {
+    font-size: 15px;
+    margin: 8px 0;
+  }
+  .face-outline {
+    width: 70px;
+    height: 83px;
+  }
+  .face-outline span {
+    font-size: 42px;
+  }
+  .camera-placeholder p {
+    font-size: 10px;
+  }
+  .camera-actions,
+  .turn-controls {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+  .primary {
+    font-size: 12px;
+    min-height: 45px;
+  }
+  .camera-label {
+    font-size: 9px;
+    bottom: 9px;
+  }
+  .privacy {
+    font-size: 9px;
+  }
+  .caregiver {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .caregiver-heading {
+    width: 100%;
+  }
+  .caregiver-heading br {
+    display: none;
+  }
+  .session-actions {
+    display: flex;
+    width: 100%;
+  }
+  .spark {
+    display: none;
+  }
+}
+@media (max-width: 520px) {
+  header {
+    padding-bottom: 17px;
+  }
+  .brand {
+    font-size: 13px;
+    gap: 8px;
+  }
+  .brand small {
+    font-size: 6px;
+    letter-spacing: 1.2px;
+  }
+  .brand-icon {
+    font-size: 20px;
+    padding: 8px;
+  }
+  .wardrobe {
+    font-size: 10px;
+    padding: 9px 12px;
+  }
+  .intro h1 {
+    font-size: 29px;
+  }
+  .intro p {
+    font-size: 11px;
+  }
+  .play-grid {
+    grid-template-columns: 1fr;
+  }
+  .camera-view {
+    aspect-ratio: 16/9;
+  }
+  .camera-placeholder {
+    display: grid;
+    grid-template-columns: 65px auto;
+    column-gap: 15px;
+    text-align: left;
+    align-items: center;
+  }
+  .face-outline {
+    grid-row: 1/3;
+    width: 60px;
+    height: 72px;
+  }
+  .camera-placeholder h2 {
+    align-self: end;
+  }
+  .camera-placeholder p {
+    align-self: start;
+  }
+  .friend-stage {
+    aspect-ratio: 1.65;
+  }
+  .bear {
+    transform: translateX(-50%) scale(0.8);
+  }
+  .camera-actions {
+    padding-top: 12px;
+  }
+  .privacy {
+    margin-bottom: 12px;
+  }
+  .camera-card,
+  .friend-card {
+    border-radius: 20px;
+  }
+  .caregiver {
+    padding: 18px;
+    gap: 14px;
+  }
+  .caregiver label {
+    flex: 1;
+    min-width: 120px;
+  }
+  select {
+    max-width: 100%;
+    width: 100%;
+  }
+  .session-actions button {
+    flex: 1;
+  }
+  footer {
+    font-size: 9px;
+    gap: 10px;
+  }
+  footer span:last-child {
+    font-size: 7px;
+  }
+  .face-hint {
+    font-size: 10px;
+    padding: 6px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+@media (max-width: 520px) {
+  .session-active .intro {
+    padding: 18px 0;
+  }
+  .session-active .intro h1 {
+    font-size: 25px;
+    margin: 7px 0;
+  }
+  .session-active .intro p {
+    font-size: 10px;
+  }
+  .session-active .play-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .session-active .card-top {
+    font-size: 10px;
+    padding: 0 11px;
+  }
+  .session-active .pill {
+    font-size: 8px;
+    padding: 5px;
+  }
+  .session-active .camera-view,
+  .session-active .friend-stage {
+    aspect-ratio: 3/4;
+    margin: 0 7px;
+  }
+  .session-active .camera-placeholder {
+    display: block;
+    text-align: center;
+  }
+  .session-active .camera-placeholder h2 {
+    font-size: 12px;
+  }
+  .session-active .camera-placeholder p {
+    font-size: 9px;
+  }
+  .session-active .face-outline {
+    width: 48px;
+    height: 60px;
+  }
+  .session-active .camera-label {
+    display: none;
+  }
+  .session-active .camera-actions {
+    display: none;
+  }
+  .session-active .privacy {
+    font-size: 9px;
+    margin: 14px 9px;
+  }
+  .session-active .bear {
+    transform: translateX(-50%) scale(0.6);
+  }
+  .session-active .bubble {
+    font-size: 10px;
+    padding: 9px 8px;
+    max-width: 100%;
+    white-space: normal;
+    width: max-content;
+    text-align: center;
+  }
+  .session-active .sound {
+    font-size: 9px;
+    padding: 0;
+  }
+  .session-active .turn-controls {
+    padding: 0 9px 10px;
+  }
+  .session-active .turn-controls p {
+    font-size: 10px;
+    min-height: 45px;
+    margin: 12px 0 8px;
+  }
+  .session-active .primary {
+    font-size: 11px;
+    padding: 9px 7px;
+  }
+  .session-active .text-button {
+    font-size: 9px;
+    padding: 7px 2px;
+  }
+  .session-active .spoon {
+    width: 62px;
+    left: calc(50% + 35px);
+  }
+  .session-active .plate {
+    width: 77px;
+  }
+  .session-active .celebration {
+    font-size: 23px;
+  }
+}

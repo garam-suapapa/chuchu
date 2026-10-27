@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#faf7ef" />
+    <meta
+      name="description"
+      content="수아와 츄츄가 함께하는 한 입 식사 놀이. 카메라로 입 움직임을 따라 하고 보호자가 확인하면 칭찬해요."
+    />
+    <title>수아랑 츄츄랑 냠냠</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='28'%3E🥄%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <div class="shell">
+      <header>
+        <a class="brand" href="./" aria-label="냠냠 놀이 처음으로"
+          ><span class="brand-icon">🥄</span
+          ><span
+            >츄츄의 작은 식탁<small>A LITTLE BITE, A HAPPY MOMENT</small></span
+          ></a
+        ><a class="wardrobe" href="../index.html">옷장 놀이 ↗</a>
+      </header>
+      <main>
+        <div class="intro">
+          <span class="eyebrow">수아의 속도로, 한 입씩</span>
+          <h1>수아랑 츄츄랑 <span>냠냠</span><i>✳</i></h1>
+          <p>작은 한 입을 함께해요. 쉬고 싶을 땐 언제든 쉬어도 좋아요.</p>
+        </div>
+        <div class="play-grid">
+          <section class="camera-card" aria-label="수아 카메라">
+            <div class="card-top">
+              <span><b class="dot" id="camera-dot"></b> 수아의 자리</span
+              ><span class="pill" id="camera-status" role="status"
+                >카메라 꺼짐</span
+              >
+            </div>
+            <div class="camera-view" id="camera-view">
+              <video
+                id="camera"
+                autoplay
+                playsinline
+                muted
+                aria-label="전면 카메라 영상"
+              ></video>
+              <div class="camera-placeholder" id="placeholder">
+                <div class="face-outline"><span>⌣</span></div>
+                <h2>수아야, 안녕!</h2>
+                <p>얼굴이 잘 보이게 앉아볼까요?</p>
+              </div>
+              <div class="face-hint" id="face-hint" hidden>
+                수아의 얼굴을 찾고 있어요
+              </div>
+              <div class="camera-label">♡ 오늘도 함께 먹어요</div>
+            </div>
+            <div class="camera-actions">
+              <button class="primary" id="start">
+                카메라 켜고 시작하기 <span>↗</span></button
+              ><button class="text-button" id="manual-start">
+                카메라 없이 놀기
+              </button>
+            </div>
+            <p class="error" id="camera-error" role="alert" hidden></p>
+            <p class="privacy">
+              ⌁ 영상은 이 기기에서 처리하며 저장하거나 전송하지 않아요.
+            </p>
+          </section>
+          <section class="friend-card" aria-label="츄츄와 한 입 놀이">
+            <div class="card-top">
+              <span>✦ 츄츄의 자리</span
+              ><button
+                id="sound"
+                class="sound"
+                aria-pressed="true"
+                aria-label="소리 끄기"
+              >
+                소리 켜짐 ♪
+              </button>
+            </div>
+            <div class="friend-stage" id="friend-stage" data-phase="ready">
+              <div class="bubble" id="message" role="status" aria-live="polite">
+                수아야, 같이 먹자!
+              </div>
+              <span class="spark spark-one">✧</span
+              ><span class="spark spark-two">✳</span>
+              <div class="bear" aria-hidden="true">
+                <div class="ear left"></div>
+                <div class="ear right"></div>
+                <div class="bear-body"></div>
+                <div class="bear-head">
+                  <span class="eye left"></span><span class="eye right"></span
+                  ><span class="cheek left"></span
+                  ><span class="cheek right"></span><span class="nose"></span
+                  ><span class="mouth"></span>
+                </div>
+                <div class="bib">♡</div>
+                <div class="paw left"></div>
+                <div class="paw right"></div>
+              </div>
+              <div class="table" aria-hidden="true">
+                <div class="plate"><span id="food-art">🍚</span></div>
+                <div class="spoon"><span id="spoon-food">🍚</span></div>
+              </div>
+              <div class="celebration" aria-hidden="true">
+                ♡ &nbsp; ✦ &nbsp; ♡
+              </div>
+            </div>
+            <div class="turn-controls">
+              <p id="instruction">시작 버튼을 누르면 츄츄가 기다릴게요.</p>
+              <button class="primary" id="arm" disabled>한 입 준비 🥄</button
+              ><button class="primary confirm" id="confirm" hidden>
+                한 입 먹었어요 · 칭찬하기 ♡</button
+              ><button class="text-button" id="manual-bite" hidden>
+                입 동작 대신 버튼으로 진행
+              </button>
+            </div>
+          </section>
+        </div>
+        <section class="caregiver" aria-label="보호자 설정">
+          <div class="caregiver-heading">
+            <span class="eyebrow">보호자와 함께해요</span>
+            <p>
+              입 움직임은 놀이에만 사용해요.<br />실제로 먹었는지는 보호자가
+              확인해 주세요.
+            </p>
+          </div>
+          <label
+            >오늘의 한 입<select id="food">
+              <option value="rice">밥 🍚</option>
+              <option value="carrot">당근 🥕</option>
+              <option value="soup">국 🥣</option>
+            </select></label
+          ><label
+            >입 인식 감도<select id="sensitivity">
+              <option value=".3">편하게 벌려도 반응</option>
+              <option value=".45" selected>보통</option>
+              <option value=".6">더 크게 벌릴 때 반응</option>
+            </select></label
+          >
+          <div class="session-actions">
+            <button id="pause" disabled>잠깐 쉬기</button
+            ><button id="finish" disabled>오늘은 여기까지</button>
+          </div>
+        </section>
+        <footer>
+          <span>많이 먹기보다, 기분 좋은 식사 시간.</span
+          ><span>MADE WITH ♡ FOR SUA</span>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

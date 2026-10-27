@@ -4,6 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "test:feeding": "node --test tests/feeding.test.mjs",
+    "test:feeding:browser": "node tests/feeding-browser.cjs",
     "test:expansion": "node --test test-expansion-loader.mjs test-expansion-state.mjs",
     "verify:expansion": "node verify-expansion.mjs",
     "review:expansion": "node review-expansion.cjs",
